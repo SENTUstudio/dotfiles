@@ -4,7 +4,7 @@ import platform
 import subprocess
 import sys
 
-REPO_URL = "URL_DEL_REPOSITORIO_GIT"  # Reemplaza con la URL real de tu repositorio
+REPO_URL = "https://github.com/SENTUstudio/dotfiles.git"
 DOTFILES_DIR = os.path.expanduser("~/dotfiles")
 REPO_NAME = REPO_URL.split("/")[-1].replace(".git", "")
 
