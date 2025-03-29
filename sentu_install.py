@@ -111,7 +111,7 @@ def check_and_install_ansible():
                         check_command("pacman"),
                         check_command("yum"),
                     ):
-                        case (False, True, False, False):
+                        case (_, True, _, _):
                             info(
                                 "Gestor de paquetes 'dnf' detectado. Intentando instalar python3-libdnf5..."
                             )
