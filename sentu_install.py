@@ -30,7 +30,7 @@ def show(message: str = "con Python 🐍"):
     logo = f"""
     \033[1m\033[33m█▀ █▀▀ █▄░█ ▀█▀ █░█\033[0m  ┎┤ {encabezado_ajustado} ├┒
     \033[1m\033[33m▄█ ██▄ █░▀█ ░█░ █▄█\033[0m  ┖┤ \033[1m{mensaje_ajustado}\033[0m├┚
-                        .studio
+                .studio
     """
     print(logo)
 
@@ -183,25 +183,25 @@ def main():
                     check_command("pacman"),
                     check_command("yum"),
                 ):
-                    case (True, False, False, False):
+                    case (True, _, _, _):
                         info(
                             "Gestor de paquetes 'apt' detectado. Intentando instalar Git..."
                         )
                         run_command(["sudo", "apt-get", "update"])
                         run_command(["sudo", "apt-get", "install", "-y", "git"])
-                    case (False, True, False, False):
+                    case (_, True, _, _):
                         info(
                             "Gestor de paquetes 'dnf' detectado. Intentando instalar Git..."
                         )
                         run_command(["sudo", "dnf", "update", "-y"])
                         run_command(["sudo", "dnf", "install", "-y", "git"])
-                    case (False, False, True, False):
+                    case (_, _, True, _):
                         info(
                             "Gestor de paquetes 'pacman' detectado. Intentando instalar Git..."
                         )
                         run_command(["sudo", "pacman", "-Syy", "--noconfirm"])
                         run_command(["sudo", "pacman", "-S", "--noconfirm", "git"])
-                    case (False, False, False, True):
+                    case (_, _, _, True):
                         info(
                             "Gestor de paquetes 'yum' detectado. Intentando instalar Git..."
                         )
@@ -282,4 +282,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    show()
