@@ -166,6 +166,7 @@ def main():
             info("Por favor, instala Git manualmente y vuelve a ejecutar este script.")
             sys.exit(1)
 
-    if __name__ == "__main__":
-        show("Instalación de dotfiles")
-        main()
+
+if __name__ == "__main__":
+    show("💾 Instalación de dotfiles")
+    main()
