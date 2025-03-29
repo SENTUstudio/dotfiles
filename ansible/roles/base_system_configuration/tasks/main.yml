@@ -1,17 +1,16 @@
 ---
-- name: Asegurar que los repositorios del sistema estén actualizados ({{ ansible_os_family }}:{{ ansible_distribution }})
-  ansible.builtin.command:
-    argv: "{{ sentu_install.package_managers.fedora.update }}"
-  become: true
+- name: Actualiza el sistema
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
   when:
     - ansible_distribution == "Fedora"
-    - sentu_install.package_managers.fedora is defined
-    - sentu_install.package_managers.fedora.update is defined
 
 - name: Instalar paquetes base
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name:
       - curl
       - git
     state: present
-  when: ansible_os_family != "Windows"
+  when:
+    - ansible_distribution == "Fedora"

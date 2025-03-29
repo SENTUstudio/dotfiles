@@ -1,5 +1,5 @@
 - name: Instalar dependencias core (Fedora)
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name: "{{ core_dependencies }}"
     state: present
   when: ansible_distribution == "Fedora"

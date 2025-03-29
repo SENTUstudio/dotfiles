@@ -1,5 +1,5 @@
 - name: Instalar dependencias extendidas (Fedora)
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name: "{{ extended_dependencies }}"
     state: present
   when: ansible_distribution == "Fedora"
