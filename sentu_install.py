@@ -104,14 +104,6 @@ def check_and_install_ansible():
         match os_name:
             case "Linux":
                 try:
-                    subprocess.run(
-                        ["python3", "-m", "pip", "install", "ansible"], check=True
-                    )
-                    info("Ansible instalado exitosamente (pip).")
-
-                    info(
-                        "Verificando gestor de paquetes para dependencias de Ansible..."
-                    )
                     match (
                         check_command("apt-get"),
                         check_command("dnf"),
@@ -123,13 +115,28 @@ def check_and_install_ansible():
                                 "Gestor de paquetes 'dnf' detectado. Intentando instalar python3-libdnf5..."
                             )
                             run_command(
-                                ["sudo", "dnf", "install", "-y", "python3-libdnf5"]
+                                [
+                                    "sudo",
+                                    "dnf",
+                                    "install",
+                                    "-y",
+                                    "python3-libdnf5",
+                                    "python3-pip",
+                                ]
                             )
                             info("python3-libdnf5 instalado exitosamente.")
                         case _:
                             info(
                                 "No se detectó un gestor de paquetes conocido que requiera dependencias específicas para Ansible."
                             )
+                    subprocess.run(
+                        ["python3", "-m", "pip", "install", "ansible"], check=True
+                    )
+                    info("Ansible instalado exitosamente (pip).")
+
+                    info(
+                        "Verificando gestor de paquetes para dependencias de Ansible..."
+                    )
                     return True
                 except subprocess.CalledProcessError as e:
                     error(f"Error al instalar Ansible con pip: {e}")
