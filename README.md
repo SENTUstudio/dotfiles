@@ -50,5 +50,5 @@ dotfiles
 # Instalación
 
 ```bash
-curl -s https://raw.githubusercontent.com/elepistemedev/dotfiles/refs/heads/feature/better_man/sentu_install.py | python3
+curl -LsSf https://raw.githubusercontent.com/SENTUstudio/dotfiles/refs/heads/main/sentu_install.py | python3
 ```
