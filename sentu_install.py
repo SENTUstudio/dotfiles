@@ -26,9 +26,9 @@ def show(message: str = "con Python 🐍"):
     mensaje_ajustado = mensaje.center(max_len)
 
     logo = f"""
-    \033[1m\033[33m█▀ █▀▀ █▄░█ ▀█▀ █░█\033[0m  ┎┤ {encabezado_ajustado} ├┒ 
+    \033[1m\033[33m█▀ █▀▀ █▄░█ ▀█▀ █░█\033[0m  ┎┤ {encabezado_ajustado} ├┒
     \033[1m\033[33m▄█ ██▄ █░▀█ ░█░ █▄█\033[0m  ┖┤ \033[1m{mensaje_ajustado}\033[0m├┚
-                .studio
+                        .studio
     """
     print(logo)
 
@@ -67,18 +67,15 @@ def run_command(command_list, check=True):
         check (bool, optional): Indica si se debe verificar el código de salida. Defaults to True.
 
     Returns:
-        subprocess.CompletedProcess: El objeto CompletedProcess resultante de la ejecución del comando.
+        int: El código de salida del comando.
     """
-    result = subprocess.run(command_list, capture_output=True, text=True)
-    if check and result.returncode != 0:
+    info(f"Ejecutando: {' '.join(command_list)}")
+    process = subprocess.Popen(command_list, stdout=sys.stdout, stderr=sys.stderr)
+    returncode = process.wait()
+    if check and returncode != 0:
         error(f"Error al ejecutar: {' '.join(command_list)}")
-        error(f"Stdout: {result.stdout}")
-        error(f"Stderr: {result.stderr}")
         sys.exit(1)
-    info(f"Ejecutado: {' '.join(command_list)}")
-    if result.stdout:
-        info(f"Stdout: {result.stdout}")
-    return result
+    return returncode
 
 
 def main():
