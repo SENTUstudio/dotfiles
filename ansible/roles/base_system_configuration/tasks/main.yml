@@ -3,7 +3,7 @@
   ansible.builtin.command: "{{ sentu_install.package_managers[ansible_distribution].update }}"
   become: true
   when:
-    - ansible_os_family == "Linux"
+    - ansible_distribution == "Fedora"
     - sentu_install.package_managers[ansible_distribution] is defined
     - sentu_install.package_managers[ansible_distribution].update is defined
 
