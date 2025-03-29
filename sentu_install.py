@@ -3,6 +3,7 @@ import platform
 import subprocess
 import sys
 from pathlib import Path
+import os  # Importamos el módulo os
 
 # Define constants
 REPO_URL = "https://github.com/SENTUstudio/dotfiles.git"
@@ -227,10 +228,11 @@ def main():
     clone_repo()
     show("💾 Clonación de dotfiles terminada")
 
-    inventory_file = create_inventory()
+    inventory_file_path = str(DOTFILES_DIR / "ansible" / "inventory.ini")
 
-    if check_and_install_ansible() and inventory_file:
-        ansible_dir = DOTFILES_DIR / "ansible" / "playbook.yml"
+    if check_and_install_ansible() and os.path.exists(inventory_file_path):
+        ansible_dir = DOTFILES_DIR / "ansible"
+        playbook_path = ansible_dir / "playbook.yml"
 
         if playbook_path.exists():
             info("Ejecutando Ansible Playbook...")
@@ -241,7 +243,7 @@ def main():
                         "--ask-become-pass",
                         str(playbook_path),
                         "-i",
-                        inventory_file,
+                        inventory_file_path,
                     ],
                     cwd=str(ansible_dir),
                     check=True,
@@ -260,19 +262,6 @@ def main():
         sys.exit(1)
 
     show("✅ Configuración completa")
-
-
-def create_inventory():
-    inventory_path = DOTFILES_DIR / "ansible" / "inventory.ini"
-    info(f"Creando archivo de inventario en: {inventory_path}")
-    try:
-        with open(inventory_path, "w") as f:
-            f.write("[local]\nlocalhost ansible_connection=local\n")
-        info("Archivo de inventario creado exitosamente.")
-        return str(inventory_path)
-    except Exception as e:
-        error(f"Error al crear el archivo de inventario: {e}")
-        return None
 
 
 if __name__ == "__main__":
