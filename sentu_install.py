@@ -82,6 +82,7 @@ def run_command(command_list, check=True):
 
 
 def main():
+    show("💾 Instalación de dotfiles")
     if not check_command("curl"):
         error("curl no está instalado. Por favor, instálalo para continuar.")
         sys.exit(1)
@@ -168,5 +169,4 @@ def main():
 
 
 if __name__ == "__main__":
-    show("💾 Instalación de dotfiles")
     main()
