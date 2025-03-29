@@ -78,6 +78,28 @@ def run_command(command_list, check=True):
     return returncode
 
 
+def clone_repo():
+    """Clona el repositorio de dotfiles."""
+    if not check_command("git"):
+        error("Git no está instalado. Por favor, instálalo para continuar.")
+        sys.exit(1)
+
+    info(f"Clonando el repositorio desde {REPO_URL} hacia {DOTFILES_DIR}...")
+    if os.path.exists(DOTFILES_DIR):
+        info(f"La carpeta {DOTFILES_DIR} ya existe. Intentando eliminarla...")
+        try:
+            import shutil
+
+            shutil.rmtree(DOTFILES_DIR)
+            info(f"Carpeta {DOTFILES_DIR} eliminada.")
+        except OSError as e:
+            error(f"No se pudo eliminar la carpeta {DOTFILES_DIR}: {e}")
+            sys.exit(1)
+
+    run_command(["git", "clone", REPO_URL, DOTFILES_DIR])
+    info("Repositorio clonado exitosamente.")
+
+
 def main():
     show("💾 Instalación de dotfiles")
     if not check_command("curl"):
@@ -163,6 +185,8 @@ def main():
             )
             info("Por favor, instala Git manualmente y vuelve a ejecutar este script.")
             sys.exit(1)
+
+    clone_repo()
 
 
 if __name__ == "__main__":
