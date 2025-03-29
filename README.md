@@ -18,8 +18,35 @@ El proyecto cuenta con una estructura personalizada adaptada para proyectos pyth
 
 ```bash
 dotfiles
-.
 ├── ansible
+│   ├── playbook.yml
+│   ├── roles
+│   │   ├── add_repositories
+│   │   │   └── tasks
+│   │   │       └── main.yml
+│   │   ├── base_system_configuration
+│   │   │   └── tasks
+│   │   │       └── main.yml
+│   │   ├── dotfiles_management
+│   │   │   └── tasks
+│   │   │       └── main.yml
+│   │   ├── install_core_dependencies
+│   │   │   └── tasks
+│   │   │       └── main.yml
+│   │   ├── install_extended_dependencies
+│   │   │   └── tasks
+│   │   │       └── main.yml
+│   │   ├── install_post_install
+│   │   │   └── tasks
+│   │   │       └── main.yml
+│   │   ├── install_rye
+│   │   │   └── tasks
+│   │   │       └── main.yml
+│   │   └── install_uv
+│   │       └── tasks
+│   │           └── main.yml
+│   └── vars
+│       └── installer_config.yaml
 ├── config
 │   ├── alacritty
 │   ├── bspwm
@@ -43,6 +70,7 @@ dotfiles
 │   └── .zshrc
 ├── README.md
 └── sentu_install.py
+
 ```
 
 #

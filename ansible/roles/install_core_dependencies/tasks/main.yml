@@ -1,0 +1,22 @@
+---
+- name: Instalar dependencias core (Fedora)
+  ansible.builtin.package:
+    name: "{{ core_dependencies }}"
+    state: present
+  when: ansible_distribution == "Fedora"
+  vars:
+    core_dependencies: "{{ sentu_install.package_managers.fedora.dependencies.core }}"
+# Aquí podríamos añadir bloques `when` para otras distribuciones
+# como Debian/Ubuntu (usando apt), Arch Linux (usando pacman), etc.
+# Por ejemplo:
+#- name: Instalar dependencias core (Debian/Ubuntu)
+#  ansible.builtin.apt:
+#    name: "{{ core_dependencies }}"
+#    state: present
+#    update_cache: yes
+#  when: ansible_os_family == "Debian"
+#  vars:
+#    core_dependencies:
+#      - curl
+#      - git
+#      # ... (otras dependencias core para Debian/Ubuntu)

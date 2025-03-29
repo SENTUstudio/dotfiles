@@ -1,0 +1,20 @@
+---
+- name: Configuración Inicial del Sistema y Dotfiles
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true
+
+  vars_files:
+    - vars/installer_config.yaml
+
+  roles:
+    - role: base_system_configuration
+    - role: add_repositories
+    - role: install_core_dependencies
+    - role: install_uv
+    - role: install_rye
+    - role: dotfiles_management
+    - role: install_extended_dependencies
+    - role: install_post_install
+    # ... (añadiremos más roles aquí)

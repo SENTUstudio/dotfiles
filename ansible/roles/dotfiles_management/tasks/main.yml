@@ -1,0 +1,16 @@
+---
+- name: Crear enlaces simbólicos para la carpeta config
+  ansible.builtin.file:
+    src: "{{ playbook_dir }}/../config/{{ item.name }}"
+    dest: "~/.config/{{ item.name }}"
+    state: link
+  with_items: "{{ lookup('fileglob', '../config/*', want='list') | map('basename') | list }}"
+  when: item is defined
+
+- name: Crear enlaces simbólicos para la carpeta home
+  ansible.builtin.file:
+    src: "{{ playbook_dir }}/../home/{{ item.name }}"
+    dest: "~/{{ item.name }}"
+    state: link
+  with_items: "{{ lookup('fileglob', '../home/*', want='list') | map('basename') | list }}"
+  when: item is defined

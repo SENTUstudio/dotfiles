@@ -1,0 +1,18 @@
+---
+- name: Instalar dependencias extendidas (Fedora)
+  ansible.builtin.package:
+    name: "{{ extended_dependencies }}"
+    state: present
+  when: ansible_distribution == "Fedora"
+  vars:
+    extended_dependencies: "{{ sentu_install.package_managers.fedora.dependencies.extended }}"
+# De manera similar, aquí añadiríamos bloques `when` para otras distribuciones
+# con sus respectivas dependencias extendidas.
+#- name: Instalar dependencias extendidas (Debian/Ubuntu)
+#  ansible.builtin.apt:
+#    name: "{{ extended_dependencies }}"
+#    state: present
+#  when: ansible_os_family == "Debian"
+#  vars:
+#    extended_dependencies:
+#      - ... (otras dependencias extendidas para Debian/Ubuntu)

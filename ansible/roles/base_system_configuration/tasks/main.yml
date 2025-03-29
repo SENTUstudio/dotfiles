@@ -1,0 +1,16 @@
+---
+- name: Asegurar que los repositorios del sistema estén actualizados ({{ ansible_distribution }})
+  ansible.builtin.command: "{{ sentu_install.package_managers[ansible_distribution].update }}"
+  become: true
+  when:
+    - ansible_os_family == "Linux"
+    - sentu_install.package_managers[ansible_distribution] is defined
+    - sentu_install.package_managers[ansible_distribution].update is defined
+
+- name: Instalar paquetes base
+  ansible.builtin.package:
+    name:
+      - curl
+      - git
+    state: present
+  when: ansible_os_family != "Windows"

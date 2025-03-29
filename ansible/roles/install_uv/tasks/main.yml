@@ -1,0 +1,6 @@
+---
+- name: Descargar e instalar uv usando el script oficial
+  ansible.builtin.command: "curl -LsSf {{ sentu_install.install_scripts.uv }} | sh"
+  become: true
+  register: uv_install_output
+  changed_when: "'uv installed successfully' not in uv_install_output.stdout"
