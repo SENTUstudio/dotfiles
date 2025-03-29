@@ -38,17 +38,6 @@ dotfiles
 │   ├── tmux
 │   ├── tmuxinator
 │   └── zsh
-├── .git
-│   ├── COMMIT_EDITMSG
-│   ├── config
-│   ├── description
-│   ├── HEAD
-│   ├── hooks
-│   ├── index
-│   ├── info
-│   ├── logs
-│   ├── objects
-│   └── refs
 ├── home
 │   ├── .p10k.zsh
 │   └── .zshrc
