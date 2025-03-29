@@ -1,13 +1,13 @@
 ---
 - name: Añadir repositorio {{ repo_name }} ({{ ansible_distribution }})
-  ansible.builtin.command: "{{ sentu_install.package_managers[ansible_distribution].repo[repo_name] }}"
+  ansible.builtin.command: "{{ sentu_install.package_managers.fedora.repo[repo_name] }}"
   become: true
   when:
     - ansible_distribution == "Fedora"
-    - sentu_install.package_managers[ansible_distribution] is defined
-    - sentu_install.package_managers[ansible_distribution].repo is defined
-    - sentu_install.package_managers[ansible_distribution].repo[repo_name] is defined
-  loop: "{{ sentu_install.package_managers[ansible_distribution].repo | dict2items }}"
+    - sentu_install.package_managers.fedora is defined
+    - sentu_install.package_managers.fedora.repo is defined
+    - sentu_install.package_managers.fedora.repo[repo_name] is defined
+  loop: "{{ sentu_install.package_managers.fedora.repo | dict2items }}"
   loop_control:
     loop_var: repo_item
   vars:
