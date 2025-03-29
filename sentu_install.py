@@ -9,6 +9,30 @@ DOTFILES_DIR = os.path.expanduser("~/dotfiles")
 REPO_NAME = REPO_URL.split("/")[-1].replace(".git", "")
 
 
+def show(message: str = "con Python 🐍"):
+    """
+    Muestra el logo del proyecto junto a un mensaje personalizado.
+    Args:
+        message (str): El mensaje que se mostrará debajo del logo.
+    """
+    encabezado = "Ingeniería de Datos & Data Science"
+    mensaje = message
+
+    # Determinar la longitud máxima
+    max_len = max(len(encabezado), len(mensaje))
+
+    # Centrar ambas cadenas según la longitud máxima
+    encabezado_ajustado = encabezado.center(max_len)
+    mensaje_ajustado = mensaje.center(max_len)
+
+    logo = f"""
+    \033[1m\033[33m█▀ █▀▀ █▄░█ ▀█▀ █░█\033[0m  ┎┤ {encabezado_ajustado} ├┒ 
+    \033[1m\033[33m▄█ ██▄ █░▀█ ░█░ █▄█\033[0m  ┖┤ \033[1m{mensaje_ajustado}\033[0m├┚
+                .studio
+    """
+    print(logo)
+
+
 def info(message):
     print(f"\033[1;34m[INFO]\033[0m {message}")
 
@@ -143,4 +167,5 @@ def main():
             sys.exit(1)
 
     if __name__ == "__main__":
+        show("Instalación de dotfiles")
         main()
