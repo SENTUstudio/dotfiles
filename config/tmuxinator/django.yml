@@ -1,0 +1,20 @@
+# /home/el/.config/tmuxinator/django.yml
+
+name: django
+root: ~/sentu/edu/django4
+
+# on_project_start: source /home/el/sentu/edu/django4/venv/bin/activate; conda deactivate
+on_project_exit: clear
+windows:
+  - shell: sleep 5; cmus-remote -p && clear
+  - server:
+      layout: main-horizontal #even-vertical
+      panes:
+        - frontend:
+          - clear
+        - backend:
+          - clear
+  - music: cmus
+  - logs:
+  - vim: clear
+  - db:

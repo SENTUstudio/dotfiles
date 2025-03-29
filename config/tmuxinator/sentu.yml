@@ -1,0 +1,12 @@
+# /home/el/.config/tmuxinator/sentu.yml
+
+name: sentu
+root: ~/Documentos/python/github-project-manager/
+
+# on_project_start:
+on_project_exit: clear
+windows:
+  - vim: nvim .
+  - terminal:
+  - lazygit: lazygit
+  - docker: python dev_tools.py --help

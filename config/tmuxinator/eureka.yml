@@ -1,0 +1,18 @@
+# /home/el/.config/tmuxinator/eureka.yml
+
+name: eureka
+root: /home/el/Vídeos/tutos/
+
+# on_project_start:
+on_project_exit: clear
+windows:
+  - server:
+      layout: main-horizontal #even-vertical
+      panes:
+        - Curso:
+          - clear && nuxt/nuxt-djangoRestFramework/ && sh super-downloader.sh
+        - Librerias:
+          - clear && cd nuxt/recursos/ && sh pnpm-storage-add.sh
+        - Documentacion:
+          - clear && okular /home/el/sentu/emergencias/README.md; sudo dnf update &
+  - shell: clear
