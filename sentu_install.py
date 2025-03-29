@@ -28,11 +28,21 @@ def show(message: str = "con Python 🐍"):
     print(logo)
 
 
-def check_command(command: str) -> bool:
+def check_command(command):
+    """Verifica si un comando está disponible en el sistema.
+
+    Args:
+        command (str): El nombre del comando a verificar.
+
+    Returns:
+        bool: True si el comando está disponible, False en caso contrario.
+    """
     try:
-        subprocess.run([command, "--version"], capture_output=True, check=True)
+        subprocess.run(["which", command], capture_output=True, text=True, check=True)
         return True
-    except (subprocess.CalledProcessError, FileNotFoundError):
+    except subprocess.CalledProcessError:
+        return False
+    except FileNotFoundError:
         return False
 
 
