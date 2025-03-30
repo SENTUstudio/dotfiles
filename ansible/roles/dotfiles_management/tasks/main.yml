@@ -34,6 +34,7 @@
     paths: "{{ user_home.stdout }}/dotfiles/home"
     file_type: file
     recurse: no
+    hidden: yes
   register: home_files
   become: no
 
