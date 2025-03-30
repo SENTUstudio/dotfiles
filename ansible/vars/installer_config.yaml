@@ -81,7 +81,7 @@ sentu_install:
           - fastfetch
           - util-linux-user
           - anacron
-          - neovim
+          - zoxide
           - python3-neovim
           - kitty
           - lua-devel
