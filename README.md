@@ -73,8 +73,6 @@ dotfiles
 
 ```
 
-#
-
 # Instalación
 
 ```bash
