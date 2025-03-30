@@ -1,17 +1,11 @@
+---
 - name: Instalar dependencias extendidas (Fedora)
   ansible.builtin.dnf:
     name: "{{ extended_dependencies }}"
     state: present
+    allowerasing: yes
+    disable_gpg_check: yes
+    install_weak_deps: no
   when: ansible_distribution == "Fedora"
   vars:
     extended_dependencies: "{{ sentu_install.package_managers.fedora.dependencies.extended }}"
-# Ejemplo para otras distribuciones (Debian/Ubuntu)
-#- name: Instalar dependencias extendidas (Debian/Ubuntu)
-#  ansible.builtin.apt:
-#    name: "{{ extended_dependencies }}"
-#    state: present
-#    update_cache: yes
-#  when: ansible_os_family == "Debian"
-#  vars:
-#    extended_dependencies:
-#      - ... (otras dependencias extendidas para Debian/Ubuntu)
