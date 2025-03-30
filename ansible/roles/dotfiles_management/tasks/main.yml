@@ -1,13 +1,47 @@
-- name: Crear enlaces simbólicos para la carpeta config
-  ansible.builtin.file:
-    src: "{{ playbook_dir }}/../config/{{ item }}"
-    dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
-    state: link
-  loop: "{{ lookup('fileglob', playbook_dir + '/../config/*', wantlist=True) | map('basename') | list }}"
+---
+- name: Get real user home directory
+  command: echo $HOME
+  register: user_home
+  changed_when: false
+  become: no
 
-- name: Crear enlaces simbólicos para la carpeta home
-  ansible.builtin.file:
-    src: "{{ playbook_dir }}/../home/{{ item }}"
-    dest: "{{ ansible_env.HOME }}/{{ item }}"
+- name: Ensure .config directory exists
+  file:
+    path: "{{ user_home.stdout }}/.config"
+    state: directory
+    mode: "0755"
+  become: no
+
+- name: Find all directories in dotfiles/config
+  find:
+    paths: "{{ user_home.stdout }}/dotfiles/config"
+    file_type: directory
+    recurse: no
+  register: config_directories
+  become: no
+
+- name: Create symbolic links for config directories
+  file:
+    src: "{{ item.path }}"
+    dest: "{{ user_home.stdout }}/.config/{{ item.path | basename }}"
     state: link
-  loop: "{{ lookup('fileglob', playbook_dir + '/../home/*', wantlist=True) | map('basename') | list }}"
+    force: yes
+  loop: "{{ config_directories.files }}"
+  become: no
+
+- name: Find all files in dotfiles/home
+  find:
+    paths: "{{ user_home.stdout }}/dotfiles/home"
+    file_type: file
+    recurse: no
+  register: home_files
+  become: no
+
+- name: Create symbolic links for home files
+  file:
+    src: "{{ item.path }}"
+    dest: "{{ user_home.stdout }}/{{ item.path | basename }}"
+    state: link
+    force: yes
+  loop: "{{ home_files.files }}"
+  become: no

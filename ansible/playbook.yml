@@ -9,6 +9,7 @@
     - vars/installer_config.yaml
 
   roles:
+    - role: test
     - role: base_system_configuration
     - role: add_repositories
     - role: install_core_dependencies
