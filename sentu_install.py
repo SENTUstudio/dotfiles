@@ -268,6 +268,7 @@ def main():
                         str(playbook_path),
                         "-i",
                         inventory_file_path,
+                        "-v",
                     ],
                     cwd=str(ansible_dir),
                     check=True,
