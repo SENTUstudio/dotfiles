@@ -19,13 +19,13 @@ sentu_install:
           - dnf
           - install
           - "-y"
-          - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+          - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
         rpmfusion-free:
           - sudo
           - dnf
           - install
           - "-y"
-          - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
+          - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
         docker:
           - sudo
           - dnf
@@ -143,8 +143,6 @@ sentu_install:
     uv: "https://astral.sh/uv/install.sh"
     rye: "https://rye.astral.sh/get"
   install_post_install_commands:
-    - command: "curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/bin"
-      description: "Instalando Oh My Posh"
     - command: "go install oss.terrastruct.com/d2@latest"
       description: "Instalando d2 diagram"
     - command: "curl -fsS https://dl.brave.com/install.sh | sh"
