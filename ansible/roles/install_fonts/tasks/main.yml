@@ -1,0 +1,80 @@
+---
+# tasks/main.yml
+- name: Instalar fontconfig
+  ansible.builtin.dnf:
+    name: fontconfig
+    state: present
+  become: yes
+
+- name: Crear directorio de fuentes
+  ansible.builtin.file:
+    path: "{{ user_home.stdout }}/.local/share/fonts"
+    state: directory
+    mode: "0755"
+  become: no
+
+- name: Descargar Meslo Nerd Font
+  ansible.builtin.get_url:
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Meslo.zip"
+    dest: "{{ user_home.stdout }}/Meslo.zip"
+    mode: "0644"
+  become: no
+  register: download_meslo
+
+- name: Descargar JetBrainsMono Nerd Font
+  ansible.builtin.get_url:
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip"
+    dest: "{{ user_home.stdout }}/JetBrainsMono.zip"
+    mode: "0644"
+  become: no
+  register: download_jetbrains
+
+- name: Descomprimir Meslo Nerd Font
+  ansible.builtin.unarchive:
+    src: "{{ user_home.stdout }}/Meslo.zip"
+    dest: "{{ user_home.stdout }}/.local/share/fonts"
+    remote_src: yes
+  become: no
+  when: download_meslo.changed
+
+- name: Descomprimir JetBrainsMono Nerd Font
+  ansible.builtin.unarchive:
+    src: "{{ user_home.stdout }}/JetBrainsMono.zip"
+    dest: "{{ user_home.stdout }}/.local/share/fonts"
+    remote_src: yes
+  become: no
+  when: download_jetbrains.changed
+
+- name: Eliminar archivo zip de Meslo
+  ansible.builtin.file:
+    path: "{{ user_home.stdout }}/Meslo.zip"
+    state: absent
+  become: no
+  when: download_meslo.changed
+
+- name: Eliminar archivo zip de JetBrainsMono
+  ansible.builtin.file:
+    path: "{{ user_home.stdout }}/JetBrainsMono.zip"
+    state: absent
+  become: no
+  when: download_jetbrains.changed
+
+- name: Encontrar archivos de Windows para eliminar
+  ansible.builtin.find:
+    paths: "{{ user_home.stdout }}/.local/share/fonts"
+    patterns: "*Windows*"
+    recurse: no
+  register: windows_files
+  become: no
+
+- name: Eliminar archivos de Windows
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: absent
+  loop: "{{ windows_files.files }}"
+  become: no
+
+- name: Actualizar cache de fuentes
+  ansible.builtin.command: fc-cache -fv
+  become: no
+  changed_when: true
