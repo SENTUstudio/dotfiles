@@ -1,0 +1,81 @@
+name: Generate Badges
+on:
+  push:
+    branches:
+      - develop
+      - feature/** # Solo ejecutar en ramas de características
+      - hotfix/** # O en ramas de hotfix
+  workflow_dispatch: # Permite ejecutar manualmente el workflow
+
+jobs:
+  generate-badges:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+    steps:
+      # Paso 1: Checkout del repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necesario para acceder al historial completo del repositorio
+
+      # Paso 2: Configurar Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Paso 3: Instalar dependencias con pip
+      - name: Install dependencies
+        run: |
+          pip install requests pybadges
+
+      # Paso 4: Debug de variables de entorno
+      - name: Debug environment variables
+        run: |
+          echo "GITHUB_TOKEN is set: ${{ secrets.GITHUB_TOKEN }}"
+          echo "GITHUB_REPOSITORY is set: ${{ github.repository }}"
+          printenv
+
+      # Paso 5: Generar badges y actualizar README
+      - name: Run badge generation script
+        run: |
+          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          export GITHUB_REPOSITORY="${{ github.repository }}"
+          python .github/scripts/generate_badges.py
+
+      # Paso 6: Configurar Git para el commit
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      # Paso 7: Verificar y añadir cambios específicos
+      - name: Check and add specific changes
+        run: |
+          # Añadir coverage.xml si existe
+          if [ -f "coverage.xml" ]; then
+            git add coverage.xml
+          fi
+
+          # Añadir README.md si existe y ha cambiado
+          if [ -f "README.md" ]; then
+            git add README.md
+          fi
+
+          # Verificar si el directorio de badges existe y tiene archivos
+          if [ -d "docs/badges" ] && [ "$(ls -A docs/badges 2>/dev/null)" ]; then
+            git add docs/badges
+          fi
+
+      # Paso 8: Commit y push de los cambios (si hay alguno)
+      - name: Commit and push changes
+        run: |
+          if git diff --staged --quiet; then
+            echo "No hay cambios para commit"
+          else
+            git commit -m "Update badges and README"
+            git push origin HEAD
+          fi
