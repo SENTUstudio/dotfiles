@@ -89,7 +89,8 @@ def clone_repo():
             [
                 "git",
                 "clone",
-                "-b develop",  # TODO: Sólo para desarrollo
+                "-b",
+                "develop",  # TODO: Sólo para desarrollo
                 REPO_URL,
                 str(DOTFILES_DIR),
             ],
