@@ -5,22 +5,22 @@
 ```
 
 <div align="center"><p>
-    <a href="https://github.com/elepistemedev/proyecto_template/releases/latest">
+    <a href="https://github.com/SENTUstudio/dotfiles/releases/latest">
       <img alt="Última versión" src="docs/badges/version.svg" />
     </a>
-    <a href="https://github.com/elepistemedev/proyecto_template/pulse">
+    <a href="https://github.com/SENTUstudio/dotfiles/pulse">
       <img alt="Último commit" src="docs/badges/last-commit.svg"/>
     </a>
-    <a href="https://github.com/elepistemedev/proyecto_template/blob/main/LICENSE">
+    <a href="https://github.com/SENTUstudio/dotfiles/blob/main/LICENSE">
       <img alt="Licencia" src="docs/badges/license.svg" />
     </a>
-    <a href="https://github.com/elepistemedev/proyecto_template/stargazers">
+    <a href="https://github.com/SENTUstudio/dotfiles/stargazers">
       <img alt="Estrellas" src="docs/badges/stars.svg" />
     </a>
-    <a href="https://github.com/elepistemedev/proyecto_template/issues">
+    <a href="https://github.com/SENTUstudio/dotfiles/issues">
       <img alt="Problemas" src="docs/badges/issues.svg" />
     </a>
-    <a href="https://github.com/elepistemedev/proyecto_template">
+    <a href="https://github.com/SENTUstudio/dotfiles">
       <img alt="Tamaño del repositorio" src="docs/badges/repo-size.svg" />
     </a>
   </p>
