@@ -85,7 +85,16 @@ def clone_repo():
         f"Clonando el repositorio '{REPO_NAME}' desde '{REPO_URL}' a '{DOTFILES_DIR}'..."
     )
     try:
-        subprocess.run(["git", "clone", REPO_URL, str(DOTFILES_DIR)], check=True)
+        subprocess.run(
+            [
+                "git",
+                "clone",
+                "-b develop",  # TODO: Sólo para desarrollo
+                REPO_URL,
+                str(DOTFILES_DIR),
+            ],
+            check=True,
+        )
         info("Repositorio clonado exitosamente.")
     except subprocess.CalledProcessError as e:
         error(f"Error al clonar el repositorio: {e}")
