@@ -3,7 +3,6 @@ import platform
 import subprocess
 import sys
 from pathlib import Path
-import os  # Importamos el módulo os
 
 # Define constants
 REPO_URL = "https://github.com/SENTUstudio/dotfiles.git"
@@ -281,7 +280,7 @@ def main():
 
     inventory_file_path = str(DOTFILES_DIR / "ansible" / "inventory.ini")
 
-    if check_and_install_ansible() and os.path.exists(inventory_file_path):
+    if check_and_install_ansible():  # and os.path.exists(inventory_file_path):
         ansible_dir = DOTFILES_DIR / "ansible"
         playbook_path = ansible_dir / "playbook.yml"
 
