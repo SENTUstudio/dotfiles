@@ -74,17 +74,13 @@ def clone_repo():
         info(
             f"El directorio '{DOTFILES_DIR}' ya existe. ¿Deseas eliminarlo y clonar de nuevo? (s/N)"
         )
-        response = input().lower()
-        if response == "s":
-            try:
-                info(f"Eliminando '{DOTFILES_DIR}'...")
-                subprocess.run(["rm", "-rf", str(DOTFILES_DIR)], check=True)
-            except subprocess.CalledProcessError as e:
-                error(f"Error al eliminar el directorio: {e}")
-                sys.exit(1)
-        else:
-            info("Omitiendo la clonación del repositorio.")
-            return
+        try:
+            info(f"Eliminando '{DOTFILES_DIR}'...")
+            subprocess.run(["rm", "-rf", str(DOTFILES_DIR)], check=True)
+        except subprocess.CalledProcessError as e:
+            error(f"Error al eliminar el directorio: {e}")
+            sys.exit(1)
+        return
 
     info(
         f"Clonando el repositorio '{REPO_NAME}' desde '{REPO_URL}' a '{DOTFILES_DIR}'..."
