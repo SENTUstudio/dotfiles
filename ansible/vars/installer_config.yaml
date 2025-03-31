@@ -141,6 +141,7 @@ sentu_install:
           - gstreamer1-plugins-bad-free-devel
           - virt-manager
           - qemu
+          - zeal
   install_scripts:
     uv: "https://astral.sh/uv/install.sh"
     rye: "https://rye.astral.sh/get"

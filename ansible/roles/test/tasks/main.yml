@@ -1,6 +1,6 @@
 - name: Mostrar Home
   ansible.builtin.debug:
-    msg: "{{ ansible_distribution }}"
+    msg: "distribucion: {{ ansible_distribution }} \nfamilia: {{ ansible_os_family }}"
   become: false
 
 - name: Mostrar playbook_dir
