@@ -72,7 +72,7 @@ def error(message: str):
 def clone_repo():
     if DOTFILES_DIR.exists():
         info(
-            f"El directorio '{DOTFILES_DIR}' ya existe. ¿Deseas eliminarlo y clonar de nuevo? (s/N)"
+            f"El directorio '{DOTFILES_DIR}' ya existe. Eliminando y clonando de nuevo"
         )
         try:
             info(f"Eliminando '{DOTFILES_DIR}'...")
