@@ -50,7 +50,7 @@ jobs:
       - name: Configure Git
         run: |
           git config --global user.name "SENTU bot"
-          git config --global user.email "elepistemedev+sentubot@gmail.com"
+          git config --global user.email "sentustudios+bot@gmail.com"
 
       # Paso 7: Verificar y añadir cambios específicos
       - name: Check and add specific changes
