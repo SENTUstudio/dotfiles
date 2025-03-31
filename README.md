@@ -1,8 +1,30 @@
 ```
-█▀ █▀▀ █▄░█ ▀█▀ █░█  ┎┤ DATA ENGINEER                                       ├┒
-▄█ ██▄ █░▀█ ░█░ █▄█  ┖┤ Obteniendo datos para empresas, personas... para ti ├┚
-                STUDIO
+  █▀ █▀▀ █▄░█ ▀█▀ █░█  ┎┤  Ingeniería de Datos & Data Science  ├┒
+  ▄█ ██▄ █░▀█ ░█░ █▄█  ┖┤              en Python               ├┚
+              .studio
 ```
+
+<div align="center"><p>
+    <a href="https://github.com/elepistemedev/proyecto_template/releases/latest">
+      <img alt="Última versión" src="docs/badges/version.svg" />
+    </a>
+    <a href="https://github.com/elepistemedev/proyecto_template/pulse">
+      <img alt="Último commit" src="docs/badges/last-commit.svg"/>
+    </a>
+    <a href="https://github.com/elepistemedev/proyecto_template/blob/main/LICENSE">
+      <img alt="Licencia" src="docs/badges/license.svg" />
+    </a>
+    <a href="https://github.com/elepistemedev/proyecto_template/stargazers">
+      <img alt="Estrellas" src="docs/badges/stars.svg" />
+    </a>
+    <a href="https://github.com/elepistemedev/proyecto_template/issues">
+      <img alt="Problemas" src="docs/badges/issues.svg" />
+    </a>
+    <a href="https://github.com/elepistemedev/proyecto_template">
+      <img alt="Tamaño del repositorio" src="docs/badges/repo-size.svg" />
+    </a>
+  </p>
+</div>
 
 # dotfiles
 

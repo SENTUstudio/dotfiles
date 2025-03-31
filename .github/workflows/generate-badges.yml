@@ -1,0 +1,104 @@
+name: Generate Badges
+on:
+  push:
+    branches:
+      - develop
+      - feature/** # Solo ejecutar en ramas de características
+      - hotfix/** # O en ramas de hotfix
+  workflow_dispatch: # Permite ejecutar manualmente el workflow
+jobs:
+  generate-badges:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+    steps:
+      # Paso 1: Configuración inicial
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necesario para acceder al historial completo del repositorio
+
+      # Paso 2: Configurar Python y Rye
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install a specific version
+        uses: eifinger/setup-rye@v4
+        with:
+          version: "latest"
+
+      # Paso 3: Sincronizar entorno con Rye
+      - name: Sync dependencies with Rye
+        run: |
+          # rye pin 3.11
+          rye add requests pybadges
+
+      # Paso 4: Ejecutar tests y generar cobertura
+      - name: Generate coverage
+        run: |
+          rye run pytest --cov=src --cov-report=xml tests/
+
+      # Paso 5: Verificar la existencia del archivo coverage.xml
+      - name: Check for coverage.xml
+        id: check_coverage
+        run: |
+          if [ -f "coverage.xml" ]; then
+            echo "Archivo coverage.xml encontrado."
+            echo "has_coverage=true" >> $GITHUB_ENV
+          else
+            echo "Archivo coverage.xml no encontrado. Usando valor predeterminado."
+            echo "has_coverage=false" >> $GITHUB_ENV
+          fi
+
+      # Paso 6: Debug environment variables
+      - name: Debug environment variables
+        run: |
+          echo "GITHUB_TOKEN is set: ${{ secrets.GITHUB_TOKEN }}"
+          echo "GITHUB_REPOSITORY is set ${{ github.repository }}"
+          printenv
+
+      # Paso 7: Generar badges y actualizar README
+      - name: Run badge generation script
+        run: |
+          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          export GITHUB_REPOSITORY="${{ github.repository }}"
+          rye run python .github/scripts/generate_badges.py
+
+      # Paso 8: Configurar Git para commit
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      # Paso 12: Verificar y añadir cambios específicos
+      - name: Check and add specific changes
+        run: |
+          # Añadir coverage.xml si existe
+          if [ -f "coverage.xml" ]; then
+            git add coverage.xml
+          fi
+
+          # Añadir README.md si existe y ha cambiado
+          if [ -f "README.md" ]; then
+            git add README.md
+          fi
+
+          # Verificar si el directorio de badges existe y tiene archivos
+          if [ -d "docs/badges" ] && [ "$(ls -A docs/badges 2>/dev/null)" ]; then
+            git add docs/badges
+          fi
+
+      # Paso 13: Commit y push cambios si hay alguno
+      - name: Commit and push changes
+        run: |
+          # Verificar si hay cambios preparados para commit
+          if git diff --staged --quiet; then
+            echo "No hay cambios para commit"
+          else
+            git commit -m "Update badges and README"
+            git push origin HEAD
+          fi
