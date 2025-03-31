@@ -1,4 +1,4 @@
-- name: Mostrar Home
+- name: Mostrar Familia
   ansible.builtin.debug:
     msg: "distribucion: {{ ansible_distribution }} \nfamilia: {{ ansible_os_family }}"
   become: false
