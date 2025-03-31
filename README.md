@@ -73,6 +73,12 @@ dotfiles
 
 ```
 
+Sistemas Operativos probados
+
+- [x] Fedora KDE 41+
+
+- [ ] OpenSUSE
+
 # Instalación
 
 ```bash

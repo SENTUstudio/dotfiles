@@ -1,6 +1,16 @@
----
-- name: Obtener el directorio home del usuario real
-  shell: "echo $HOME"
-  register: user_home
-  changed_when: false
-  become: no
+- name: Mostrar Home
+  ansible.builtin.debug:
+    msg: "{{ ansible_distribution }}"
+  become: false
+
+- name: Mostrar playbook_dir
+  ansible.builtin.debug:
+    msg: "{{ lookup('env', 'HOME') }}/dotfiles/config"
+
+- name: Mostrar playbook_dir
+  ansible.builtin.debug:
+    msg: "Ruta de fileglob para config: {{ lookup('env', 'HOME') + '/dotfiles/config/*' }}"
+
+- name: Debug de archivos en config
+  ansible.builtin.debug:
+    var: "{{ lookup('fileglob', lookup('env', 'HOME') + '/dotfiles/config/*', wantlist=True) }}"
