@@ -109,8 +109,9 @@ def check_and_install_ansible():
                         check_command("dnf"),
                         check_command("pacman"),
                         check_command("yum"),
+                        check_command("zypper"),
                     ):
-                        case (_, True, _, _):
+                        case (_, True, _, _, _):
                             info(
                                 "Gestor de paquetes 'dnf' detectado. Intentando instalar python3-libdnf5..."
                             )
@@ -118,6 +119,21 @@ def check_and_install_ansible():
                                 [
                                     "sudo",
                                     "dnf",
+                                    "install",
+                                    "-y",
+                                    "python3-libdnf5",
+                                    "python3-pip",
+                                ]
+                            )
+                            info("python3-libdnf5 instalado exitosamente.")
+                        case (_, _, _, _, True):
+                            info(
+                                "Gestor de paquetes 'zypper' detectado. Intentando instalar python3-libdnf5..."
+                            )
+                            run_command(
+                                [
+                                    "sudo",
+                                    "zypper",
                                     "install",
                                     "-y",
                                     "python3-libdnf5",
@@ -189,31 +205,38 @@ def main():
                     check_command("dnf"),
                     check_command("pacman"),
                     check_command("yum"),
+                    check_command("zypper"),
                 ):
-                    case (True, _, _, _):
+                    case (True, _, _, _, _):
                         info(
                             "Gestor de paquetes 'apt' detectado. Intentando instalar Git..."
                         )
                         run_command(["sudo", "apt-get", "update"])
                         run_command(["sudo", "apt-get", "install", "-y", "git"])
-                    case (_, True, _, _):
+                    case (_, True, _, _, _):
                         info(
                             "Gestor de paquetes 'dnf' detectado. Intentando instalar Git..."
                         )
                         run_command(["sudo", "dnf", "update", "-y"])
                         run_command(["sudo", "dnf", "install", "-y", "git"])
-                    case (_, _, True, _):
+                    case (_, _, True, _, _):
                         info(
                             "Gestor de paquetes 'pacman' detectado. Intentando instalar Git..."
                         )
                         run_command(["sudo", "pacman", "-Syy", "--noconfirm"])
                         run_command(["sudo", "pacman", "-S", "--noconfirm", "git"])
-                    case (_, _, _, True):
+                    case (_, _, _, True, _):
                         info(
                             "Gestor de paquetes 'yum' detectado. Intentando instalar Git..."
                         )
                         run_command(["sudo", "yum", "update", "-y"])
                         run_command(["sudo", "yum", "install", "-y", "git"])
+                    case (_, _, _, _, True):
+                        info(
+                            "Gestor de paquetes 'zypper' detectado. Intentando instalar Git..."
+                        )
+                        run_command(["sudo", "zypper", "update", "-y"])
+                        run_command(["sudo", "zypper", "install", "-y", "git"])
                     case _:
                         error(
                             "Gestor de paquetes no reconocido para la instalación automática de Git."
