@@ -139,6 +139,8 @@ sentu_install:
           - gstreamer1-plugins-good-extras
           - gstreamer1-plugins-bad-free
           - gstreamer1-plugins-bad-free-devel
+          - virt-manager
+          - qemu
   install_scripts:
     uv: "https://astral.sh/uv/install.sh"
     rye: "https://rye.astral.sh/get"
@@ -157,20 +159,7 @@ sentu_install:
       description: "Instalando Obsidian"
     - command: "sudo usermod -aG docker $USER"
       description: "Añadiendo el usuario al grupo docker (puede requerir reiniciar sesión)"
-phase_1:
-  steps:
-    - task: update_system
-    - task: install_dependencies
-      group: core
-    - task: install_and_configure_zsh
-    - task: install_uv
-    - task: install_rye
-    - task: install_uv # Duplicado, lo corregiremos
-phase_2:
-  steps:
-    - task: install_dependencies
-      group: extended
-    - task: install_fonts
-    - task: configurar_docker
-    - task: install_post_install
-    - task: install_dotfiles
+    - command: "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh"
+      description: "Añadiendo Atuin, Sync, search and backup shell history"
+    - command: "cargo install du-dust"
+      description: "Herramienta para ver el uso del disco por el terminal"
