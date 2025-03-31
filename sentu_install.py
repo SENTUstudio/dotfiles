@@ -152,7 +152,7 @@ def check_and_install_ansible():
                             "pip",
                             "install",
                             "ansible",
-                            "--breack-system-packages",
+                            "--break-system-packages",
                         ],
                         check=True,
                     )
