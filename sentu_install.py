@@ -146,7 +146,15 @@ def check_and_install_ansible():
                                 "No se detectó un gestor de paquetes conocido que requiera dependencias específicas para Ansible."
                             )
                     subprocess.run(
-                        ["python3", "-m", "pip", "install", "ansible"], check=True
+                        [
+                            "python3",
+                            "-m",
+                            "pip",
+                            "install",
+                            "ansible",
+                            "--breack-system-packages",
+                        ],
+                        check=True,
                     )
                     info("Ansible instalado exitosamente (pip).")
 
