@@ -6,6 +6,7 @@ on:
       - feature/** # Solo ejecutar en ramas de características
       - hotfix/** # O en ramas de hotfix
   workflow_dispatch: # Permite ejecutar manualmente el workflow
+
 jobs:
   generate-badges:
     runs-on: ubuntu-latest
@@ -14,67 +15,44 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      # Paso 1: Configuración inicial
+      # Paso 1: Checkout del repositorio
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Necesario para acceder al historial completo del repositorio
 
-      # Paso 2: Configurar Python y Rye
+      # Paso 2: Configurar Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install a specific version
-        uses: eifinger/setup-rye@v4
-        with:
-          version: "latest"
-
-      # Paso 3: Sincronizar entorno con Rye
-      - name: Sync dependencies with Rye
+      # Paso 3: Instalar dependencias con pip
+      - name: Install dependencies
         run: |
-          # rye pin 3.11
-          rye add requests pybadges
+          pip install requests pybadges
 
-      # Paso 4: Ejecutar tests y generar cobertura
-      - name: Generate coverage
-        run: |
-          rye run pytest --cov=src --cov-report=xml tests/
-
-      # Paso 5: Verificar la existencia del archivo coverage.xml
-      - name: Check for coverage.xml
-        id: check_coverage
-        run: |
-          if [ -f "coverage.xml" ]; then
-            echo "Archivo coverage.xml encontrado."
-            echo "has_coverage=true" >> $GITHUB_ENV
-          else
-            echo "Archivo coverage.xml no encontrado. Usando valor predeterminado."
-            echo "has_coverage=false" >> $GITHUB_ENV
-          fi
-
-      # Paso 6: Debug environment variables
+      # Paso 4: Debug de variables de entorno
       - name: Debug environment variables
         run: |
           echo "GITHUB_TOKEN is set: ${{ secrets.GITHUB_TOKEN }}"
-          echo "GITHUB_REPOSITORY is set ${{ github.repository }}"
+          echo "GITHUB_REPOSITORY is set: ${{ github.repository }}"
           printenv
 
-      # Paso 7: Generar badges y actualizar README
+      # Paso 5: Generar badges y actualizar README
       - name: Run badge generation script
         run: |
           export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           export GITHUB_REPOSITORY="${{ github.repository }}"
-          rye run python .github/scripts/generate_badges.py
+          python .github/scripts/generate_badges.py
 
-      # Paso 8: Configurar Git para commit
+      # Paso 6: Configurar Git para el commit
       - name: Configure Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      # Paso 12: Verificar y añadir cambios específicos
+      # Paso 7: Verificar y añadir cambios específicos
       - name: Check and add specific changes
         run: |
           # Añadir coverage.xml si existe
@@ -92,10 +70,9 @@ jobs:
             git add docs/badges
           fi
 
-      # Paso 13: Commit y push cambios si hay alguno
+      # Paso 8: Commit y push de los cambios (si hay alguno)
       - name: Commit and push changes
         run: |
-          # Verificar si hay cambios preparados para commit
           if git diff --staged --quiet; then
             echo "No hay cambios para commit"
           else
