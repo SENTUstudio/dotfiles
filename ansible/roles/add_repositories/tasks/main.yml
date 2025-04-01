@@ -10,9 +10,9 @@
   become: true
   when:
     - ansible_distribution == "Fedora"
-    - sentu_install.package_managers.RedHat is defined
-    - sentu_install.package_managers.RedHat.repo is defined
+    - package_managers.RedHat is defined
+    - package_managers.RedHat.repo is defined
     - repo_item.value is defined
-  loop: "{{ sentu_install.package_managers.RedHat.repo | dict2items }}"
+  loop: "{{ package_managers.RedHat.repo | dict2items }}"
   loop_control:
     loop_var: repo_item

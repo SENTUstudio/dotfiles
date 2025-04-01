@@ -1,4 +1,3 @@
-sentu_install:
-  install_scripts:
-    uv: "https://astral.sh/uv/install.sh"
-    rye: "https://rye.astral.sh/get"
+install_scripts:
+  uv: "https://astral.sh/uv/install.sh"
+  rye: "https://rye.astral.sh/get"
