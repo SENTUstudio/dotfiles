@@ -106,7 +106,6 @@ sentu_install:
           - openshot
           - vlc
           - mpv
-          - gnome-mpv
           - soundconverter
           - audacity
           - muse

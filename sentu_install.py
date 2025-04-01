@@ -58,19 +58,22 @@ def check_command(command: str) -> bool:
         return False
 
 
-def run_command(command_list: list[str]) -> None:
+def run_command(command_list: list[str], cwd: Path | None = None) -> None:
     """Ejecuta un comando en el sistema.
 
     Args:
         command_list (list[str]): Lista de strings que representan el comando y sus argumentos.
+        cwd (Path | None): Directorio de trabajo para ejecutar el comando.
 
     Raises:
         SystemExit: Si el comando falla.
     """
     try:
-        subprocess.run(command_list, check=True)
+        subprocess.run(command_list, check=True, cwd=cwd)
     except subprocess.CalledProcessError as e:
-        logging.error(f"Error al ejecutar el comando '{' '.join(command_list)}': {e}")
+        logging.error(
+            f"Error al ejecutar el comando '{' '.join(command_list)}' en '{cwd if cwd else '.'}': {e}"
+        )
         sys.exit(1)
 
 
@@ -159,7 +162,7 @@ def clone_repo():
                     logging.info(
                         f"El repositorio ya existe en '{DOTFILES_DIR}' y apunta al origen correcto. Intentando actualizar..."
                     )
-                    run_command(["git", "pull"], cwd=str(DOTFILES_DIR))
+                    run_command(["git", "pull"], cwd=DOTFILES_DIR)
                     logging.info("Repositorio actualizado exitosamente.")
                     return
                 else:
@@ -168,10 +171,10 @@ def clone_repo():
                     )
                     run_command(
                         ["git", "remote", "set-url", "origin", REPO_URL],
-                        cwd=str(DOTFILES_DIR),
+                        cwd=DOTFILES_DIR,
                     )
                     logging.info("Origen remoto restablecido. Intentando actualizar...")
-                    run_command(["git", "pull"], cwd=str(DOTFILES_DIR))
+                    run_command(["git", "pull"], cwd=DOTFILES_DIR)
                     logging.info("Repositorio actualizado exitosamente.")
                     return
             except subprocess.CalledProcessError as e:
@@ -285,7 +288,7 @@ def run_ansible_playbook():
             str(inventory_file_path),
             "-v",
         ]
-        subprocess.run(command, cwd=str(ansible_dir), check=True)
+        run_command(command, cwd=ansible_dir)
         logging.info("Ansible Playbook ejecutado exitosamente.")
         return True
     except subprocess.CalledProcessError as e:
