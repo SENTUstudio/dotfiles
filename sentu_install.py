@@ -3,16 +3,24 @@ import platform
 import subprocess
 import sys
 from pathlib import Path
+import logging
+
+# Configuración básica de logging
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 # Define constants
 REPO_URL = "https://github.com/SENTUstudio/dotfiles.git"
 DOTFILES_DIR = Path.home() / "dotfiles"
 REPO_NAME = "dotfiles"
+REPO_BRANCH = "main"  # Variable para la rama, se puede modificar aquí
 
 
 def show(message: str = "con Python 🐍"):
     """
     Muestra el logo del proyecto junto a un mensaje personalizado.
+
     Args:
         message (str): El mensaje que se mostrará debajo del logo.
     """
@@ -34,7 +42,7 @@ def show(message: str = "con Python 🐍"):
     print(logo)
 
 
-def check_command(command):
+def check_command(command: str) -> bool:
     """Verifica si un comando está disponible en el sistema.
 
     Args:
@@ -46,281 +54,264 @@ def check_command(command):
     try:
         subprocess.run(["which", command], capture_output=True, text=True, check=True)
         return True
-    except subprocess.CalledProcessError:
-        return False
-    except FileNotFoundError:
+    except (subprocess.CalledProcessError, FileNotFoundError):
         return False
 
 
-def run_command(command_list: list):
+def run_command(command_list: list[str]) -> None:
+    """Ejecuta un comando en el sistema.
+
+    Args:
+        command_list (list[str]): Lista de strings que representan el comando y sus argumentos.
+
+    Raises:
+        SystemExit: Si el comando falla.
+    """
     try:
         subprocess.run(command_list, check=True)
     except subprocess.CalledProcessError as e:
-        error(f"Error al ejecutar el comando '{' '.join(command_list)}': {e}")
+        logging.error(f"Error al ejecutar el comando '{' '.join(command_list)}': {e}")
         sys.exit(1)
 
 
-def info(message: str):
-    print(f"\033[1;34m[INFO]\033[0m {message}")
+def install_git():
+    """Verifica e instala Git si no está presente."""
+    os_name = platform.system()
+    logging.info("Verificando si Git está instalado...")
+    if check_command("git"):
+        logging.info("Git ya está instalado.")
+        return True
 
-
-def error(message: str):
-    print(f"\033[1;31m[ERROR]\033[0m {message}")
+    logging.info("Git no está instalado. Intentando instalarlo...")
+    match os_name:
+        case "Linux":
+            package_managers = {
+                "apt-get": ["sudo", "apt-get", "update"],
+                "dnf": ["sudo", "dnf", "update", "-y"],
+                "pacman": ["sudo", "pacman", "-Syy", "--noconfirm"],
+                "yum": ["sudo", "yum", "update", "-y"],
+                "zypper": ["sudo", "zypper", "update", "-y"],
+            }
+            install_commands = {
+                "apt-get": ["sudo", "apt-get", "install", "-y", "git"],
+                "dnf": ["sudo", "dnf", "install", "-y", "git"],
+                "pacman": ["sudo", "pacman", "-S", "--noconfirm", "git"],
+                "yum": ["sudo", "yum", "install", "-y", "git"],
+                "zypper": ["sudo", "zypper", "install", "-y", "git"],
+            }
+            for pm, update_cmd in package_managers.items():
+                if check_command(pm):
+                    logging.info(
+                        f"Gestor de paquetes '{pm}' detectado. Intentando instalar Git..."
+                    )
+                    run_command(update_cmd)
+                    run_command(install_commands[pm])
+                    if check_command("git"):
+                        logging.info("Git instalado exitosamente.")
+                        return True
+                    logging.error(f"Falló la instalación de Git con '{pm}'.")
+                    break  # Salir del bucle si se intentó con un gestor de paquetes
+            else:
+                logging.error(
+                    "No se reconoció un gestor de paquetes compatible para la instalación automática de Git."
+                )
+                logging.info(
+                    "Por favor, instala Git manualmente y vuelve a ejecutar el script."
+                )
+                sys.exit(1)
+        case "Darwin":
+            logging.info(
+                "Por favor, instala Git en macOS (por ejemplo, usando Xcode Command Line Tools o Homebrew)."
+            )
+            logging.info("Luego, vuelve a ejecutar este script.")
+            sys.exit(1)
+        case "Windows":
+            logging.info(
+                "Por favor, instala Git en Windows (por ejemplo, desde https://git-scm.com/download/win)."
+            )
+            logging.info("Luego, vuelve a ejecutar este script.")
+            sys.exit(1)
+        case _:
+            logging.error(
+                f"Sistema operativo '{os_name}' no reconocido para la instalación automática de Git."
+            )
+            logging.info(
+                "Por favor, instala Git manualmente y vuelve a ejecutar este script."
+            )
+            sys.exit(1)
+    return False  # Debería haber salido antes si la instalación falla
 
 
 def clone_repo():
+    """Clona el repositorio de dotfiles, manejando el caso de que ya exista."""
     if DOTFILES_DIR.exists():
-        info(
-            f"El directorio '{DOTFILES_DIR}' ya existe. Eliminando y clonando de nuevo"
+        if (DOTFILES_DIR / ".git").exists():
+            try:
+                # Verificar si el origen remoto es el correcto
+                remote_url = subprocess.run(
+                    ["git", "config", "--get", "remote.origin.url"],
+                    cwd=str(DOTFILES_DIR),
+                    capture_output=True,
+                    text=True,
+                    check=True,
+                ).stdout.strip()
+                if remote_url == REPO_URL:
+                    logging.info(
+                        f"El repositorio ya existe en '{DOTFILES_DIR}' y apunta al origen correcto. Intentando actualizar..."
+                    )
+                    run_command(["git", "pull"], cwd=str(DOTFILES_DIR))
+                    logging.info("Repositorio actualizado exitosamente.")
+                    return
+                else:
+                    logging.warning(
+                        f"El repositorio existe en '{DOTFILES_DIR}' pero apunta a '{remote_url}'. Se restablecerá el origen."
+                    )
+                    run_command(
+                        ["git", "remote", "set-url", "origin", REPO_URL],
+                        cwd=str(DOTFILES_DIR),
+                    )
+                    logging.info("Origen remoto restablecido. Intentando actualizar...")
+                    run_command(["git", "pull"], cwd=str(DOTFILES_DIR))
+                    logging.info("Repositorio actualizado exitosamente.")
+                    return
+            except subprocess.CalledProcessError as e:
+                logging.error(f"Error al interactuar con el repositorio existente: {e}")
+                logging.info("Se intentará clonar el repositorio nuevamente.")
+                # No hacemos sys.exit aquí, intentamos clonar de nuevo
+
+        logging.warning(
+            f"El directorio '{DOTFILES_DIR}' existe pero no parece ser un repositorio Git completo. Intentando eliminar y clonar de nuevo."
         )
         try:
-            info(f"Eliminando '{DOTFILES_DIR}'...")
-            subprocess.run(["rm", "-rf", str(DOTFILES_DIR)], check=True)
+            run_command(["rm", "-rf", str(DOTFILES_DIR)])
         except subprocess.CalledProcessError as e:
-            error(f"Error al eliminar el directorio: {e}")
+            logging.error(f"Error al eliminar el directorio existente: {e}")
+            logging.error(
+                "Por favor, verifica los permisos o elimina el directorio manualmente."
+            )
             sys.exit(1)
-        return
 
-    info(
-        f"Clonando el repositorio '{REPO_NAME}' desde '{REPO_URL}' a '{DOTFILES_DIR}'..."
+    logging.info(
+        f"Clonando el repositorio '{REPO_NAME}' desde '{REPO_URL}' a '{DOTFILES_DIR}' en la rama '{REPO_BRANCH}'..."
     )
     try:
-        subprocess.run(
-            [
-                "git",
-                "clone",
-                "-b",
-                "develop",  # TODO: Sólo para desarrollo
-                REPO_URL,
-                str(DOTFILES_DIR),
-            ],
-            check=True,
-        )
-        info("Repositorio clonado exitosamente.")
+        run_command(["git", "clone", "-b", REPO_BRANCH, REPO_URL, str(DOTFILES_DIR)])
+        logging.info("Repositorio clonado exitosamente.")
     except subprocess.CalledProcessError as e:
-        error(f"Error al clonar el repositorio: {e}")
+        logging.error(f"Error al clonar el repositorio: {e}")
         sys.exit(1)
 
 
-def check_and_install_ansible():
-    if not check_command("ansible-playbook"):
-        info("Ansible no está instalado. Intentando instalarlo con pip...")
-        os_name = platform.system()
-        match os_name:
-            case "Linux":
-                try:
-                    match (
-                        check_command("apt-get"),
-                        check_command("dnf"),
-                        check_command("pacman"),
-                        check_command("yum"),
-                        check_command("zypper"),
-                    ):
-                        case (_, True, _, _, _):
-                            info(
-                                "Gestor de paquetes 'dnf' detectado. Intentando instalar python3-libdnf5..."
-                            )
-                            run_command(
-                                [
-                                    "sudo",
-                                    "dnf",
-                                    "install",
-                                    "-y",
-                                    "python3-libdnf5",
-                                    "python3-pip",
-                                ]
-                            )
-                            info("python3-libdnf5 instalado exitosamente.")
-                        case (_, _, _, _, True):
-                            info(
-                                "Gestor de paquetes 'zypper' detectado. Intentando instalar python3-libdnf5..."
-                            )
-                            run_command(
-                                [
-                                    "sudo",
-                                    "zypper",
-                                    "install",
-                                    "-y",
-                                    "python3-libdnf5",
-                                    "python3-pip",
-                                ]
-                            )
-                            info("python3-libdnf5 instalado exitosamente.")
-                        case _:
-                            info(
-                                "No se detectó un gestor de paquetes conocido que requiera dependencias específicas para Ansible."
-                            )
-                    subprocess.run(
-                        [
-                            "python3",
-                            "-m",
-                            "pip",
-                            "install",
-                            "ansible",
-                            "--break-system-packages",
-                        ],
-                        check=True,
-                    )
-                    info("Ansible instalado exitosamente (pip).")
-
-                    info(
-                        "Verificando gestor de paquetes para dependencias de Ansible..."
-                    )
-                    return True
-                except subprocess.CalledProcessError as e:
-                    error(f"Error al instalar Ansible con pip: {e}")
-                    info(
-                        "Asegúrate de tener pip instalado y configurado correctamente."
-                    )
-                    info(
-                        "Si los problemas persisten, intenta instalar Ansible manualmente usando el gestor de paquetes de tu distribución."
-                    )
-                    return False
-            case "Darwin":
-                info(
-                    "Por favor, instala Ansible en macOS usando pip: `pip3 install ansible`."
-                )
-                info("Luego, vuelve a ejecutar este script.")
-                return False
-            case "Windows":
-                info(
-                    "Por favor, instala Ansible en Windows usando pip: `pip install ansible`."
-                )
-                info("Luego, vuelve a ejecutar este script.")
-                return False
-            case _:
-                error(
-                    f"Sistema operativo '{os_name}' no reconocido para la instalación automática de Ansible."
-                )
-                info(
-                    "Por favor, instala Ansible manualmente (preferiblemente con pip) y vuelve a ejecutar este script."
-                )
-                return False
-    else:
-        info("Ansible ya está instalado.")
+def install_ansible():
+    """Verifica e intenta instalar Ansible si no está presente."""
+    if check_command("ansible-playbook"):
+        logging.info("Ansible ya está instalado.")
         return True
+
+    logging.info("Ansible no está instalado. Intentando instalarlo con pip...")
+    os_name = platform.system()
+    try:
+        run_command(
+            ["python3", "-m", "pip", "install", "ansible", "--break-system-packages"]
+        )
+        if check_command("ansible-playbook"):
+            logging.info("Ansible instalado exitosamente (pip).")
+            return True
+        else:
+            logging.error("La instalación de Ansible con pip parece haber fallado.")
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Error al instalar Ansible con pip: {e}")
+        logging.info("Asegúrate de tener pip instalado y configurado correctamente.")
+
+    logging.info(
+        "Si los problemas persisten, intenta instalar Ansible manualmente usando el gestor de paquetes de tu distribución:"
+    )
+    if os_name == "Linux":
+        logging.info(
+            "- Para Debian/Ubuntu: `sudo apt-get update && sudo apt-get install -y ansible`"
+        )
+        logging.info(
+            "- Para Fedora/CentOS/RHEL: `sudo dnf install -y ansible` o `sudo yum install -y ansible`"
+        )
+        logging.info("- Para Arch Linux: `sudo pacman -S ansible`")
+        logging.info("- Para openSUSE: `sudo zypper install ansible`")
+    elif os_name == "Darwin":
+        logging.info(
+            "- Para macOS: `pip3 install ansible` (si tienes pip3 instalado) o considera usar Homebrew: `brew install ansible`"
+        )
+    elif os_name == "Windows":
+        logging.info(
+            "- Para Windows: `pip install ansible` (asegúrate de que pip esté configurado correctamente)"
+        )
+    else:
+        logging.info(
+            f"- No se proporcionaron instrucciones específicas para '{os_name}'. Consulta la documentación de Ansible para tu sistema operativo."
+        )
+
+    logging.error(
+        "Por favor, instala Ansible manualmente y vuelve a ejecutar el script."
+    )
+    return False
+
+
+def run_ansible_playbook():
+    """Ejecuta el playbook de Ansible si Ansible está instalado."""
+    ansible_dir = DOTFILES_DIR / "ansible"
+    playbook_path = ansible_dir / "playbook.yml"
+    inventory_file_path = (
+        ansible_dir / "inventory.ini"
+    )  # Asumo que el inventario está en la misma carpeta
+
+    if not check_command("ansible-playbook"):
+        logging.error("Ansible no está instalado, no se puede ejecutar el playbook.")
+        return False
+
+    if not playbook_path.exists():
+        logging.error(f"No se encontró el playbook de Ansible en: {playbook_path}")
+        return False
+
+    if not inventory_file_path.exists():
+        logging.warning(
+            f"No se encontró el archivo de inventario en: {inventory_file_path}. Ansible podría fallar."
+        )
+
+    logging.info("Ejecutando Ansible Playbook...")
+    try:
+        command = [
+            "ansible-playbook",
+            "--ask-become-pass",
+            str(playbook_path),
+            "-i",
+            str(inventory_file_path),
+            "-v",
+        ]
+        subprocess.run(command, cwd=str(ansible_dir), check=True)
+        logging.info("Ansible Playbook ejecutado exitosamente.")
+        return True
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Error al ejecutar Ansible Playbook: {e}")
+        return False
 
 
 def main():
     show()
     os_name = platform.system()
-    info(f"Sistema operativo detectado: {os_name}")
+    logging.info(f"Sistema operativo detectado: {os_name}")
 
-    info("Verificando si Git está instalado...")
-    match os_name:
-        case "Linux":
-            if not check_command("git"):
-                info(
-                    "Git no está instalado. Intentando instalarlo con el gestor de paquetes..."
-                )
-                match (
-                    check_command("apt-get"),
-                    check_command("dnf"),
-                    check_command("pacman"),
-                    check_command("yum"),
-                    check_command("zypper"),
-                ):
-                    case (True, _, _, _, _):
-                        info(
-                            "Gestor de paquetes 'apt' detectado. Intentando instalar Git..."
-                        )
-                        run_command(["sudo", "apt-get", "update"])
-                        run_command(["sudo", "apt-get", "install", "-y", "git"])
-                    case (_, True, _, _, _):
-                        info(
-                            "Gestor de paquetes 'dnf' detectado. Intentando instalar Git..."
-                        )
-                        run_command(["sudo", "dnf", "update", "-y"])
-                        run_command(["sudo", "dnf", "install", "-y", "git"])
-                    case (_, _, True, _, _):
-                        info(
-                            "Gestor de paquetes 'pacman' detectado. Intentando instalar Git..."
-                        )
-                        run_command(["sudo", "pacman", "-Syy", "--noconfirm"])
-                        run_command(["sudo", "pacman", "-S", "--noconfirm", "git"])
-                    case (_, _, _, True, _):
-                        info(
-                            "Gestor de paquetes 'yum' detectado. Intentando instalar Git..."
-                        )
-                        run_command(["sudo", "yum", "update", "-y"])
-                        run_command(["sudo", "yum", "install", "-y", "git"])
-                    case (_, _, _, _, True):
-                        info(
-                            "Gestor de paquetes 'zypper' detectado. Intentando instalar Git..."
-                        )
-                        run_command(["sudo", "zypper", "update", "-y"])
-                        run_command(["sudo", "zypper", "install", "-y", "git"])
-                    case _:
-                        error(
-                            "Gestor de paquetes no reconocido para la instalación automática de Git."
-                        )
-                        info(
-                            "Por favor, instala Git manualmente y vuelve a ejecutar el script."
-                        )
-                        sys.exit(1)
-            else:
-                info("Git ya está instalado.")
-        case "Darwin":
-            if not check_command("git"):
-                info(
-                    "Por favor, instala Git en macOS (por ejemplo, usando Xcode Command Line Tools o Homebrew)."
-                )
-                info("Luego, vuelve a ejecutar este script.")
-                sys.exit(1)
-            else:
-                info("Git ya está instalado.")
-        case "Windows":
-            if not check_command("git"):
-                info(
-                    "Por favor, instala Git en Windows (por ejemplo, desde https://git-scm.com/download/win)."
-                )
-                info("Luego, vuelve a ejecutar este script.")
-                sys.exit(1)
-            else:
-                info("Git ya está instalado.")
-        case _:
-            error(
-                f"Sistema operativo '{os_name}' no reconocido para la instalación automática de Git."
-            )
-            info("Por favor, instala Git manualmente y vuelve a ejecutar este script.")
-            sys.exit(1)
+    if not install_git():
+        logging.error("No se pudo instalar Git. Saliendo.")
+        sys.exit(1)
 
     clone_repo()
     show("💾 Clonación de dotfiles terminada")
 
-    inventory_file_path = str(DOTFILES_DIR / "ansible" / "inventory.ini")
-
-    if check_and_install_ansible():  # and os.path.exists(inventory_file_path):
-        ansible_dir = DOTFILES_DIR / "ansible"
-        playbook_path = ansible_dir / "playbook.yml"
-
-        if playbook_path.exists():
-            info("Ejecutando Ansible Playbook...")
-            try:
-                subprocess.run(
-                    [
-                        "ansible-playbook",
-                        "--ask-become-pass",
-                        str(playbook_path),
-                        "-i",
-                        inventory_file_path,
-                        "-v",
-                    ],
-                    cwd=str(ansible_dir),
-                    check=True,
-                )
-                info("Ansible Playbook ejecutado exitosamente.")
-            except subprocess.CalledProcessError as e:
-                error(f"Error al ejecutar Ansible Playbook: {e}")
-                sys.exit(1)
-        else:
-            error(f"No se encontró el playbook de Ansible en: {playbook_path}")
-            sys.exit(1)
+    if install_ansible():
+        if not run_ansible_playbook():
+            logging.error("La ejecución del Ansible Playbook falló o no se realizó.")
     else:
-        error(
-            "No se puede continuar sin Ansible instalado o sin el archivo de inventario."
+        logging.warning(
+            "No se pudo instalar Ansible. La configuración automática podría no completarse."
         )
-        sys.exit(1)
 
     show("✅ Configuración completa")
 
