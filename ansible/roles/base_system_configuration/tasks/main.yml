@@ -5,7 +5,7 @@
   tags: global_vars
 
 - name: Incluir variables específicas de la distribución
-  include_vars: "{{ ansible_os_family }}.yaml"
+  include_vars: "{{ playbook_dir }}/vars/{{ ansible_os_family }}.yaml"
   # when: ansible_os_family == "Debian"
   ignore_errors: true # Por si el archivo no existe en alguna distro
 
