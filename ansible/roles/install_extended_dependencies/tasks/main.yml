@@ -8,4 +8,4 @@
     install_weak_deps: no
   when: ansible_distribution == "Fedora"
   vars:
-    extended_dependencies: "{{ sentu_install.package_managers.fedora.dependencies.extended }}"
+    extended_dependencies: "{{ sentu_install.package_managers.RedHat.dependencies.extended }}"
