@@ -27,10 +27,9 @@
       when: ansible_os_family == "Archlinux"
 
     - name: Actualiza el sistema (openSUSE)
-      ansible.builtin.zypper:
+      community.general.zypper:
         name: "*"
         state: latest
-        update: yes
       when: ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE Tumbleweed"
 
     - name: Actualiza el sistema (macOS con Homebrew)
