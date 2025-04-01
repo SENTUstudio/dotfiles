@@ -52,6 +52,7 @@ def check_command(command: str) -> bool:
         bool: True si el comando está disponible, False en caso contrario.
     """
     try:
+        print(command)
         subprocess.run(["which", command], capture_output=True, text=True, check=True)
         return True
     except (subprocess.CalledProcessError, FileNotFoundError):
