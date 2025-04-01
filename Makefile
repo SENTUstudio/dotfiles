@@ -28,4 +28,17 @@ test-opensuse:
 		echo '%${USERNAME} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers; \
 		su - ${USERNAME} -c 'curl -LsSf \"${SCRIPT_URL}\" | python3'; \
 	"
+## Ejecuta la prueba del script en un contenedor Docker de Fedora
+test-fedora:
+	@echo "Ejecutando prueba en contenedor Docker de Fedora..."
+	docker run --rm fedora sh -c " \
+		set -e; \
+		dnf update -y; \
+		dnf install which python3-pip python3 sudo ansible -y; \
+		useradd -m ${USERNAME}; \
+		echo '${USERNAME}:${PASSWORD}' | chpasswd; \
+		echo '%${USERNAME} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers; \
+		sudo -u el bash -c 'curl -LsSf \"${SCRIPT_URL}\" | python3'; \
+	"
+
 	@echo "Prueba finalizada."
