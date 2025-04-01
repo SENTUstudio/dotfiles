@@ -1,9 +1,4 @@
 ---
-- name: Include global variables
-  include_vars:
-    file: "{{ playbook_dir }}/vars/global.yaml"
-  tags: global_vars
-
 - name: Descargar e instalar uv usando el script oficial
   shell: "curl -LsSf {{ sentu_install.install_scripts.uv }} | sh"
   become: false
