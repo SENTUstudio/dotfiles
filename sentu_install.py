@@ -162,6 +162,9 @@ def clone_repo():
                     logging.info(
                         f"El repositorio ya existe en '{DOTFILES_DIR}' y apunta al origen correcto. Intentando actualizar..."
                     )
+                    run_command(
+                        ["git", "config", "pull.rebase", "true"], cwd=DOTFILES_DIR
+                    )
                     run_command(["git", "pull"], cwd=DOTFILES_DIR)
                     logging.info("Repositorio actualizado exitosamente.")
                     return
@@ -174,6 +177,9 @@ def clone_repo():
                         cwd=DOTFILES_DIR,
                     )
                     logging.info("Origen remoto restablecido. Intentando actualizar...")
+                    run_command(
+                        ["git", "config", "pull.rebase", "true"], cwd=DOTFILES_DIR
+                    )
                     run_command(["git", "pull"], cwd=DOTFILES_DIR)
                     logging.info("Repositorio actualizado exitosamente.")
                     return
