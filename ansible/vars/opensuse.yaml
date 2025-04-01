@@ -1,6 +1,6 @@
 sentu_install:
   package_managers:
-    suse:
+    opensuse:
       manager: zypper
       update:
         - sudo
