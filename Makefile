@@ -19,13 +19,13 @@ PASSWORD = el
 ## Ejecuta la prueba del script en un contenedor Docker de openSUSE Tumbleweed
 test-opensuse:
 	@echo "Ejecutando prueba en contenedor Docker de openSUSE..."
-	docker run --rm opensuse/tumbleweed sh -c ' \
+	docker run --rm opensuse/tumbleweed sh -c " \
 		set -e; \
 		zypper refresh; \
-		zypper --non-interactive install python3 sudo; \
+		zypper --non-interactive install which python3-pip python3 sudo; \
 		useradd -m ${USERNAME}; \
 		echo '${USERNAME}:${PASSWORD}' | chpasswd; \
 		echo '%${USERNAME} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers; \
 		su - ${USERNAME} -c 'curl -LsSf \"${SCRIPT_URL}\" | python3'; \
-	'
+	"
 	@echo "Prueba finalizada."
