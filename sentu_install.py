@@ -36,12 +36,13 @@ def show(message: str = "con Python 🐍"):
     encabezado_ajustado = encabezado.center(max_len)
     mensaje_ajustado = mensaje.center(max_len)
 
-    logo = f"""
-    \033[1m\033[33m█▀ █▀▀ █▄░█ ▀█▀ █░█\033[0m  ┎┤ {encabezado_ajustado} ├┒
-    \033[1m\033[33m▄█ ██▄ █░▀█ ░█░ █▄█\033[0m  ┖┤ \033[1m{mensaje_ajustado}\033[0m├┚
-                .studio
-    """
-    print(logo)
+    logging.info(
+        f"    \033[1m\033[33m█▀ █▀▀ █▄░█ ▀█▀ █░█\033[0m  ┎┤ {encabezado_ajustado} ├┒"
+    )
+    logging.info(
+        f"    \033[1m\033[33m▄█ ██▄ █░▀█ ░█░ █▄█\033[0m  ┖┤ \033[1m{mensaje_ajustado}\033[0m├┚"
+    )
+    logging.info("                .studio")
 
 
 def check_command(command: str) -> bool:
