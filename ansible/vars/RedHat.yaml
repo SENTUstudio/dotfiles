@@ -1,6 +1,6 @@
 sentu_install:
   package_managers:
-    fedora:
+    RedHat:
       manager: dnf
       update:
         - sudo

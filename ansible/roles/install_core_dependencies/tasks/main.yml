@@ -6,7 +6,7 @@
         name: "{{ core_dependencies }}"
         state: present
       vars:
-        core_dependencies: "{{ sentu_install.package_managers.fedora.dependencies.core | default([]) }}"
+        core_dependencies: "{{ sentu_install.package_managers.RedHat.dependencies.core | default([]) }}"
       when: ansible_distribution == "Fedora"
 
     - name: Instalar dependencias core (Debian/Ubuntu)
