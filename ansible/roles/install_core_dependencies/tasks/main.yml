@@ -32,7 +32,7 @@
         state: present
         update_cache: true
       vars:
-        core_dependencies: "{{ package_managers.opensuse.dependencies.core | default([]) }}"
+        core_dependencies: "{{ package_managers.dependencies.core | default([]) }}"
       when: ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE Tumbleweed"
 
     - name: Mostrar mensaje si la distribución no está soportada para dependencias core
