@@ -260,6 +260,7 @@ def main():
     clone_repo()
     show("💾 Clonación de dotfiles terminada")
 
+    run_ansible_playbook()
     show("✅ Configuración completa")
 
 
