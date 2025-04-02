@@ -80,15 +80,10 @@ def run_command(command_list: list[str], cwd: Path | None = None) -> None:
         sys.exit(1)
 
 
-def install_git():
+def package_core():
     """Verifica e instala Git si no está presente."""
     os_name = platform.system()
-    logging.info("Verificando si Git está instalado...")
-    if check_command("git"):
-        logging.info("Git ya está instalado.")
-        return True
-
-    logging.info("Git no está instalado. Intentando instalarlo...")
+    logging.info("Instalando dependencias...")
     match os_name:
         case "Linux":
             package_managers = {
@@ -99,11 +94,11 @@ def install_git():
                 "zypper": ["sudo", "zypper", "update", "-y"],
             }
             install_commands = {
-                "apt-get": ["sudo", "apt-get", "install", "-y", "git"],
-                "dnf": ["sudo", "dnf", "install", "-y", "git"],
-                "pacman": ["sudo", "pacman", "-S", "--noconfirm", "git"],
-                "yum": ["sudo", "yum", "install", "-y", "git"],
-                "zypper": ["sudo", "zypper", "install", "-y", "git"],
+                "apt-get": ["sudo", "apt-get", "install", "-y", "git", "ansible"],
+                "dnf": ["sudo", "dnf", "install", "-y", "git", "ansible"],
+                "pacman": ["sudo", "pacman", "-S", "--noconfirm", "git", "ansible"],
+                "yum": ["sudo", "yum", "install", "-y", "git", "ansible"],
+                "zypper": ["sudo", "zypper", "install", "-y", "git", "ansible"],
             }
             for pm, update_cmd in package_managers.items():
                 if check_command(pm):
@@ -214,58 +209,6 @@ def clone_repo():
         sys.exit(1)
 
 
-def install_ansible():
-    """Verifica e intenta instalar Ansible si no está presente."""
-    if check_command("ansible-playbook"):
-        logging.info("Ansible ya está instalado.")
-        return True
-
-    logging.info("Ansible no está instalado. Intentando instalarlo con pip...")
-    os_name = platform.system()
-    try:
-        run_command(
-            ["python3", "-m", "pip", "install", "ansible", "--break-system-packages"]
-        )
-        if check_command("ansible-playbook"):
-            logging.info("Ansible instalado exitosamente (pip).")
-            return True
-        else:
-            logging.error("La instalación de Ansible con pip parece haber fallado.")
-    except subprocess.CalledProcessError as e:
-        logging.error(f"Error al instalar Ansible con pip: {e}")
-        logging.info("Asegúrate de tener pip instalado y configurado correctamente.")
-
-    logging.info(
-        "Si los problemas persisten, intenta instalar Ansible manualmente usando el gestor de paquetes de tu distribución:"
-    )
-    if os_name == "Linux":
-        logging.info(
-            "- Para Debian/Ubuntu: `sudo apt-get update && sudo apt-get install -y ansible`"
-        )
-        logging.info(
-            "- Para Fedora/CentOS/RHEL: `sudo dnf install -y ansible` o `sudo yum install -y ansible`"
-        )
-        logging.info("- Para Arch Linux: `sudo pacman -S ansible`")
-        logging.info("- Para openSUSE: `sudo zypper install ansible`")
-    elif os_name == "Darwin":
-        logging.info(
-            "- Para macOS: `pip3 install ansible` (si tienes pip3 instalado) o considera usar Homebrew: `brew install ansible`"
-        )
-    elif os_name == "Windows":
-        logging.info(
-            "- Para Windows: `pip install ansible` (asegúrate de que pip esté configurado correctamente)"
-        )
-    else:
-        logging.info(
-            f"- No se proporcionaron instrucciones específicas para '{os_name}'. Consulta la documentación de Ansible para tu sistema operativo."
-        )
-
-    logging.error(
-        "Por favor, instala Ansible manualmente y vuelve a ejecutar el script."
-    )
-    return False
-
-
 def run_ansible_playbook():
     """Ejecuta el playbook de Ansible si Ansible está instalado."""
     ansible_dir = DOTFILES_DIR / "ansible"
@@ -310,20 +253,12 @@ def main():
     os_name = platform.system()
     logging.info(f"Sistema operativo detectado: {os_name}")
 
-    if not install_git():
-        logging.error("No se pudo instalar Git. Saliendo.")
+    if not package_core():
+        logging.error("No se pudo instalar dependencias. Saliendo.")
         sys.exit(1)
 
     clone_repo()
     show("💾 Clonación de dotfiles terminada")
-
-    if install_ansible():
-        if not run_ansible_playbook():
-            logging.error("La ejecución del Ansible Playbook falló o no se realizó.")
-    else:
-        logging.warning(
-            "No se pudo instalar Ansible. La configuración automática podría no completarse."
-        )
 
     show("✅ Configuración completa")
 
