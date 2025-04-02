@@ -14,6 +14,11 @@
   # when: ansible_os_family == "Debian"
   ignore_errors: true # Por si el archivo no existe en alguna distro
 
+- name: Obtener el directorio home del usuario
+  ansible.builtin.command: echo $HOME
+  register: user_home
+  become: no
+
 - name: Actualiza el sistema
   become: true # Generalmente se necesita elevación de privilegios para actualizar el sistema
   block:

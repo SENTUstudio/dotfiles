@@ -1,9 +1,24 @@
 ---
 # tasks/main.yml
 - name: Instalar fontconfig
-  ansible.builtin.dnf:
-    name: fontconfig
-    state: present
+  block:
+    - name: Instalar fontconfig (Debian/Ubuntu)
+      ansible.builtin.apt:
+        name: fontconfig
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Instalar fontconfig (Red Hat/CentOS/Fedora)
+      ansible.builtin.dnf:
+        name: fontconfig
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Instalar fontconfig (openSUSE)
+      community.general.zypper:
+        name: fontconfig
+        state: present
+      when: ansible_os_family == "Suse"
   become: yes
 
 - name: Crear directorio de fuentes
