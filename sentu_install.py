@@ -257,9 +257,11 @@ def main():
         logging.error("No se pudo instalar dependencias. Saliendo.")
         sys.exit(1)
 
+    show("💾 Clonación de dotfiles iniciada")
     clone_repo()
     show("💾 Clonación de dotfiles terminada")
 
+    show("⚙️  Iniciando instalación de paquetes")
     run_ansible_playbook()
     show("✅ Configuración completa")
 
