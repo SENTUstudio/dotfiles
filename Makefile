@@ -16,8 +16,16 @@ SCRIPT_URL = https://raw.githubusercontent.com/SENTUstudio/dotfiles/refs/heads/d
 USERNAME = el
 PASSWORD = el
 
+## Chequea el proyecto ansible con detalles
+ansible-check: logo
+	ansible-playbook \
+		--ask-become-pass \
+		--check ansible/playbook.yml \
+		-i ansible/inventory.ini \
+		-v
+
 ## Ejecuta la prueba del script en un contenedor Docker de openSUSE Tumbleweed
-test-opensuse:
+test-opensuse: logo
 	@echo "Ejecutando prueba en contenedor Docker de openSUSE..."
 	docker run --rm opensuse/tumbleweed sh -c " \
 		set -e; \
@@ -29,7 +37,7 @@ test-opensuse:
 		su - ${USERNAME} -c 'curl -LsSf \"${SCRIPT_URL}\" | python3'; \
 	"
 ## Ejecuta la prueba del script en un contenedor Docker de Fedora
-test-fedora:
+test-fedora: logo
 	@echo "Ejecutando prueba en contenedor Docker de Fedora..."
 	docker run --rm fedora sh -c " \
 		set -e; \
