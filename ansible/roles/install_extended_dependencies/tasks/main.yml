@@ -12,7 +12,7 @@
 
 - name: Install package from AUR using a Pacman compatible AUR helper
   community.general.pacman:
-    name: "{{ core_dependencies }}"
+    name: "{{ extended_dependencies }}"
     state: present
     executable: yay
     extra_args: --builddir /var/cache/yay

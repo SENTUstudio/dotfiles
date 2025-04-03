@@ -26,6 +26,14 @@
   ansible.builtin.debug:
     var: core_dependencies
 
+- name: Definir core_dependencies globalmente
+  ansible.builtin.set_fact:
+    extended_dependencies: "{{ package_managers.dependencies.extended | default([]) }}"
+
+- name: Depurar contenido de core_dependencies
+  ansible.builtin.debug:
+    var: extended_dependencies
+
 - name: Obtener el directorio home del usuario
   ansible.builtin.command: echo $HOME
   register: user_home
