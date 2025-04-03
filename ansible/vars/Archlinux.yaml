@@ -88,7 +88,6 @@ package_managers:
       - audacity
       - muse
       - lmms
-      - amarok
       - flowblade
       - xine-lib
       - libdvdread

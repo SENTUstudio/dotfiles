@@ -106,5 +106,1251 @@ Total Installed Size:  645.88 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
+ ansible-11.4.0-1-any downloading...
+ python-3.13.2-1-x86_64 downloading...
+ ansible-core-2.18.4-1-any downloading...
+ python-pip-25.0.1-1-any downloading...
+ sudo-1.9.16.p2-2-x86_64 downloading...
+ python-cryptography-44.0.2-1-x86_64 downloading...
+ python-paramiko-3.5.0-1-any downloading...
+ python-jinja-1:3.1.5-1-any downloading...
+ python-cffi-1.17.1-2-x86_64 downloading...
+ python-pycparser-2.22-3-any downloading...
+ python-bcrypt-4.2.1-2-x86_64 downloading...
+ python-yaml-6.0.2-2-x86_64 downloading...
+ libsodium-1.0.20-1-x86_64 downloading...
+ python-packaging-24.2-3-any downloading...
+ python-pynacl-1.5.0-3-x86_64 downloading...
+ python-attrs-23.2.0-4-any downloading...
+ mpdecimal-4.0.0-2-x86_64 downloading...
+ python-typing_extensions-4.12.2-3-any downloading...
+ python-wheel-0.45.1-1-any downloading...
+ libyaml-0.2.5-3-x86_64 downloading...
+ python-resolvelib-1.1.0-2-any downloading...
+ python-filelock-3.18.0-1-any downloading...
+ python-markupsafe-2.1.5-3-x86_64 downloading...
+ which-2.23-1-x86_64 downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Processing package changes...
+installing which...
+installing mpdecimal...
+installing python...
+Optional dependencies for python
+    python-setuptools: for building Python packages using tooling that is usually bundled with Python
+    python-pip: for installing Python packages using tooling that is usually bundled with Python [pending]
+    python-pipx: for installing Python software not packaged on Arch Linux
+    sqlite: for a default database integration [installed]
+    xz: for lzma [installed]
+    tk: for tkinter
+installing python-attrs...
+installing python-pycparser...
+installing python-cffi...
+Optional dependencies for python-cffi
+    python-setuptools: "limited api" version checking in cffi.setuptools_ext
+installing python-cryptography...
+installing python-filelock...
+installing python-packaging...
+installing python-wheel...
+Optional dependencies for python-wheel
+    python-keyring: for wheel.signatures
+    python-xdg: for wheel.signatures
+    python-setuptools: for legacy bdist_wheel subcommand
+installing python-pip...
+installing sudo...
+installing python-markupsafe...
+installing python-jinja...
+Optional dependencies for python-jinja
+    python-babel: for i18n support
+installing libyaml...
+installing python-yaml...
+installing python-resolvelib...
+installing python-bcrypt...
+installing libsodium...
+installing python-pynacl...
+installing python-paramiko...
+Optional dependencies for python-paramiko
+    python-invoke: config support
+    python-gssapi: GSS-API/SSPI support
+    python-pyasn1: GSS-API/SSPI support
+installing python-typing_extensions...
+installing ansible-core...
+Optional dependencies for ansible-core
+    python-argcomplete: shell completions
+    python-dnspython: for dig lookup
+    python-jmespath: json_query support
+    python-netaddr: for the ipaddr filter
+    python-passlib: crypt values for vars_prompt
+    python-pip: for module to manage Python libarary dependencies [installed]
+    python-pywinrm: connect to Windows machines
+    python-setuptools: for module to manage Python libarary dependencies
+    python-systemd: for journald support
+    sshpass: for ssh connections with password
+installing ansible...
+Optional dependencies for ansible
+    python-argcomplete: shell completions
+    python-pyopenssl: openssl modules
+    python-dnspython: for dig lookup
+    python-ovirt-engine-sdk: ovirt support
+    python-boto3: aws_s3 module
+    python-ldap: ldap support
+    python-proxmoxer: proxmox modules
+    python-openstacksdk: OpenStack module
+    python-pynetbox: NetBox module
+    python-ldap: LDAP modules
+    python-kubernetes: Kubernetes modules
+    python-keyring: Keyring module
+    python-github3py: GitHub module
+    python-lxc: LXC module
+    acme-tiny: openssl_certificate module
+:: Running post-transaction hooks...
+(1/3) Reloading system manager configuration...
+  Skipped: Current root is not booted.
+(2/3) Creating temporary files...
+/usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+All rules containing unresolvable specifiers will be skipped.
+(3/3) Arming ConditionNeedsUpdate...
+2025-04-03 10:32:31,892 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 10:32:31,892 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚
+2025-04-03 10:32:31,892 - INFO -                 .studio
+2025-04-03 10:32:31,892 - INFO - Sistema operativo detectado: Linux
+2025-04-03 10:32:31,892 - INFO - Instalando dependencias...
+2025-04-03 10:32:31,899 - INFO - Gestor de paquetes 'pacman' detectado. Intentando instalar Paquetes...
+:: Synchronizing package databases...
+ core downloading...
+ extra downloading...
+warning: ansible-11.4.0-1 is up to date -- reinstalling
+resolving dependencies...
+looking for conflicting packages...
+
+Package (7)           Old Version  New Version  Net Change  Download Size
+
+core/db5.3                         5.3.28-5       6.45 MiB       1.18 MiB
+core/perl                          5.40.1-2      71.30 MiB      19.99 MiB
+extra/perl-error                   0.17030-1      0.04 MiB       0.02 MiB
+extra/perl-mailtools               2.22-1         0.10 MiB       0.06 MiB
+extra/perl-timedate                2.33-7         0.08 MiB       0.03 MiB
+extra/ansible         11.4.0-1     11.4.0-1       0.00 MiB               
+extra/git                          2.49.0-1      28.71 MiB       6.59 MiB
+
+Total Download Size:    27.87 MiB
+Total Installed Size:  623.16 MiB
+Net Upgrade Size:      106.69 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ perl-5.40.1-2-x86_64 downloading...
+ git-2.49.0-1-x86_64 downloading...
+ db5.3-5.3.28-5-x86_64 downloading...
+ perl-mailtools-2.22-1-any downloading...
+ perl-timedate-2.33-7-any downloading...
+ perl-error-0.17030-1-any downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Processing package changes...
+installing db5.3...
+installing perl...
+installing perl-error...
+installing perl-timedate...
+installing perl-mailtools...
+installing git...
+Optional dependencies for git
+    git-zsh-completion: upstream zsh completion
+    tk: gitk and git gui
+    openssh: ssh transport and crypto
+    man: show help with `git command --help`
+    perl-libwww: git svn
+    perl-term-readkey: git svn and interactive.singlekey setting
+    perl-io-socket-ssl: git send-email TLS support
+    perl-authen-sasl: git send-email TLS support
+    perl-mediawiki-api: git mediawiki support
+    perl-datetime-format-iso8601: git mediawiki support
+    perl-lwp-protocol-https: git mediawiki https support
+    perl-cgi: gitweb (web interface) support
+    python: git svn & git p4 [installed]
+    subversion: git svn
+    org.freedesktop.secrets: keyring credential helper
+    libsecret: libsecret credential helper [installed]
+reinstalling ansible...
+:: Running post-transaction hooks...
+(1/4) Creating system user accounts...
+Creating group 'git' with GID 971.
+Creating user 'git' (git daemon user) with UID 971 and GID 971.
+(2/4) Reloading system manager configuration...
+Failed to check for chroot() environment: Permission denied
+  Skipped: Current root is not booted.
+(3/4) Arming ConditionNeedsUpdate...
+(4/4) Checking for old perl modules...
+2025-04-03 10:33:19,889 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 10:33:19,889 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m         💾 Instalando yay         [0m├┚
+2025-04-03 10:33:19,889 - INFO -                 .studio
+2025-04-03 10:33:19,889 - INFO - Asegurando que git y base-devel estén instalados...
+warning: git-2.49.0-1 is up to date -- skipping
+resolving dependencies...
+looking for conflicting packages...
+
+Package (23)     New Version                  Net Change  Download Size
+
+core/autoconf    2.72-1                         2.22 MiB       0.64 MiB
+core/automake    1.17-1                         1.62 MiB       0.61 MiB
+core/binutils    2.44-1                        41.78 MiB       7.71 MiB
+core/bison       3.8.2-8                        2.52 MiB       0.75 MiB
+core/debugedit   5.1-1                          0.10 MiB       0.04 MiB
+core/diffutils   3.11-2                         1.49 MiB       0.33 MiB
+core/fakeroot    1.37.1.1-1                     0.14 MiB       0.08 MiB
+core/flex        2.6.4-5                        0.93 MiB       0.30 MiB
+core/gc          8.2.8-2                        0.76 MiB       0.23 MiB
+core/gcc         14.2.1+r753+g1cd744a6828f-1  202.43 MiB      51.08 MiB
+core/groff       1.23.0-7                       8.84 MiB       2.26 MiB
+core/guile       3.0.10-1                      54.73 MiB       8.31 MiB
+core/jansson     2.14.1-1                       0.27 MiB       0.09 MiB
+core/libisl      0.27-1                         5.75 MiB       0.87 MiB
+core/libmpc      1.3.1-2                        0.18 MiB       0.08 MiB
+core/libtool     2.5.4+r1+gbaa1fe41-3           2.27 MiB       0.41 MiB
+core/m4          1.4.19-3                       0.47 MiB       0.24 MiB
+core/make        4.4.1-2                        1.67 MiB       0.51 MiB
+core/patch       2.7.6-10                       0.18 MiB       0.09 MiB
+core/pkgconf     2.4.3-1                        0.17 MiB       0.06 MiB
+core/texinfo     7.2-1                         11.51 MiB       1.99 MiB
+extra/xxhash     0.8.3-1                        0.39 MiB       0.10 MiB
+core/base-devel  1-2                            0.00 MiB       0.00 MiB
+
+Total Download Size:    76.76 MiB
+Total Installed Size:  340.42 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ gcc-14.2.1+r753+g1cd744a6828f-1-x86_64 downloading...
+ guile-3.0.10-1-x86_64 downloading...
+ binutils-2.44-1-x86_64 downloading...
+ groff-1.23.0-7-x86_64 downloading...
+ texinfo-7.2-1-x86_64 downloading...
+ libisl-0.27-1-x86_64 downloading...
+ bison-3.8.2-8-x86_64 downloading...
+ autoconf-2.72-1-any downloading...
+ automake-1.17-1-any downloading...
+ make-4.4.1-2-x86_64 downloading...
+ libtool-2.5.4+r1+gbaa1fe41-3-x86_64 downloading...
+ diffutils-3.11-2-x86_64 downloading...
+ flex-2.6.4-5-x86_64 downloading...
+ m4-1.4.19-3-x86_64 downloading...
+ gc-8.2.8-2-x86_64 downloading...
+ xxhash-0.8.3-1-x86_64 downloading...
+ patch-2.7.6-10-x86_64 downloading...
+ jansson-2.14.1-1-x86_64 downloading...
+ libmpc-1.3.1-2-x86_64 downloading...
+ fakeroot-1.37.1.1-1-x86_64 downloading...
+ pkgconf-2.4.3-1-x86_64 downloading...
+ debugedit-5.1-1-x86_64 downloading...
+ base-devel-1-2-any downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Processing package changes...
+installing m4...
+installing diffutils...
+installing autoconf...
+installing automake...
+installing jansson...
+installing binutils...
+Optional dependencies for binutils
+    debuginfod: for debuginfod server/client functionality
+installing bison...
+installing xxhash...
+installing debugedit...
+installing fakeroot...
+installing flex...
+installing libmpc...
+installing libisl...
+installing gcc...
+Optional dependencies for gcc
+    lib32-gcc-libs: for generating code for 32-bit ABI
+installing groff...
+Optional dependencies for groff
+    netpbm: for use together with man -H command interaction in browsers
+    psutils: for use together with man -H command interaction in browsers
+    libxaw: for gxditview
+    perl-file-homedir: for use with glilypond
+installing libtool...
+installing gc...
+installing guile...
+installing make...
+installing patch...
+Optional dependencies for patch
+    ed: for patch -e functionality
+installing pkgconf...
+installing texinfo...
+Optional dependencies for texinfo
+    perl-archive-zip: EPUB file output via texi2any
+installing base-devel...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+2025-04-03 10:33:41,449 - INFO - git y base-devel instalados o ya presentes.
+2025-04-03 10:33:41,450 - INFO - Clonando el repositorio de yay desde AUR...
+Cloning into '/home/el/.cache/yay'...
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+2025-04-03 10:33:43,708 - INFO - Repositorio de yay clonado.
+2025-04-03 10:33:43,708 - INFO - Navegando al directorio de yay...
+2025-04-03 10:33:43,708 - INFO - Construyendo e instalando yay...
+==> Making package: yay 12.4.2-1 (Thu Apr  3 10:33:52 2025)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Installing missing dependencies...
+resolving dependencies...
+looking for conflicting packages...
+
+Package (1)  New Version  Net Change  Download Size
+
+extra/go     2:1.24.1-1   237.73 MiB      42.99 MiB
+
+Total Download Size:    42.99 MiB
+Total Installed Size:  237.73 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ go-2:1.24.1-1-x86_64 downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Processing package changes...
+installing go...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+==> Retrieving sources...
+  -> Downloading yay-12.4.2.tar.gz...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  444k    0  444k    0     0   370k      0 --:--:--  0:00:01 --:--:--  719k
+==> Validating source files with sha256sums...
+    yay-12.4.2.tar.gz ... Passed
+==> Extracting sources...
+  -> Extracting yay-12.4.2.tar.gz with bsdtar
+==> Starting build()...
+go build -trimpath -mod=readonly -modcacherw -ldflags '-X "main.yayVersion=12.4.2" -X "main.localePath=/usr/share/locale/" -linkmode=external -compressdwarf=false' -buildmode=pie -o yay
+go: downloading github.com/Jguer/aur v1.2.3
+go: downloading github.com/Jguer/votar v1.0.0
+go: downloading github.com/Jguer/go-alpm/v2 v2.2.2
+go: downloading github.com/Morganamilo/go-srcinfo v1.0.0
+go: downloading github.com/deckarep/golang-set/v2 v2.6.0
+go: downloading golang.org/x/sys v0.18.0
+go: downloading github.com/leonelquinteros/gotext v1.5.2
+go: downloading github.com/Morganamilo/go-pacmanconf v0.0.0-20210502114700-cff030e927a5
+go: downloading golang.org/x/term v0.18.0
+go: downloading github.com/adrg/strutil v0.3.1
+go: downloading github.com/hashicorp/go-multierror v1.1.1
+go: downloading github.com/itchyny/gojq v0.12.14
+go: downloading github.com/mitchellh/mapstructure v1.5.0
+go: downloading github.com/ohler55/ojg v1.21.4
+go: downloading golang.org/x/text v0.14.0
+go: downloading github.com/hashicorp/errwrap v1.1.0
+go: downloading github.com/itchyny/timefmt-go v0.1.5
+==> Entering fakeroot environment...
+==> Starting package()...
+msgfmt po/ca.po -o po/ca.mo
+msgfmt po/cs.po -o po/cs.mo
+msgfmt po/de.po -o po/de.mo
+msgfmt po/en.po -o po/en.mo
+msgfmt po/es.po -o po/es.mo
+msgfmt po/eu.po -o po/eu.mo
+msgfmt po/fr_FR.po -o po/fr_FR.mo
+msgfmt po/he.po -o po/he.mo
+msgfmt po/id.po -o po/id.mo
+msgfmt po/it_IT.po -o po/it_IT.mo
+msgfmt po/ja.po -o po/ja.mo
+msgfmt po/ko.po -o po/ko.mo
+msgfmt po/pl_PL.po -o po/pl_PL.mo
+msgfmt po/pt_BR.po -o po/pt_BR.mo
+msgfmt po/pt.po -o po/pt.mo
+msgfmt po/ru_RU.po -o po/ru_RU.mo
+msgfmt po/ru.po -o po/ru.mo
+msgfmt po/sv.po -o po/sv.mo
+msgfmt po/tr.po -o po/tr.mo
+msgfmt po/uk.po -o po/uk.mo
+msgfmt po/zh_CN.po -o po/zh_CN.mo
+msgfmt po/zh_TW.po -o po/zh_TW.mo
+install -Dm755 yay /home/el/.cache/yay/pkg/yay/usr/bin/yay
+install -Dm644 doc/yay.8 /home/el/.cache/yay/pkg/yay/usr/share/man/man8/yay.8
+install -Dm644 completions/bash /home/el/.cache/yay/pkg/yay/usr/share/bash-completion/completions/yay
+install -Dm644 completions/zsh /home/el/.cache/yay/pkg/yay/usr/share/zsh/site-functions/_yay
+install -Dm644 completions/fish /home/el/.cache/yay/pkg/yay/usr/share/fish/vendor_completions.d/yay.fish
+for lang in ca cs de en es eu fr_FR he id it_IT ja ko pl_PL pt_BR pt ru_RU ru sv tr uk zh_CN zh_TW; do \
+	install -Dm644 po/${lang}.mo /home/el/.cache/yay/pkg/yay/usr/share/locale/$lang/LC_MESSAGES/yay.mo; \
+done
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "yay"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Creating package "yay-debug"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: yay 12.4.2-1 (Thu Apr  3 10:34:57 2025)
+==> Installing package yay with pacman -U...
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Package (2)  New Version  Net Change
+
+yay          12.4.2-1       9.30 MiB
+yay-debug    12.4.2-1      13.98 MiB
+
+Total Installed Size:  23.29 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Processing package changes...
+installing yay...
+Optional dependencies for yay
+    sudo: privilege elevation [installed]
+    doas: privilege elevation
+installing yay-debug...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+2025-04-03 10:34:57,280 - INFO - Yay instalado exitosamente.
+2025-04-03 10:34:57,280 - INFO - Limpiando el directorio de construcción de yay...
+2025-04-03 10:34:57,459 - INFO - Limpieza completada.
+2025-04-03 10:34:57,463 - INFO - Git instalado exitosamente.
+2025-04-03 10:34:57,463 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 10:34:57,463 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m 💾 Clonación de dotfiles iniciada [0m├┚
+2025-04-03 10:34:57,463 - INFO -                 .studio
+2025-04-03 10:34:57,463 - INFO - Clonando el repositorio 'dotfiles' desde 'https://github.com/SENTUstudio/dotfiles.git' a '/home/el/dotfiles' en la rama 'develop'...
+Cloning into '/home/el/dotfiles'...
+2025-04-03 10:35:10,524 - INFO - Repositorio clonado exitosamente.
+2025-04-03 10:35:10,524 - INFO - 💾 Clonación de dotfiles terminada
+2025-04-03 10:35:10,524 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤   Ingeniería de Datos & Data Science  ├┒
+2025-04-03 10:35:10,524 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m⚙️  Iniciando instalación de paquetes[0m├┚
+2025-04-03 10:35:10,524 - INFO -                 .studio
+2025-04-03 10:35:10,525 - INFO - Ejecutando Ansible Playbook...
+/usr/lib/python3.13/getpass.py:90: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: ansible-playbook [core 2.18.4]
+  config file = None
+  configured module search path = ['/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.13/site-packages/ansible
+  ansible collection location = /home/el/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.13.2 (main, Feb  5 2025, 08:05:21) [GCC 14.2.1 20250128] (/usr/bin/python)
+  jinja version = 3.1.5
+  libyaml = True
+No config file found; using defaults
+host_list declined parsing /home/el/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+script declined parsing /home/el/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+auto declined parsing /home/el/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+yaml declined parsing /home/el/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+Parsed /home/el/dotfiles/ansible/inventory.ini inventory source with ini plugin
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+redirecting (type: modules) ansible.builtin.pacman to community.general.pacman
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: playbook.yml *********************************************************
+1 plays in /home/el/dotfiles/ansible/playbook.yml
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+PLAY [Configuración Inicial del Sistema y Dotfiles] ****************************
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [Gathering Facts] *********************************************************
+task path: /home/el/dotfiles/ansible/playbook.yml:2
+[WARNING]: Platform linux on host localhost is using the discovered Python
+interpreter at /usr/bin/python3.13, but future installation of another Python
+interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743676511.725864-11876-7548329436681 `" && echo ansible-tmp-1743676511.725864-11876-7548329436681="` echo /home/el/.ansible/tmp/ansible-tmp-1743676511.725864-11876-7548329436681 `" ) && sleep 0'
+<localhost> Attempting python interpreter discovery
+<localhost> EXEC /bin/sh -c 'echo PLATFORM; uname; echo FOUND; command -v '"'"'python3.13'"'"'; command -v '"'"'python3.12'"'"'; command -v '"'"'python3.11'"'"'; command -v '"'"'python3.10'"'"'; command -v '"'"'python3.9'"'"'; command -v '"'"'python3.8'"'"'; command -v '"'"'/usr/bin/python3'"'"'; command -v '"'"'python3'"'"'; echo ENDFOUND && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3.13 && sleep 0'
+<localhost> Python interpreter discovery fallback (unsupported Linux distribution: arch)
+Using module file /usr/lib/python3.13/site-packages/ansible/modules/setup.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-118733vzl42w4/tmpt_lq8hco TO /home/el/.ansible/tmp/ansible-tmp-1743676511.725864-11876-7548329436681/AnsiballZ_setup.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743676511.725864-11876-7548329436681/ /home/el/.ansible/tmp/ansible-tmp-1743676511.725864-11876-7548329436681/AnsiballZ_setup.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-nrlmzzrvpbmpbedlbcnvbpxqneeeuwck ; /usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743676511.725864-11876-7548329436681/AnsiballZ_setup.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743676511.725864-11876-7548329436681/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [test : Mostrar Familia] **************************************************
+task path: /home/el/dotfiles/ansible/roles/test/tasks/main.yml:1
+ok: [localhost] => {
+    "msg": "distribucion: Archlinux \nfamilia: Archlinux"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [test : Mostrar playbook_dir] *********************************************
+task path: /home/el/dotfiles/ansible/roles/test/tasks/main.yml:6
+ok: [localhost] => {
+    "msg": "/home/el/dotfiles/config"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [test : Mostrar playbook_dir] *********************************************
+task path: /home/el/dotfiles/ansible/roles/test/tasks/main.yml:10
+ok: [localhost] => {
+    "msg": "Ruta de fileglob para config: /home/el/dotfiles/config/*"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [test : Debug de archivos en config] **************************************
+task path: /home/el/dotfiles/ansible/roles/test/tasks/main.yml:14
+ok: [localhost] => {
+    "<class 'list'>": "VARIABLE IS NOT DEFINED!: "
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Include global variables] ********************
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:2
+ok: [localhost] => {
+    "ansible_facts": {
+        "install_scripts": {
+            "rye": "https://rye.astral.sh/get",
+            "uv": "https://astral.sh/uv/install.sh"
+        }
+    },
+    "ansible_included_var_files": [
+        "/home/el/dotfiles/ansible/vars/global.yaml"
+    ],
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Include post-install variables] **************
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:7
+ok: [localhost] => {
+    "ansible_facts": {
+        "install_post_install_commands": [
+            {
+                "command": "go install oss.terrastruct.com/d2@latest",
+                "description": "Instalando d2 diagram"
+            },
+            {
+                "command": "curl -fsS https://dl.brave.com/install.sh | sh",
+                "description": "Instalando Brave"
+            },
+            {
+                "command": "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm",
+                "description": "Configurando tmux plugin manager"
+            },
+            {
+                "command": "gem install tmuxinator",
+                "description": "Instalando tmuxinator"
+            },
+            {
+                "command": "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo",
+                "description": "Actualizando repo Flatpak"
+            },
+            {
+                "command": "flatpak install flathub md.obsidian.Obsidian -y",
+                "description": "Instalando Obsidian"
+            },
+            {
+                "command": "sudo usermod -aG docker $USER",
+                "description": "Añadiendo el usuario al grupo docker (puede requerir reiniciar sesión)"
+            },
+            {
+                "command": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh",
+                "description": "Añadiendo Atuin, Sync, search and backup shell history"
+            },
+            {
+                "command": "cargo install du-dust",
+                "description": "Herramienta para ver el uso del disco por el terminal"
+            }
+        ]
+    },
+    "ansible_included_var_files": [
+        "/home/el/dotfiles/ansible/vars/post_install.yaml"
+    ],
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Incluir variables específicas de la distribución] ***
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:12
+ok: [localhost] => {
+    "ansible_facts": {
+        "package_managers": {
+            "dependencies": {
+                "core": [
+                    "git",
+                    "curl",
+                    "wget",
+                    "gcc",
+                    "make",
+                    "unzip",
+                    "zsh",
+                    "go",
+                    "cargo",
+                    "python",
+                    "ruby",
+                    "unrar",
+                    "p7zip",
+                    "xdg-user-dirs",
+                    "lsd",
+                    "jdk-openjdk",
+                    "flatpak",
+                    "linux-headers",
+                    "automake",
+                    "perl",
+                    "elfutils"
+                ],
+                "extended": [
+                    "lazygit",
+                    "ripgrep",
+                    "fd",
+                    "neovim",
+                    "fastfetch",
+                    "util-linux",
+                    "cron",
+                    "zoxide",
+                    "python-neovim",
+                    "kitty",
+                    "lua",
+                    "luarocks",
+                    "docker",
+                    "containerd",
+                    "docker-compose",
+                    "bat",
+                    "fzf",
+                    "httpie",
+                    "tmux",
+                    "htop",
+                    "proselint",
+                    "lm_sensors",
+                    "discord",
+                    "alacritty",
+                    "kdeconnect",
+                    "kdenlive",
+                    "openshot",
+                    "vlc",
+                    "mpv",
+                    "soundconverter",
+                    "audacity",
+                    "muse",
+                    "lmms",
+                    "amarok",
+                    "flowblade",
+                    "xine-lib",
+                    "libdvdread",
+                    "libdvdnav",
+                    "lsdvd",
+                    "libdvbpsi",
+                    "ffmpeg",
+                    "libmatroska",
+                    "xvidcore",
+                    "gimp",
+                    "inkscape",
+                    "libreoffice-fresh",
+                    "libreoffice-fresh-es",
+                    "gstreamer",
+                    "gst-plugins-base",
+                    "gst-plugins-good",
+                    "gst-plugins-bad",
+                    "virt-manager",
+                    "qemu",
+                    "zeal"
+                ]
+            },
+            "install": [
+                "sudo",
+                "pacman",
+                "-Sy",
+                "--needed",
+                "--noconfirm"
+            ],
+            "manager": "pacman",
+            "repo": {
+                "docker": [
+                    "sudo",
+                    "dnf",
+                    "config-manager",
+                    "addrepo",
+                    "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
+                ],
+                "google-chrome": [
+                    "sudo",
+                    "dnf",
+                    "install",
+                    "-y",
+                    "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+                ],
+                "lazygit": [
+                    "sudo",
+                    "dnf",
+                    "copr",
+                    "enable",
+                    "atim/lazygit",
+                    "-y"
+                ]
+            },
+            "update": [
+                "sudo",
+                "pacman",
+                "-Suy",
+                "--noconfirm"
+            ]
+        }
+    },
+    "ansible_included_var_files": [
+        "/home/el/dotfiles/ansible/vars/Archlinux.yaml"
+    ],
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Depurar contenido de package_managers] *******
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:17
+ok: [localhost] => {
+    "package_managers": {
+        "dependencies": {
+            "core": [
+                "git",
+                "curl",
+                "wget",
+                "gcc",
+                "make",
+                "unzip",
+                "zsh",
+                "go",
+                "cargo",
+                "python",
+                "ruby",
+                "unrar",
+                "p7zip",
+                "xdg-user-dirs",
+                "lsd",
+                "jdk-openjdk",
+                "flatpak",
+                "linux-headers",
+                "automake",
+                "perl",
+                "elfutils"
+            ],
+            "extended": [
+                "lazygit",
+                "ripgrep",
+                "fd",
+                "neovim",
+                "fastfetch",
+                "util-linux",
+                "cron",
+                "zoxide",
+                "python-neovim",
+                "kitty",
+                "lua",
+                "luarocks",
+                "docker",
+                "containerd",
+                "docker-compose",
+                "bat",
+                "fzf",
+                "httpie",
+                "tmux",
+                "htop",
+                "proselint",
+                "lm_sensors",
+                "discord",
+                "alacritty",
+                "kdeconnect",
+                "kdenlive",
+                "openshot",
+                "vlc",
+                "mpv",
+                "soundconverter",
+                "audacity",
+                "muse",
+                "lmms",
+                "amarok",
+                "flowblade",
+                "xine-lib",
+                "libdvdread",
+                "libdvdnav",
+                "lsdvd",
+                "libdvbpsi",
+                "ffmpeg",
+                "libmatroska",
+                "xvidcore",
+                "gimp",
+                "inkscape",
+                "libreoffice-fresh",
+                "libreoffice-fresh-es",
+                "gstreamer",
+                "gst-plugins-base",
+                "gst-plugins-good",
+                "gst-plugins-bad",
+                "virt-manager",
+                "qemu",
+                "zeal"
+            ]
+        },
+        "install": [
+            "sudo",
+            "pacman",
+            "-Sy",
+            "--needed",
+            "--noconfirm"
+        ],
+        "manager": "pacman",
+        "repo": {
+            "docker": [
+                "sudo",
+                "dnf",
+                "config-manager",
+                "addrepo",
+                "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
+            ],
+            "google-chrome": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+            ],
+            "lazygit": [
+                "sudo",
+                "dnf",
+                "copr",
+                "enable",
+                "atim/lazygit",
+                "-y"
+            ]
+        },
+        "update": [
+            "sudo",
+            "pacman",
+            "-Suy",
+            "--noconfirm"
+        ]
+    }
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Definir core_dependencies globalmente] *******
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:21
+ok: [localhost] => {
+    "ansible_facts": {
+        "core_dependencies": [
+            "git",
+            "curl",
+            "wget",
+            "gcc",
+            "make",
+            "unzip",
+            "zsh",
+            "go",
+            "cargo",
+            "python",
+            "ruby",
+            "unrar",
+            "p7zip",
+            "xdg-user-dirs",
+            "lsd",
+            "jdk-openjdk",
+            "flatpak",
+            "linux-headers",
+            "automake",
+            "perl",
+            "elfutils"
+        ]
+    },
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Depurar contenido de core_dependencies] ******
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:25
+ok: [localhost] => {
+    "core_dependencies": [
+        "git",
+        "curl",
+        "wget",
+        "gcc",
+        "make",
+        "unzip",
+        "zsh",
+        "go",
+        "cargo",
+        "python",
+        "ruby",
+        "unrar",
+        "p7zip",
+        "xdg-user-dirs",
+        "lsd",
+        "jdk-openjdk",
+        "flatpak",
+        "linux-headers",
+        "automake",
+        "perl",
+        "elfutils"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Definir core_dependencies globalmente] *******
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:29
+ok: [localhost] => {
+    "ansible_facts": {
+        "extended_dependencies": [
+            "lazygit",
+            "ripgrep",
+            "fd",
+            "neovim",
+            "fastfetch",
+            "util-linux",
+            "cron",
+            "zoxide",
+            "python-neovim",
+            "kitty",
+            "lua",
+            "luarocks",
+            "docker",
+            "containerd",
+            "docker-compose",
+            "bat",
+            "fzf",
+            "httpie",
+            "tmux",
+            "htop",
+            "proselint",
+            "lm_sensors",
+            "discord",
+            "alacritty",
+            "kdeconnect",
+            "kdenlive",
+            "openshot",
+            "vlc",
+            "mpv",
+            "soundconverter",
+            "audacity",
+            "muse",
+            "lmms",
+            "amarok",
+            "flowblade",
+            "xine-lib",
+            "libdvdread",
+            "libdvdnav",
+            "lsdvd",
+            "libdvbpsi",
+            "ffmpeg",
+            "libmatroska",
+            "xvidcore",
+            "gimp",
+            "inkscape",
+            "libreoffice-fresh",
+            "libreoffice-fresh-es",
+            "gstreamer",
+            "gst-plugins-base",
+            "gst-plugins-good",
+            "gst-plugins-bad",
+            "virt-manager",
+            "qemu",
+            "zeal"
+        ]
+    },
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Depurar contenido de core_dependencies] ******
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:33
+ok: [localhost] => {
+    "extended_dependencies": [
+        "lazygit",
+        "ripgrep",
+        "fd",
+        "neovim",
+        "fastfetch",
+        "util-linux",
+        "cron",
+        "zoxide",
+        "python-neovim",
+        "kitty",
+        "lua",
+        "luarocks",
+        "docker",
+        "containerd",
+        "docker-compose",
+        "bat",
+        "fzf",
+        "httpie",
+        "tmux",
+        "htop",
+        "proselint",
+        "lm_sensors",
+        "discord",
+        "alacritty",
+        "kdeconnect",
+        "kdenlive",
+        "openshot",
+        "vlc",
+        "mpv",
+        "soundconverter",
+        "audacity",
+        "muse",
+        "lmms",
+        "amarok",
+        "flowblade",
+        "xine-lib",
+        "libdvdread",
+        "libdvdnav",
+        "lsdvd",
+        "libdvbpsi",
+        "ffmpeg",
+        "libmatroska",
+        "xvidcore",
+        "gimp",
+        "inkscape",
+        "libreoffice-fresh",
+        "libreoffice-fresh-es",
+        "gstreamer",
+        "gst-plugins-base",
+        "gst-plugins-good",
+        "gst-plugins-bad",
+        "virt-manager",
+        "qemu",
+        "zeal"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Obtener el directorio home del usuario] ******
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:37
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743676513.9681494-11933-41169889132890 `" && echo ansible-tmp-1743676513.9681494-11933-41169889132890="` echo /home/el/.ansible/tmp/ansible-tmp-1743676513.9681494-11933-41169889132890 `" ) && sleep 0'
+Using module file /usr/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-118733vzl42w4/tmp_a7ysoh1 TO /home/el/.ansible/tmp/ansible-tmp-1743676513.9681494-11933-41169889132890/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743676513.9681494-11933-41169889132890/ /home/el/.ansible/tmp/ansible-tmp-1743676513.9681494-11933-41169889132890/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743676513.9681494-11933-41169889132890/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743676513.9681494-11933-41169889132890/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "cmd": [
+        "echo",
+        "$HOME"
+    ],
+    "delta": "0:00:00.017320",
+    "end": "2025-04-03 10:35:14.543817",
+    "invocation": {
+        "module_args": {
+            "_raw_params": "echo $HOME",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "start": "2025-04-03 10:35:14.526497",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "/home/el",
+    "stdout_lines": [
+        "/home/el"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Actualiza el sistema (Debian/Ubuntu)] ********
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:45
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Debian\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+
+TASK [base_system_configuration : Actualiza el sistema (RedHat based, excluyendo Fedora)] ***
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:51
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"RedHat\" and ansible_distribution != \"Fedora\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Actualiza el sistema (Fedora)] ***************
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:57
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"Fedora\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Actualiza el sistema (Arch Linux)] ***********
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:63
+redirecting (type: modules) ansible.builtin.pacman to community.general.pacman
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743676514.746444-11952-231425472687205 `" && echo ansible-tmp-1743676514.746444-11952-231425472687205="` echo /home/el/.ansible/tmp/ansible-tmp-1743676514.746444-11952-231425472687205 `" ) && sleep 0'
+redirecting (type: modules) ansible.builtin.pacman to community.general.pacman
+Using module file /usr/lib/python3.13/site-packages/ansible_collections/community/general/plugins/modules/pacman.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-118733vzl42w4/tmp6y3jnj__ TO /home/el/.ansible/tmp/ansible-tmp-1743676514.746444-11952-231425472687205/AnsiballZ_pacman.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743676514.746444-11952-231425472687205/ /home/el/.ansible/tmp/ansible-tmp-1743676514.746444-11952-231425472687205/AnsiballZ_pacman.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-shitcrlvprriimworknrdusglhtruvit ; /usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743676514.746444-11952-231425472687205/AnsiballZ_pacman.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743676514.746444-11952-231425472687205/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "cache_updated": false,
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "executable": "pacman",
+            "extra_args": [],
+            "force": false,
+            "name": null,
+            "reason": null,
+            "reason_for": "new",
+            "remove_nosave": false,
+            "state": "present",
+            "update_cache": true,
+            "update_cache_extra_args": [],
+            "upgrade": true,
+            "upgrade_extra_args": []
+        }
+    },
+    "msg": "Updated package db\nNothing to upgrade",
+    "stdout": ":: Synchronizing package databases...\n core downloading...\n extra downloading...\n",
+    "stdout_lines": [
+        ":: Synchronizing package databases...",
+        " core downloading...",
+        " extra downloading..."
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Actualiza el sistema (openSUSE)] *************
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:69
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"openSUSE Leap\" or ansible_distribution == \"openSUSE Tumbleweed\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [base_system_configuration : Actualiza el sistema (macOS con Homebrew)] ***
+task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:75
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Darwin\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [add_repositories : Establecer la versión de Fedora como un hecho (fact)] ***
+task path: /home/el/dotfiles/ansible/roles/add_repositories/tasks/main.yml:2
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"Fedora\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [add_repositories : Añadir repositorio {{ repo_item.key }} ({{ ansible_distribution }})] ***
+task path: /home/el/dotfiles/ansible/roles/add_repositories/tasks/main.yml:7
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"Fedora\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [install_core_dependencies : Instalar dependencias core (Fedora)] *********
+task path: /home/el/dotfiles/ansible/roles/install_core_dependencies/tasks/main.yml:4
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"Fedora\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [install_core_dependencies : Instalar dependencias core (Debian/Ubuntu)] ***
+task path: /home/el/dotfiles/ansible/roles/install_core_dependencies/tasks/main.yml:12
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Debian\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+
+TASK [install_core_dependencies : Instalar dependencias core (Red Hat/CentOS)] ***
+task path: /home/el/dotfiles/ansible/roles/install_core_dependencies/tasks/main.yml:21
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"RedHat\" and ansible_distribution != \"Fedora\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [install_core_dependencies : Install package from AUR using a Pacman compatible AUR helper] ***
+task path: /home/el/dotfiles/ansible/roles/install_core_dependencies/tasks/main.yml:29
 
 got 3 SIGTERM/SIGINTs, forcefully exiting
