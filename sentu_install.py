@@ -165,8 +165,8 @@ def package_core():
                     )
                     run_command(update_cmd)
                     run_command(install_commands[pm])
-                    if pm == "pacman":
-                        install_paru_python()
+                    # if pm == "pacman":
+                    #     install_paru_python()
 
                     if check_command("git"):
                         logging.info("Git instalado exitosamente.")
