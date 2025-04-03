@@ -1,18 +1,18 @@
 package_managers:
-  manager: zypper
+  manager: pacman
   update:
     - sudo
-    - zypper
-    - update
-    - "-y"
+    - pacman
+    - "-Suy"
+    - "--noconfirm"
   install:
     - sudo
-    - zypper
-    - install
-    - "-y"
-    - "--allowerasing"
+    - pacman
+    - "-Sy"
+    - "--needed"
+    - "--noconfirm"
   repo:
-    rpmfusion-nonfree:
+    paru:
       - sudo
       - dnf
       - install

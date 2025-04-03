@@ -2,6 +2,7 @@
 import platform
 import subprocess
 import sys
+import os
 from pathlib import Path
 import logging
 
@@ -80,6 +81,61 @@ def run_command(command_list: list[str], cwd: Path | None = None) -> None:
         sys.exit(1)
 
 
+def install_paru_python():
+    """Instala paru en Arch Linux utilizando Python.
+
+    Esta función automatiza el proceso de instalación de paru, un ayudante
+    para el AUR (Arch User Repository), realizando los siguientes pasos:
+    1. Asegura que el grupo de paquetes 'base-devel' esté instalado.
+    2. Clona el repositorio de paru desde el AUR en un directorio temporal.
+    3. Navega al directorio clonado.
+    4. Construye e instala paru utilizando 'makepkg -si'.
+    5. (Opcional) Limpia el directorio temporal después de la instalación.
+
+    Requiere privilegios de superusuario (sudo) para instalar paquetes
+    y ejecutar makepkg. También asume que 'git' está instalado en el sistema.
+    """
+    try:
+        logging.info("Asegurando que base-devel esté instalado...")
+        subprocess.run(
+            ["sudo", "pacman", "-S", "--needed", "base-devel", "--noconfirm"],
+            check=True,
+        )
+        logging.info("base-devel instalado o ya presente.")
+
+        paru_dir = Path.home() / ".cache" / "paru"
+
+        if not paru_dir.exists():
+            logging.info("Clonando el repositorio de paru desde AUR...")
+            subprocess.run(
+                ["git", "clone", "https://aur.archlinux.org/paru.git", str(paru_dir)],
+                check=True,
+            )
+            logging.info("Repositorio de paru clonado.")
+        else:
+            logging.info("El repositorio de paru ya existe.")
+
+        logging.info("Navegando al directorio de paru...")
+        os.chdir(str(paru_dir))
+
+        logging.info("Construyendo e instalando paru...")
+        subprocess.run(["sudo", "makepkg", "-si", "--noconfirm"], check=True)
+        logging.info("Paru instalado exitosamente.")
+
+        # Opcional: Limpiar el directorio clonado
+        # logging.info("Limpiando el directorio de construcción de paru...")
+        # os.chdir(str(Path.home()))
+        # shutil.rmtree(paru_dir)
+        # logging.info("Limpieza completada.")
+
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Error durante la instalación: {e}")
+    except FileNotFoundError as e:
+        logging.error(f"Comando no encontrado: {e}")
+    except Exception as e:
+        logging.error(f"Ocurrió un error inesperado: {e}")
+
+
 def package_core():
     """Verifica e instala Git si no está presente."""
     os_name = platform.system()
@@ -103,10 +159,13 @@ def package_core():
             for pm, update_cmd in package_managers.items():
                 if check_command(pm):
                     logging.info(
-                        f"Gestor de paquetes '{pm}' detectado. Intentando instalar Git..."
+                        f"Gestor de paquetes '{pm}' detectado. Intentando instalar Paquetes..."
                     )
                     run_command(update_cmd)
                     run_command(install_commands[pm])
+                    if pm == "pacman":
+                        install_paru_python()
+
                     if check_command("git"):
                         logging.info("Git instalado exitosamente.")
                         return True

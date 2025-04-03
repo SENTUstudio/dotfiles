@@ -35,7 +35,8 @@ test-opensuse: logo
 		echo '${USERNAME}:${PASSWORD}' | chpasswd; \
 		echo '%${USERNAME} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers; \
 		su - ${USERNAME} -c 'curl -LsSf \"${SCRIPT_URL}\" | python3'; \
-	"
+	" > logs/ansible.log
+
 ## Ejecuta la prueba del script en un contenedor Docker de Fedora
 test-fedora: logo
 	@echo "Ejecutando prueba en contenedor Docker de Fedora..."
@@ -47,6 +48,21 @@ test-fedora: logo
 		echo '${USERNAME}:${PASSWORD}' | chpasswd; \
 		echo '%${USERNAME} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers; \
 		sudo -u el bash -c 'curl -LsSf \"${SCRIPT_URL}\" | python3'; \
-	"
+	" > logs/ansible.log
+
+## Ejecuta la prueba del script en un contenedor Docker de Archlinux
+test-archlinux: logo
+	@echo "Ejecutando prueba en contenedor Docker de Archlinux..."
+	# Asegurarse de que el directorio logs existe
+	mkdir -p logs
+	docker run --rm archlinux sh -c " \
+		set -e; \
+		pacman -Suy --noconfirm; \
+		pacman -Sy --needed --noconfirm which python-pip python3 sudo ansible; \
+		useradd -m ${USERNAME}; \
+		echo '${USERNAME}:${PASSWORD}' | chpasswd; \
+		echo '%${USERNAME} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers; \
+		sudo -u ${USERNAME} bash -c 'curl -LsSf \"${SCRIPT_URL}\" | python3'; \
+	" &> logs/ansible.log
 
 	@echo "Prueba finalizada."
