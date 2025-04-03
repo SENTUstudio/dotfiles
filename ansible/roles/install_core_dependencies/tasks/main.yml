@@ -26,6 +26,16 @@
         core_dependencies: "{{ package_managers.redhat.dependencies.core | default([]) }}"
       when: ansible_os_family == "RedHat" and ansible_distribution != "Fedora"
 
+    - name: Install package from AUR using a Pacman compatible AUR helper
+      community.general.pacman:
+        name: "{{ core_dependencies }}"
+        state: present
+        executable: yay
+        extra_args: --builddir /var/cache/yay
+      vars:
+        core_dependencies: "{{ package_managers.dependencies.core | default([]) }}"
+      when: ansible_os_family == "Archlinux"
+
     - name: Instalar dependencias core (openSUSE)
       community.general.zypper:
         name: "{{ core_dependencies }}"

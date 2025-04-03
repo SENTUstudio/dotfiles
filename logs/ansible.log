@@ -209,12 +209,12 @@ Optional dependencies for ansible
 /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
 All rules containing unresolvable specifiers will be skipped.
 (3/3) Arming ConditionNeedsUpdate...
-2025-04-03 04:59:46,425 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 04:59:46,425 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚
-2025-04-03 04:59:46,425 - INFO -                 .studio
-2025-04-03 04:59:46,425 - INFO - Sistema operativo detectado: Linux
-2025-04-03 04:59:46,425 - INFO - Instalando dependencias...
-2025-04-03 04:59:46,433 - INFO - Gestor de paquetes 'pacman' detectado. Intentando instalar Paquetes...
+2025-04-03 05:07:21,902 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 05:07:21,902 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚
+2025-04-03 05:07:21,902 - INFO -                 .studio
+2025-04-03 05:07:21,902 - INFO - Sistema operativo detectado: Linux
+2025-04-03 05:07:21,902 - INFO - Instalando dependencias...
+2025-04-03 05:07:21,911 - INFO - Gestor de paquetes 'pacman' detectado. Intentando instalar Paquetes...
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -282,7 +282,7 @@ Failed to check for chroot() environment: Permission denied
   Skipped: Current root is not booted.
 (3/4) Arming ConditionNeedsUpdate...
 (4/4) Checking for old perl modules...
-2025-04-03 05:00:33,653 - INFO - Asegurando que base-devel esté instalado...
+2025-04-03 05:08:07,091 - INFO - Asegurando que base-devel esté instalado...
 resolving dependencies...
 looking for conflicting packages...
 
@@ -383,8 +383,8 @@ Optional dependencies for texinfo
 installing base-devel...
 :: Running post-transaction hooks...
 (1/1) Arming ConditionNeedsUpdate...
-2025-04-03 05:00:54,435 - INFO - base-devel instalado o ya presente.
-2025-04-03 05:00:54,436 - INFO - Clonando el repositorio de paru desde AUR...
+2025-04-03 05:08:24,843 - INFO - base-devel instalado o ya presente.
+2025-04-03 05:08:24,843 - INFO - Clonando el repositorio de paru desde AUR...
 Cloning into '/home/el/.cache/paru'...
 hint: Using 'master' as the name for the initial branch. This default branch name
 hint: is subject to change. To configure the initial branch name to use in all
@@ -396,26 +396,598 @@ hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
 hint: 'development'. The just-created branch can be renamed via this command:
 hint:
 hint: 	git branch -m <name>
-2025-04-03 05:00:55,929 - INFO - Repositorio de paru clonado.
-2025-04-03 05:00:55,929 - INFO - Navegando al directorio de paru...
-2025-04-03 05:00:55,929 - INFO - Construyendo e instalando paru...
-==> ERROR: Running makepkg as root is not allowed as it can cause permanent,
-catastrophic damage to your system.
-2025-04-03 05:00:56,083 - ERROR - Error durante la instalación: Command '['sudo', 'makepkg', '-si', '--noconfirm']' returned non-zero exit status 10.
-2025-04-03 05:00:56,085 - INFO - Git instalado exitosamente.
-2025-04-03 05:00:56,085 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 05:00:56,085 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m 💾 Clonación de dotfiles iniciada [0m├┚
-2025-04-03 05:00:56,085 - INFO -                 .studio
-2025-04-03 05:00:56,085 - INFO - Clonando el repositorio 'dotfiles' desde 'https://github.com/SENTUstudio/dotfiles.git' a '/home/el/dotfiles' en la rama 'develop'...
+2025-04-03 05:08:26,260 - INFO - Repositorio de paru clonado.
+2025-04-03 05:08:26,260 - INFO - Navegando al directorio de paru...
+2025-04-03 05:08:26,260 - INFO - Construyendo e instalando paru...
+==> Making package: paru 2.0.4-1 (Thu Apr  3 05:08:33 2025)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Installing missing dependencies...
+:: There are 2 providers available for cargo:
+:: Repository extra
+   1) rust  2) rustup
+
+Enter a number (default=1): 
+resolving dependencies...
+looking for conflicting packages...
+
+Package (3)      New Version     Net Change  Download Size
+
+core/libedit     20250104_3.1-1    0.26 MiB       0.11 MiB
+extra/llvm-libs  19.1.7-1        134.51 MiB      35.07 MiB
+extra/rust       1:1.85.1-1      271.74 MiB      65.08 MiB
+
+Total Download Size:   100.26 MiB
+Total Installed Size:  406.52 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ rust-1:1.85.1-1-x86_64 downloading...
+ llvm-libs-19.1.7-1-x86_64 downloading...
+ libedit-20250104_3.1-1-x86_64 downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Processing package changes...
+installing libedit...
+installing llvm-libs...
+installing rust...
+Optional dependencies for rust
+    gdb: rust-gdb script
+    lldb: rust-lldb script
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+==> Retrieving sources...
+  -> Downloading paru-2.0.4.tar.gz...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1406k    0 1406k    0     0   894k      0 --:--:--  0:00:01 --:--:-- 1388k100 3381k    0 3381k    0     0  1331k      0 --:--:--  0:00:02 --:--:-- 1707k100 5392k    0 5392k    0     0  1530k      0 --:--:--  0:00:03 --:--:-- 1819k100 7590k    0 7590k    0     0  1679k      0 --:--:--  0:00:04 --:--:-- 1915k100 8064k    0 8064k    0     0  1692k      0 --:--:--  0:00:04 --:--:-- 1918k
+==> Validating source files with sha256sums...
+    paru-2.0.4.tar.gz ... Passed
+==> Extracting sources...
+  -> Extracting paru-2.0.4.tar.gz with bsdtar
+==> Starting prepare()...
+    Updating git repository `https://github.com/archlinux/alpm.rs`
+    Updating git repository `https://github.com/Morganamilo/aur-depends`
+    Updating crates.io index
+warning: Patch `alpm v3.0.4 (https://github.com/archlinux/alpm.rs?rev=306342#306342ef)` was not used in the crate graph.
+Patch `aur-depends v3.0.0 (https://github.com/Morganamilo/aur-depends?rev=30c2c1#30c2c150)` was not used in the crate graph.
+Check that the patched package version and available features are compatible
+with the dependency requirements. If the patch has a different version from
+what is locked in the Cargo.lock file, run `cargo update` to use the new
+version. This may also occur with an optional dependency that is not enabled.
+ Downloading crates ...
+  Downloaded percent-encoding v2.3.1
+  Downloaded tinyvec_macros v0.1.1
+  Downloaded form_urlencoded v1.2.1
+  Downloaded tinyvec v1.8.0
+  Downloaded clang-sys v1.8.1
+  Downloaded unicode-bidi v0.3.15
+  Downloaded lazycell v1.3.0
+  Downloaded tr v0.1.10
+  Downloaded unicode-normalization v0.1.24
+  Downloaded cexpr v0.6.0
+  Downloaded glob v0.3.1
+  Downloaded locale_config v0.3.0
+  Downloaded peeking_take_while v0.1.2
+  Downloaded serde_derive v1.0.210
+  Downloaded unicode-ident v1.0.13
+  Downloaded lock_api v0.4.12
+  Downloaded libloading v0.8.5
+  Downloaded anyhow v1.0.89
+  Downloaded addr2line v0.24.1
+  Downloaded phf_codegen v0.11.2
+  Downloaded autocfg v1.3.0
+  Downloaded ego-tree v0.6.3
+  Downloaded string_cache_codegen v0.5.2
+  Downloaded phf_macros v0.11.2
+  Downloaded fxhash v0.2.1
+  Downloaded phf v0.10.1
+  Downloaded log v0.4.22
+  Downloaded futf v0.1.5
+  Downloaded getrandom v0.2.15
+  Downloaded phf_generator v0.10.0
+  Downloaded phf_codegen v0.10.0
+  Downloaded precomputed-hash v0.1.1
+  Downloaded stable_deref_trait v1.2.0
+  Downloaded utf-8 v0.7.6
+  Downloaded string_cache v0.8.7
+  Downloaded phf_shared v0.10.0
+  Downloaded cfg-if v1.0.0
+  Downloaded equivalent v1.0.1
+  Downloaded serde_spanned v0.6.7
+  Downloaded toml v0.8.19
+  Downloaded lazy_static v1.5.0
+  Downloaded rss v2.0.9
+  Downloaded futures-sink v0.3.30
+  Downloaded foreign-types-shared v0.1.1
+  Downloaded foreign-types v0.3.2
+  Downloaded openssl-macros v0.1.1
+  Downloaded openssl-probe v0.1.5
+  Downloaded tokio-native-tls v0.3.1
+  Downloaded pin-utils v0.1.0
+  Downloaded thiserror-impl v1.0.63
+  Downloaded thiserror v1.0.63
+  Downloaded futures-core v0.3.30
+  Downloaded adler2 v2.0.0
+  Downloaded try-lock v0.2.5
+  Downloaded want v0.3.1
+  Downloaded hyper-tls v0.5.0
+  Downloaded tower-service v0.3.3
+  Downloaded version_check v0.9.5
+  Downloaded ahash v0.8.11
+  Downloaded scopeguard v1.2.0
+  Downloaded rustc-demangle v0.1.24
+  Downloaded parking_lot v0.12.3
+  Downloaded quote v1.0.37
+  Downloaded is_terminal_polyfill v1.70.1
+  Downloaded utf8parse v0.2.2
+  Downloaded humantime v2.1.0
+  Downloaded number_prefix v0.4.0
+  Downloaded fnv v1.0.7
+  Downloaded mime v0.3.17
+  Downloaded serde_urlencoded v0.7.1
+  Downloaded sync_wrapper v0.1.2
+  Downloaded slab v0.4.9
+  Downloaded phf v0.11.2
+  Downloaded rand_chacha v0.3.1
+  Downloaded rand_core v0.6.4
+  Downloaded phf_shared v0.11.2
+  Downloaded mac v0.1.1
+  Downloaded tendril v0.4.3
+  Downloaded errno v0.3.9
+  Downloaded socket2 v0.5.7
+  Downloaded crossbeam v0.8.4
+  Downloaded proc-macro2 v1.0.86
+  Downloaded num-traits v0.2.19
+  Downloaded temp-dir v0.1.13
+  Downloaded iana-time-zone v0.1.61
+  Downloaded aur-depends v4.0.0
+  Downloaded parking_lot_core v0.9.10
+  Downloaded cssparser-macros v0.6.1
+  Downloaded zerocopy-derive v0.7.35
+  Downloaded ppv-lite86 v0.2.20
+  Downloaded siphasher v0.3.11
+  Downloaded option-ext v0.2.0
+  Downloaded scraper v0.19.1
+  Downloaded smart-default v0.7.1
+  Downloaded terminal_size v0.3.0
+  Downloaded pin-project-lite v0.2.14
+  Downloaded hashbrown v0.14.5
+  Downloaded memchr v2.7.4
+  Downloaded getopts v0.2.21
+  Downloaded ansi_term v0.12.1
+  Downloaded env_logger v0.11.5
+  Downloaded regex v1.10.6
+  Downloaded crossbeam-queue v0.3.11
+  Downloaded either v1.13.0
+  Downloaded crossbeam-epoch v0.9.18
+  Downloaded rustc-hash v1.1.0
+  Downloaded zerocopy v0.7.35
+  Downloaded winnow v0.6.18
+  Downloaded crossbeam-deque v0.8.5
+  Downloaded httparse v1.9.4
+  Downloaded httpdate v1.0.3
+  Downloaded tracing-core v0.1.32
+  Downloaded ipnet v2.10.0
+  Downloaded rustls-pemfile v1.0.4
+  Downloaded pkg-config v0.3.30
+  Downloaded native-tls v0.2.12
+  Downloaded anstyle-parse v0.2.5
+  Downloaded aho-corasick v1.1.3
+  Downloaded regex-syntax v0.8.4
+  Downloaded indexmap v2.5.0
+  Downloaded cc v1.1.21
+  Downloaded backtrace v0.3.74
+  Downloaded toml_edit v0.22.21
+  Downloaded h2 v0.3.26
+  Downloaded vcpkg v0.2.15
+  Downloaded base64 v0.21.7
+  Downloaded reqwest v0.11.27
+  Downloaded quick-xml v0.36.1
+  Downloaded syn v2.0.77
+  Downloaded aur-fetch v0.11.2
+  Downloaded alpm-sys v4.0.0
+  Downloaded alpm v4.0.1
+  Downloaded crossbeam-utils v0.8.20
+  Downloaded bindgen v0.66.1
+  Downloaded alpm-utils v4.0.1
+  Downloaded chrono v0.4.38
+  Downloaded flate2 v1.0.33
+  Downloaded portable-atomic v1.7.0
+  Downloaded tracing v0.1.40
+  Downloaded bstr v1.10.0
+  Downloaded crossbeam-channel v0.5.13
+  Downloaded object v0.36.4
+  Downloaded hyper v0.14.30
+  Downloaded gimli v0.31.0
+  Downloaded tokio-util v0.7.12
+  Downloaded async-compression v0.4.12
+  Downloaded http v0.2.12
+  Downloaded openssl-sys v0.9.103
+  Downloaded futures-util v0.3.30
+  Downloaded nix v0.28.0
+  Downloaded openssl v0.10.66
+  Downloaded rustix v0.38.37
+  Downloaded libc v0.2.158
+  Downloaded html5ever v0.27.0
+  Downloaded serde_json v1.0.128
+  Downloaded serde v1.0.210
+  Downloaded regex-automata v0.4.7
+  Downloaded anstyle-query v1.1.1
+  Downloaded colorchoice v1.0.2
+  Downloaded tokio v1.40.0
+  Downloaded anstream v0.6.15
+  Downloaded anstyle v1.0.8
+  Downloaded env_filter v0.1.2
+  Downloaded futures-executor v0.3.30
+  Downloaded futures v0.3.30
+  Downloaded globset v0.4.15
+  Downloaded htmlescape v0.3.1
+  Downloaded console v0.15.8
+  Downloaded indicatif v0.17.8
+  Downloaded cfg_aliases v0.1.1
+  Downloaded cini v1.0.0
+  Downloaded encoding_rs v0.8.34
+  Downloaded pacmanconf v3.0.0
+  Downloaded async-trait v0.1.82
+  Downloaded raur v7.0.0
+  Downloaded crc32fast v1.4.2
+  Downloaded linux-raw-sys v0.4.14
+  Downloaded miniz_oxide v0.8.0
+  Downloaded http-body v0.4.6
+  Downloaded futures-macro v0.3.30
+  Downloaded futures-channel v0.3.30
+  Downloaded futures-io v0.3.30
+  Downloaded futures-task v0.3.30
+  Downloaded tokio-socks v0.5.2
+  Downloaded minimal-lexical v0.2.1
+  Downloaded nom v7.1.3
+  Downloaded rand v0.8.5
+  Downloaded mio v1.0.2
+  Downloaded gettext-rs v0.7.1
+  Downloaded unicode-width v0.1.14
+  Downloaded markup5ever v0.12.1
+  Downloaded dtoa v1.0.9
+  Downloaded dtoa-short v0.3.5
+  Downloaded phf_generator v0.11.2
+  Downloaded cssparser v0.31.2
+  Downloaded derive_more v0.99.18
+  Downloaded byteorder v1.5.0
+  Downloaded servo_arc v0.3.0
+  Downloaded selectors v0.25.0
+  Downloaded new_debug_unreachable v1.0.6
+  Downloaded itoa v1.0.11
+  Downloaded signal-hook v0.3.17
+  Downloaded srcinfo v1.1.0
+  Downloaded once_cell v1.19.0
+  Downloaded tempfile v3.12.0
+  Downloaded bitflags v2.6.0
+  Downloaded bytes v1.7.2
+  Downloaded tokio-macros v2.4.0
+  Downloaded idna v0.5.0
+  Downloaded url v2.5.2
+  Downloaded dirs-sys v0.4.1
+  Downloaded dirs v5.0.1
+  Downloaded smallvec v1.13.2
+  Downloaded ryu v1.0.18
+  Downloaded fastrand v2.1.1
+  Downloaded signal-hook-registry v1.4.2
+  Downloaded toml_datetime v0.6.8
+  Downloaded shlex v1.3.0
+  Downloaded gettext-sys v0.21.4
+==> Starting build()...
+warning: Patch `alpm v3.0.4 (https://github.com/archlinux/alpm.rs?rev=306342#306342ef)` was not used in the crate graph.
+Patch `aur-depends v3.0.0 (https://github.com/Morganamilo/aur-depends?rev=30c2c1#30c2c150)` was not used in the crate graph.
+Check that the patched package version and available features are compatible
+with the dependency requirements. If the patch has a different version from
+what is locked in the Cargo.lock file, run `cargo update` to use the new
+version. This may also occur with an optional dependency that is not enabled.
+   Compiling proc-macro2 v1.0.86
+   Compiling unicode-ident v1.0.13
+   Compiling libc v0.2.158
+   Compiling memchr v2.7.4
+   Compiling cfg-if v1.0.0
+   Compiling autocfg v1.3.0
+   Compiling pkg-config v0.3.30
+   Compiling byteorder v1.5.0
+   Compiling siphasher v0.3.11
+   Compiling shlex v1.3.0
+   Compiling once_cell v1.19.0
+   Compiling cc v1.1.21
+   Compiling pin-project-lite v0.2.14
+   Compiling serde v1.0.210
+   Compiling bitflags v2.6.0
+   Compiling log v0.4.22
+   Compiling quote v1.0.37
+   Compiling futures-core v0.3.30
+   Compiling bytes v1.7.2
+   Compiling itoa v1.0.11
+   Compiling syn v2.0.77
+   Compiling getrandom v0.2.15
+   Compiling slab v0.4.9
+   Compiling futures-sink v0.3.30
+   Compiling rand_core v0.6.4
+   Compiling vcpkg v0.2.15
+   Compiling phf_shared v0.10.0
+   Compiling phf_shared v0.11.2
+   Compiling futures-channel v0.3.30
+   Compiling futures-task v0.3.30
+   Compiling futures-io v0.3.30
+   Compiling pin-utils v0.1.0
+   Compiling alpm-sys v4.0.0
+   Compiling hashbrown v0.14.5
+   Compiling equivalent v1.0.1
+   Compiling aho-corasick v1.1.3
+   Compiling signal-hook-registry v1.4.2
+   Compiling socket2 v0.5.7
+   Compiling mio v1.0.2
+   Compiling tinyvec_macros v0.1.1
+   Compiling indexmap v2.5.0
+   Compiling openssl v0.10.66
+   Compiling fnv v1.0.7
+   Compiling crossbeam-utils v0.8.20
+   Compiling openssl-sys v0.9.103
+   Compiling smallvec v1.13.2
+   Compiling foreign-types-shared v0.1.1
+   Compiling adler2 v2.0.0
+   Compiling regex-syntax v0.8.4
+   Compiling foreign-types v0.3.2
+   Compiling miniz_oxide v0.8.0
+   Compiling http v0.2.12
+   Compiling tinyvec v1.8.0
+   Compiling lock_api v0.4.12
+   Compiling tracing-core v0.1.32
+   Compiling new_debug_unreachable v1.0.6
+   Compiling percent-encoding v2.3.1
+   Compiling parking_lot_core v0.9.10
+   Compiling httparse v1.9.4
+   Compiling native-tls v0.2.12
+   Compiling tracing v0.1.40
+   Compiling form_urlencoded v1.2.1
+   Compiling unicode-normalization v0.1.24
+   Compiling thiserror v1.0.63
+   Compiling unicode-bidi v0.3.15
+   Compiling openssl-probe v0.1.5
+   Compiling scopeguard v1.2.0
+   Compiling regex-automata v0.4.7
+   Compiling try-lock v0.2.5
+   Compiling want v0.3.1
+   Compiling idna v0.5.0
+   Compiling http-body v0.4.6
+   Compiling crc32fast v1.4.2
+   Compiling encoding_rs v0.8.34
+   Compiling tower-service v0.3.3
+   Compiling mac v0.1.1
+   Compiling httpdate v1.0.3
+   Compiling serde_json v1.0.128
+   Compiling ryu v1.0.18
+   Compiling precomputed-hash v0.1.1
+   Compiling temp-dir v0.1.13
+   Compiling lazy_static v1.5.0
+   Compiling futf v0.1.5
+   Compiling flate2 v1.0.33
+   Compiling gettext-sys v0.21.4
+   Compiling parking_lot v0.12.3
+   Compiling url v2.5.2
+   Compiling alpm v4.0.1
+   Compiling version_check v0.9.5
+   Compiling utf-8 v0.7.6
+   Compiling either v1.13.0
+   Compiling unicode-width v0.1.14
+   Compiling base64 v0.21.7
+   Compiling dtoa v1.0.9
+   Compiling rustix v0.38.37
+   Compiling dtoa-short v0.3.5
+   Compiling rustls-pemfile v1.0.4
+   Compiling regex v1.10.6
+   Compiling zerocopy-derive v0.7.35
+   Compiling serde_derive v1.0.210
+   Compiling tokio-macros v2.4.0
+   Compiling futures-macro v0.3.30
+   Compiling tokio v1.40.0
+   Compiling openssl-macros v0.1.1
+   Compiling thiserror-impl v1.0.63
+   Compiling zerocopy v0.7.35
+   Compiling ppv-lite86 v0.2.20
+   Compiling futures-util v0.3.30
+   Compiling html5ever v0.27.0
+   Compiling rand_chacha v0.3.1
+   Compiling rand v0.8.5
+   Compiling cssparser-macros v0.6.1
+   Compiling phf_generator v0.11.2
+   Compiling phf_generator v0.10.0
+   Compiling phf_macros v0.11.2
+   Compiling phf_codegen v0.11.2
+   Compiling string_cache_codegen v0.5.2
+   Compiling phf_codegen v0.10.0
+   Compiling selectors v0.25.0
+   Compiling markup5ever v0.12.1
+   Compiling ahash v0.8.11
+   Compiling tendril v0.4.3
+   Compiling phf v0.11.2
+   Compiling crossbeam-epoch v0.9.18
+   Compiling num-traits v0.2.19
+   Compiling tokio-util v0.7.12
+   Compiling tokio-native-tls v0.3.1
+   Compiling async-compression v0.4.12
+   Compiling tokio-socks v0.5.2
+   Compiling ipnet v2.10.0
+   Compiling portable-atomic v1.7.0
+   Compiling h2 v0.3.26
+   Compiling cfg_aliases v0.1.1
+   Compiling mime v0.3.17
+   Compiling cini v1.0.0
+   Compiling utf8parse v0.2.2
+   Compiling sync_wrapper v0.1.2
+   Compiling gimli v0.31.0
+   Compiling stable_deref_trait v1.2.0
+   Compiling linux-raw-sys v0.4.14
+   Compiling servo_arc v0.3.0
+   Compiling fxhash v0.2.1
+   Compiling pacmanconf v3.0.0
+   Compiling anstyle-parse v0.2.5
+   Compiling nix v0.28.0
+   Compiling crossbeam-deque v0.8.5
+   Compiling cssparser v0.31.2
+   Compiling string_cache v0.8.7
+   Compiling serde_urlencoded v0.7.1
+   Compiling hyper v0.14.30
+   Compiling addr2line v0.24.1
+   Compiling serde_spanned v0.6.7
+   Compiling toml_datetime v0.6.8
+   Compiling locale_config v0.3.0
+   Compiling derive_more v0.99.18
+   Compiling async-trait v0.1.82
+   Compiling crossbeam-channel v0.5.13
+   Compiling crossbeam-queue v0.3.11
+   Compiling phf v0.10.1
+   Compiling object v0.36.4
+   Compiling anstyle-query v1.1.1
+   Compiling winnow v0.6.18
+   Compiling anyhow v1.0.89
+   Compiling anstyle v1.0.8
+   Compiling option-ext v0.2.0
+   Compiling is_terminal_polyfill v1.70.1
+   Compiling rustc-demangle v0.1.24
+   Compiling colorchoice v1.0.2
+   Compiling signal-hook v0.3.17
+   Compiling anstream v0.6.15
+   Compiling dirs-sys v0.4.1
+   Compiling hyper-tls v0.5.0
+   Compiling reqwest v0.11.27
+   Compiling crossbeam v0.8.4
+   Compiling gettext-rs v0.7.1
+   Compiling alpm-utils v4.0.1
+   Compiling toml_edit v0.22.21
+   Compiling raur v7.0.0
+   Compiling futures-executor v0.3.30
+   Compiling env_filter v0.1.2
+   Compiling console v0.15.8
+   Compiling getopts v0.2.21
+   Compiling quick-xml v0.36.1
+   Compiling bstr v1.10.0
+   Compiling number_prefix v0.4.0
+   Compiling iana-time-zone v0.1.61
+   Compiling humantime v2.1.0
+   Compiling srcinfo v1.1.0
+   Compiling fastrand v2.1.1
+   Compiling backtrace v0.3.74
+   Compiling ego-tree v0.6.3
+   Compiling tempfile v3.12.0
+   Compiling scraper v0.19.1
+   Compiling aur-depends v4.0.0
+   Compiling toml v0.8.19
+   Compiling env_logger v0.11.5
+   Compiling rss v2.0.9
+   Compiling globset v0.4.15
+   Compiling chrono v0.4.38
+   Compiling indicatif v0.17.8
+   Compiling futures v0.3.30
+   Compiling tr v0.1.10
+   Compiling aur-fetch v0.11.2
+   Compiling dirs v5.0.1
+   Compiling terminal_size v0.3.0
+   Compiling smart-default v0.7.1
+   Compiling ansi_term v0.12.1
+   Compiling htmlescape v0.3.1
+   Compiling paru v2.0.4 (/home/el/.cache/paru/src/paru-2.0.4)
+warning: fields `base` and `ss_repo` are never read
+  --> src/config.rs:80:9
+   |
+73 | pub struct Colors {
+   |            ------ fields in this struct
+...
+80 |     pub base: Style,
+   |         ^^^^
+...
+86 |     pub ss_repo: Style,
+   |         ^^^^^^^
+   |
+   = note: `Colors` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: fields `pkgbuild_skip` and `aur_skip` are never read
+  --> src/upgrade.rs:20:9
+   |
+17 | pub struct Upgrades {
+   |            -------- fields in this struct
+...
+20 |     pub pkgbuild_skip: Vec<(String, String)>,
+   |         ^^^^^^^^^^^^^
+...
+24 |     pub aur_skip: Vec<String>,
+   |         ^^^^^^^^
+   |
+   = note: `Upgrades` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+
+warning: `paru` (lib) generated 2 warnings
+    Finished `release` profile [optimized] target(s) in 8m 18s
+==> Entering fakeroot environment...
+==> Starting package()...
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "paru"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Creating package "paru-debug"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: paru 2.0.4-1 (Thu Apr  3 05:17:46 2025)
+==> Installing package paru with pacman -U...
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Package (2)  New Version  Net Change
+
+paru         2.0.4-1        8.35 MiB
+paru-debug   2.0.4-1        2.52 MiB
+
+Total Installed Size:  10.87 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Processing package changes...
+installing paru...
+Optional dependencies for paru
+    bat: colored pkgbuild printing
+    devtools: build in chroot and downloading pkgbuilds
+installing paru-debug...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+2025-04-03 05:17:46,571 - INFO - Paru instalado exitosamente.
+2025-04-03 05:17:46,571 - INFO - Limpiando el directorio de construcción de paru...
+2025-04-03 05:17:46,858 - INFO - Limpieza completada.
+2025-04-03 05:17:46,861 - INFO - Git instalado exitosamente.
+2025-04-03 05:17:46,862 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 05:17:46,862 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m 💾 Clonación de dotfiles iniciada [0m├┚
+2025-04-03 05:17:46,862 - INFO -                 .studio
+2025-04-03 05:17:46,862 - INFO - Clonando el repositorio 'dotfiles' desde 'https://github.com/SENTUstudio/dotfiles.git' a '/home/el/dotfiles' en la rama 'develop'...
 Cloning into '/home/el/dotfiles'...
-2025-04-03 05:01:07,586 - INFO - Repositorio clonado exitosamente.
-2025-04-03 05:01:07,586 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 05:01:07,586 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m💾 Clonación de dotfiles terminada [0m├┚
-2025-04-03 05:01:07,586 - INFO -                 .studio
-2025-04-03 05:01:07,587 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤   Ingeniería de Datos & Data Science  ├┒
-2025-04-03 05:01:07,587 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m⚙️  Iniciando instalación de paquetes[0m├┚
-2025-04-03 05:01:07,587 - INFO -                 .studio
-2025-04-03 05:01:07,588 - INFO - Ejecutando Ansible Playbook...
+2025-04-03 05:17:57,583 - INFO - Repositorio clonado exitosamente.
+2025-04-03 05:17:57,583 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 05:17:57,583 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m💾 Clonación de dotfiles terminada [0m├┚
+2025-04-03 05:17:57,583 - INFO -                 .studio
+2025-04-03 05:17:57,584 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤   Ingeniería de Datos & Data Science  ├┒
+2025-04-03 05:17:57,584 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m⚙️  Iniciando instalación de paquetes[0m├┚
+2025-04-03 05:17:57,584 - INFO -                 .studio
+2025-04-03 05:17:57,586 - INFO - Ejecutando Ansible Playbook...
 /usr/lib/python3.13/getpass.py:90: GetPassWarning: Can not control echo on the terminal.
   passwd = fallback_getpass(prompt, stream)
 Warning: Password input may be echoed.
@@ -461,7 +1033,7 @@ TASK [base_system_configuration : Incluir variables específicas de la distribuc
 ok: [localhost] => {"ansible_facts": {"package_managers": {"dependencies": {"core": ["git", "curl", "wget", "gcc", "make", "unzip", "zsh", "golang", "cargo", "g++", "python3", "ruby", "unrar", "p7zip", "p7zip-plugins", "xdg-user-dirs", "lsd", "java", "dnf-utils", "flatpak", "kernel-devel", "gcc", "make", "automake", "perl", "elfutils-libelf-devel"], "extended": ["lazygit", "ripgrep", "fd-find", "neovim", "fastfetch", "util-linux-user", "anacron", "zoxide", "python3-neovim", "kitty", "lua-devel", "luarocks", "docker-ce", "docker-ce-cli", "containerd.io", "docker-compose-plugin", "bat", "fzf", "httpie", "ripgrep", "tmux", "htop", "proselint", "lm_sensors", "discord", "alacritty", "kde-connect", "dnf-utils", "kdenlive", "openshot", "vlc", "mpv", "soundconverter", "audacity", "muse", "lmms", "amarok", "flowblade", "dnf-plugins-core", "xine-lib", "xine-lib-extras", "xine-lib-extras-freeworld", "libdvdread", "libdvdnav", "lsdvd", "libdvbpsi", "ffmpeg", "libmatroska", "xvidcore", "gimp", "inkscape", "libreoffice-writer", "libreoffice-calc", "libreoffice-impress", "libreoffice-draw", "libreoffice-langpack-es", "gstreamer1-devel", "gstreamer1-plugins-base-tools", "gstreamer1-doc", "gstreamer1-plugins-base-devel", "gstreamer1-plugins-good", "gstreamer1-plugins-good-extras", "gstreamer1-plugins-bad-free", "gstreamer1-plugins-bad-free-devel", "virt-manager", "qemu", "zeal"]}, "install": ["sudo", "pacman", "-Sy", "--needed", "--noconfirm"], "manager": "pacman", "repo": {"docker": ["sudo", "dnf", "config-manager", "addrepo", "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"], "google-chrome": ["sudo", "dnf", "install", "-y", "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"], "lazygit": ["sudo", "dnf", "copr", "enable", "atim/lazygit", "-y"], "paru": ["sudo", "dnf", "install", "-y", "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"], "rpmfusion-free": ["sudo", "dnf", "install", "-y", "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"]}, "update": ["sudo", "pacman", "-Suy", "--noconfirm"]}}, "ansible_included_var_files": ["/home/el/dotfiles/ansible/vars/Archlinux.yaml"], "changed": false}
 
 TASK [base_system_configuration : Obtener el directorio home del usuario] ******
-changed: [localhost] => {"changed": true, "cmd": ["echo", "$HOME"], "delta": "0:00:00.018785", "end": "2025-04-03 05:01:11.899113", "msg": "", "rc": 0, "start": "2025-04-03 05:01:11.880328", "stderr": "", "stderr_lines": [], "stdout": "/home/el", "stdout_lines": ["/home/el"]}
+changed: [localhost] => {"changed": true, "cmd": ["echo", "$HOME"], "delta": "0:00:01.012282", "end": "2025-04-03 05:18:02.699336", "msg": "", "rc": 0, "start": "2025-04-03 05:18:01.687054", "stderr": "", "stderr_lines": [], "stdout": "/home/el", "stdout_lines": ["/home/el"]}
 
 TASK [base_system_configuration : Actualiza el sistema (Debian/Ubuntu)] ********
 skipping: [localhost] => {"changed": false, "false_condition": "ansible_os_family == \"Debian\"", "skip_reason": "Conditional result was False"}
@@ -505,26 +1077,26 @@ ok: [localhost] => {
 }
 
 TASK [install_uv : Descargar e instalar uv usando el script oficial] ***********
-changed: [localhost] => {"changed": true, "cmd": "curl -LsSf https://astral.sh/uv/install.sh | sh", "delta": "0:00:04.729335", "end": "2025-04-03 05:01:20.649874", "msg": "", "rc": 0, "start": "2025-04-03 05:01:15.920539", "stderr": "downloading uv 0.6.12 x86_64-unknown-linux-gnu", "stderr_lines": ["downloading uv 0.6.12 x86_64-unknown-linux-gnu"], "stdout": "no checksums to verify\ninstalling to /home/el/.local/bin\n  uv\n  uvx\neverything's installed!\n\nTo add $HOME/.local/bin to your PATH, either restart your shell or run:\n\n    source $HOME/.local/bin/env (sh, bash, zsh)\n    source $HOME/.local/bin/env.fish (fish)\nWARNING: The following commands are shadowed by other commands in your PATH: uv uvx", "stdout_lines": ["no checksums to verify", "installing to /home/el/.local/bin", "  uv", "  uvx", "everything's installed!", "", "To add $HOME/.local/bin to your PATH, either restart your shell or run:", "", "    source $HOME/.local/bin/env (sh, bash, zsh)", "    source $HOME/.local/bin/env.fish (fish)", "WARNING: The following commands are shadowed by other commands in your PATH: uv uvx"]}
+changed: [localhost] => {"changed": true, "cmd": "curl -LsSf https://astral.sh/uv/install.sh | sh", "delta": "0:00:04.654317", "end": "2025-04-03 05:18:11.711205", "msg": "", "rc": 0, "start": "2025-04-03 05:18:07.056888", "stderr": "downloading uv 0.6.12 x86_64-unknown-linux-gnu", "stderr_lines": ["downloading uv 0.6.12 x86_64-unknown-linux-gnu"], "stdout": "no checksums to verify\ninstalling to /home/el/.local/bin\n  uv\n  uvx\neverything's installed!\n\nTo add $HOME/.local/bin to your PATH, either restart your shell or run:\n\n    source $HOME/.local/bin/env (sh, bash, zsh)\n    source $HOME/.local/bin/env.fish (fish)\nWARNING: The following commands are shadowed by other commands in your PATH: uv uvx", "stdout_lines": ["no checksums to verify", "installing to /home/el/.local/bin", "  uv", "  uvx", "everything's installed!", "", "To add $HOME/.local/bin to your PATH, either restart your shell or run:", "", "    source $HOME/.local/bin/env (sh, bash, zsh)", "    source $HOME/.local/bin/env.fish (fish)", "WARNING: The following commands are shadowed by other commands in your PATH: uv uvx"]}
 
 TASK [install_rye : Descargar e instalar rye usando el script oficial] *********
-changed: [localhost] => {"changed": true, "cmd": "curl -sSf https://rye.astral.sh/get |  RYE_INSTALL_OPTION=\"--yes\" bash", "delta": "0:00:25.296785", "end": "2025-04-03 05:01:46.428670", "msg": "", "rc": 0, "start": "2025-04-03 05:01:21.131885", "stderr": "\r#=#=#                                                                          \r##O#-#                                                                         \r##O=#  #                                                                       \r#=#=-#  #                                                                      \r                                                                           0.1%\r#                                                                          1.5%\r#####                                                                      7.8%\r###########                                                               15.6%\r########################                                                  34.2%\r################################                                          45.0%\r##############################################                            64.0%\r#######################################################                   77.6%\r#################################################################         91.5%\r######################################################################## 100.0%", "stderr_lines": ["", "#=#=#                                                                          ", "##O#-#                                                                         ", "##O=#  #                                                                       ", "#=#=-#  #                                                                      ", "                                                                           0.1%", "#                                                                          1.5%", "#####                                                                      7.8%", "###########                                                               15.6%", "########################                                                  34.2%", "################################                                          45.0%", "##############################################                            64.0%", "#######################################################                   77.6%", "#################################################################         91.5%", "######################################################################## 100.0%"], "stdout": "This script will automatically download and install rye (latest) for you.\nWelcome to Rye!\n\nThis installer will install rye to /home/el/.rye\nThis path can be changed by exporting the RYE_HOME environment variable.\n\nDetails:\n  Rye Version: 0.44.0\n  Platform: linux (x86_64)\n\nInstalled binary to /home/el/.rye/shims/rye\nBootstrapping rye internals\nDownloading cpython@3.12.9\nChecking checksum\nUnpacking\nDownloaded cpython@3.12.9\nUpdated self-python installation at /home/el/.rye/self\n\nThe rye directory /home/el/.rye/shims was not detected on PATH.\nIt is highly recommended that you add it.\nAdded to PATH.\nnote: for this to take effect you will need to restart your shell or run this manually:\n\n    source \"$HOME/.rye/env\"\n\nFor more information read https://rye.astral.sh/guide/installation/\n\nAll done!", "stdout_lines": ["This script will automatically download and install rye (latest) for you.", "Welcome to Rye!", "", "This installer will install rye to /home/el/.rye", "This path can be changed by exporting the RYE_HOME environment variable.", "", "Details:", "  Rye Version: 0.44.0", "  Platform: linux (x86_64)", "", "Installed binary to /home/el/.rye/shims/rye", "Bootstrapping rye internals", "Downloading cpython@3.12.9", "Checking checksum", "Unpacking", "Downloaded cpython@3.12.9", "Updated self-python installation at /home/el/.rye/self", "", "The rye directory /home/el/.rye/shims was not detected on PATH.", "It is highly recommended that you add it.", "Added to PATH.", "note: for this to take effect you will need to restart your shell or run this manually:", "", "    source \"$HOME/.rye/env\"", "", "For more information read https://rye.astral.sh/guide/installation/", "", "All done!"]}
+changed: [localhost] => {"changed": true, "cmd": "curl -sSf https://rye.astral.sh/get |  RYE_INSTALL_OPTION=\"--yes\" bash", "delta": "0:00:24.610248", "end": "2025-04-03 05:18:36.828493", "msg": "", "rc": 0, "start": "2025-04-03 05:18:12.218245", "stderr": "\r#=#=#                                                                          \r##O#-#                                                                         \r##O=#  #                                                                       \r#=#=-#  #                                                                      \r-#O#- #   #                                                                    \r                                                                           0.1%\r#                                                                          1.5%\r#####                                                                      7.8%\r###########                                                               15.6%\r#################                                                         24.1%\r##################################                                        48.4%\r###########################################                               59.8%\r####################################################                      72.9%\r#############################################################             86.0%\r######################################################################## 100.0%", "stderr_lines": ["", "#=#=#                                                                          ", "##O#-#                                                                         ", "##O=#  #                                                                       ", "#=#=-#  #                                                                      ", "-#O#- #   #                                                                    ", "                                                                           0.1%", "#                                                                          1.5%", "#####                                                                      7.8%", "###########                                                               15.6%", "#################                                                         24.1%", "##################################                                        48.4%", "###########################################                               59.8%", "####################################################                      72.9%", "#############################################################             86.0%", "######################################################################## 100.0%"], "stdout": "This script will automatically download and install rye (latest) for you.\nWelcome to Rye!\n\nThis installer will install rye to /home/el/.rye\nThis path can be changed by exporting the RYE_HOME environment variable.\n\nDetails:\n  Rye Version: 0.44.0\n  Platform: linux (x86_64)\n\nInstalled binary to /home/el/.rye/shims/rye\nBootstrapping rye internals\nDownloading cpython@3.12.9\nChecking checksum\nUnpacking\nDownloaded cpython@3.12.9\nUpdated self-python installation at /home/el/.rye/self\n\nThe rye directory /home/el/.rye/shims was not detected on PATH.\nIt is highly recommended that you add it.\nAdded to PATH.\nnote: for this to take effect you will need to restart your shell or run this manually:\n\n    source \"$HOME/.rye/env\"\n\nFor more information read https://rye.astral.sh/guide/installation/\n\nAll done!", "stdout_lines": ["This script will automatically download and install rye (latest) for you.", "Welcome to Rye!", "", "This installer will install rye to /home/el/.rye", "This path can be changed by exporting the RYE_HOME environment variable.", "", "Details:", "  Rye Version: 0.44.0", "  Platform: linux (x86_64)", "", "Installed binary to /home/el/.rye/shims/rye", "Bootstrapping rye internals", "Downloading cpython@3.12.9", "Checking checksum", "Unpacking", "Downloaded cpython@3.12.9", "Updated self-python installation at /home/el/.rye/self", "", "The rye directory /home/el/.rye/shims was not detected on PATH.", "It is highly recommended that you add it.", "Added to PATH.", "note: for this to take effect you will need to restart your shell or run this manually:", "", "    source \"$HOME/.rye/env\"", "", "For more information read https://rye.astral.sh/guide/installation/", "", "All done!"]}
 
 TASK [install_extended_dependencies : Instalar dependencias extendidas (Fedora)] ***
 skipping: [localhost] => {"changed": false, "false_condition": "ansible_distribution == \"Fedora\"", "skip_reason": "Conditional result was False"}
 
 TASK [install_post_install : Ejecutar comandos post-instalación] ***************
-failed: [localhost] (item={'command': 'go install oss.terrastruct.com/d2@latest', 'description': 'Instalando d2 diagram'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "go install oss.terrastruct.com/d2@latest", "delta": "0:00:00.008781", "end": "2025-04-03 05:01:47.025030", "item": {"command": "go install oss.terrastruct.com/d2@latest", "description": "Instalando d2 diagram"}, "msg": "non-zero return code", "rc": 127, "start": "2025-04-03 05:01:47.016249", "stderr": "/bin/sh: line 1: go: command not found", "stderr_lines": ["/bin/sh: line 1: go: command not found"], "stdout": "", "stdout_lines": []}
-failed: [localhost] (item={'command': 'curl -fsS https://dl.brave.com/install.sh | sh', 'description': 'Instalando Brave'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "curl -fsS https://dl.brave.com/install.sh | sh", "delta": "0:00:00.790685", "end": "2025-04-03 05:01:48.280422", "item": {"command": "curl -fsS https://dl.brave.com/install.sh | sh", "description": "Instalando Brave"}, "msg": "non-zero return code", "rc": 1, "start": "2025-04-03 05:01:47.489737", "stderr": "Error: Could not find an AUR helper. Please install paru/pikaur/yay to proceed.\n\nYou can find more information about AUR helpers at https://wiki.archlinux.org/title/AUR_helpers", "stderr_lines": ["Error: Could not find an AUR helper. Please install paru/pikaur/yay to proceed.", "", "You can find more information about AUR helpers at https://wiki.archlinux.org/title/AUR_helpers"], "stdout": "", "stdout_lines": []}
-changed: [localhost] => (item={'command': 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm', 'description': 'Configurando tmux plugin manager'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm", "delta": "0:00:00.742627", "end": "2025-04-03 05:01:49.521881", "item": {"command": "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm", "description": "Configurando tmux plugin manager"}, "msg": "", "rc": 0, "start": "2025-04-03 05:01:48.779254", "stderr": "Cloning into '/root/.tmux/plugins/tpm'...", "stderr_lines": ["Cloning into '/root/.tmux/plugins/tpm'..."], "stdout": "", "stdout_lines": []}
-failed: [localhost] (item={'command': 'gem install tmuxinator', 'description': 'Instalando tmuxinator'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "gem install tmuxinator", "delta": "0:00:00.009009", "end": "2025-04-03 05:01:50.030823", "item": {"command": "gem install tmuxinator", "description": "Instalando tmuxinator"}, "msg": "non-zero return code", "rc": 127, "start": "2025-04-03 05:01:50.021814", "stderr": "/bin/sh: line 1: gem: command not found", "stderr_lines": ["/bin/sh: line 1: gem: command not found"], "stdout": "", "stdout_lines": []}
-failed: [localhost] (item={'command': 'flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo', 'description': 'Actualizando repo Flatpak'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo", "delta": "0:00:00.008991", "end": "2025-04-03 05:01:50.550167", "item": {"command": "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo", "description": "Actualizando repo Flatpak"}, "msg": "non-zero return code", "rc": 127, "start": "2025-04-03 05:01:50.541176", "stderr": "/bin/sh: line 1: flatpak: command not found", "stderr_lines": ["/bin/sh: line 1: flatpak: command not found"], "stdout": "", "stdout_lines": []}
-failed: [localhost] (item={'command': 'flatpak install flathub md.obsidian.Obsidian -y', 'description': 'Instalando Obsidian'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "flatpak install flathub md.obsidian.Obsidian -y", "delta": "0:00:00.009036", "end": "2025-04-03 05:01:51.055055", "item": {"command": "flatpak install flathub md.obsidian.Obsidian -y", "description": "Instalando Obsidian"}, "msg": "non-zero return code", "rc": 127, "start": "2025-04-03 05:01:51.046019", "stderr": "/bin/sh: line 1: flatpak: command not found", "stderr_lines": ["/bin/sh: line 1: flatpak: command not found"], "stdout": "", "stdout_lines": []}
-failed: [localhost] (item={'command': 'sudo usermod -aG docker $USER', 'description': 'Añadiendo el usuario al grupo docker (puede requerir reiniciar sesión)'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo usermod -aG docker $USER", "delta": "0:00:00.043374", "end": "2025-04-03 05:01:51.589959", "item": {"command": "sudo usermod -aG docker $USER", "description": "Añadiendo el usuario al grupo docker (puede requerir reiniciar sesión)"}, "msg": "non-zero return code", "rc": 6, "start": "2025-04-03 05:01:51.546585", "stderr": "usermod: group 'docker' does not exist", "stderr_lines": ["usermod: group 'docker' does not exist"], "stdout": "", "stdout_lines": []}
-changed: [localhost] => (item={'command': "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh", 'description': 'Añadiendo Atuin, Sync, search and backup shell history'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh", "delta": "0:00:06.149229", "end": "2025-04-03 05:01:58.220370", "item": {"command": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh", "description": "Añadiendo Atuin, Sync, search and backup shell history"}, "msg": "", "rc": 0, "start": "2025-04-03 05:01:52.071141", "stderr": "downloading atuin 18.4.0 x86_64-unknown-linux-gnu\ngrep: /root/.bashrc: No such file or directory\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100 14374  100 14374    0     0  51319      0 --:--:-- --:--:-- --:--:-- 51519", "stderr_lines": ["downloading atuin 18.4.0 x86_64-unknown-linux-gnu", "grep: /root/.bashrc: No such file or directory", "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current", "                                 Dload  Upload   Total   Spent    Left  Speed", "", "  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0", "100 14374  100 14374    0     0  51319      0 --:--:-- --:--:-- --:--:-- 51519"], "stdout": " _______  _______  __   __  ___   __    _\n|   _   ||       ||  | |  ||   | |  |  | |\n|  |_|  ||_     _||  | |  ||   | |   |_| |\n|       |  |   |  |  |_|  ||   | |       |\n|       |  |   |  |       ||   | |  _    |\n|   _   |  |   |  |       ||   | | | |   |\n|__| |__|  |___|  |_______||___| |_|  |__|\n\nMagical shell history\n\nAtuin setup\nhttps://github.com/atuinsh/atuin\nhttps://forum.atuin.sh\n\nPlease file an issue or reach out on the forum if you encounter any problems!\n\n===============================================================================\n\ninstalling to /root/.atuin/bin\n  atuin\n  atuin-update\neverything's installed!\n\nTo add $HOME/.atuin/bin to your PATH, either restart your shell or run:\n\n    source $HOME/.atuin/bin/env (sh, bash, zsh)\n    source $HOME/.atuin/bin/env.fish (fish)\n\n\n\n _______  __   __  _______  __    _  ___   _    __   __  _______  __   __ \n|       ||  | |  ||   _   ||  |  | ||   | | |  |  | |  ||       ||  | |  |\n|_     _||  |_|  ||  |_|  ||   |_| ||   |_| |  |  |_|  ||   _   ||  | |  |\n  |   |  |       ||       ||       ||      _|  |       ||  | |  ||  |_|  |\n  |   |  |       ||       ||  _    ||     |_   |_     _||  |_|  ||       |\n  |   |  |   _   ||   _   || | |   ||    _  |    |   |  |       ||       |\n  |___|  |__| |__||__| |__||_|  |__||___| |_|    |___|  |_______||_______|\n\n\n\nThanks for installing Atuin! I really hope you like it.\n\nIf you have any issues, please open an issue on GitHub or visit our forum (https://forum.atuin.sh)!\n\nIf you love Atuin, please give us a star on GitHub! It really helps ⭐️ https://github.com/atuinsh/atuin\n\nPlease run \"atuin register\" to get setup with sync, or \"atuin login\" if you already have an account", "stdout_lines": [" _______  _______  __   __  ___   __    _", "|   _   ||       ||  | |  ||   | |  |  | |", "|  |_|  ||_     _||  | |  ||   | |   |_| |", "|       |  |   |  |  |_|  ||   | |       |", "|       |  |   |  |       ||   | |  _    |", "|   _   |  |   |  |       ||   | | | |   |", "|__| |__|  |___|  |_______||___| |_|  |__|", "", "Magical shell history", "", "Atuin setup", "https://github.com/atuinsh/atuin", "https://forum.atuin.sh", "", "Please file an issue or reach out on the forum if you encounter any problems!", "", "===============================================================================", "", "installing to /root/.atuin/bin", "  atuin", "  atuin-update", "everything's installed!", "", "To add $HOME/.atuin/bin to your PATH, either restart your shell or run:", "", "    source $HOME/.atuin/bin/env (sh, bash, zsh)", "    source $HOME/.atuin/bin/env.fish (fish)", "", "", "", " _______  __   __  _______  __    _  ___   _    __   __  _______  __   __ ", "|       ||  | |  ||   _   ||  |  | ||   | | |  |  | |  ||       ||  | |  |", "|_     _||  |_|  ||  |_|  ||   |_| ||   |_| |  |  |_|  ||   _   ||  | |  |", "  |   |  |       ||       ||       ||      _|  |       ||  | |  ||  |_|  |", "  |   |  |       ||       ||  _    ||     |_   |_     _||  |_|  ||       |", "  |   |  |   _   ||   _   || | |   ||    _  |    |   |  |       ||       |", "  |___|  |__| |__||__| |__||_|  |__||___| |_|    |___|  |_______||_______|", "", "", "", "Thanks for installing Atuin! I really hope you like it.", "", "If you have any issues, please open an issue on GitHub or visit our forum (https://forum.atuin.sh)!", "", "If you love Atuin, please give us a star on GitHub! It really helps ⭐️ https://github.com/atuinsh/atuin", "", "Please run \"atuin register\" to get setup with sync, or \"atuin login\" if you already have an account"]}
-failed: [localhost] (item={'command': 'cargo install du-dust', 'description': 'Herramienta para ver el uso del disco por el terminal'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "cargo install du-dust", "delta": "0:00:00.008950", "end": "2025-04-03 05:01:58.718013", "item": {"command": "cargo install du-dust", "description": "Herramienta para ver el uso del disco por el terminal"}, "msg": "non-zero return code", "rc": 127, "start": "2025-04-03 05:01:58.709063", "stderr": "/bin/sh: line 1: cargo: command not found", "stderr_lines": ["/bin/sh: line 1: cargo: command not found"], "stdout": "", "stdout_lines": []}
+failed: [localhost] (item={'command': 'go install oss.terrastruct.com/d2@latest', 'description': 'Instalando d2 diagram'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "go install oss.terrastruct.com/d2@latest", "delta": "0:00:00.012243", "end": "2025-04-03 05:18:37.527971", "item": {"command": "go install oss.terrastruct.com/d2@latest", "description": "Instalando d2 diagram"}, "msg": "non-zero return code", "rc": 127, "start": "2025-04-03 05:18:37.515728", "stderr": "/bin/sh: line 1: go: command not found", "stderr_lines": ["/bin/sh: line 1: go: command not found"], "stdout": "", "stdout_lines": []}
+failed: [localhost] (item={'command': 'curl -fsS https://dl.brave.com/install.sh | sh', 'description': 'Instalando Brave'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "curl -fsS https://dl.brave.com/install.sh | sh", "delta": "0:00:03.142907", "end": "2025-04-03 05:18:41.177335", "item": {"command": "curl -fsS https://dl.brave.com/install.sh | sh", "description": "Instalando Brave"}, "msg": "non-zero return code", "rc": 1, "start": "2025-04-03 05:18:38.034428", "stderr": "+ paru -Sy --needed --noconfirm brave-bin\nerror: can't install AUR package as root", "stderr_lines": ["+ paru -Sy --needed --noconfirm brave-bin", "error: can't install AUR package as root"], "stdout": ":: Synchronizing package databases...\n core downloading...\n extra downloading...\n:: Resolving dependencies...\n\n:: There are 11 providers available for ttf-font:\n:: Repository extra:\n    1) gnu-free-fonts  2) noto-fonts  3) ttf-bitstream-vera  4) ttf-croscore  5) ttf-dejavu  6) ttf-droid  7) ttf-ibm-plex  8) ttf-input  9) ttf-input-nerd  10) ttf-liberation  11) ttf-roboto  \nEnter a number (default=1): ", "stdout_lines": [":: Synchronizing package databases...", " core downloading...", " extra downloading...", ":: Resolving dependencies...", "", ":: There are 11 providers available for ttf-font:", ":: Repository extra:", "    1) gnu-free-fonts  2) noto-fonts  3) ttf-bitstream-vera  4) ttf-croscore  5) ttf-dejavu  6) ttf-droid  7) ttf-ibm-plex  8) ttf-input  9) ttf-input-nerd  10) ttf-liberation  11) ttf-roboto  ", "Enter a number (default=1): "]}
+changed: [localhost] => (item={'command': 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm', 'description': 'Configurando tmux plugin manager'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm", "delta": "0:00:00.744791", "end": "2025-04-03 05:18:42.496048", "item": {"command": "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm", "description": "Configurando tmux plugin manager"}, "msg": "", "rc": 0, "start": "2025-04-03 05:18:41.751257", "stderr": "Cloning into '/root/.tmux/plugins/tpm'...", "stderr_lines": ["Cloning into '/root/.tmux/plugins/tpm'..."], "stdout": "", "stdout_lines": []}
+failed: [localhost] (item={'command': 'gem install tmuxinator', 'description': 'Instalando tmuxinator'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "gem install tmuxinator", "delta": "0:00:00.009180", "end": "2025-04-03 05:18:42.981985", "item": {"command": "gem install tmuxinator", "description": "Instalando tmuxinator"}, "msg": "non-zero return code", "rc": 127, "start": "2025-04-03 05:18:42.972805", "stderr": "/bin/sh: line 1: gem: command not found", "stderr_lines": ["/bin/sh: line 1: gem: command not found"], "stdout": "", "stdout_lines": []}
+failed: [localhost] (item={'command': 'flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo', 'description': 'Actualizando repo Flatpak'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo", "delta": "0:00:00.009108", "end": "2025-04-03 05:18:43.465531", "item": {"command": "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo", "description": "Actualizando repo Flatpak"}, "msg": "non-zero return code", "rc": 127, "start": "2025-04-03 05:18:43.456423", "stderr": "/bin/sh: line 1: flatpak: command not found", "stderr_lines": ["/bin/sh: line 1: flatpak: command not found"], "stdout": "", "stdout_lines": []}
+failed: [localhost] (item={'command': 'flatpak install flathub md.obsidian.Obsidian -y', 'description': 'Instalando Obsidian'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "flatpak install flathub md.obsidian.Obsidian -y", "delta": "0:00:00.009122", "end": "2025-04-03 05:18:43.942995", "item": {"command": "flatpak install flathub md.obsidian.Obsidian -y", "description": "Instalando Obsidian"}, "msg": "non-zero return code", "rc": 127, "start": "2025-04-03 05:18:43.933873", "stderr": "/bin/sh: line 1: flatpak: command not found", "stderr_lines": ["/bin/sh: line 1: flatpak: command not found"], "stdout": "", "stdout_lines": []}
+failed: [localhost] (item={'command': 'sudo usermod -aG docker $USER', 'description': 'Añadiendo el usuario al grupo docker (puede requerir reiniciar sesión)'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "sudo usermod -aG docker $USER", "delta": "0:00:00.044933", "end": "2025-04-03 05:18:44.452761", "item": {"command": "sudo usermod -aG docker $USER", "description": "Añadiendo el usuario al grupo docker (puede requerir reiniciar sesión)"}, "msg": "non-zero return code", "rc": 6, "start": "2025-04-03 05:18:44.407828", "stderr": "usermod: group 'docker' does not exist", "stderr_lines": ["usermod: group 'docker' does not exist"], "stdout": "", "stdout_lines": []}
+changed: [localhost] => (item={'command': "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh", 'description': 'Añadiendo Atuin, Sync, search and backup shell history'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh", "delta": "0:00:06.698914", "end": "2025-04-03 05:18:51.618572", "item": {"command": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh", "description": "Añadiendo Atuin, Sync, search and backup shell history"}, "msg": "", "rc": 0, "start": "2025-04-03 05:18:44.919658", "stderr": "downloading atuin 18.4.0 x86_64-unknown-linux-gnu\ngrep: /root/.bashrc: No such file or directory\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100 14374  100 14374    0     0  61158      0 --:--:-- --:--:-- --:--:-- 61427", "stderr_lines": ["downloading atuin 18.4.0 x86_64-unknown-linux-gnu", "grep: /root/.bashrc: No such file or directory", "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current", "                                 Dload  Upload   Total   Spent    Left  Speed", "", "  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0", "100 14374  100 14374    0     0  61158      0 --:--:-- --:--:-- --:--:-- 61427"], "stdout": " _______  _______  __   __  ___   __    _\n|   _   ||       ||  | |  ||   | |  |  | |\n|  |_|  ||_     _||  | |  ||   | |   |_| |\n|       |  |   |  |  |_|  ||   | |       |\n|       |  |   |  |       ||   | |  _    |\n|   _   |  |   |  |       ||   | | | |   |\n|__| |__|  |___|  |_______||___| |_|  |__|\n\nMagical shell history\n\nAtuin setup\nhttps://github.com/atuinsh/atuin\nhttps://forum.atuin.sh\n\nPlease file an issue or reach out on the forum if you encounter any problems!\n\n===============================================================================\n\ninstalling to /root/.atuin/bin\n  atuin\n  atuin-update\neverything's installed!\n\nTo add $HOME/.atuin/bin to your PATH, either restart your shell or run:\n\n    source $HOME/.atuin/bin/env (sh, bash, zsh)\n    source $HOME/.atuin/bin/env.fish (fish)\n\n\n\n _______  __   __  _______  __    _  ___   _    __   __  _______  __   __ \n|       ||  | |  ||   _   ||  |  | ||   | | |  |  | |  ||       ||  | |  |\n|_     _||  |_|  ||  |_|  ||   |_| ||   |_| |  |  |_|  ||   _   ||  | |  |\n  |   |  |       ||       ||       ||      _|  |       ||  | |  ||  |_|  |\n  |   |  |       ||       ||  _    ||     |_   |_     _||  |_|  ||       |\n  |   |  |   _   ||   _   || | |   ||    _  |    |   |  |       ||       |\n  |___|  |__| |__||__| |__||_|  |__||___| |_|    |___|  |_______||_______|\n\n\n\nThanks for installing Atuin! I really hope you like it.\n\nIf you have any issues, please open an issue on GitHub or visit our forum (https://forum.atuin.sh)!\n\nIf you love Atuin, please give us a star on GitHub! It really helps ⭐️ https://github.com/atuinsh/atuin\n\nPlease run \"atuin register\" to get setup with sync, or \"atuin login\" if you already have an account", "stdout_lines": [" _______  _______  __   __  ___   __    _", "|   _   ||       ||  | |  ||   | |  |  | |", "|  |_|  ||_     _||  | |  ||   | |   |_| |", "|       |  |   |  |  |_|  ||   | |       |", "|       |  |   |  |       ||   | |  _    |", "|   _   |  |   |  |       ||   | | | |   |", "|__| |__|  |___|  |_______||___| |_|  |__|", "", "Magical shell history", "", "Atuin setup", "https://github.com/atuinsh/atuin", "https://forum.atuin.sh", "", "Please file an issue or reach out on the forum if you encounter any problems!", "", "===============================================================================", "", "installing to /root/.atuin/bin", "  atuin", "  atuin-update", "everything's installed!", "", "To add $HOME/.atuin/bin to your PATH, either restart your shell or run:", "", "    source $HOME/.atuin/bin/env (sh, bash, zsh)", "    source $HOME/.atuin/bin/env.fish (fish)", "", "", "", " _______  __   __  _______  __    _  ___   _    __   __  _______  __   __ ", "|       ||  | |  ||   _   ||  |  | ||   | | |  |  | |  ||       ||  | |  |", "|_     _||  |_|  ||  |_|  ||   |_| ||   |_| |  |  |_|  ||   _   ||  | |  |", "  |   |  |       ||       ||       ||      _|  |       ||  | |  ||  |_|  |", "  |   |  |       ||       ||  _    ||     |_   |_     _||  |_|  ||       |", "  |   |  |   _   ||   _   || | |   ||    _  |    |   |  |       ||       |", "  |___|  |__| |__||__| |__||_|  |__||___| |_|    |___|  |_______||_______|", "", "", "", "Thanks for installing Atuin! I really hope you like it.", "", "If you have any issues, please open an issue on GitHub or visit our forum (https://forum.atuin.sh)!", "", "If you love Atuin, please give us a star on GitHub! It really helps ⭐️ https://github.com/atuinsh/atuin", "", "Please run \"atuin register\" to get setup with sync, or \"atuin login\" if you already have an account"]}
+changed: [localhost] => (item={'command': 'cargo install du-dust', 'description': 'Herramienta para ver el uso del disco por el terminal'}) => {"ansible_loop_var": "item", "changed": true, "cmd": "cargo install du-dust", "delta": "0:02:12.038441", "end": "2025-04-03 05:21:04.151108", "item": {"command": "cargo install du-dust", "description": "Herramienta para ver el uso del disco por el terminal"}, "msg": "", "rc": 0, "start": "2025-04-03 05:18:52.112667", "stderr": "    Updating crates.io index\n Downloading crates ...\n  Downloaded du-dust v1.2.0\n  Installing du-dust v1.2.0\n    Updating crates.io index\n     Locking 118 packages to latest compatible versions\n      Adding directories v4.0.1 (available: v6.0.0)\n      Adding lscolors v0.13.0 (available: v0.20.0)\n      Adding sysinfo v0.27.8 (available: v0.34.2)\n      Adding terminal_size v0.2.6 (available: v0.4.2)\n      Adding unicode-width v0.1.14 (available: v0.2.0)\n Downloading crates ...\n  Downloaded autocfg v1.4.0\n  Downloaded ansi_term v0.12.1\n  Downloaded cfg-if v1.0.0\n  Downloaded cfg_aliases v0.2.1\n  Downloaded config-file v0.2.3\n  Downloaded utf8parse v0.2.2\n  Downloaded bitflags v1.3.2\n  Downloaded is_terminal_polyfill v1.70.1\n  Downloaded ctrlc v3.4.5\n  Downloaded itoa v1.0.15\n  Downloaded thiserror v1.0.69\n  Downloaded strsim v0.11.1\n  Downloaded nu-ansi-term v0.46.0\n  Downloaded clap_lex v0.7.4\n  Downloaded either v1.15.0\n  Downloaded clap_mangen v0.2.26\n  Downloaded dirs-sys v0.3.7\n  Downloaded directories v4.0.1\n  Downloaded crossbeam-deque v0.8.6\n  Downloaded colorchoice v1.0.3\n  Downloaded anstyle-query v1.1.2\n  Downloaded anstyle-parse v0.2.6\n  Downloaded thousands v0.2.0\n  Downloaded terminal_size v0.2.6\n  Downloaded roff v0.2.2\n  Downloaded overload v0.1.1\n  Downloaded anstyle v1.0.10\n  Downloaded thiserror-impl v1.0.69\n  Downloaded quote v1.0.40\n  Downloaded once_cell v1.21.3\n  Downloaded bitflags v2.9.0\n  Downloaded anstream v0.6.18\n  Downloaded lscolors v0.13.0\n  Downloaded io-lifetimes v1.0.11\n  Downloaded proc-macro2 v1.0.94\n  Downloaded unicode-ident v1.0.18\n  Downloaded serde_derive v1.0.219\n  Downloaded serde v1.0.219\n  Downloaded rayon-core v1.12.1\n  Downloaded iana-time-zone v0.1.63\n  Downloaded memchr v2.7.4\n  Downloaded clap_complete v4.5.47\n  Downloaded clap v4.5.35\n  Downloaded toml v0.5.11\n  Downloaded stfu8 v0.2.7\n  Downloaded ryu v1.0.20\n  Downloaded sysinfo v0.27.8\n  Downloaded serde_json v1.0.140\n  Downloaded rayon v1.10.0\n  Downloaded aho-corasick v1.1.3\n  Downloaded clap_builder v4.5.35\n  Downloaded chrono v0.4.40\n  Downloaded num-traits v0.2.19\n  Downloaded syn v2.0.100\n  Downloaded unicode-width v0.1.14\n  Downloaded nix v0.29.0\n  Downloaded rustix v0.37.28\n  Downloaded regex-syntax v0.8.5\n  Downloaded regex v1.11.1\n  Downloaded crossbeam-epoch v0.9.18\n  Downloaded crossbeam-utils v0.8.21\n  Downloaded regex-automata v0.4.9\n  Downloaded libc v0.2.171\n  Downloaded linux-raw-sys v0.3.8\n   Compiling proc-macro2 v1.0.94\n   Compiling unicode-ident v1.0.18\n   Compiling libc v0.2.171\n   Compiling utf8parse v0.2.2\n   Compiling is_terminal_polyfill v1.70.1\n   Compiling colorchoice v1.0.3\n   Compiling anstyle-query v1.1.2\n   Compiling crossbeam-utils v0.8.21\n   Compiling anstyle v1.0.10\n   Compiling anstyle-parse v0.2.6\n   Compiling strsim v0.11.1\n   Compiling clap_lex v0.7.4\n   Compiling serde v1.0.219\n   Compiling rayon-core v1.12.1\n   Compiling anstream v0.6.18\n   Compiling memchr v2.7.4\n   Compiling io-lifetimes v1.0.11\n   Compiling autocfg v1.4.0\n   Compiling cfg_aliases v0.2.1\n   Compiling clap_builder v4.5.35\n   Compiling nix v0.29.0\n   Compiling quote v1.0.40\n   Compiling crossbeam-epoch v0.9.18\n   Compiling num-traits v0.2.19\n   Compiling syn v2.0.100\n   Compiling crossbeam-deque v0.8.6\n   Compiling roff v0.2.2\n   Compiling cfg-if v1.0.0\n   Compiling rustix v0.37.28\n   Compiling thiserror v1.0.69\n   Compiling aho-corasick v1.1.3\n   Compiling either v1.15.0\n   Compiling linux-raw-sys v0.3.8\n   Compiling overload v0.1.1\n   Compiling regex-syntax v0.8.5\n   Compiling serde_json v1.0.140\n   Compiling bitflags v1.3.2\n   Compiling bitflags v2.9.0\n   Compiling clap v4.5.35\n   Compiling clap_complete v4.5.47\n   Compiling clap_mangen v0.2.26\n   Compiling dirs-sys v0.3.7\n   Compiling rayon v1.10.0\n   Compiling du-dust v1.2.0\n   Compiling serde_derive v1.0.219\n   Compiling thiserror-impl v1.0.69\n   Compiling regex-automata v0.4.9\n   Compiling nu-ansi-term v0.46.0\n   Compiling itoa v1.0.15\n   Compiling iana-time-zone v0.1.63\n   Compiling ansi_term v0.12.1\n   Compiling ryu v1.0.20\n   Compiling once_cell v1.21.3\n   Compiling lscolors v0.13.0\n   Compiling chrono v0.4.40\n   Compiling terminal_size v0.2.6\n   Compiling ctrlc v3.4.5\n   Compiling directories v4.0.1\n   Compiling sysinfo v0.27.8\n   Compiling thousands v0.2.0\n   Compiling unicode-width v0.1.14\n   Compiling stfu8 v0.2.7\n   Compiling regex v1.11.1\n   Compiling toml v0.5.11\n   Compiling config-file v0.2.3\n    Finished `release` profile [optimized] target(s) in 2m 11s\n  Installing /root/.cargo/bin/dust\n   Installed package `du-dust v1.2.0` (executable `dust`)\nwarning: be sure to add `/root/.cargo/bin` to your PATH to be able to run the installed binaries", "stderr_lines": ["    Updating crates.io index", " Downloading crates ...", "  Downloaded du-dust v1.2.0", "  Installing du-dust v1.2.0", "    Updating crates.io index", "     Locking 118 packages to latest compatible versions", "      Adding directories v4.0.1 (available: v6.0.0)", "      Adding lscolors v0.13.0 (available: v0.20.0)", "      Adding sysinfo v0.27.8 (available: v0.34.2)", "      Adding terminal_size v0.2.6 (available: v0.4.2)", "      Adding unicode-width v0.1.14 (available: v0.2.0)", " Downloading crates ...", "  Downloaded autocfg v1.4.0", "  Downloaded ansi_term v0.12.1", "  Downloaded cfg-if v1.0.0", "  Downloaded cfg_aliases v0.2.1", "  Downloaded config-file v0.2.3", "  Downloaded utf8parse v0.2.2", "  Downloaded bitflags v1.3.2", "  Downloaded is_terminal_polyfill v1.70.1", "  Downloaded ctrlc v3.4.5", "  Downloaded itoa v1.0.15", "  Downloaded thiserror v1.0.69", "  Downloaded strsim v0.11.1", "  Downloaded nu-ansi-term v0.46.0", "  Downloaded clap_lex v0.7.4", "  Downloaded either v1.15.0", "  Downloaded clap_mangen v0.2.26", "  Downloaded dirs-sys v0.3.7", "  Downloaded directories v4.0.1", "  Downloaded crossbeam-deque v0.8.6", "  Downloaded colorchoice v1.0.3", "  Downloaded anstyle-query v1.1.2", "  Downloaded anstyle-parse v0.2.6", "  Downloaded thousands v0.2.0", "  Downloaded terminal_size v0.2.6", "  Downloaded roff v0.2.2", "  Downloaded overload v0.1.1", "  Downloaded anstyle v1.0.10", "  Downloaded thiserror-impl v1.0.69", "  Downloaded quote v1.0.40", "  Downloaded once_cell v1.21.3", "  Downloaded bitflags v2.9.0", "  Downloaded anstream v0.6.18", "  Downloaded lscolors v0.13.0", "  Downloaded io-lifetimes v1.0.11", "  Downloaded proc-macro2 v1.0.94", "  Downloaded unicode-ident v1.0.18", "  Downloaded serde_derive v1.0.219", "  Downloaded serde v1.0.219", "  Downloaded rayon-core v1.12.1", "  Downloaded iana-time-zone v0.1.63", "  Downloaded memchr v2.7.4", "  Downloaded clap_complete v4.5.47", "  Downloaded clap v4.5.35", "  Downloaded toml v0.5.11", "  Downloaded stfu8 v0.2.7", "  Downloaded ryu v1.0.20", "  Downloaded sysinfo v0.27.8", "  Downloaded serde_json v1.0.140", "  Downloaded rayon v1.10.0", "  Downloaded aho-corasick v1.1.3", "  Downloaded clap_builder v4.5.35", "  Downloaded chrono v0.4.40", "  Downloaded num-traits v0.2.19", "  Downloaded syn v2.0.100", "  Downloaded unicode-width v0.1.14", "  Downloaded nix v0.29.0", "  Downloaded rustix v0.37.28", "  Downloaded regex-syntax v0.8.5", "  Downloaded regex v1.11.1", "  Downloaded crossbeam-epoch v0.9.18", "  Downloaded crossbeam-utils v0.8.21", "  Downloaded regex-automata v0.4.9", "  Downloaded libc v0.2.171", "  Downloaded linux-raw-sys v0.3.8", "   Compiling proc-macro2 v1.0.94", "   Compiling unicode-ident v1.0.18", "   Compiling libc v0.2.171", "   Compiling utf8parse v0.2.2", "   Compiling is_terminal_polyfill v1.70.1", "   Compiling colorchoice v1.0.3", "   Compiling anstyle-query v1.1.2", "   Compiling crossbeam-utils v0.8.21", "   Compiling anstyle v1.0.10", "   Compiling anstyle-parse v0.2.6", "   Compiling strsim v0.11.1", "   Compiling clap_lex v0.7.4", "   Compiling serde v1.0.219", "   Compiling rayon-core v1.12.1", "   Compiling anstream v0.6.18", "   Compiling memchr v2.7.4", "   Compiling io-lifetimes v1.0.11", "   Compiling autocfg v1.4.0", "   Compiling cfg_aliases v0.2.1", "   Compiling clap_builder v4.5.35", "   Compiling nix v0.29.0", "   Compiling quote v1.0.40", "   Compiling crossbeam-epoch v0.9.18", "   Compiling num-traits v0.2.19", "   Compiling syn v2.0.100", "   Compiling crossbeam-deque v0.8.6", "   Compiling roff v0.2.2", "   Compiling cfg-if v1.0.0", "   Compiling rustix v0.37.28", "   Compiling thiserror v1.0.69", "   Compiling aho-corasick v1.1.3", "   Compiling either v1.15.0", "   Compiling linux-raw-sys v0.3.8", "   Compiling overload v0.1.1", "   Compiling regex-syntax v0.8.5", "   Compiling serde_json v1.0.140", "   Compiling bitflags v1.3.2", "   Compiling bitflags v2.9.0", "   Compiling clap v4.5.35", "   Compiling clap_complete v4.5.47", "   Compiling clap_mangen v0.2.26", "   Compiling dirs-sys v0.3.7", "   Compiling rayon v1.10.0", "   Compiling du-dust v1.2.0", "   Compiling serde_derive v1.0.219", "   Compiling thiserror-impl v1.0.69", "   Compiling regex-automata v0.4.9", "   Compiling nu-ansi-term v0.46.0", "   Compiling itoa v1.0.15", "   Compiling iana-time-zone v0.1.63", "   Compiling ansi_term v0.12.1", "   Compiling ryu v1.0.20", "   Compiling once_cell v1.21.3", "   Compiling lscolors v0.13.0", "   Compiling chrono v0.4.40", "   Compiling terminal_size v0.2.6", "   Compiling ctrlc v3.4.5", "   Compiling directories v4.0.1", "   Compiling sysinfo v0.27.8", "   Compiling thousands v0.2.0", "   Compiling unicode-width v0.1.14", "   Compiling stfu8 v0.2.7", "   Compiling regex v1.11.1", "   Compiling toml v0.5.11", "   Compiling config-file v0.2.3", "    Finished `release` profile [optimized] target(s) in 2m 11s", "  Installing /root/.cargo/bin/dust", "   Installed package `du-dust v1.2.0` (executable `dust`)", "warning: be sure to add `/root/.cargo/bin` to your PATH to be able to run the installed binaries"], "stdout": "", "stdout_lines": []}
 
 PLAY RECAP *********************************************************************
 localhost                  : ok=13   changed=3    unreachable=0    failed=1    skipped=12   rescued=0    ignored=0   
 
-2025-04-03 05:01:58,923 - ERROR - Error al ejecutar el comando 'ansible-playbook --ask-become-pass /home/el/dotfiles/ansible/playbook.yml -i /home/el/dotfiles/ansible/inventory.ini -v' en '/home/el/dotfiles/ansible': Command '['ansible-playbook', '--ask-become-pass', '/home/el/dotfiles/ansible/playbook.yml', '-i', '/home/el/dotfiles/ansible/inventory.ini', '-v']' returned non-zero exit status 2.
+2025-04-03 05:21:04,342 - ERROR - Error al ejecutar el comando 'ansible-playbook --ask-become-pass /home/el/dotfiles/ansible/playbook.yml -i /home/el/dotfiles/ansible/inventory.ini -v' en '/home/el/dotfiles/ansible': Command '['ansible-playbook', '--ask-become-pass', '/home/el/dotfiles/ansible/playbook.yml', '-i', '/home/el/dotfiles/ansible/inventory.ini', '-v']' returned non-zero exit status 2.
