@@ -5,6 +5,7 @@ import sys
 import os
 from pathlib import Path
 import logging
+import shutil
 
 # Configuración básica de logging
 logging.basicConfig(
@@ -119,14 +120,15 @@ def install_paru_python():
         os.chdir(str(paru_dir))
 
         logging.info("Construyendo e instalando paru...")
-        subprocess.run(["sudo", "makepkg", "-si", "--noconfirm"], check=True)
+        # Eliminar 'sudo' de la ejecución de makepkg
+        subprocess.run(["makepkg", "-si", "--noconfirm"], check=True)
         logging.info("Paru instalado exitosamente.")
 
         # Opcional: Limpiar el directorio clonado
-        # logging.info("Limpiando el directorio de construcción de paru...")
-        # os.chdir(str(Path.home()))
-        # shutil.rmtree(paru_dir)
-        # logging.info("Limpieza completada.")
+        logging.info("Limpiando el directorio de construcción de paru...")
+        os.chdir(str(Path.home()))
+        shutil.rmtree(paru_dir)
+        logging.info("Limpieza completada.")
 
     except subprocess.CalledProcessError as e:
         logging.error(f"Error durante la instalación: {e}")
