@@ -35,7 +35,7 @@ test-opensuse: logo
 		echo '${USERNAME}:${PASSWORD}' | chpasswd; \
 		echo '%${USERNAME} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers; \
 		su - ${USERNAME} -c 'curl -LsSf \"${SCRIPT_URL}\" | python3'; \
-	" > logs/ansible.log
+	" &> logs/ansible.log
 
 ## Ejecuta la prueba del script en un contenedor Docker de Fedora
 test-fedora: logo
@@ -48,7 +48,7 @@ test-fedora: logo
 		echo '${USERNAME}:${PASSWORD}' | chpasswd; \
 		echo '%${USERNAME} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers; \
 		sudo -u el bash -c 'curl -LsSf \"${SCRIPT_URL}\" | python3'; \
-	" > logs/ansible.log
+	" &> logs/ansible.log
 
 ## Ejecuta la prueba del script en un contenedor Docker de Archlinux
 test-archlinux: logo
