@@ -1,6 +1,6 @@
 - name: Ejecutar comandos post-instalación
   ansible.builtin.shell: "{{ item.command }}"
-  become: true
+  become: no
   loop: "{{ install_post_install_commands }}"
   when:
     - install_post_install_commands is defined
