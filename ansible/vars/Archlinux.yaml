@@ -40,7 +40,7 @@ package_managers:
       - make
       - unzip
       - zsh
-      - golang
+      - go
       - cargo
       - g++
       - python3
