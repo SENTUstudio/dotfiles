@@ -16,7 +16,7 @@
 
 - name: Definir core_dependencies globalmente
   ansible.builtin.set_fact:
-    core_dependencies: "{{ package_managers[ansible_os_family | lower].dependencies.core | default([]) }}"
+    core_dependencies: "{{ package_managers.dependencies.core | default([]) }}"
 
 - name: Obtener el directorio home del usuario
   ansible.builtin.command: echo $HOME
