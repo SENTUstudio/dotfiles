@@ -212,12 +212,12 @@ Optional dependencies for ansible
 /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
 All rules containing unresolvable specifiers will be skipped.
 (3/3) Arming ConditionNeedsUpdate...
-2025-04-03 07:50:43,752 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 07:50:43,752 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚
-2025-04-03 07:50:43,752 - INFO -                 .studio
-2025-04-03 07:50:43,752 - INFO - Sistema operativo detectado: Linux
-2025-04-03 07:50:43,752 - INFO - Instalando dependencias...
-2025-04-03 07:50:43,759 - INFO - Gestor de paquetes 'pacman' detectado. Intentando instalar Paquetes...
+2025-04-03 08:09:14,348 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 08:09:14,348 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚
+2025-04-03 08:09:14,348 - INFO -                 .studio
+2025-04-03 08:09:14,348 - INFO - Sistema operativo detectado: Linux
+2025-04-03 08:09:14,348 - INFO - Instalando dependencias...
+2025-04-03 08:09:14,357 - INFO - Gestor de paquetes 'pacman' detectado. Intentando instalar Paquetes...
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -285,10 +285,10 @@ Failed to check for chroot() environment: Permission denied
   Skipped: Current root is not booted.
 (3/4) Arming ConditionNeedsUpdate...
 (4/4) Checking for old perl modules...
-2025-04-03 07:51:31,234 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 07:51:31,234 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m         💾 Instalando yay         [0m├┚
-2025-04-03 07:51:31,234 - INFO -                 .studio
-2025-04-03 07:51:31,234 - INFO - Asegurando que git y base-devel estén instalados...
+2025-04-03 08:10:05,396 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 08:10:05,396 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m         💾 Instalando yay         [0m├┚
+2025-04-03 08:10:05,396 - INFO -                 .studio
+2025-04-03 08:10:05,396 - INFO - Asegurando que git y base-devel estén instalados...
 warning: git-2.49.0-1 is up to date -- skipping
 resolving dependencies...
 looking for conflicting packages...
@@ -390,8 +390,8 @@ Optional dependencies for texinfo
 installing base-devel...
 :: Running post-transaction hooks...
 (1/1) Arming ConditionNeedsUpdate...
-2025-04-03 07:51:48,981 - INFO - git y base-devel instalados o ya presentes.
-2025-04-03 07:51:48,982 - INFO - Clonando el repositorio de yay desde AUR...
+2025-04-03 08:10:24,115 - INFO - git y base-devel instalados o ya presentes.
+2025-04-03 08:10:24,116 - INFO - Clonando el repositorio de yay desde AUR...
 Cloning into '/home/el/.cache/yay'...
 hint: Using 'master' as the name for the initial branch. This default branch name
 hint: is subject to change. To configure the initial branch name to use in all
@@ -403,10 +403,10 @@ hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
 hint: 'development'. The just-created branch can be renamed via this command:
 hint:
 hint: 	git branch -m <name>
-2025-04-03 07:51:50,687 - INFO - Repositorio de yay clonado.
-2025-04-03 07:51:50,687 - INFO - Navegando al directorio de yay...
-2025-04-03 07:51:50,687 - INFO - Construyendo e instalando yay...
-==> Making package: yay 12.4.2-1 (Thu Apr  3 07:51:58 2025)
+2025-04-03 08:10:25,619 - INFO - Repositorio de yay clonado.
+2025-04-03 08:10:25,620 - INFO - Navegando al directorio de yay...
+2025-04-03 08:10:25,620 - INFO - Construyendo e instalando yay...
+==> Making package: yay 12.4.2-1 (Thu Apr  3 08:10:34 2025)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Installing missing dependencies...
@@ -435,17 +435,17 @@ installing go...
   -> Downloading yay-12.4.2.tar.gz...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  444k  100  444k    0     0   478k      0 --:--:-- --:--:-- --:--:--  913k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  444k  100  444k    0     0   467k      0 --:--:-- --:--:-- --:--:--  467k
 ==> Validating source files with sha256sums...
     yay-12.4.2.tar.gz ... Passed
 ==> Extracting sources...
   -> Extracting yay-12.4.2.tar.gz with bsdtar
 ==> Starting build()...
 go build -trimpath -mod=readonly -modcacherw -ldflags '-X "main.yayVersion=12.4.2" -X "main.localePath=/usr/share/locale/" -linkmode=external -compressdwarf=false' -buildmode=pie -o yay
-go: downloading github.com/Jguer/aur v1.2.3
 go: downloading github.com/Jguer/votar v1.0.0
 go: downloading github.com/Jguer/go-alpm/v2 v2.2.2
+go: downloading github.com/Jguer/aur v1.2.3
 go: downloading github.com/Morganamilo/go-srcinfo v1.0.0
 go: downloading github.com/deckarep/golang-set/v2 v2.6.0
 go: downloading github.com/leonelquinteros/gotext v1.5.2
@@ -454,10 +454,10 @@ go: downloading github.com/Morganamilo/go-pacmanconf v0.0.0-20210502114700-cff03
 go: downloading golang.org/x/term v0.18.0
 go: downloading github.com/adrg/strutil v0.3.1
 go: downloading github.com/hashicorp/go-multierror v1.1.1
-go: downloading github.com/itchyny/gojq v0.12.14
 go: downloading golang.org/x/text v0.14.0
-go: downloading github.com/mitchellh/mapstructure v1.5.0
+go: downloading github.com/itchyny/gojq v0.12.14
 go: downloading github.com/ohler55/ojg v1.21.4
+go: downloading github.com/mitchellh/mapstructure v1.5.0
 go: downloading github.com/hashicorp/errwrap v1.1.0
 go: downloading github.com/itchyny/timefmt-go v0.1.5
 ==> Entering fakeroot environment...
@@ -510,7 +510,7 @@ done
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: yay 12.4.2-1 (Thu Apr  3 07:52:58 2025)
+==> Finished making: yay 12.4.2-1 (Thu Apr  3 08:11:40 2025)
 ==> Installing package yay with pacman -U...
 loading packages...
 resolving dependencies...
@@ -536,21 +536,21 @@ Optional dependencies for yay
 installing yay-debug...
 :: Running post-transaction hooks...
 (1/1) Arming ConditionNeedsUpdate...
-2025-04-03 07:52:59,132 - INFO - Yay instalado exitosamente.
-2025-04-03 07:52:59,132 - INFO - Limpiando el directorio de construcción de yay...
-2025-04-03 07:52:59,318 - INFO - Limpieza completada.
-2025-04-03 07:52:59,330 - INFO - Git instalado exitosamente.
-2025-04-03 07:52:59,331 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 07:52:59,331 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m 💾 Clonación de dotfiles iniciada [0m├┚
-2025-04-03 07:52:59,331 - INFO -                 .studio
-2025-04-03 07:52:59,331 - INFO - Clonando el repositorio 'dotfiles' desde 'https://github.com/SENTUstudio/dotfiles.git' a '/home/el/dotfiles' en la rama 'develop'...
+2025-04-03 08:11:40,930 - INFO - Yay instalado exitosamente.
+2025-04-03 08:11:40,931 - INFO - Limpiando el directorio de construcción de yay...
+2025-04-03 08:11:41,176 - INFO - Limpieza completada.
+2025-04-03 08:11:41,179 - INFO - Git instalado exitosamente.
+2025-04-03 08:11:41,179 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 08:11:41,179 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m 💾 Clonación de dotfiles iniciada [0m├┚
+2025-04-03 08:11:41,179 - INFO -                 .studio
+2025-04-03 08:11:41,179 - INFO - Clonando el repositorio 'dotfiles' desde 'https://github.com/SENTUstudio/dotfiles.git' a '/home/el/dotfiles' en la rama 'develop'...
 Cloning into '/home/el/dotfiles'...
-2025-04-03 07:53:10,425 - INFO - Repositorio clonado exitosamente.
-2025-04-03 07:53:10,426 - INFO - 💾 Clonación de dotfiles terminada
-2025-04-03 07:53:10,426 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤   Ingeniería de Datos & Data Science  ├┒
-2025-04-03 07:53:10,426 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m⚙️  Iniciando instalación de paquetes[0m├┚
-2025-04-03 07:53:10,426 - INFO -                 .studio
-2025-04-03 07:53:10,428 - INFO - Ejecutando Ansible Playbook...
+2025-04-03 08:11:53,165 - INFO - Repositorio clonado exitosamente.
+2025-04-03 08:11:53,165 - INFO - 💾 Clonación de dotfiles terminada
+2025-04-03 08:11:53,166 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤   Ingeniería de Datos & Data Science  ├┒
+2025-04-03 08:11:53,166 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m⚙️  Iniciando instalación de paquetes[0m├┚
+2025-04-03 08:11:53,166 - INFO -                 .studio
+2025-04-03 08:11:53,169 - INFO - Ejecutando Ansible Playbook...
 /usr/lib/python3.13/getpass.py:90: GetPassWarning: Can not control echo on the terminal.
   passwd = fallback_getpass(prompt, stream)
 Warning: Password input may be echoed.
@@ -593,7 +593,7 @@ TASK [base_system_configuration : Include post-install variables] **************
 ok: [localhost] => {"ansible_facts": {"install_post_install_commands": [{"command": "go install oss.terrastruct.com/d2@latest", "description": "Instalando d2 diagram"}, {"command": "curl -fsS https://dl.brave.com/install.sh | sh", "description": "Instalando Brave"}, {"command": "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm", "description": "Configurando tmux plugin manager"}, {"command": "gem install tmuxinator", "description": "Instalando tmuxinator"}, {"command": "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo", "description": "Actualizando repo Flatpak"}, {"command": "flatpak install flathub md.obsidian.Obsidian -y", "description": "Instalando Obsidian"}, {"command": "sudo usermod -aG docker $USER", "description": "Añadiendo el usuario al grupo docker (puede requerir reiniciar sesión)"}, {"command": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh", "description": "Añadiendo Atuin, Sync, search and backup shell history"}, {"command": "cargo install du-dust", "description": "Herramienta para ver el uso del disco por el terminal"}]}, "ansible_included_var_files": ["/home/el/dotfiles/ansible/vars/post_install.yaml"], "changed": false}
 
 TASK [base_system_configuration : Incluir variables específicas de la distribución] ***
-ok: [localhost] => {"ansible_facts": {"package_managers": {"dependencies": {"core": ["git", "curl", "wget", "gcc", "make", "unzip", "zsh", "golang", "cargo", "g++", "python3", "ruby", "unrar", "p7zip", "p7zip-plugins", "xdg-user-dirs", "lsd", "java", "dnf-utils", "flatpak", "kernel-devel", "gcc", "make", "automake", "perl", "elfutils-libelf-devel"], "extended": ["lazygit", "ripgrep", "fd-find", "neovim", "fastfetch", "util-linux-user", "anacron", "zoxide", "python3-neovim", "kitty", "lua-devel", "luarocks", "docker-ce", "docker-ce-cli", "containerd.io", "docker-compose-plugin", "bat", "fzf", "httpie", "ripgrep", "tmux", "htop", "proselint", "lm_sensors", "discord", "alacritty", "kde-connect", "dnf-utils", "kdenlive", "openshot", "vlc", "mpv", "soundconverter", "audacity", "muse", "lmms", "amarok", "flowblade", "dnf-plugins-core", "xine-lib", "xine-lib-extras", "xine-lib-extras-freeworld", "libdvdread", "libdvdnav", "lsdvd", "libdvbpsi", "ffmpeg", "libmatroska", "xvidcore", "gimp", "inkscape", "libreoffice-writer", "libreoffice-calc", "libreoffice-impress", "libreoffice-draw", "libreoffice-langpack-es", "gstreamer1-devel", "gstreamer1-plugins-base-tools", "gstreamer1-doc", "gstreamer1-plugins-base-devel", "gstreamer1-plugins-good", "gstreamer1-plugins-good-extras", "gstreamer1-plugins-bad-free", "gstreamer1-plugins-bad-free-devel", "virt-manager", "qemu", "zeal"]}, "install": ["sudo", "pacman", "-Sy", "--needed", "--noconfirm"], "manager": "pacman", "repo": {"docker": ["sudo", "dnf", "config-manager", "addrepo", "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"], "google-chrome": ["sudo", "dnf", "install", "-y", "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"], "lazygit": ["sudo", "dnf", "copr", "enable", "atim/lazygit", "-y"]}, "update": ["sudo", "pacman", "-Suy", "--noconfirm"]}}, "ansible_included_var_files": ["/home/el/dotfiles/ansible/vars/Archlinux.yaml"], "changed": false}
+ok: [localhost] => {"ansible_facts": {"package_managers": {"dependencies": {"core": ["git", "curl", "wget", "gcc", "make", "unzip", "zsh", "go", "cargo", "g++", "python3", "ruby", "unrar", "p7zip", "p7zip-plugins", "xdg-user-dirs", "lsd", "java", "dnf-utils", "flatpak", "kernel-devel", "gcc", "make", "automake", "perl", "elfutils-libelf-devel"], "extended": ["lazygit", "ripgrep", "fd-find", "neovim", "fastfetch", "util-linux-user", "anacron", "zoxide", "python3-neovim", "kitty", "lua-devel", "luarocks", "docker-ce", "docker-ce-cli", "containerd.io", "docker-compose-plugin", "bat", "fzf", "httpie", "ripgrep", "tmux", "htop", "proselint", "lm_sensors", "discord", "alacritty", "kde-connect", "dnf-utils", "kdenlive", "openshot", "vlc", "mpv", "soundconverter", "audacity", "muse", "lmms", "amarok", "flowblade", "dnf-plugins-core", "xine-lib", "xine-lib-extras", "xine-lib-extras-freeworld", "libdvdread", "libdvdnav", "lsdvd", "libdvbpsi", "ffmpeg", "libmatroska", "xvidcore", "gimp", "inkscape", "libreoffice-writer", "libreoffice-calc", "libreoffice-impress", "libreoffice-draw", "libreoffice-langpack-es", "gstreamer1-devel", "gstreamer1-plugins-base-tools", "gstreamer1-doc", "gstreamer1-plugins-base-devel", "gstreamer1-plugins-good", "gstreamer1-plugins-good-extras", "gstreamer1-plugins-bad-free", "gstreamer1-plugins-bad-free-devel", "virt-manager", "qemu", "zeal"]}, "install": ["sudo", "pacman", "-Sy", "--needed", "--noconfirm"], "manager": "pacman", "repo": {"docker": ["sudo", "dnf", "config-manager", "addrepo", "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"], "google-chrome": ["sudo", "dnf", "install", "-y", "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"], "lazygit": ["sudo", "dnf", "copr", "enable", "atim/lazygit", "-y"]}, "update": ["sudo", "pacman", "-Suy", "--noconfirm"]}}, "ansible_included_var_files": ["/home/el/dotfiles/ansible/vars/Archlinux.yaml"], "changed": false}
 
 TASK [base_system_configuration : Depurar contenido de package_managers] *******
 ok: [localhost] => {
@@ -607,7 +607,7 @@ ok: [localhost] => {
                 "make",
                 "unzip",
                 "zsh",
-                "golang",
+                "go",
                 "cargo",
                 "g++",
                 "python3",
@@ -739,7 +739,7 @@ ok: [localhost] => {
 }
 
 TASK [base_system_configuration : Definir core_dependencies globalmente] *******
-ok: [localhost] => {"ansible_facts": {"core_dependencies": ["git", "curl", "wget", "gcc", "make", "unzip", "zsh", "golang", "cargo", "g++", "python3", "ruby", "unrar", "p7zip", "p7zip-plugins", "xdg-user-dirs", "lsd", "java", "dnf-utils", "flatpak", "kernel-devel", "gcc", "make", "automake", "perl", "elfutils-libelf-devel"]}, "changed": false}
+ok: [localhost] => {"ansible_facts": {"core_dependencies": ["git", "curl", "wget", "gcc", "make", "unzip", "zsh", "go", "cargo", "g++", "python3", "ruby", "unrar", "p7zip", "p7zip-plugins", "xdg-user-dirs", "lsd", "java", "dnf-utils", "flatpak", "kernel-devel", "gcc", "make", "automake", "perl", "elfutils-libelf-devel"]}, "changed": false}
 
 TASK [base_system_configuration : Depurar contenido de core_dependencies] ******
 ok: [localhost] => {
@@ -751,7 +751,7 @@ ok: [localhost] => {
         "make",
         "unzip",
         "zsh",
-        "golang",
+        "go",
         "cargo",
         "g++",
         "python3",
@@ -774,7 +774,7 @@ ok: [localhost] => {
 }
 
 TASK [base_system_configuration : Obtener el directorio home del usuario] ******
-changed: [localhost] => {"changed": true, "cmd": ["echo", "$HOME"], "delta": "0:00:00.011291", "end": "2025-04-03 07:53:14.370576", "msg": "", "rc": 0, "start": "2025-04-03 07:53:14.359285", "stderr": "", "stderr_lines": [], "stdout": "/home/el", "stdout_lines": ["/home/el"]}
+changed: [localhost] => {"changed": true, "cmd": ["echo", "$HOME"], "delta": "0:00:00.018751", "end": "2025-04-03 08:11:57.503186", "msg": "", "rc": 0, "start": "2025-04-03 08:11:57.484435", "stderr": "", "stderr_lines": [], "stdout": "/home/el", "stdout_lines": ["/home/el"]}
 
 TASK [base_system_configuration : Actualiza el sistema (Debian/Ubuntu)] ********
 skipping: [localhost] => {"changed": false, "false_condition": "ansible_os_family == \"Debian\"", "skip_reason": "Conditional result was False"}
@@ -786,7 +786,7 @@ TASK [base_system_configuration : Actualiza el sistema (Fedora)] ***************
 skipping: [localhost] => {"changed": false, "false_condition": "ansible_distribution == \"Fedora\"", "skip_reason": "Conditional result was False"}
 
 TASK [base_system_configuration : Actualiza el sistema (Arch Linux)] ***********
-ok: [localhost] => {"cache_updated": false, "changed": false, "msg": "Updated package db\nNothing to upgrade", "stdout": ":: Synchronizing package databases...\n core downloading...\n extra downloading...\n", "stdout_lines": [":: Synchronizing package databases...", " core downloading...", " extra downloading..."]}
+changed: [localhost] => {"cache_updated": true, "changed": true, "msg": "Updated package db\nNothing to upgrade", "stdout": ":: Synchronizing package databases...\n core downloading...\n extra downloading...\n", "stdout_lines": [":: Synchronizing package databases...", " core downloading...", " extra downloading..."]}
 
 TASK [base_system_configuration : Actualiza el sistema (openSUSE)] *************
 skipping: [localhost] => {"changed": false, "false_condition": "ansible_distribution == \"openSUSE Leap\" or ansible_distribution == \"openSUSE Tumbleweed\"", "skip_reason": "Conditional result was False"}
@@ -810,9 +810,9 @@ TASK [install_core_dependencies : Instalar dependencias core (Red Hat/CentOS)] *
 skipping: [localhost] => {"changed": false, "false_condition": "ansible_os_family == \"RedHat\" and ansible_distribution != \"Fedora\"", "skip_reason": "Conditional result was False"}
 
 TASK [install_core_dependencies : Install package from AUR using a Pacman compatible AUR helper] ***
-fatal: [localhost]: FAILED! => {"changed": false, "cmd": ["/usr/bin/yay", "--upgrade", "--print-format", "%n", "golang"], "msg": "Failed to list package golang", "rc": 1, "stderr": "error: 'golang': could not find or read package\n -> exit status 1\n", "stderr_lines": ["error: 'golang': could not find or read package", " -> exit status 1"], "stdout": "\u001b[1m\u001b[33m -> \u001b[0m\u001b[0mAvoid running yay as root/sudo.\n", "stdout_lines": ["\u001b[1m\u001b[33m -> \u001b[0m\u001b[0mAvoid running yay as root/sudo."]}
+fatal: [localhost]: FAILED! => {"changed": false, "cmd": ["/usr/bin/yay", "--upgrade", "--print-format", "%n", "g++"], "msg": "Failed to list package g++", "rc": 1, "stderr": "error: 'g++': could not find or read package\n -> exit status 1\n", "stderr_lines": ["error: 'g++': could not find or read package", " -> exit status 1"], "stdout": "\u001b[1m\u001b[33m -> \u001b[0m\u001b[0mAvoid running yay as root/sudo.\n", "stdout_lines": ["\u001b[1m\u001b[33m -> \u001b[0m\u001b[0mAvoid running yay as root/sudo."]}
 
 PLAY RECAP *********************************************************************
-localhost                  : ok=13   changed=1    unreachable=0    failed=1    skipped=10   rescued=0    ignored=0   
+localhost                  : ok=13   changed=2    unreachable=0    failed=1    skipped=10   rescued=0    ignored=0   
 
-2025-04-03 07:53:25,574 - ERROR - Error al ejecutar el comando 'ansible-playbook --ask-become-pass /home/el/dotfiles/ansible/playbook.yml -i /home/el/dotfiles/ansible/inventory.ini -v' en '/home/el/dotfiles/ansible': Command '['ansible-playbook', '--ask-become-pass', '/home/el/dotfiles/ansible/playbook.yml', '-i', '/home/el/dotfiles/ansible/inventory.ini', '-v']' returned non-zero exit status 2.
+2025-04-03 08:12:12,991 - ERROR - Error al ejecutar el comando 'ansible-playbook --ask-become-pass /home/el/dotfiles/ansible/playbook.yml -i /home/el/dotfiles/ansible/inventory.ini -v' en '/home/el/dotfiles/ansible': Command '['ansible-playbook', '--ask-become-pass', '/home/el/dotfiles/ansible/playbook.yml', '-i', '/home/el/dotfiles/ansible/inventory.ini', '-v']' returned non-zero exit status 2.

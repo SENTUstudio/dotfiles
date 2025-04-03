@@ -42,52 +42,45 @@ package_managers:
       - zsh
       - go
       - cargo
-      - g++
-      - python3
+      - python
       - ruby
       - unrar
       - p7zip
-      - p7zip-plugins
       - xdg-user-dirs
       - lsd
-      - java
-      - dnf-utils
+      - jdk-openjdk
       - flatpak
-      - kernel-devel
-      - gcc
-      - make
+      - linux-headers
       - automake
       - perl
-      - elfutils-libelf-devel
+      - elfutils
     extended:
       - lazygit
       - ripgrep
-      - fd-find
+      - fd
       - neovim
       - fastfetch
-      - util-linux-user
+      - util-linux
       - anacron
       - zoxide
-      - python3-neovim
+      - python-neovim
       - kitty
-      - lua-devel
+      - lua
       - luarocks
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - docker-compose-plugin
+      - docker
+      - docker-cli
+      - containerd
+      - docker-compose
       - bat
       - fzf
       - httpie
-      - ripgrep
       - tmux
       - htop
       - proselint
       - lm_sensors
       - discord
       - alacritty
-      - kde-connect
-      - dnf-utils
+      - kdeconnect
       - kdenlive
       - openshot
       - vlc
@@ -98,10 +91,7 @@ package_managers:
       - lmms
       - amarok
       - flowblade
-      - dnf-plugins-core
       - xine-lib
-      - xine-lib-extras
-      - xine-lib-extras-freeworld
       - libdvdread
       - libdvdnav
       - lsdvd
@@ -111,19 +101,12 @@ package_managers:
       - xvidcore
       - gimp
       - inkscape
-      - libreoffice-writer
-      - libreoffice-calc
-      - libreoffice-impress
-      - libreoffice-draw
-      - libreoffice-langpack-es
-      - gstreamer1-devel
-      - gstreamer1-plugins-base-tools
-      - gstreamer1-doc
-      - gstreamer1-plugins-base-devel
-      - gstreamer1-plugins-good
-      - gstreamer1-plugins-good-extras
-      - gstreamer1-plugins-bad-free
-      - gstreamer1-plugins-bad-free-devel
+      - libreoffice-fresh
+      - libreoffice-fresh-es
+      - gstreamer
+      - gst-plugins-base
+      - gst-plugins-good
+      - gst-plugins-bad
       - virt-manager
       - qemu
       - zeal
