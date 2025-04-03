@@ -9,6 +9,11 @@
     file: "{{ playbook_dir }}/vars/post_install.yaml"
   tags: post_install_vars
 
+- name: Include flatpak_apps variables
+  include_vars:
+    file: "{{ playbook_dir }}/vars/flatpak.yaml"
+  tags: flatpak_apps_vars
+
 - name: Incluir variables específicas de la distribución
   ansible.builtin.include_vars:
     file: "{{ playbook_dir }}/vars/{{ ansible_os_family }}.yaml"
@@ -26,13 +31,21 @@
   ansible.builtin.debug:
     var: core_dependencies
 
-- name: Definir core_dependencies globalmente
+- name: Definir extended_dependencies globalmente
   ansible.builtin.set_fact:
     extended_dependencies: "{{ package_managers.dependencies.extended | default([]) }}"
 
-- name: Depurar contenido de core_dependencies
+- name: Depurar contenido de extended_dependencies
   ansible.builtin.debug:
     var: extended_dependencies
+
+- name: Definir flatpak_apps globalmente
+  ansible.builtin.set_fact:
+    flatpak_apps: "{{ apps | default([]) }}"
+
+- name: Depurar contenido de flatpak_apps
+  ansible.builtin.debug:
+    var: flatpak_apps
 
 - name: Obtener el directorio home del usuario
   ansible.builtin.command: echo $HOME

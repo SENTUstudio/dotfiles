@@ -17,6 +17,7 @@
     - role: install_rye
     - role: install_extended_dependencies
     - role: install_post_install
+    - role: install_flatpak
     - role: install_fonts
     - role: dotfiles_management
     # ... (añadiremos más roles aquí)
