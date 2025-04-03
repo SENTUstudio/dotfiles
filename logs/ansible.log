@@ -209,12 +209,12 @@ Optional dependencies for ansible
 /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
 All rules containing unresolvable specifiers will be skipped.
 (3/3) Arming ConditionNeedsUpdate...
-2025-04-03 06:48:50,202 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 06:48:50,202 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚
-2025-04-03 06:48:50,202 - INFO -                 .studio
-2025-04-03 06:48:50,202 - INFO - Sistema operativo detectado: Linux
-2025-04-03 06:48:50,202 - INFO - Instalando dependencias...
-2025-04-03 06:48:50,210 - INFO - Gestor de paquetes 'pacman' detectado. Intentando instalar Paquetes...
+2025-04-03 06:52:37,020 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 06:52:37,021 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚
+2025-04-03 06:52:37,021 - INFO -                 .studio
+2025-04-03 06:52:37,021 - INFO - Sistema operativo detectado: Linux
+2025-04-03 06:52:37,021 - INFO - Instalando dependencias...
+2025-04-03 06:52:37,029 - INFO - Gestor de paquetes 'pacman' detectado. Intentando instalar Paquetes...
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -282,20 +282,20 @@ Failed to check for chroot() environment: Permission denied
   Skipped: Current root is not booted.
 (3/4) Arming ConditionNeedsUpdate...
 (4/4) Checking for old perl modules...
-2025-04-03 06:49:38,392 - INFO - Git instalado exitosamente.
-2025-04-03 06:49:38,392 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 06:49:38,392 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m 💾 Clonación de dotfiles iniciada [0m├┚
-2025-04-03 06:49:38,392 - INFO -                 .studio
-2025-04-03 06:49:38,392 - INFO - Clonando el repositorio 'dotfiles' desde 'https://github.com/SENTUstudio/dotfiles.git' a '/home/el/dotfiles' en la rama 'develop'...
+2025-04-03 06:53:21,610 - INFO - Git instalado exitosamente.
+2025-04-03 06:53:21,610 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 06:53:21,610 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m 💾 Clonación de dotfiles iniciada [0m├┚
+2025-04-03 06:53:21,610 - INFO -                 .studio
+2025-04-03 06:53:21,611 - INFO - Clonando el repositorio 'dotfiles' desde 'https://github.com/SENTUstudio/dotfiles.git' a '/home/el/dotfiles' en la rama 'develop'...
 Cloning into '/home/el/dotfiles'...
-2025-04-03 06:49:52,731 - INFO - Repositorio clonado exitosamente.
-2025-04-03 06:49:52,731 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 06:49:52,731 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m💾 Clonación de dotfiles terminada [0m├┚
-2025-04-03 06:49:52,731 - INFO -                 .studio
-2025-04-03 06:49:52,731 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤   Ingeniería de Datos & Data Science  ├┒
-2025-04-03 06:49:52,731 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m⚙️  Iniciando instalación de paquetes[0m├┚
-2025-04-03 06:49:52,731 - INFO -                 .studio
-2025-04-03 06:49:52,734 - INFO - Ejecutando Ansible Playbook...
+2025-04-03 06:53:30,681 - INFO - Repositorio clonado exitosamente.
+2025-04-03 06:53:30,681 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 06:53:30,681 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m💾 Clonación de dotfiles terminada [0m├┚
+2025-04-03 06:53:30,681 - INFO -                 .studio
+2025-04-03 06:53:30,681 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤   Ingeniería de Datos & Data Science  ├┒
+2025-04-03 06:53:30,681 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m⚙️  Iniciando instalación de paquetes[0m├┚
+2025-04-03 06:53:30,681 - INFO -                 .studio
+2025-04-03 06:53:30,684 - INFO - Ejecutando Ansible Playbook...
 /usr/lib/python3.13/getpass.py:90: GetPassWarning: Can not control echo on the terminal.
   passwd = fallback_getpass(prompt, stream)
 Warning: Password input may be echoed.
@@ -341,7 +341,7 @@ TASK [base_system_configuration : Incluir variables específicas de la distribuc
 ok: [localhost] => {"ansible_facts": {"package_managers": {"dependencies": {"core": ["git", "curl", "wget", "gcc", "make", "unzip", "zsh", "golang", "cargo", "g++", "python3", "ruby", "unrar", "p7zip", "p7zip-plugins", "xdg-user-dirs", "lsd", "java", "dnf-utils", "flatpak", "kernel-devel", "gcc", "make", "automake", "perl", "elfutils-libelf-devel"], "extended": ["lazygit", "ripgrep", "fd-find", "neovim", "fastfetch", "util-linux-user", "anacron", "zoxide", "python3-neovim", "kitty", "lua-devel", "luarocks", "docker-ce", "docker-ce-cli", "containerd.io", "docker-compose-plugin", "bat", "fzf", "httpie", "ripgrep", "tmux", "htop", "proselint", "lm_sensors", "discord", "alacritty", "kde-connect", "dnf-utils", "kdenlive", "openshot", "vlc", "mpv", "soundconverter", "audacity", "muse", "lmms", "amarok", "flowblade", "dnf-plugins-core", "xine-lib", "xine-lib-extras", "xine-lib-extras-freeworld", "libdvdread", "libdvdnav", "lsdvd", "libdvbpsi", "ffmpeg", "libmatroska", "xvidcore", "gimp", "inkscape", "libreoffice-writer", "libreoffice-calc", "libreoffice-impress", "libreoffice-draw", "libreoffice-langpack-es", "gstreamer1-devel", "gstreamer1-plugins-base-tools", "gstreamer1-doc", "gstreamer1-plugins-base-devel", "gstreamer1-plugins-good", "gstreamer1-plugins-good-extras", "gstreamer1-plugins-bad-free", "gstreamer1-plugins-bad-free-devel", "virt-manager", "qemu", "zeal"]}, "install": ["sudo", "pacman", "-Sy", "--needed", "--noconfirm"], "manager": "pacman", "repo": {"docker": ["sudo", "dnf", "config-manager", "addrepo", "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"], "google-chrome": ["sudo", "dnf", "install", "-y", "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"], "lazygit": ["sudo", "dnf", "copr", "enable", "atim/lazygit", "-y"], "paru": ["sudo", "dnf", "install", "-y", "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"], "rpmfusion-free": ["sudo", "dnf", "install", "-y", "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"]}, "update": ["sudo", "pacman", "-Suy", "--noconfirm"]}}, "ansible_included_var_files": ["/home/el/dotfiles/ansible/vars/Archlinux.yaml"], "changed": false}
 
 TASK [base_system_configuration : Obtener el directorio home del usuario] ******
-changed: [localhost] => {"changed": true, "cmd": ["echo", "$HOME"], "delta": "0:00:00.012075", "end": "2025-04-03 06:49:56.878602", "msg": "", "rc": 0, "start": "2025-04-03 06:49:56.866527", "stderr": "", "stderr_lines": [], "stdout": "/home/el", "stdout_lines": ["/home/el"]}
+changed: [localhost] => {"changed": true, "cmd": ["echo", "$HOME"], "delta": "0:00:00.018080", "end": "2025-04-03 06:53:34.620594", "msg": "", "rc": 0, "start": "2025-04-03 06:53:34.602514", "stderr": "", "stderr_lines": [], "stdout": "/home/el", "stdout_lines": ["/home/el"]}
 
 TASK [base_system_configuration : Actualiza el sistema (Debian/Ubuntu)] ********
 skipping: [localhost] => {"changed": false, "false_condition": "ansible_os_family == \"Debian\"", "skip_reason": "Conditional result was False"}
@@ -382,4 +382,4 @@ fatal: [localhost]: FAILED! => {"changed": false, "msg": "Failed to find require
 PLAY RECAP *********************************************************************
 localhost                  : ok=10   changed=1    unreachable=0    failed=1    skipped=10   rescued=0    ignored=0   
 
-2025-04-03 06:50:01,290 - ERROR - Error al ejecutar el comando 'ansible-playbook --ask-become-pass /home/el/dotfiles/ansible/playbook.yml -i /home/el/dotfiles/ansible/inventory.ini -v' en '/home/el/dotfiles/ansible': Command '['ansible-playbook', '--ask-become-pass', '/home/el/dotfiles/ansible/playbook.yml', '-i', '/home/el/dotfiles/ansible/inventory.ini', '-v']' returned non-zero exit status 2.
+2025-04-03 06:53:38,952 - ERROR - Error al ejecutar el comando 'ansible-playbook --ask-become-pass /home/el/dotfiles/ansible/playbook.yml -i /home/el/dotfiles/ansible/inventory.ini -v' en '/home/el/dotfiles/ansible': Command '['ansible-playbook', '--ask-become-pass', '/home/el/dotfiles/ansible/playbook.yml', '-i', '/home/el/dotfiles/ansible/inventory.ini', '-v']' returned non-zero exit status 2.

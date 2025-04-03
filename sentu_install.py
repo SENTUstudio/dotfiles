@@ -166,6 +166,7 @@ def package_core():
                     run_command(install_commands[pm])
 
                     if pm == "pacman":
+                        show("💾 Instalando yay")
                         install_yay_python()
 
                     if check_command("git"):
@@ -320,7 +321,7 @@ def main():
 
     show("💾 Clonación de dotfiles iniciada")
     clone_repo()
-    show("💾 Clonación de dotfiles terminada")
+    logging.info("💾 Clonación de dotfiles terminada")
 
     show("⚙️  Iniciando instalación de paquetes")
     run_ansible_playbook()
