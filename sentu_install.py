@@ -300,7 +300,7 @@ def run_ansible_playbook():
             str(playbook_path),
             "-i",
             str(inventory_file_path),
-            "-v",
+            "-vvv",
         ]
         run_command(command, cwd=ansible_dir)
         logging.info("Ansible Playbook ejecutado exitosamente.")
