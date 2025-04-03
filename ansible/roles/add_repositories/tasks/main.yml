@@ -5,8 +5,8 @@
   become: true
   when:
     - ansible_distribution == "Fedora"
-    - package_managers.RedHat is defined
-    - package_managers.RedHat.repo is defined
+    - package_managers is defined
+    - package_managers.repo is defined
     - repo_item.value is defined
   loop: "{{ package_managers.RedHat.repo | dict2items }}"
   loop_control:
