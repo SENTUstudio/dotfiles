@@ -68,7 +68,6 @@ package_managers:
       - lua
       - luarocks
       - docker
-      - docker-cli
       - containerd
       - docker-compose
       - bat
