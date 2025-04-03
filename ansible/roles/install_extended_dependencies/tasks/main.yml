@@ -7,8 +7,8 @@
     disable_gpg_check: yes
     install_weak_deps: no
   when: ansible_distribution == "Fedora"
-  vars:
-    extended_dependencies: "{{ package_managers.RedHat.dependencies.extended }}"
+  # vars:
+  #   extended_dependencies: "{{ package_managers.RedHat.dependencies.extended }}"
 
 - name: Install package from AUR using a Pacman compatible AUR helper
   community.general.pacman:

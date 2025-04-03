@@ -1,142 +1,141 @@
 package_managers:
-  RedHat:
-    manager: dnf
-    update:
-      - sudo
-      - dnf
-      - update
-      - "-y"
-    install:
+  manager: dnf
+  update:
+    - sudo
+    - dnf
+    - update
+    - "-y"
+  install:
+    - sudo
+    - dnf
+    - install
+    - "-y"
+    - "--allowerasing"
+  repo:
+    rpmfusion-nonfree:
       - sudo
       - dnf
       - install
       - "-y"
-      - "--allowerasing"
-    repo:
-      rpmfusion-nonfree:
-        - sudo
-        - dnf
-        - install
-        - "-y"
-        - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
-      rpmfusion-free:
-        - sudo
-        - dnf
-        - install
-        - "-y"
-        - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
-      docker:
-        - sudo
-        - dnf
-        - config-manager
-        - addrepo
-        - "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
-      google-chrome:
-        - sudo
-        - dnf
-        - install
-        - "-y"
-        - "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
-      lazygit:
-        - sudo
-        - dnf
-        - copr
-        - enable
-        - "atim/lazygit"
-        - "-y"
-    dependencies:
-      core:
-        - git
-        - curl
-        - wget
-        - gcc
-        - make
-        - unzip
-        - zsh
-        - golang
-        - cargo
-        - g++
-        - python3
-        - ruby
-        - unrar
-        - p7zip
-        - p7zip-plugins
-        - xdg-user-dirs
-        - lsd
-        - java
-        - dnf-utils
-        - flatpak
-        - kernel-devel
-        - gcc
-        - make
-        - automake
-        - perl
-        - elfutils-libelf-devel
-      extended:
-        - lazygit
-        - ripgrep
-        - fd-find
-        - neovim
-        - fastfetch
-        - util-linux-user
-        - anacron
-        - zoxide
-        - python3-neovim
-        - kitty
-        - lua-devel
-        - luarocks
-        - docker-ce
-        - docker-ce-cli
-        - containerd.io
-        - docker-compose-plugin
-        - bat
-        - fzf
-        - httpie
-        - ripgrep
-        - tmux
-        - htop
-        - proselint
-        - lm_sensors
-        - discord
-        - alacritty
-        - kde-connect
-        - dnf-utils
-        - kdenlive
-        - openshot
-        - vlc
-        - mpv
-        - soundconverter
-        - audacity
-        - muse
-        - lmms
-        - amarok
-        - flowblade
-        - dnf-plugins-core
-        - xine-lib
-        - xine-lib-extras
-        - xine-lib-extras-freeworld
-        - libdvdread
-        - libdvdnav
-        - lsdvd
-        - libdvbpsi
-        - ffmpeg
-        - libmatroska
-        - xvidcore
-        - gimp
-        - inkscape
-        - libreoffice-writer
-        - libreoffice-calc
-        - libreoffice-impress
-        - libreoffice-draw
-        - libreoffice-langpack-es
-        - gstreamer1-devel
-        - gstreamer1-plugins-base-tools
-        - gstreamer1-doc
-        - gstreamer1-plugins-base-devel
-        - gstreamer1-plugins-good
-        - gstreamer1-plugins-good-extras
-        - gstreamer1-plugins-bad-free
-        - gstreamer1-plugins-bad-free-devel
-        - virt-manager
-        - qemu
-        - zeal
+      - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
+    rpmfusion-free:
+      - sudo
+      - dnf
+      - install
+      - "-y"
+      - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
+    docker:
+      - sudo
+      - dnf
+      - config-manager
+      - addrepo
+      - "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
+    google-chrome:
+      - sudo
+      - dnf
+      - install
+      - "-y"
+      - "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+    lazygit:
+      - sudo
+      - dnf
+      - copr
+      - enable
+      - "atim/lazygit"
+      - "-y"
+  dependencies:
+    core:
+      - git
+      - curl
+      - wget
+      - gcc
+      - make
+      - unzip
+      - zsh
+      - golang
+      - cargo
+      - g++
+      - python3
+      - ruby
+      - unrar
+      - p7zip
+      - p7zip-plugins
+      - xdg-user-dirs
+      - lsd
+      - java
+      - dnf-utils
+      - flatpak
+      - kernel-devel
+      - gcc
+      - make
+      - automake
+      - perl
+      - elfutils-libelf-devel
+    extended:
+      - lazygit
+      - ripgrep
+      - fd-find
+      - neovim
+      - fastfetch
+      - util-linux-user
+      - anacron
+      - zoxide
+      - python3-neovim
+      - kitty
+      - lua-devel
+      - luarocks
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-compose-plugin
+      - bat
+      - fzf
+      - httpie
+      - ripgrep
+      - tmux
+      - htop
+      - proselint
+      - lm_sensors
+      - discord
+      - alacritty
+      - kde-connect
+      - dnf-utils
+      - kdenlive
+      - openshot
+      - vlc
+      - mpv
+      - soundconverter
+      - audacity
+      - muse
+      - lmms
+      - amarok
+      - flowblade
+      - dnf-plugins-core
+      - xine-lib
+      - xine-lib-extras
+      - xine-lib-extras-freeworld
+      - libdvdread
+      - libdvdnav
+      - lsdvd
+      - libdvbpsi
+      - ffmpeg
+      - libmatroska
+      - xvidcore
+      - gimp
+      - inkscape
+      - libreoffice-writer
+      - libreoffice-calc
+      - libreoffice-impress
+      - libreoffice-draw
+      - libreoffice-langpack-es
+      - gstreamer1-devel
+      - gstreamer1-plugins-base-tools
+      - gstreamer1-doc
+      - gstreamer1-plugins-base-devel
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-extras
+      - gstreamer1-plugins-bad-free
+      - gstreamer1-plugins-bad-free-devel
+      - virt-manager
+      - qemu
+      - zeal
