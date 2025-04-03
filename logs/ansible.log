@@ -1,8 +1,10 @@
 Updating and loading repositories:
- Fedora 41 - x86_64 - Updates           100% | 967.3 KiB/s |  12.1 MiB |  00m13s
- Fedora 41 openh264 (From Cisco) - x86_ 100% |   4.5 KiB/s |   6.0 KiB |  00m01s
- Fedora 41 - x86_64                     100% |   1.2 MiB/s |  35.5 MiB |  00m30s
+ Fedora 41 - x86_64 - Updates           100% |   1.2 MiB/s |  12.1 MiB |  00m10s
+ Fedora 41 openh264 (From Cisco) - x86_ 100% |   4.1 KiB/s |   6.0 KiB |  00m01s
+ Fedora 41 - x86_64                     100% |   5.5 MiB/s |  35.5 MiB |  00m06s
 Repositories loaded.
+Total size of inbound packages is 970 KiB. Need to download 970 KiB.
+After this operation, 22 KiB extra will be used (install 2 MiB, remove 2 MiB).
 Package               Arch   Version      Repository                            Size
 Upgrading:
  openldap             x86_64 2.6.9-1.fc41 updates                          645.3 KiB
@@ -14,19 +16,17 @@ Transaction Summary:
  Upgrading:          2 packages
  Replacing:          2 packages
 
-Total size of inbound packages is 970 KiB. Need to download 970 KiB.
-After this operation, 22 KiB extra will be used (install 2 MiB, remove 2 MiB).
-[1/2] openldap-0:2.6.9-1.fc41.x86_64    100% | 389.5 KiB/s | 255.9 KiB |  00m01s
-[2/2] tzdata-0:2025b-1.fc41.noarch      100% | 939.4 KiB/s | 713.9 KiB |  00m01s
+[1/2] openldap-0:2.6.9-1.fc41.x86_64    100% | 398.0 KiB/s | 255.9 KiB |  00m01s
+[2/2] tzdata-0:2025b-1.fc41.noarch      100% | 895.8 KiB/s | 713.9 KiB |  00m01s
 --------------------------------------------------------------------------------
-[2/2] Total                             100% | 790.4 KiB/s | 969.8 KiB |  00m01s
+[2/2] Total                             100% | 641.8 KiB/s | 969.8 KiB |  00m02s
 Running transaction
-[1/6] Verify package files              100% | 250.0   B/s |   2.0   B |  00m00s
-[2/6] Prepare transaction               100% |  47.0   B/s |   4.0   B |  00m00s
-[3/6] Upgrading tzdata-0:2025b-1.fc41.n 100% |   4.0 MiB/s |   1.9 MiB |  00m00s
-[4/6] Upgrading openldap-0:2.6.9-1.fc41 100% |  28.8 MiB/s | 649.1 KiB |  00m00s
-[5/6] Removing tzdata-0:2025a-1.fc41.no 100% | 228.0 KiB/s |   1.8 KiB |  00m00s
-[6/6] Removing openldap-0:2.6.8-7.fc41. 100% | 141.0   B/s |  26.0   B |  00m00s
+[1/6] Verify package files              100% | 222.0   B/s |   2.0   B |  00m00s
+[2/6] Prepare transaction               100% |  41.0   B/s |   4.0   B |  00m00s
+[3/6] Upgrading tzdata-0:2025b-1.fc41.n 100% |   3.8 MiB/s |   1.9 MiB |  00m00s
+[4/6] Upgrading openldap-0:2.6.9-1.fc41 100% |  24.4 MiB/s | 649.1 KiB |  00m00s
+[5/6] Removing tzdata-0:2025a-1.fc41.no 100% | 152.0 KiB/s |   1.8 KiB |  00m00s
+[6/6] Removing openldap-0:2.6.8-7.fc41. 100% | 120.0   B/s |  26.0   B |  00m00s
 Complete!
 Updating and loading repositories:
 Repositories loaded.
@@ -64,62 +64,62 @@ Transaction Summary:
 
 Total size of inbound packages is 75 MiB. Need to download 75 MiB.
 After this operation, 422 MiB extra will be used (install 422 MiB, remove 0 B).
-[ 1/22] python3-0:3.13.2-1.fc41.x86_64  100% |  65.6 KiB/s |  28.5 KiB |  00m00s
-[ 2/22] which-0:2.21-42.fc41.x86_64     100% |  82.1 KiB/s |  41.6 KiB |  00m01s
-[ 3/22] libb2-0:0.98.1-12.fc41.x86_64   100% | 154.7 KiB/s |  25.7 KiB |  00m00s
-[ 4/22] python3-libs-0:3.13.2-1.fc41.x8 100% |   6.9 MiB/s |   9.1 MiB |  00m01s
-[ 5/22] mpdecimal-0:2.5.1-16.fc41.x86_6 100% |  68.7 KiB/s |  89.0 KiB |  00m01s
-[ 6/22] ansible-0:9.13.0-1.fc41.noarch  100% |  10.4 MiB/s |  53.6 MiB |  00m05s
-[ 7/22] ansible-core-0:2.16.14-1.fc41.n 100% |   7.3 MiB/s |   3.7 MiB |  00m01s
-[ 8/22] python3-pyyaml-0:6.0.1-18.fc41. 100% | 244.6 KiB/s | 231.6 KiB |  00m01s
-[ 9/22] python3-resolvelib-0:1.0.1-6.fc 100% | 239.7 KiB/s |  45.3 KiB |  00m00s
-[10/22] expat-0:2.7.1-1.fc41.x86_64     100% |   1.2 MiB/s | 116.0 KiB |  00m00s
-[11/22] python3-argcomplete-0:3.6.0-1.f 100% | 942.8 KiB/s |  97.1 KiB |  00m00s
-[12/22] python3-cryptography-0:43.0.0-4 100% |   3.8 MiB/s |   1.3 MiB |  00m00s
-[13/22] python3-cffi-0:1.17.0-1.fc41.x8 100% | 264.9 KiB/s | 307.0 KiB |  00m01s
-[14/22] python3-pycparser-0:2.20-18.fc4 100% | 123.0 KiB/s | 159.5 KiB |  00m01s
-[15/22] python3-ply-0:3.11-25.fc41.noar 100% | 815.4 KiB/s | 136.2 KiB |  00m00s
-[16/22] python3-jinja2-0:3.1.6-1.fc41.n 100% | 740.9 KiB/s | 494.2 KiB |  00m01s
-[17/22] python3-markupsafe-0:2.1.5-3.fc 100% | 172.0 KiB/s |  30.8 KiB |  00m00s
-[18/22] python3-packaging-0:24.2-3.fc41 100% |   1.4 MiB/s | 153.8 KiB |  00m00s
-[19/22] python-unversioned-command-0:3. 100% | 119.5 KiB/s |  11.6 KiB |  00m00s
-[20/22] python3-libdnf5-0:5.2.12.0-1.fc 100% |   5.5 MiB/s |   1.5 MiB |  00m00s
-[21/22] python3-pip-0:24.2-1.fc41.noarc 100% | 209.7 KiB/s |   2.7 MiB |  00m13s
-[22/22] python-pip-wheel-0:24.2-1.fc41. 100% |  91.9 KiB/s |   1.2 MiB |  00m13s
+[ 1/22] python3-0:3.13.2-1.fc41.x86_64  100% |  39.5 KiB/s |  28.5 KiB |  00m01s
+[ 2/22] which-0:2.21-42.fc41.x86_64     100% |  57.6 KiB/s |  41.6 KiB |  00m01s
+[ 3/22] libb2-0:0.98.1-12.fc41.x86_64   100% | 155.6 KiB/s |  25.7 KiB |  00m00s
+[ 4/22] mpdecimal-0:2.5.1-16.fc41.x86_6 100% | 278.0 KiB/s |  89.0 KiB |  00m00s
+[ 5/22] python-pip-wheel-0:24.2-1.fc41. 100% | 982.2 KiB/s |   1.2 MiB |  00m01s
+[ 6/22] python3-pip-0:24.2-1.fc41.noarc 100% | 714.8 KiB/s |   2.7 MiB |  00m04s
+[ 7/22] ansible-core-0:2.16.14-1.fc41.n 100% | 679.4 KiB/s |   3.7 MiB |  00m06s
+[ 8/22] python3-pyyaml-0:6.0.1-18.fc41. 100% | 654.2 KiB/s | 231.6 KiB |  00m00s
+[ 9/22] python3-resolvelib-0:1.0.1-6.fc 100% | 254.6 KiB/s |  45.3 KiB |  00m00s
+[10/22] expat-0:2.7.1-1.fc41.x86_64     100% | 690.3 KiB/s | 116.0 KiB |  00m00s
+[11/22] python3-argcomplete-0:3.6.0-1.f 100% | 622.5 KiB/s |  97.1 KiB |  00m00s
+[12/22] python3-cryptography-0:43.0.0-4 100% | 876.9 KiB/s |   1.3 MiB |  00m02s
+[13/22] python3-libs-0:3.13.2-1.fc41.x8 100% | 773.2 KiB/s |   9.1 MiB |  00m12s
+[14/22] python3-cffi-0:1.17.0-1.fc41.x8 100% | 312.3 KiB/s | 307.0 KiB |  00m01s
+[15/22] python3-ply-0:3.11-25.fc41.noar 100% | 424.2 KiB/s | 136.2 KiB |  00m00s
+[16/22] python3-pycparser-0:2.20-18.fc4 100% | 138.9 KiB/s | 159.5 KiB |  00m01s
+[17/22] python3-markupsafe-0:2.1.5-3.fc 100% | 167.3 KiB/s |  30.8 KiB |  00m00s
+[18/22] python3-jinja2-0:3.1.6-1.fc41.n 100% | 533.1 KiB/s | 494.2 KiB |  00m01s
+[19/22] python-unversioned-command-0:3. 100% |  70.2 KiB/s |  11.6 KiB |  00m00s
+[20/22] python3-packaging-0:24.2-3.fc41 100% | 221.6 KiB/s | 153.8 KiB |  00m01s
+[21/22] python3-libdnf5-0:5.2.12.0-1.fc 100% | 604.2 KiB/s |   1.5 MiB |  00m02s
+[22/22] ansible-0:9.13.0-1.fc41.noarch  100% |   1.5 MiB/s |  53.6 MiB |  00m36s
 --------------------------------------------------------------------------------
-[22/22] Total                           100% |   4.7 MiB/s |  75.0 MiB |  00m16s
+[22/22] Total                           100% |   1.9 MiB/s |  75.0 MiB |  00m40s
 Running transaction
-[ 1/24] Verify package files            100% |  14.0   B/s |  22.0   B |  00m02s
-[ 2/24] Prepare transaction             100% |  30.0   B/s |  22.0   B |  00m01s
-[ 3/24] Installing expat-0:2.7.1-1.fc41 100% |   5.9 MiB/s | 300.4 KiB |  00m00s
-[ 4/24] Installing python-pip-wheel-0:2 100% | 103.5 MiB/s |   1.2 MiB |  00m00s
-[ 5/24] Installing mpdecimal-0:2.5.1-16 100% |  22.4 MiB/s | 206.0 KiB |  00m00s
+[ 1/24] Verify package files            100% |  12.0   B/s |  22.0   B |  00m02s
+[ 2/24] Prepare transaction             100% |  25.0   B/s |  22.0   B |  00m01s
+[ 3/24] Installing expat-0:2.7.1-1.fc41 100% |  13.3 MiB/s | 300.4 KiB |  00m00s
+[ 4/24] Installing python-pip-wheel-0:2 100% | 155.2 MiB/s |   1.2 MiB |  00m00s
+[ 5/24] Installing mpdecimal-0:2.5.1-16 100% |  33.5 MiB/s | 206.0 KiB |  00m00s
 [ 6/24] Installing libb2-0:0.98.1-12.fc 100% |   2.3 MiB/s |  43.3 KiB |  00m00s
-[ 7/24] Installing python3-libs-0:3.13. 100% |  58.3 MiB/s |  40.8 MiB |  00m01s
-[ 8/24] Installing python3-0:3.13.2-1.f 100% |   3.6 MiB/s |  33.5 KiB |  00m00s
-[ 9/24] Installing python3-pyyaml-0:6.0 100% |  25.4 MiB/s | 804.9 KiB |  00m00s
-[10/24] Installing python3-resolvelib-0 100% |   6.1 MiB/s |  99.6 KiB |  00m00s
-[11/24] Installing python3-argcomplete- 100% |  11.1 MiB/s | 328.4 KiB |  00m00s
+[ 7/24] Installing python3-libs-0:3.13. 100% |  57.1 MiB/s |  40.8 MiB |  00m01s
+[ 8/24] Installing python3-0:3.13.2-1.f 100% |   4.7 MiB/s |  33.5 KiB |  00m00s
+[ 9/24] Installing python3-pyyaml-0:6.0 100% |  35.7 MiB/s | 804.9 KiB |  00m00s
+[10/24] Installing python3-resolvelib-0 100% |   7.5 MiB/s |  99.6 KiB |  00m00s
+[11/24] Installing python3-argcomplete- 100% |  11.9 MiB/s | 328.4 KiB |  00m00s
 [12/24] Installing python3-ply-0:3.11-2 100% |  32.9 MiB/s | 573.4 KiB |  00m00s
-[13/24] Installing python3-pycparser-0: 100% |  33.9 MiB/s | 832.5 KiB |  00m00s
-[14/24] Installing python3-cffi-0:1.17. 100% |  28.4 MiB/s |   1.3 MiB |  00m00s
-[15/24] Installing python3-cryptography 100% |  38.0 MiB/s |   4.8 MiB |  00m00s
-[16/24] Installing python3-markupsafe-0 100% |   4.0 MiB/s |  61.5 KiB |  00m00s
-[17/24] Installing python3-jinja2-0:3.1 100% |  59.6 MiB/s |   2.9 MiB |  00m00s
-[18/24] Installing python3-packaging-0: 100% |   8.7 MiB/s | 570.6 KiB |  00m00s
-[19/24] Installing ansible-core-0:2.16. 100% |  15.4 MiB/s |  14.7 MiB |  00m01s
-[20/24] Installing ansible-0:9.13.0-1.f 100% |  35.3 MiB/s | 347.4 MiB |  00m10s
-[21/24] Installing python3-pip-0:24.2-1 100% |  40.4 MiB/s |  11.7 MiB |  00m00s
+[13/24] Installing python3-pycparser-0: 100% |  42.8 MiB/s | 832.5 KiB |  00m00s
+[14/24] Installing python3-cffi-0:1.17. 100% |  43.1 MiB/s |   1.3 MiB |  00m00s
+[15/24] Installing python3-cryptography 100% |  45.5 MiB/s |   4.8 MiB |  00m00s
+[16/24] Installing python3-markupsafe-0 100% |   5.5 MiB/s |  61.5 KiB |  00m00s
+[17/24] Installing python3-jinja2-0:3.1 100% |  81.1 MiB/s |   2.9 MiB |  00m00s
+[18/24] Installing python3-packaging-0: 100% |  12.7 MiB/s | 570.6 KiB |  00m00s
+[19/24] Installing ansible-core-0:2.16. 100% |  15.7 MiB/s |  14.7 MiB |  00m01s
+[20/24] Installing ansible-0:9.13.0-1.f 100% |  30.4 MiB/s | 347.4 MiB |  00m11s
+[21/24] Installing python3-pip-0:24.2-1 100% |  33.7 MiB/s |  11.7 MiB |  00m00s
 [22/24] Installing python-unversioned-c 100% | 103.5 KiB/s | 424.0   B |  00m00s
-[23/24] Installing python3-libdnf5-0:5. 100% | 107.2 MiB/s |   8.0 MiB |  00m00s
-[24/24] Installing which-0:2.21-42.fc41 100% | 158.2 KiB/s |  82.4 KiB |  00m01s
+[23/24] Installing python3-libdnf5-0:5. 100% |  94.6 MiB/s |   8.0 MiB |  00m00s
+[24/24] Installing which-0:2.21-42.fc41 100% | 137.1 KiB/s |  82.4 KiB |  00m01s
 Complete!
-2025-04-03 20:12:53,878 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 20:12:53,878 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚
-2025-04-03 20:12:53,878 - INFO -                 .studio
-2025-04-03 20:12:53,879 - INFO - Sistema operativo detectado: Linux
-2025-04-03 20:12:53,879 - INFO - Instalando dependencias...
-2025-04-03 20:12:53,882 - INFO - Gestor de paquetes 'dnf' detectado. Intentando instalar Paquetes...
+2025-04-03 20:30:53,389 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 20:30:53,389 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚
+2025-04-03 20:30:53,389 - INFO -                 .studio
+2025-04-03 20:30:53,389 - INFO - Sistema operativo detectado: Linux
+2025-04-03 20:30:53,389 - INFO - Instalando dependencias...
+2025-04-03 20:30:53,392 - INFO - Gestor de paquetes 'dnf' detectado. Intentando instalar Paquetes...
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
@@ -182,9 +182,7 @@ Installing dependencies:
  perl-Scalar-List-Utils x86_64 5:1.68-1.fc41           updates    148.9 KiB
  perl-SelectSaver       noarch 1.02-514.fc41           updates      2.2 KiB
  perl-Socket            x86_64 4:2.038-511.fc41        fedora     124.0 KiB
- perl-Storable          x86_64 Total size of inbound packages is 19 MiB. Need to download 19 MiB.
-After this operation, 76 MiB extra will be used (install 76 MiB, remove 0 B).
-1:3.32-511.fc41         fedora     232.4 KiB
+ perl-Storable          x86_64 1:3.32-511.fc41         fedora     232.4 KiB
  perl-Symbol            noarch 1.09-514.fc41           updates      6.8 KiB
  perl-Term-ANSIColor    noarch 5.01-512.fc41           fedora      97.5 KiB
  perl-Term-Cap          noarch 1.18-511.fc41           fedora      29.3 KiB
@@ -214,178 +212,180 @@ Installing weak dependencies:
 Transaction Summary:
  Installing:        77 packages
 
-[ 1/77] git-0:2.49.0-1.fc41.x86_64      100% | 114.8 KiB/s |  51.1 KiB |  00m00s
-[ 2/77] perl-Git-0:2.49.0-1.fc41.noarch 100% | 281.9 KiB/s |  37.8 KiB |  00m00s
-[ 3/77] git-core-doc-0:2.49.0-1.fc41.no 100% |   2.3 MiB/s |   3.0 MiB |  00m01s
-[ 4/77] git-core-0:2.49.0-1.fc41.x86_64 100% |   3.1 MiB/s |   4.9 MiB |  00m02s
-[ 5/77] perl-Getopt-Long-1:2.58-2.fc41. 100% |  56.5 KiB/s |  63.9 KiB |  00m01s
-[ 6/77] perl-TermReadKey-0:2.38-23.fc41 100% |  76.6 KiB/s |  35.6 KiB |  00m00s
-[ 7/77] perl-constant-0:1.33-512.fc41.n 100% | 138.7 KiB/s |  23.0 KiB |  00m00s
-[ 8/77] perl-Exporter-0:5.78-511.fc41.n 100% | 100.0 KiB/s |  30.9 KiB |  00m00s
-[ 9/77] perl-Error-1:0.17029-16.fc41.no 100% |  87.5 KiB/s |  40.6 KiB |  00m00s
-[10/77] perl-Pod-Usage-4:2.03-511.fc41. 100% | 258.1 KiB/s |  40.0 KiB |  00m00s
-[11/77] perl-Text-ParseWords-0:3.31-511 100% | 106.3 KiB/s |  16.6 KiB |  00m00s
-[12/77] perl-Carp-0:1.54-511.fc41.noarc 100% | 185.2 KiB/s |  28.9 KiB |  00m00s
-[13/77] perl-Pod-Perldoc-0:3.28.01-512. 100% | 552.0 KiB/s |  86.1 KiB |  00m00s
-[14/77] perl-File-Temp-1:0.231.100-511. 100% | 354.0 KiB/s |  59.1 KiB |  00m00s
-[15/77] perl-Pod-Simple-1:3.45-511.fc41 100% | 460.2 KiB/s | 219.0 KiB |  00m00s
-[16/77] perl-podlators-1:6.0.2-2.fc41.n 100% | 166.9 KiB/s | 128.9 KiB |  00m01s
-[17/77] perl-parent-1:0.242-1.fc41.noar 100% |  96.2 KiB/s |  15.0 KiB |  00m00s
-[18/77] perl-Term-Cap-0:1.18-511.fc41.n 100% | 132.9 KiB/s |  22.1 KiB |  00m00s
-[19/77] perl-Term-ANSIColor-0:5.01-512. 100% | 153.8 KiB/s |  47.7 KiB |  00m00s
-[20/77] perl-File-Path-0:2.18-511.fc41. 100% | 217.7 KiB/s |  35.3 KiB |  00m00s
-[21/77] perl-Pod-Escapes-1:1.07-511.fc4 100% | 127.8 KiB/s |  19.8 KiB |  00m00s
-[22/77] groff-base-0:1.23.0-7.fc41.x86_ 100% | 882.0 KiB/s |   1.1 MiB |  00m01s
-[23/77] perl-Text-Tabs+Wrap-0:2024.001- 100% | 140.1 KiB/s |  21.9 KiB |  00m00s
-[24/77] perl-File-Basename-0:2.86-514.f 100% |  49.9 KiB/s |  17.0 KiB |  00m00s
-[25/77] perl-POSIX-0:2.20-514.fc41.x86_ 100% | 198.4 KiB/s |  97.0 KiB |  00m00s
-[26/77] perl-PathTools-0:3.91-512.fc41. 100% | 362.3 KiB/s |  87.3 KiB |  00m00s
-[27/77] perl-interpreter-4:5.40.1-514.f 100% | 523.2 KiB/s |  72.2 KiB |  00m00s
-[28/77] perl-Errno-0:1.38-514.fc41.x86_ 100% | 164.5 KiB/s |  14.8 KiB |  00m00s
-[29/77] perl-libs-4:5.40.1-514.fc41.x86 100% |   3.6 MiB/s |   2.3 MiB |  00m01s
-[30/77] perl-MIME-Base64-0:3.16-511.fc4 100% |  50.9 KiB/s |  29.9 KiB |  00m01s
-[31/77] perl-Storable-1:3.32-511.fc41.x 100% | 307.5 KiB/s |  98.4 KiB |  00m00s
-[32/77] perl-Encode-4:3.21-511.fc41.x86 100% | 775.9 KiB/s |   1.1 MiB |  00m01s
-[33/77] perl-DynaLoader-0:1.56-514.fc41 100% | 267.1 KiB/s |  25.9 KiB |  00m00s
+Total size of inbound packages is 19 MiB. Need to download 19 MiB.
+After this operation, 76 MiB extra will be used (install 76 MiB, remove 0 B).
+[ 1/77] git-0:2.49.0-1.fc41.x86_64      100% |  89.9 KiB/s |  51.1 KiB |  00m01s
+[ 2/77] perl-Git-0:2.49.0-1.fc41.noarch 100% | 277.8 KiB/s |  37.8 KiB |  00m00s
+[ 3/77] perl-Getopt-Long-1:2.58-2.fc41. 100% | 139.2 KiB/s |  63.9 KiB |  00m00s
+[ 4/77] perl-TermReadKey-0:2.38-23.fc41 100% | 155.9 KiB/s |  35.6 KiB |  00m00s
+[ 5/77] git-core-0:2.49.0-1.fc41.x86_64 100% |   3.4 MiB/s |   4.9 MiB |  00m01s
+[ 6/77] git-core-doc-0:2.49.0-1.fc41.no 100% |   1.9 MiB/s |   3.0 MiB |  00m02s
+[ 7/77] perl-Exporter-0:5.78-511.fc41.n 100% | 266.5 KiB/s |  30.9 KiB |  00m00s
+[ 8/77] perl-Error-1:0.17029-16.fc41.no 100% | 219.5 KiB/s |  40.6 KiB |  00m00s
+[ 9/77] perl-constant-0:1.33-512.fc41.n 100% | 133.1 KiB/s |  23.0 KiB |  00m00s
+[10/77] perl-Pod-Usage-4:2.03-511.fc41. 100% | 229.9 KiB/s |  40.0 KiB |  00m00s
+[11/77] perl-Carp-0:1.54-511.fc41.noarc 100% | 286.1 KiB/s |  28.9 KiB |  00m00s
+[12/77] perl-Text-ParseWords-0:3.31-511 100% |  64.0 KiB/s |  16.6 KiB |  00m00s
+[13/77] perl-Pod-Perldoc-0:3.28.01-512. 100% | 453.2 KiB/s |  86.1 KiB |  00m00s
+[14/77] perl-podlators-1:6.0.2-2.fc41.n 100% | 622.5 KiB/s | 128.9 KiB |  00m00s
+[15/77] perl-File-Temp-1:0.231.100-511. 100% | 332.1 KiB/s |  59.1 KiB |  00m00s
+[16/77] perl-Pod-Simple-1:3.45-511.fc41 100% |   1.6 MiB/s | 219.0 KiB |  00m00s
+[17/77] perl-parent-1:0.242-1.fc41.noar 100% | 131.6 KiB/s |  15.0 KiB |  00m00s
+[18/77] perl-Term-ANSIColor-0:5.01-512. 100% | 404.2 KiB/s |  47.7 KiB |  00m00s
+[19/77] groff-base-0:1.23.0-7.fc41.x86_ 100% |   2.1 MiB/s |   1.1 MiB |  00m01s
+[20/77] perl-Term-Cap-0:1.18-511.fc41.n 100% | 126.8 KiB/s |  22.1 KiB |  00m00s
+[21/77] perl-File-Path-0:2.18-511.fc41. 100% | 320.5 KiB/s |  35.3 KiB |  00m00s
+[22/77] perl-Pod-Escapes-1:1.07-511.fc4 100% | 111.9 KiB/s |  19.8 KiB |  00m00s
+[23/77] perl-Text-Tabs+Wrap-0:2024.001- 100% | 125.6 KiB/s |  21.9 KiB |  00m00s
+[24/77] ncurses-0:6.5-2.20240629.fc41.x 100% |   2.3 MiB/s | 423.8 KiB |  00m00s
+[25/77] perl-File-Basename-0:2.86-514.f 100% | 148.0 KiB/s |  17.0 KiB |  00m00s
+[26/77] perl-POSIX-0:2.20-514.fc41.x86_ 100% |   1.1 MiB/s |  97.0 KiB |  00m00s
+[27/77] perl-PathTools-0:3.91-512.fc41. 100% | 970.3 KiB/s |  87.3 KiB |  00m00s
+[28/77] perl-interpreter-4:5.40.1-514.f 100% | 859.5 KiB/s |  72.2 KiB |  00m00s
+[29/77] perl-Errno-0:1.38-514.fc41.x86_ 100% |  74.8 KiB/s |  14.8 KiB |  00m00s
+[30/77] perl-libs-4:5.40.1-514.fc41.x86 100% |   6.3 MiB/s |   2.3 MiB |  00m00s
+[31/77] perl-Encode-4:3.21-511.fc41.x86 100% |   3.4 MiB/s |   1.1 MiB |  00m00s
+[32/77] perl-Storable-1:3.32-511.fc41.x 100% | 751.2 KiB/s |  98.4 KiB |  00m00s
+[33/77] perl-DynaLoader-0:1.56-514.fc41 100% | 223.4 KiB/s |  25.9 KiB |  00m00s
 [34/77] perl-vars-0:1.05-514.fc41.noarc 100% | 154.9 KiB/s |  12.9 KiB |  00m00s
-[35/77] perl-Fcntl-0:1.18-514.fc41.x86_ 100% | 299.7 KiB/s |  29.7 KiB |  00m00s
-[36/77] perl-IO-0:1.55-514.fc41.x86_64  100% | 950.6 KiB/s |  81.7 KiB |  00m00s
-[37/77] ncurses-0:6.5-2.20240629.fc41.x 100% | 171.2 KiB/s | 423.8 KiB |  00m02s
-[38/77] perl-Symbol-0:1.09-514.fc41.noa 100% | 154.6 KiB/s |  14.1 KiB |  00m00s
-[39/77] perl-Socket-4:2.038-511.fc41.x8 100% | 351.5 KiB/s |  54.8 KiB |  00m00s
-[40/77] perl-if-0:0.61.000-514.fc41.noa 100% | 167.0 KiB/s |  13.9 KiB |  00m00s
-[41/77] perl-overload-0:1.37-514.fc41.n 100% | 416.5 KiB/s |  45.4 KiB |  00m00s
-[42/77] perl-HTTP-Tiny-0:0.090-1.fc41.n 100% | 133.8 KiB/s |  56.5 KiB |  00m00s
-[43/77] perl-Net-SSLeay-0:1.94-7.fc41.x 100% | 789.3 KiB/s | 375.7 KiB |  00m00s
-[44/77] perl-Time-Local-2:1.350-511.fc4 100% | 221.3 KiB/s |  34.5 KiB |  00m00s
-[45/77] perl-Data-Dumper-0:2.189-512.fc 100% | 339.4 KiB/s |  56.3 KiB |  00m00s
-[46/77] perl-URI-0:5.30-1.fc41.noarch   100% | 439.8 KiB/s | 140.8 KiB |  00m00s
-[47/77] perl-MIME-Base32-0:1.303-21.fc4 100% | 131.2 KiB/s |  20.5 KiB |  00m00s
-[48/77] perl-libnet-0:3.15-512.fc41.noa 100% | 769.3 KiB/s | 128.5 KiB |  00m00s
-[49/77] perl-Digest-MD5-0:2.59-5.fc41.x 100% | 230.8 KiB/s |  36.0 KiB |  00m00s
-[50/77] perl-IO-Socket-SSL-0:2.089-1.fc 100% | 206.2 KiB/s | 231.2 KiB |  00m01s
-[51/77] perl-IPC-Open3-0:1.22-514.fc41. 100% | 233.3 KiB/s |  21.7 KiB |  00m00s
-[52/77] perl-Digest-0:1.20-511.fc41.noa 100% | 160.7 KiB/s |  24.9 KiB |  00m00s
-[53/77] perl-AutoLoader-0:5.74-514.fc41 100% | 254.2 KiB/s |  21.1 KiB |  00m00s
-[54/77] perl-IO-Socket-IP-0:0.43-1.fc41 100% | 394.7 KiB/s |  42.2 KiB |  00m00s
-[55/77] perl-base-0:2.27-514.fc41.noarc 100% | 170.9 KiB/s |  16.1 KiB |  00m00s
-[56/77] perl-Scalar-List-Utils-5:1.68-1 100% | 883.2 KiB/s |  74.2 KiB |  00m00s
-[57/77] perl-Getopt-Std-0:1.14-514.fc41 100% | 169.0 KiB/s |  15.5 KiB |  00m00s
-[58/77] perl-mro-0:1.29-514.fc41.x86_64 100% | 357.9 KiB/s |  29.7 KiB |  00m00s
-[59/77] perl-overloading-0:0.02-514.fc4 100% | 143.5 KiB/s |  12.8 KiB |  00m00s
-[60/77] perl-locale-0:1.12-514.fc41.noa 100% | 162.4 KiB/s |  13.5 KiB |  00m00s
-[61/77] perl-B-0:1.89-514.fc41.x86_64   100% | 800.6 KiB/s | 176.1 KiB |  00m00s
-[62/77] perl-File-stat-0:1.14-514.fc41. 100% | 183.8 KiB/s |  16.9 KiB |  00m00s
-[63/77] perl-SelectSaver-0:1.02-514.fc4 100% | 139.6 KiB/s |  11.6 KiB |  00m00s
-[64/77] perl-Class-Struct-0:0.68-514.fc 100% | 249.1 KiB/s |  21.9 KiB |  00m00s
-[65/77] less-0:668-1.fc41.x86_64        100% | 782.5 KiB/s | 189.4 KiB |  00m00s
-[66/77] openssh-0:9.9p1-3.fc41.x86_64   100% |   1.7 MiB/s | 353.2 KiB |  00m00s
-[67/77] openssh-clients-0:9.9p1-3.fc41. 100% |   2.7 MiB/s | 760.0 KiB |  00m00s
-[68/77] perl-File-Find-0:1.44-514.fc41. 100% | 286.7 KiB/s |  25.2 KiB |  00m00s
-[69/77] libcbor-0:0.11.0-2.fc41.x86_64  100% | 212.4 KiB/s |  33.1 KiB |  00m00s
-[70/77] perl-lib-0:0.65-514.fc41.x86_64 100% | 146.6 KiB/s |  14.8 KiB |  00m00s
-[71/77] perl-FileHandle-0:2.05-514.fc41 100% | 176.5 KiB/s |  15.4 KiB |  00m00s
-[72/77] libedit-0:3.1-54.20250104cvs.fc 100% | 867.8 KiB/s | 100.7 KiB |  00m00s
-[73/77] libutempter-0:1.2.1-15.fc41.x86 100% | 160.3 KiB/s |  26.6 KiB |  00m00s
-[74/77] libfido2-0:1.15.0-2.fc41.x86_64 100% | 158.8 KiB/s |  98.1 KiB |  00m01s
-[75/77] libfdisk-0:2.40.4-1.fc41.x86_64 100% |   1.2 MiB/s | 152.5 KiB |  00m00s
-[76/77] util-linux-0:2.40.4-1.fc41.x86_ 100% |   2.7 MiB/s |   1.1 MiB |  00m00s
-[77/77] perl-NDBM_File-0:1.17-514.fc41. 100% | 260.8 KiB/s |  22.7 KiB |  00m00s
+[35/77] perl-Fcntl-0:1.18-514.fc41.x86_ 100% | 357.4 KiB/s |  29.7 KiB |  00m00s
+[36/77] perl-IO-0:1.55-514.fc41.x86_64  100% | 495.4 KiB/s |  81.7 KiB |  00m00s
+[37/77] perl-Socket-4:2.038-511.fc41.x8 100% | 229.4 KiB/s |  54.8 KiB |  00m00s
+[38/77] perl-Symbol-0:1.09-514.fc41.noa 100% |  62.2 KiB/s |  14.1 KiB |  00m00s
+[39/77] perl-if-0:0.61.000-514.fc41.noa 100% |  90.0 KiB/s |  13.9 KiB |  00m00s
+[40/77] perl-overload-0:1.37-514.fc41.n 100% | 540.4 KiB/s |  45.4 KiB |  00m00s
+[41/77] perl-HTTP-Tiny-0:0.090-1.fc41.n 100% | 672.1 KiB/s |  56.5 KiB |  00m00s
+[42/77] perl-IO-Socket-SSL-0:2.089-1.fc 100% |   1.3 MiB/s | 231.2 KiB |  00m00s
+[43/77] perl-Time-Local-2:1.350-511.fc4 100% | 345.3 KiB/s |  34.5 KiB |  00m00s
+[44/77] perl-URI-0:5.30-1.fc41.noarch   100% |   1.4 MiB/s | 140.8 KiB |  00m00s
+[45/77] perl-Net-SSLeay-0:1.94-7.fc41.x 100% | 973.3 KiB/s | 375.7 KiB |  00m00s
+[46/77] perl-Data-Dumper-0:2.189-512.fc 100% | 440.2 KiB/s |  56.3 KiB |  00m00s
+[47/77] perl-MIME-Base64-0:3.16-511.fc4 100% |  21.0 KiB/s |  29.9 KiB |  00m01s
+[48/77] perl-MIME-Base32-0:1.303-21.fc4 100% |  59.0 KiB/s |  20.5 KiB |  00m00s
+[49/77] perl-libnet-0:3.15-512.fc41.noa 100% | 339.0 KiB/s | 128.5 KiB |  00m00s
+[50/77] perl-Digest-0:1.20-511.fc41.noa 100% | 129.7 KiB/s |  24.9 KiB |  00m00s
+[51/77] perl-IPC-Open3-0:1.22-514.fc41. 100% |  64.4 KiB/s |  21.7 KiB |  00m00s
+[52/77] perl-AutoLoader-0:5.74-514.fc41 100% |  72.0 KiB/s |  21.1 KiB |  00m00s
+[53/77] perl-IO-Socket-IP-0:0.43-1.fc41 100% | 496.8 KiB/s |  42.2 KiB |  00m00s
+[54/77] perl-base-0:2.27-514.fc41.noarc 100% | 186.8 KiB/s |  16.1 KiB |  00m00s
+[55/77] perl-Scalar-List-Utils-5:1.68-1 100% | 872.8 KiB/s |  74.2 KiB |  00m00s
+[56/77] perl-Getopt-Std-0:1.14-514.fc41 100% | 185.1 KiB/s |  15.5 KiB |  00m00s
+[57/77] perl-mro-0:1.29-514.fc41.x86_64 100% | 345.4 KiB/s |  29.7 KiB |  00m00s
+[58/77] perl-B-0:1.89-514.fc41.x86_64   100% |   1.9 MiB/s | 176.1 KiB |  00m00s
+[59/77] perl-overloading-0:0.02-514.fc4 100% | 155.7 KiB/s |  12.8 KiB |  00m00s
+[60/77] perl-locale-0:1.12-514.fc41.noa 100% | 160.5 KiB/s |  13.5 KiB |  00m00s
+[61/77] perl-Digest-MD5-0:2.59-5.fc41.x 100% |  34.0 KiB/s |  36.0 KiB |  00m01s
+[62/77] perl-File-stat-0:1.14-514.fc41. 100% | 190.0 KiB/s |  16.9 KiB |  00m00s
+[63/77] perl-SelectSaver-0:1.02-514.fc4 100% | 133.2 KiB/s |  11.6 KiB |  00m00s
+[64/77] openssh-clients-0:9.9p1-3.fc41. 100% |   3.5 MiB/s | 760.0 KiB |  00m00s
+[65/77] less-0:668-1.fc41.x86_64        100% | 751.5 KiB/s | 189.4 KiB |  00m00s
+[66/77] perl-Class-Struct-0:0.68-514.fc 100% |  63.0 KiB/s |  21.9 KiB |  00m00s
+[67/77] openssh-0:9.9p1-3.fc41.x86_64   100% |   2.5 MiB/s | 353.2 KiB |  00m00s
+[68/77] perl-File-Find-0:1.44-514.fc41. 100% | 268.4 KiB/s |  25.2 KiB |  00m00s
+[69/77] perl-lib-0:0.65-514.fc41.x86_64 100% | 143.8 KiB/s |  14.8 KiB |  00m00s
+[70/77] perl-FileHandle-0:2.05-514.fc41 100% | 131.3 KiB/s |  15.4 KiB |  00m00s
+[71/77] libedit-0:3.1-54.20250104cvs.fc 100% |   1.0 MiB/s | 100.7 KiB |  00m00s
+[72/77] libfido2-0:1.15.0-2.fc41.x86_64 100% | 185.9 KiB/s |  98.1 KiB |  00m01s
+[73/77] libcbor-0:0.11.0-2.fc41.x86_64  100% |  71.6 KiB/s |  33.1 KiB |  00m00s
+[74/77] libutempter-0:1.2.1-15.fc41.x86 100% | 144.6 KiB/s |  26.6 KiB |  00m00s
+[75/77] util-linux-0:2.40.4-1.fc41.x86_ 100% |   4.0 MiB/s |   1.1 MiB |  00m00s
+[76/77] perl-NDBM_File-0:1.17-514.fc41. 100% | 149.3 KiB/s |  22.7 KiB |  00m00s
+[77/77] libfdisk-0:2.40.4-1.fc41.x86_64 100% | 193.3 KiB/s | 152.5 KiB |  00m01s
 --------------------------------------------------------------------------------
-[77/77] Total                           100% |   2.0 MiB/s |  18.9 MiB |  00m09s
+[77/77] Total                           100% |   2.2 MiB/s |  18.9 MiB |  00m08s
 Running transaction
-[ 1/79] Verify package files            100% | 484.0   B/s |  77.0   B |  00m00s
-[ 2/79] Prepare transaction             100% | 490.0   B/s |  77.0   B |  00m00s
-[ 3/79] Installing libfdisk-0:2.40.4-1. 100% |   5.8 MiB/s | 357.4 KiB |  00m00s
-[ 4/79] Installing libutempter-0:1.2.1- 100% |   5.3 MiB/s |  59.7 KiB |  00m00s
-[ 5/79] Installing util-linux-0:2.40.4- 100% |  25.4 MiB/s |   3.7 MiB |  00m00s
-[ 6/79] Installing openssh-0:9.9p1-3.fc 100% |  92.1 MiB/s |   1.4 MiB |  00m00s
-[ 7/79] Installing libedit-0:3.1-54.202 100% |  33.6 MiB/s | 241.0 KiB |  00m00s
-[ 8/79] Installing libcbor-0:0.11.0-2.f 100% |  18.4 MiB/s |  75.3 KiB |  00m00s
-[ 9/79] Installing libfido2-0:1.15.0-2. 100% |  26.0 MiB/s | 239.7 KiB |  00m00s
-[10/79] Installing openssh-clients-0:9. 100% |  59.5 MiB/s |   2.7 MiB |  00m00s
-[11/79] Installing less-0:668-1.fc41.x8 100% |  26.7 MiB/s | 409.6 KiB |  00m00s
-[12/79] Installing git-core-0:2.49.0-1. 100% | 149.1 MiB/s |  22.8 MiB |  00m00s
-[13/79] Installing git-core-doc-0:2.49. 100% | 355.6 MiB/s |  17.8 MiB |  00m00s
-[14/79] Installing ncurses-0:6.5-2.2024 100% |  20.6 MiB/s | 633.9 KiB |  00m00s
-[15/79] Installing groff-base-0:1.23.0- 100% |  43.0 MiB/s |   3.9 MiB |  00m00s
-[16/79] Installing perl-Digest-0:1.20-5 100% |   7.2 MiB/s |  37.1 KiB |  00m00s
-[17/79] Installing perl-Digest-MD5-0:2. 100% |  10.0 MiB/s |  61.7 KiB |  00m00s
-[18/79] Installing perl-B-0:1.89-514.fc 100% |  54.4 MiB/s | 501.4 KiB |  00m00s
+[ 1/79] Verify package files            100% | 427.0   B/s |  77.0   B |  00m00s
+[ 2/79] Prepare transaction             100% | 420.0   B/s |  77.0   B |  00m00s
+[ 3/79] Installing libfdisk-0:2.40.4-1. 100% |   5.6 MiB/s | 357.4 KiB |  00m00s
+[ 4/79] Installing libutempter-0:1.2.1- 100% |   4.9 MiB/s |  59.7 KiB |  00m00s
+[ 5/79] Installing util-linux-0:2.40.4- 100% |  19.6 MiB/s |   3.7 MiB |  00m00s
+[ 6/79] Installing openssh-0:9.9p1-3.fc 100% |  76.7 MiB/s |   1.4 MiB |  00m00s
+[ 7/79] Installing libedit-0:3.1-54.202 100% |  29.4 MiB/s | 241.0 KiB |  00m00s
+[ 8/79] Installing libcbor-0:0.11.0-2.f 100% |  12.3 MiB/s |  75.3 KiB |  00m00s
+[ 9/79] Installing libfido2-0:1.15.0-2. 100% |  29.3 MiB/s | 239.7 KiB |  00m00s
+[10/79] Installing openssh-clients-0:9. 100% |  47.0 MiB/s |   2.7 MiB |  00m00s
+[11/79] Installing less-0:668-1.fc41.x8 100% |  23.5 MiB/s | 409.6 KiB |  00m00s
+[12/79] Installing git-core-0:2.49.0-1. 100% | 129.6 MiB/s |  22.8 MiB |  00m00s
+[13/79] Installing git-core-doc-0:2.49. 100% | 296.3 MiB/s |  17.8 MiB |  00m00s
+[14/79] Installing ncurses-0:6.5-2.2024 100% |  17.2 MiB/s | 633.9 KiB |  00m00s
+[15/79] Installing groff-base-0:1.23.0- 100% |  36.2 MiB/s |   3.9 MiB |  00m00s
+[16/79] Installing perl-Digest-0:1.20-5 100% |   6.0 MiB/s |  37.1 KiB |  00m00s
+[17/79] Installing perl-Digest-MD5-0:2. 100% |   7.5 MiB/s |  61.7 KiB |  00m00s
+[18/79] Installing perl-B-0:1.89-514.fc 100% |  37.7 MiB/s | 501.4 KiB |  00m00s
 [19/79] Installing perl-FileHandle-0:2. 100% |   3.2 MiB/s |   9.8 KiB |  00m00s
 [20/79] Installing perl-MIME-Base32-0:1 100% |   7.9 MiB/s |  32.2 KiB |  00m00s
-[21/79] Installing perl-Data-Dumper-0:2 100% |  15.8 MiB/s | 113.6 KiB |  00m00s
-[22/79] Installing perl-libnet-0:3.15-5 100% |  32.0 MiB/s | 294.7 KiB |  00m00s
-[23/79] Installing perl-AutoLoader-0:5. 100% |   6.8 MiB/s |  20.9 KiB |  00m00s
+[21/79] Installing perl-Data-Dumper-0:2 100% |  13.9 MiB/s | 113.6 KiB |  00m00s
+[22/79] Installing perl-libnet-0:3.15-5 100% |  20.6 MiB/s | 294.7 KiB |  00m00s
+[23/79] Installing perl-AutoLoader-0:5. 100% |   4.1 MiB/s |  20.9 KiB |  00m00s
 [24/79] Installing perl-IO-Socket-IP-0: 100% |  20.0 MiB/s | 102.2 KiB |  00m00s
-[25/79] Installing perl-URI-0:5.30-1.fc 100% |  14.6 MiB/s | 269.5 KiB |  00m00s
-[26/79] Installing perl-Text-Tabs+Wrap- 100% |   5.8 MiB/s |  23.9 KiB |  00m00s
-[27/79] Installing perl-Pod-Escapes-1:1 100% |   8.4 MiB/s |  25.9 KiB |  00m00s
-[28/79] Installing perl-if-0:0.61.000-5 100% |   3.0 MiB/s |   6.2 KiB |  00m00s
-[29/79] Installing perl-Time-Local-2:1. 100% |  17.2 MiB/s |  70.6 KiB |  00m00s
-[30/79] Installing perl-Net-SSLeay-0:1. 100% |  38.9 MiB/s |   1.4 MiB |  00m00s
+[25/79] Installing perl-URI-0:5.30-1.fc 100% |  10.1 MiB/s | 269.5 KiB |  00m00s
+[26/79] Installing perl-Text-Tabs+Wrap- 100% |   3.9 MiB/s |  23.9 KiB |  00m00s
+[27/79] Installing perl-Pod-Escapes-1:1 100% |   6.3 MiB/s |  25.9 KiB |  00m00s
+[28/79] Installing perl-if-0:0.61.000-5 100% |   2.0 MiB/s |   6.2 KiB |  00m00s
+[29/79] Installing perl-Time-Local-2:1. 100% |  11.5 MiB/s |  70.6 KiB |  00m00s
+[30/79] Installing perl-Net-SSLeay-0:1. 100% |  41.3 MiB/s |   1.4 MiB |  00m00s
 [31/79] Installing perl-File-Path-0:2.1 100% |  15.8 MiB/s |  64.5 KiB |  00m00s
 [32/79] Installing perl-locale-0:1.12-5 100% |   2.2 MiB/s |   6.9 KiB |  00m00s
-[33/79] Installing perl-IO-Socket-SSL-0 100% |  76.8 MiB/s | 707.4 KiB |  00m00s
+[33/79] Installing perl-IO-Socket-SSL-0 100% |  69.1 MiB/s | 707.4 KiB |  00m00s
 [34/79] Installing perl-Term-ANSIColor- 100% |  24.2 MiB/s |  99.2 KiB |  00m00s
-[35/79] Installing perl-Term-Cap-0:1.18 100% |   7.5 MiB/s |  30.6 KiB |  00m00s
-[36/79] Installing perl-Pod-Simple-1:3. 100% |  46.4 MiB/s | 570.5 KiB |  00m00s
-[37/79] Installing perl-POSIX-0:2.20-51 100% |  33.0 MiB/s | 236.4 KiB |  00m00s
+[35/79] Installing perl-Term-Cap-0:1.18 100% |   6.0 MiB/s |  30.6 KiB |  00m00s
+[36/79] Installing perl-Pod-Simple-1:3. 100% |  30.9 MiB/s | 570.5 KiB |  00m00s
+[37/79] Installing perl-POSIX-0:2.20-51 100% |  28.9 MiB/s | 236.4 KiB |  00m00s
 [38/79] Installing perl-File-Temp-1:0.2 100% |  32.0 MiB/s | 164.1 KiB |  00m00s
 [39/79] Installing perl-IPC-Open3-0:1.2 100% |   5.7 MiB/s |  23.3 KiB |  00m00s
 [40/79] Installing perl-Class-Struct-0: 100% |   6.3 MiB/s |  25.9 KiB |  00m00s
 [41/79] Installing perl-HTTP-Tiny-0:0.0 100% |  30.6 MiB/s | 156.4 KiB |  00m00s
-[42/79] Installing perl-Socket-4:2.038- 100% |  15.4 MiB/s | 126.1 KiB |  00m00s
-[43/79] Installing perl-Symbol-0:1.09-5 100% |   2.3 MiB/s |   7.2 KiB |  00m00s
+[42/79] Installing perl-Socket-4:2.038- 100% |  13.7 MiB/s | 126.1 KiB |  00m00s
+[43/79] Installing perl-Symbol-0:1.09-5 100% |   1.8 MiB/s |   7.2 KiB |  00m00s
 [44/79] Installing perl-SelectSaver-0:1 100% | 859.4 KiB/s |   2.6 KiB |  00m00s
 [45/79] Installing perl-File-stat-0:1.1 100% |   4.2 MiB/s |  13.1 KiB |  00m00s
-[46/79] Installing perl-podlators-1:6.0 100% |  39.2 MiB/s | 321.4 KiB |  00m00s
-[47/79] Installing perl-Pod-Perldoc-0:3 100% |  23.6 MiB/s | 169.3 KiB |  00m00s
-[48/79] Installing perl-Text-ParseWords 100% |   4.7 MiB/s |  14.6 KiB |  00m00s
-[49/79] Installing perl-Fcntl-0:1.18-51 100% |  12.2 MiB/s |  50.1 KiB |  00m00s
+[46/79] Installing perl-podlators-1:6.0 100% |  31.4 MiB/s | 321.4 KiB |  00m00s
+[47/79] Installing perl-Pod-Perldoc-0:3 100% |  20.7 MiB/s | 169.3 KiB |  00m00s
+[48/79] Installing perl-Text-ParseWords 100% |   2.8 MiB/s |  14.6 KiB |  00m00s
+[49/79] Installing perl-Fcntl-0:1.18-51 100% |   8.2 MiB/s |  50.1 KiB |  00m00s
 [50/79] Installing perl-base-0:2.27-514 100% |   4.2 MiB/s |  12.9 KiB |  00m00s
 [51/79] Installing perl-mro-0:1.29-514. 100% |   9.1 MiB/s |  46.6 KiB |  00m00s
-[52/79] Installing perl-overloading-0:0 100% |   1.8 MiB/s |   5.5 KiB |  00m00s
-[53/79] Installing perl-IO-0:1.55-514.f 100% |  19.0 MiB/s | 155.3 KiB |  00m00s
-[54/79] Installing perl-Pod-Usage-4:2.0 100% |  21.1 MiB/s |  86.3 KiB |  00m00s
+[52/79] Installing perl-overloading-0:0 100% |   1.4 MiB/s |   5.5 KiB |  00m00s
+[53/79] Installing perl-IO-0:1.55-514.f 100% |  10.8 MiB/s | 155.3 KiB |  00m00s
+[54/79] Installing perl-Pod-Usage-4:2.0 100% |  12.0 MiB/s |  86.3 KiB |  00m00s
 [55/79] Installing perl-constant-0:1.33 100% |   8.9 MiB/s |  27.4 KiB |  00m00s
-[56/79] Installing perl-parent-1:0.242- 100% |   3.5 MiB/s |  10.7 KiB |  00m00s
-[57/79] Installing perl-File-Basename-0 100% |   4.7 MiB/s |  14.6 KiB |  00m00s
+[56/79] Installing perl-parent-1:0.242- 100% |   2.6 MiB/s |  10.7 KiB |  00m00s
+[57/79] Installing perl-File-Basename-0 100% |   3.6 MiB/s |  14.6 KiB |  00m00s
 [58/79] Installing perl-Errno-0:1.38-51 100% |   2.8 MiB/s |   8.7 KiB |  00m00s
 [59/79] Installing perl-MIME-Base64-0:3 100% |   9.4 MiB/s |  48.4 KiB |  00m00s
-[60/79] Installing perl-vars-0:1.05-514 100% | 853.1 KiB/s |   4.3 KiB |  00m00s
-[61/79] Installing perl-Scalar-List-Uti 100% |  12.4 MiB/s | 152.6 KiB |  00m00s
-[62/79] Installing perl-Getopt-Std-0:1. 100% |   2.9 MiB/s |  11.7 KiB |  00m00s
-[63/79] Installing perl-overload-0:1.37 100% |  17.6 MiB/s |  71.9 KiB |  00m00s
-[64/79] Installing perl-Storable-1:3.32 100% |  28.6 MiB/s | 234.0 KiB |  00m00s
-[65/79] Installing perl-Getopt-Long-1:2 100% |  28.8 MiB/s | 147.2 KiB |  00m00s
-[66/79] Installing perl-Exporter-0:5.78 100% |  18.1 MiB/s |  55.6 KiB |  00m00s
-[67/79] Installing perl-Carp-0:1.54-511 100% |  15.5 MiB/s |  47.7 KiB |  00m00s
-[68/79] Installing perl-DynaLoader-0:1. 100% |   7.9 MiB/s |  32.5 KiB |  00m00s
-[69/79] Installing perl-PathTools-0:3.9 100% |  20.5 MiB/s | 188.6 KiB |  00m00s
-[70/79] Installing perl-Encode-4:3.21-5 100% |  73.7 MiB/s |   4.7 MiB |  00m00s
-[71/79] Installing perl-libs-4:5.40.1-5 100% |  53.3 MiB/s |   9.9 MiB |  00m00s
-[72/79] Installing perl-interpreter-4:5 100% |  20.2 MiB/s | 124.0 KiB |  00m00s
-[73/79] Installing perl-TermReadKey-0:2 100% |  10.8 MiB/s |  66.3 KiB |  00m00s
-[74/79] Installing perl-Error-1:0.17029 100% |  15.7 MiB/s |  80.5 KiB |  00m00s
-[75/79] Installing perl-File-Find-0:1.4 100% |  13.8 MiB/s |  42.5 KiB |  00m00s
+[60/79] Installing perl-vars-0:1.05-514 100% |   1.4 MiB/s |   4.3 KiB |  00m00s
+[61/79] Installing perl-Scalar-List-Uti 100% |  13.5 MiB/s | 152.6 KiB |  00m00s
+[62/79] Installing perl-Getopt-Std-0:1. 100% |   3.8 MiB/s |  11.7 KiB |  00m00s
+[63/79] Installing perl-overload-0:1.37 100% |  23.4 MiB/s |  71.9 KiB |  00m00s
+[64/79] Installing perl-Storable-1:3.32 100% |  25.4 MiB/s | 234.0 KiB |  00m00s
+[65/79] Installing perl-Getopt-Long-1:2 100% |  16.0 MiB/s | 147.2 KiB |  00m00s
+[66/79] Installing perl-Exporter-0:5.78 100% |   9.1 MiB/s |  55.6 KiB |  00m00s
+[67/79] Installing perl-Carp-0:1.54-511 100% |   9.3 MiB/s |  47.7 KiB |  00m00s
+[68/79] Installing perl-DynaLoader-0:1. 100% |   6.3 MiB/s |  32.5 KiB |  00m00s
+[69/79] Installing perl-PathTools-0:3.9 100% |  18.4 MiB/s | 188.6 KiB |  00m00s
+[70/79] Installing perl-Encode-4:3.21-5 100% |  70.4 MiB/s |   4.7 MiB |  00m00s
+[71/79] Installing perl-libs-4:5.40.1-5 100% |  43.4 MiB/s |   9.9 MiB |  00m00s
+[72/79] Installing perl-interpreter-4:5 100% |   7.6 MiB/s | 124.0 KiB |  00m00s
+[73/79] Installing perl-TermReadKey-0:2 100% |   9.2 MiB/s |  66.3 KiB |  00m00s
+[74/79] Installing perl-Error-1:0.17029 100% |  11.2 MiB/s |  80.5 KiB |  00m00s
+[75/79] Installing perl-File-Find-0:1.4 100% |  10.4 MiB/s |  42.5 KiB |  00m00s
 [76/79] Installing perl-lib-0:0.65-514. 100% |   2.9 MiB/s |   8.9 KiB |  00m00s
-[77/79] Installing perl-Git-0:2.49.0-1. 100% |  15.9 MiB/s |  65.0 KiB |  00m00s
-[78/79] Installing git-0:2.49.0-1.fc41. 100% |  17.1 MiB/s |  87.5 KiB |  00m00s
-[79/79] Installing perl-NDBM_File-0:1.1 100% | 109.3 KiB/s |  33.7 KiB |  00m00s
+[77/79] Installing perl-Git-0:2.49.0-1. 100% |  12.7 MiB/s |  65.0 KiB |  00m00s
+[78/79] Installing git-0:2.49.0-1.fc41. 100% |  14.2 MiB/s |  87.5 KiB |  00m00s
+[79/79] Installing perl-NDBM_File-0:1.1 100% | 107.6 KiB/s |  33.7 KiB |  00m00s
 Complete!
-2025-04-03 20:13:09,190 - INFO - Git instalado exitosamente.
-2025-04-03 20:13:09,190 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
-2025-04-03 20:13:09,190 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m 💾 Clonación de dotfiles iniciada [0m├┚
-2025-04-03 20:13:09,190 - INFO -                 .studio
-2025-04-03 20:13:09,190 - INFO - Clonando el repositorio 'dotfiles' desde 'https://github.com/SENTUstudio/dotfiles.git' a '/home/el/dotfiles' en la rama 'develop'...
+2025-04-03 20:31:09,032 - INFO - Git instalado exitosamente.
+2025-04-03 20:31:09,032 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒
+2025-04-03 20:31:09,032 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m 💾 Clonación de dotfiles iniciada [0m├┚
+2025-04-03 20:31:09,032 - INFO -                 .studio
+2025-04-03 20:31:09,032 - INFO - Clonando el repositorio 'dotfiles' desde 'https://github.com/SENTUstudio/dotfiles.git' a '/home/el/dotfiles' en la rama 'develop'...
 Cloning into '/home/el/dotfiles'...
-2025-04-03 20:13:21,383 - INFO - Repositorio clonado exitosamente.
-2025-04-03 20:13:21,384 - INFO - 💾 Clonación de dotfiles terminada
-2025-04-03 20:13:21,384 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤   Ingeniería de Datos & Data Science  ├┒
-2025-04-03 20:13:21,384 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m⚙️  Iniciando instalación de paquetes[0m├┚
-2025-04-03 20:13:21,384 - INFO -                 .studio
-2025-04-03 20:13:21,385 - INFO - Ejecutando Ansible Playbook...
+2025-04-03 20:31:17,345 - INFO - Repositorio clonado exitosamente.
+2025-04-03 20:31:17,345 - INFO - 💾 Clonación de dotfiles terminada
+2025-04-03 20:31:17,345 - INFO -     [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤   Ingeniería de Datos & Data Science  ├┒
+2025-04-03 20:31:17,345 - INFO -     [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m⚙️  Iniciando instalación de paquetes[0m├┚
+2025-04-03 20:31:17,345 - INFO -                 .studio
+2025-04-03 20:31:17,347 - INFO - Ejecutando Ansible Playbook...
 /usr/lib64/python3.13/getpass.py:90: GetPassWarning: Can not control echo on the terminal.
   passwd = fallback_getpass(prompt, stream)
 Warning: Password input may be echoed.
@@ -444,15 +444,15 @@ TASK [Gathering Facts] *********************************************************
 task path: /home/el/dotfiles/ansible/playbook.yml:2
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
 <localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743711202.3466737-89-261104294177583 `" && echo ansible-tmp-1743711202.3466737-89-261104294177583="` echo /home/el/.ansible/tmp/ansible-tmp-1743711202.3466737-89-261104294177583 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743712278.4653168-88-154113957106911 `" && echo ansible-tmp-1743712278.4653168-88-154113957106911="` echo /home/el/.ansible/tmp/ansible-tmp-1743712278.4653168-88-154113957106911 `" ) && sleep 0'
 <localhost> Attempting python interpreter discovery
 <localhost> EXEC /bin/sh -c 'echo PLATFORM; uname; echo FOUND; command -v '"'"'python3.12'"'"'; command -v '"'"'python3.11'"'"'; command -v '"'"'python3.10'"'"'; command -v '"'"'python3.9'"'"'; command -v '"'"'python3.8'"'"'; command -v '"'"'python3.7'"'"'; command -v '"'"'python3.6'"'"'; command -v '"'"'/usr/bin/python3'"'"'; command -v '"'"'/usr/libexec/platform-python'"'"'; command -v '"'"'python2.7'"'"'; command -v '"'"'/usr/bin/python'"'"'; command -v '"'"'python'"'"'; echo ENDFOUND && sleep 0'
 <localhost> EXEC /bin/sh -c '/usr/bin/python3 && sleep 0'
 Using module file /usr/lib/python3.13/site-packages/ansible/modules/setup.py
-<localhost> PUT /home/el/.ansible/tmp/ansible-local-86duava6u6/tmpqsot9_we TO /home/el/.ansible/tmp/ansible-tmp-1743711202.3466737-89-261104294177583/AnsiballZ_setup.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743711202.3466737-89-261104294177583/ /home/el/.ansible/tmp/ansible-tmp-1743711202.3466737-89-261104294177583/AnsiballZ_setup.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-arbiyamkadvwnpxqdqxrylqoxfgqoaaw ; /usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743711202.3466737-89-261104294177583/AnsiballZ_setup.py'"'"' && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743711202.3466737-89-261104294177583/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-85r4a55aly/tmp7k0lksbh TO /home/el/.ansible/tmp/ansible-tmp-1743712278.4653168-88-154113957106911/AnsiballZ_setup.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743712278.4653168-88-154113957106911/ /home/el/.ansible/tmp/ansible-tmp-1743712278.4653168-88-154113957106911/AnsiballZ_setup.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-pxfwebnyiamhysbruuzjydanpjevdtiv ; /usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743712278.4653168-88-154113957106911/AnsiballZ_setup.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743712278.4653168-88-154113957106911/ > /dev/null 2>&1 && sleep 0'
 ok: [localhost]
 Read vars_file 'vars/installer_config.yaml'
 
@@ -1141,20 +1141,20 @@ TASK [base_system_configuration : Obtener el directorio home del usuario] ******
 task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:55
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
 <localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743711204.3926408-146-19168457616661 `" && echo ansible-tmp-1743711204.3926408-146-19168457616661="` echo /home/el/.ansible/tmp/ansible-tmp-1743711204.3926408-146-19168457616661 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743712280.6745045-145-29649751077823 `" && echo ansible-tmp-1743712280.6745045-145-29649751077823="` echo /home/el/.ansible/tmp/ansible-tmp-1743712280.6745045-145-29649751077823 `" ) && sleep 0'
 Using module file /usr/lib/python3.13/site-packages/ansible/modules/command.py
-<localhost> PUT /home/el/.ansible/tmp/ansible-local-86duava6u6/tmpy6umxgkb TO /home/el/.ansible/tmp/ansible-tmp-1743711204.3926408-146-19168457616661/AnsiballZ_command.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743711204.3926408-146-19168457616661/ /home/el/.ansible/tmp/ansible-tmp-1743711204.3926408-146-19168457616661/AnsiballZ_command.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743711204.3926408-146-19168457616661/AnsiballZ_command.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743711204.3926408-146-19168457616661/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-85r4a55aly/tmpxdq3y0k0 TO /home/el/.ansible/tmp/ansible-tmp-1743712280.6745045-145-29649751077823/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743712280.6745045-145-29649751077823/ /home/el/.ansible/tmp/ansible-tmp-1743712280.6745045-145-29649751077823/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743712280.6745045-145-29649751077823/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743712280.6745045-145-29649751077823/ > /dev/null 2>&1 && sleep 0'
 changed: [localhost] => {
     "changed": true,
     "cmd": [
         "echo",
         "$HOME"
     ],
-    "delta": "0:00:00.015084",
-    "end": "2025-04-03 20:13:24.882184",
+    "delta": "0:00:00.017621",
+    "end": "2025-04-03 20:31:21.257604",
     "invocation": {
         "module_args": {
             "_raw_params": "echo $HOME",
@@ -1172,7 +1172,7 @@ changed: [localhost] => {
     },
     "msg": "",
     "rc": 0,
-    "start": "2025-04-03 20:13:24.867100",
+    "start": "2025-04-03 20:31:21.239983",
     "stderr": "",
     "stderr_lines": [],
     "stdout": "/home/el",
@@ -1204,12 +1204,12 @@ TASK [base_system_configuration : Actualiza el sistema (Fedora)] ***************
 task path: /home/el/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:75
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
 <localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743711205.0237076-164-255836316952121 `" && echo ansible-tmp-1743711205.0237076-164-255836316952121="` echo /home/el/.ansible/tmp/ansible-tmp-1743711205.0237076-164-255836316952121 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743712281.4077642-163-94257211194577 `" && echo ansible-tmp-1743712281.4077642-163-94257211194577="` echo /home/el/.ansible/tmp/ansible-tmp-1743712281.4077642-163-94257211194577 `" ) && sleep 0'
 Using module file /usr/lib/python3.13/site-packages/ansible/modules/dnf5.py
-<localhost> PUT /home/el/.ansible/tmp/ansible-local-86duava6u6/tmp5wj7zv6w TO /home/el/.ansible/tmp/ansible-tmp-1743711205.0237076-164-255836316952121/AnsiballZ_dnf5.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743711205.0237076-164-255836316952121/ /home/el/.ansible/tmp/ansible-tmp-1743711205.0237076-164-255836316952121/AnsiballZ_dnf5.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-oqifwhuwvsztfwmipawgtgmcfconxnlr ; /usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743711205.0237076-164-255836316952121/AnsiballZ_dnf5.py'"'"' && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743711205.0237076-164-255836316952121/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-85r4a55aly/tmpmdlr9_oj TO /home/el/.ansible/tmp/ansible-tmp-1743712281.4077642-163-94257211194577/AnsiballZ_dnf5.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743712281.4077642-163-94257211194577/ /home/el/.ansible/tmp/ansible-tmp-1743712281.4077642-163-94257211194577/AnsiballZ_dnf5.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-haewpgqwkactucquseeshbhhpxajeymm ; /usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743712281.4077642-163-94257211194577/AnsiballZ_dnf5.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743712281.4077642-163-94257211194577/ > /dev/null 2>&1 && sleep 0'
 ok: [localhost] => {
     "changed": false,
     "invocation": {
@@ -1287,7 +1287,7 @@ TASK [add_repositories : Añadir repositorio {{ repo_item.key }} ({{ ansible_dis
 task path: /home/el/dotfiles/ansible/roles/add_repositories/tasks/main.yml:2
 skipping: [localhost] => {
     "changed": false,
-    "false_condition": "package_managers.RedHat is defined",
+    "false_condition": "repo_item.value is defined",
     "skip_reason": "Conditional result was False"
 }
 Read vars_file 'vars/installer_config.yaml'
@@ -1297,12 +1297,12 @@ TASK [install_core_dependencies : Instalar dependencias core (Fedora)] *********
 task path: /home/el/dotfiles/ansible/roles/install_core_dependencies/tasks/main.yml:4
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
 <localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743711207.1950274-188-72174322302719 `" && echo ansible-tmp-1743711207.1950274-188-72174322302719="` echo /home/el/.ansible/tmp/ansible-tmp-1743711207.1950274-188-72174322302719 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743712284.2565548-187-231710811229249 `" && echo ansible-tmp-1743712284.2565548-187-231710811229249="` echo /home/el/.ansible/tmp/ansible-tmp-1743712284.2565548-187-231710811229249 `" ) && sleep 0'
 Using module file /usr/lib/python3.13/site-packages/ansible/modules/dnf5.py
-<localhost> PUT /home/el/.ansible/tmp/ansible-local-86duava6u6/tmpaj33ey88 TO /home/el/.ansible/tmp/ansible-tmp-1743711207.1950274-188-72174322302719/AnsiballZ_dnf5.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743711207.1950274-188-72174322302719/ /home/el/.ansible/tmp/ansible-tmp-1743711207.1950274-188-72174322302719/AnsiballZ_dnf5.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-zlqppgmhpgfjahsjkuujflhlzthxedcq ; /usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743711207.1950274-188-72174322302719/AnsiballZ_dnf5.py'"'"' && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743711207.1950274-188-72174322302719/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-85r4a55aly/tmpk20n03q5 TO /home/el/.ansible/tmp/ansible-tmp-1743712284.2565548-187-231710811229249/AnsiballZ_dnf5.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743712284.2565548-187-231710811229249/ /home/el/.ansible/tmp/ansible-tmp-1743712284.2565548-187-231710811229249/AnsiballZ_dnf5.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-opjjeclxqrrxjilepqwjuldyvwoepecv ; /usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743712284.2565548-187-231710811229249/AnsiballZ_dnf5.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743712284.2565548-187-231710811229249/ > /dev/null 2>&1 && sleep 0'
 changed: [localhost] => {
     "changed": true,
     "invocation": {
@@ -1394,21 +1394,20 @@ changed: [localhost] => {
         "Installed: perl-Thread-Queue-3.14-511.fc41.noarch",
         "Installed: perl-threads-1:2.40-511.fc41.x86_64",
         "Installed: wget2-2.2.0-2.fc41.x86_64",
-        "Installed: cpp-14.2.1-7.fc41.x86_64",
         "Installed: libmpc-1.3.1-6.fc41.x86_64",
+        "Installed: cpp-14.2.1-7.fc41.x86_64",
         "Installed: golang-bin-1.23.7-1.fc41.x86_64",
         "Installed: golang-src-1.23.7-1.fc41.noarch",
         "Installed: rust-1.85.1-1.fc41.x86_64",
         "Installed: ruby-libs-3.3.7-18.fc41.x86_64",
-        "Installed: java-21-openjdk-headless-1:21.0.6.0.7-6.fc41.x86_64",
         "Installed: fontconfig-2.15.0-8.fc41.x86_64",
         "Installed: libXcomposite-0.4.6-4.fc41.x86_64",
         "Installed: libXext-1.3.6-2.fc41.x86_64",
         "Installed: libXi-1.8.2-1.fc41.x86_64",
         "Installed: libXtst-1.2.5-1.fc41.x86_64",
         "Installed: xorg-x11-fonts-Type1-7.5-39.fc41.noarch",
+        "Installed: java-21-openjdk-headless-1:21.0.6.0.7-6.fc41.x86_64",
         "Installed: dnf-plugins-core-4.10.1-1.fc41.noarch",
-        "Installed: flatpak-session-helper-1.16.0-1.fc41.x86_64",
         "Installed: bubblewrap-0.10.0-1.fc41.x86_64",
         "Installed: dconf-0.40.0-14.fc41.x86_64",
         "Installed: fuse3-3.16.2-4.fc41.x86_64",
@@ -1418,19 +1417,20 @@ changed: [localhost] => {
         "Installed: libseccomp-2.5.5-2.fc41.x86_64",
         "Installed: libwayland-client-1.23.0-2.fc41.x86_64",
         "Installed: xdg-dbus-proxy-0.1.6-1.fc41.x86_64",
+        "Installed: flatpak-session-helper-1.16.0-1.fc41.x86_64",
         "Installed: bison-3.8.2-9.fc41.x86_64",
         "Installed: flex-2.6.4-18.fc41.x86_64",
         "Installed: perl-threads-shared-1.69-511.fc41.x86_64",
-        "Installed: wget2-libs-2.2.0-2.fc41.x86_64",
         "Installed: gpgme-1.23.2-5.fc41.x86_64",
+        "Installed: wget2-libs-2.2.0-2.fc41.x86_64",
         "Installed: rust-std-static-1.85.1-1.fc41.x86_64",
-        "Installed: javapackages-filesystem-6.2.0-14.fc41.noarch",
         "Installed: default-fonts-core-sans-4.1-2.fc41.noarch",
         "Installed: fonts-filesystem-1:2.0.5-17.fc41.noarch",
         "Installed: freetype-2.13.3-1.fc41.x86_64",
         "Installed: xml-common-0.6.3-65.fc41.noarch",
         "Installed: mkfontscale-1.2.3-1.fc41.x86_64",
         "Installed: ttmkfdir-3.0.9-71.fc41.x86_64",
+        "Installed: javapackages-filesystem-6.2.0-14.fc41.noarch",
         "Installed: python3-dnf-plugins-core-4.10.1-1.fc41.noarch",
         "Installed: dbus-1:1.14.10-4.fc41.x86_64",
         "Installed: fuse-common-3.16.2-4.fc41.x86_64",
@@ -1459,11 +1459,6 @@ changed: [localhost] => {
         "Installed: python3-six-1.16.0-23.fc41.noarch",
         "Installed: dbus-libs-1:1.14.10-4.fc41.x86_64",
         "Installed: dbus-common-1:1.14.10-4.fc41.noarch",
-        "Installed: libX11-1.8.11-1.fc41.x86_64",
-        "Installed: libX11-common-1.8.11-1.fc41.noarch",
-        "Installed: libxcb-1.17.0-3.fc41.x86_64",
-        "Installed: autoconf-2.72-4.fc41.noarch",
-        "Installed: emacs-filesystem-1:30.0-3.fc41.noarch",
         "Installed: gnutls-dane-3.8.9-2.fc41.x86_64",
         "Installed: glibc-devel-2.40-23.fc41.x86_64",
         "Installed: llvm-libs-19.1.7-3.fc41.x86_64",
@@ -1478,14 +1473,17 @@ changed: [localhost] => {
         "Installed: openssl-devel-1:3.2.4-1.fc41.x86_64",
         "Installed: alsa-lib-1.2.13-3.fc41.x86_64",
         "Installed: cups-libs-1:2.4.11-9.fc41.x86_64",
-        "Installed: cups-filesystem-1:2.4.11-9.fc41.noarch",
         "Installed: avahi-libs-0.8-29.fc41.x86_64",
+        "Installed: cups-filesystem-1:2.4.11-9.fc41.noarch",
         "Installed: lksctp-tools-1.0.20-1.fc41.x86_64",
         "Installed: nss-3.109.0-1.fc41.x86_64",
         "Installed: nss-softokn-3.109.0-1.fc41.x86_64",
         "Installed: nss-softokn-freebl-3.109.0-1.fc41.x86_64",
         "Installed: nss-sysinit-3.109.0-1.fc41.x86_64",
         "Installed: tzdata-java-2025b-1.fc41.noarch",
+        "Installed: libX11-1.8.11-1.fc41.x86_64",
+        "Installed: libxcb-1.17.0-3.fc41.x86_64",
+        "Installed: libX11-common-1.8.11-1.fc41.noarch",
         "Installed: libXrender-0.9.12-1.fc41.x86_64",
         "Installed: go-filesystem-3.6.0-5.fc41.x86_64",
         "Installed: unbound-libs-1.22.0-14.fc41.x86_64",
@@ -1506,16 +1504,16 @@ changed: [localhost] => {
         "Installed: ostree-libs-2025.2-2.fc41.x86_64",
         "Installed: polkit-libs-125-1.fc41.1.x86_64",
         "Installed: libzstd-devel-1.5.7-1.fc41.x86_64",
-        "Installed: zlib-ng-compat-devel-2.2.3-2.fc41.x86_64",
         "Installed: pkgconf-pkg-config-2.3.0-1.fc41.x86_64",
         "Installed: pkgconf-2.3.0-1.fc41.x86_64",
         "Installed: pkgconf-m4-2.3.0-1.fc41.noarch",
         "Installed: libpkgconf-2.3.0-1.fc41.x86_64",
+        "Installed: zlib-ng-compat-devel-2.2.3-2.fc41.x86_64",
         "Installed: libssh2-1.11.1-1.fc41.x86_64",
         "Installed: elfutils-debuginfod-client-0.192-9.fc41.x86_64",
-        "Installed: perl-File-Compare-1.100.800-514.fc41.noarch",
-        "Installed: perl-File-Copy-2.41-514.fc41.noarch",
         "Installed: libxmlb-0.3.22-1.fc41.x86_64",
+        "Installed: autoconf-2.72-4.fc41.noarch",
+        "Installed: emacs-filesystem-1:30.0-3.fc41.noarch",
         "Installed: cmake-filesystem-3.30.8-1.fc41.x86_64",
         "Installed: rpm-sign-libs-4.20.1-1.fc41.x86_64",
         "Installed: ima-evm-utils-libs-1.6.2-2.fc41.x86_64",
@@ -1532,6 +1530,8 @@ changed: [localhost] => {
         "Installed: libdatrie-0.2.13-10.fc41.x86_64",
         "Installed: rsvg-pixbuf-loader-2.59.2-1.fc41.x86_64",
         "Installed: pixman-0.44.2-1.fc41.x86_64",
+        "Installed: perl-File-Compare-1.100.800-514.fc41.noarch",
+        "Installed: perl-File-Copy-2.41-514.fc41.noarch",
         "Installed: libgit2_1.8-1.8.4-1.fc41.x86_64",
         "Installed: llhttp-9.2.1-2.fc41.x86_64",
         "Installed: rubygems-3.5.22-18.fc41.noarch",
@@ -1567,9 +1567,9 @@ changed: [localhost] => {
         "Installed: xdg-desktop-portal-1.20.0-2.fc41.x86_64",
         "Installed: libgudev-238-6.fc41.x86_64",
         "Installed: subversion-1.14.5-1.fc41.x86_64",
-        "Installed: subversion-libs-1.14.5-1.fc41.x86_64",
         "Installed: apr-1.7.5-1.fc41.x86_64",
         "Installed: apr-util-1.6.3-21.fc41.x86_64",
+        "Installed: subversion-libs-1.14.5-1.fc41.x86_64",
         "Installed: utf8proc-2.7.0-8.fc41.x86_64",
         "Installed: mercurial-6.8.2-1.fc41.x86_64",
         "Installed: pinentry-1.3.1-2.fc41.x86_64",
@@ -1587,18 +1587,6 @@ changed: [localhost] => {
         "Installed: qrencode-libs-4.1.1-8.fc41.x86_64",
         "Installed: systemd-networkd-256.12-1.fc41.x86_64",
         "Installed: systemd-resolved-256.12-1.fc41.x86_64",
-        "Installed: libsecret-0.21.7-1.fc41.x86_64",
-        "Installed: libusb1-1.0.28-2.fc41.x86_64",
-        "Installed: pcsc-lite-2.3.1-1.fc41.x86_64",
-        "Installed: polkit-125-1.fc41.1.x86_64",
-        "Installed: duktape-2.7.0-8.fc41.x86_64",
-        "Installed: libsoup3-3.6.5-1.fc41.x86_64",
-        "Installed: libwebp-1.5.0-1.fc41.x86_64",
-        "Installed: at-spi2-atk-2.54.1-1.fc41.x86_64",
-        "Installed: at-spi2-core-2.54.1-1.fc41.x86_64",
-        "Installed: atk-2.54.1-1.fc41.x86_64",
-        "Installed: xprop-1.2.7-2.fc41.x86_64",
-        "Installed: libXcursor-1.2.3-1.fc41.x86_64",
         "Installed: geoclue2-2.7.2-2.fc41.x86_64",
         "Installed: ModemManager-glib-1.22.0-4.fc41.x86_64",
         "Installed: gstreamer1-1.24.11-1.fc41.x86_64",
@@ -1632,7 +1620,7 @@ changed: [localhost] => {
         "Installed: flac-libs-1.4.3-5.fc41.x86_64",
         "Installed: gsm-1.0.22-7.fc41.x86_64",
         "Installed: lame-libs-3.100-18.fc41.x86_64",
-        "Installed: pcsc-lite-libs-2.3.1-1.fc41.x86_64",
+        "Installed: libusb1-1.0.28-2.fc41.x86_64",
         "Installed: mpg123-libs-1.32.9-1.fc41.x86_64",
         "Installed: libX11-xcb-1.8.11-1.fc41.x86_64",
         "Installed: libXv-1.0.13-1.fc41.x86_64",
@@ -1640,14 +1628,26 @@ changed: [localhost] => {
         "Installed: libpciaccess-0.16-13.fc41.x86_64",
         "Installed: mesa-libgbm-25.0.2-2.fc41.x86_64",
         "Installed: mesa-libEGL-25.0.2-2.fc41.x86_64",
-        "Installed: mesa-dri-drivers-25.0.2-2.fc41.x86_64",
         "Installed: libwayland-server-1.23.0-2.fc41.x86_64",
-        "Installed: mesa-filesystem-25.0.2-2.fc41.x86_64",
+        "Installed: mesa-dri-drivers-25.0.2-2.fc41.x86_64",
         "Installed: lm_sensors-libs-3.6.0-20.fc41.x86_64",
+        "Installed: mesa-filesystem-25.0.2-2.fc41.x86_64",
         "Installed: mesa-libGL-25.0.2-2.fc41.x86_64",
         "Installed: libunwind-1.8.0-5.fc41.x86_64",
         "Installed: libnotify-0.8.4-1.fc41.x86_64",
+        "Installed: libsoup3-3.6.5-1.fc41.x86_64",
+        "Installed: libsecret-0.21.7-1.fc41.x86_64",
+        "Installed: pcsc-lite-2.3.1-1.fc41.x86_64",
+        "Installed: polkit-125-1.fc41.1.x86_64",
+        "Installed: duktape-2.7.0-8.fc41.x86_64",
+        "Installed: libwebp-1.5.0-1.fc41.x86_64",
         "Installed: hwdata-0.393-1.fc41.noarch",
+        "Installed: at-spi2-atk-2.54.1-1.fc41.x86_64",
+        "Installed: at-spi2-core-2.54.1-1.fc41.x86_64",
+        "Installed: atk-2.54.1-1.fc41.x86_64",
+        "Installed: xprop-1.2.7-2.fc41.x86_64",
+        "Installed: libXcursor-1.2.3-1.fc41.x86_64",
+        "Installed: pcsc-lite-libs-2.3.1-1.fc41.x86_64",
         "Installed: libXxf86vm-1.1.6-1.fc41.x86_64",
         "Installed: libxshmfence-1.3.2-5.fc41.x86_64",
         "Installed: spirv-tools-libs-2024.4-1.fc41.x86_64",
@@ -1689,18 +1689,10 @@ changed: [localhost] => {
         "Installed: kmod-33-1.fc41.x86_64",
         "Installed: kbd-legacy-2.6.4-4.fc41.noarch",
         "Installed: kbd-misc-2.6.4-4.fc41.noarch",
-        "Installed: polkit-pkla-compat-0.1-29.fc41.x86_64",
+        "Installed: mesa-va-drivers-25.0.2-2.fc41.x86_64",
         "Installed: glib-networking-2.80.1-1.fc41.x86_64",
         "Installed: libproxy-0.5.8-1.fc41.x86_64",
-        "Installed: mesa-va-drivers-25.0.2-2.fc41.x86_64",
-        "Installed: gsettings-desktop-schemas-47.1-1.fc41.x86_64",
-        "Installed: openjpeg-2.5.3-6.fc41.x86_64",
-        "Installed: libxslt-1.1.43-1.fc41.x86_64",
-        "Installed: osinfo-db-20250124-1.fc41.noarch",
-        "Installed: osinfo-db-tools-1.12.0-1.fc41.x86_64",
-        "Installed: exiv2-libs-0.28.5-1.fc41.x86_64",
-        "Installed: inih-cpp-58-2.fc41.x86_64",
-        "Installed: inih-58-2.fc41.x86_64",
+        "Installed: polkit-pkla-compat-0.1-29.fc41.x86_64",
         "Installed: NetworkManager-libnm-1:1.50.3-1.fc41.x86_64",
         "Installed: libgsf-1.14.53-2.fc41.x86_64",
         "Installed: upower-libs-1.90.7-1.fc41.x86_64",
@@ -1710,10 +1702,18 @@ changed: [localhost] => {
         "Installed: highway-1.2.0-3.fc41.x86_64",
         "Installed: openexr-libs-3.2.4-3.fc41.x86_64",
         "Installed: imath-3.1.12-1.fc41.x86_64",
+        "Installed: gsettings-desktop-schemas-47.1-1.fc41.x86_64",
         "Installed: libavif-1.1.1-1.fc41.x86_64",
         "Installed: libyuv-0-0.55.20240704git96bbdb5.fc41.x86_64",
         "Installed: rav1e-libs-0.7.1-4.fc41.x86_64",
+        "Installed: openjpeg-2.5.3-6.fc41.x86_64",
         "Installed: libdeflate-1.23-1.fc41.x86_64",
+        "Installed: libxslt-1.1.43-1.fc41.x86_64",
+        "Installed: osinfo-db-20250124-1.fc41.noarch",
+        "Installed: osinfo-db-tools-1.12.0-1.fc41.x86_64",
+        "Installed: exiv2-libs-0.28.5-1.fc41.x86_64",
+        "Installed: inih-cpp-58-2.fc41.x86_64",
+        "Installed: inih-58-2.fc41.x86_64",
         "Installed: gobject-introspection-1.82.0-1.fc41.x86_64",
         "Installed: libaom-3.12.0-1.fc41.x86_64",
         "Installed: libvmaf-3.0.0-2.fc41.x86_64",
@@ -1729,13 +1729,13 @@ changed: [localhost] => {
         "Installed: pipewire-plugin-libcamera-1.2.7-7.fc41.x86_64",
         "Installed: libcamera-0.3.2-1.fc41.x86_64",
         "Installed: lttng-ust-2.13.8-3.fc41.x86_64",
-        "Installed: adobe-source-code-pro-fonts-2.042.1.062.1.026-5.fc41.noarch",
-        "Installed: exiv2-0.28.5-1.fc41.x86_64",
         "Installed: upower-1.90.7-1.fc41.x86_64",
         "Installed: libimobiledevice-1.3.0^20230705git6fc41f5-5.fc41.x86_64",
         "Installed: libplist-2.3.0-6.fc41.x86_64",
         "Installed: libimobiledevice-glue-1.0.0-4.fc41.x86_64",
         "Installed: libusbmuxd-2.0.2^20230620git8d30a55-6.fc41.x86_64",
+        "Installed: adobe-source-code-pro-fonts-2.042.1.062.1.026-5.fc41.noarch",
+        "Installed: exiv2-0.28.5-1.fc41.x86_64",
         "Installed: numactl-libs-2.0.19-1.fc41.x86_64",
         "Installed: libcamera-ipa-0.3.2-1.fc41.x86_64",
         "Installed: usbmuxd-1.1.1^20230720git61b99ab-3.fc41.x86_64"
@@ -1791,17 +1791,17 @@ TASK [install_uv : Descargar e instalar uv usando el script oficial] ***********
 task path: /home/el/dotfiles/ansible/roles/install_uv/tasks/main.yml:2
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
 <localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743711411.7230573-20548-105059517133040 `" && echo ansible-tmp-1743711411.7230573-20548-105059517133040="` echo /home/el/.ansible/tmp/ansible-tmp-1743711411.7230573-20548-105059517133040 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743712436.5094535-20545-87764344954354 `" && echo ansible-tmp-1743712436.5094535-20545-87764344954354="` echo /home/el/.ansible/tmp/ansible-tmp-1743712436.5094535-20545-87764344954354 `" ) && sleep 0'
 Using module file /usr/lib/python3.13/site-packages/ansible/modules/command.py
-<localhost> PUT /home/el/.ansible/tmp/ansible-local-86duava6u6/tmp1fina70o TO /home/el/.ansible/tmp/ansible-tmp-1743711411.7230573-20548-105059517133040/AnsiballZ_command.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743711411.7230573-20548-105059517133040/ /home/el/.ansible/tmp/ansible-tmp-1743711411.7230573-20548-105059517133040/AnsiballZ_command.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743711411.7230573-20548-105059517133040/AnsiballZ_command.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743711411.7230573-20548-105059517133040/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-85r4a55aly/tmp_hlh1096 TO /home/el/.ansible/tmp/ansible-tmp-1743712436.5094535-20545-87764344954354/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743712436.5094535-20545-87764344954354/ /home/el/.ansible/tmp/ansible-tmp-1743712436.5094535-20545-87764344954354/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743712436.5094535-20545-87764344954354/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743712436.5094535-20545-87764344954354/ > /dev/null 2>&1 && sleep 0'
 changed: [localhost] => {
     "changed": true,
     "cmd": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-    "delta": "0:00:04.070279",
-    "end": "2025-04-03 20:16:56.117756",
+    "delta": "0:00:04.258311",
+    "end": "2025-04-03 20:34:01.192052",
     "invocation": {
         "module_args": {
             "_raw_params": "curl -LsSf https://astral.sh/uv/install.sh | sh",
@@ -1819,7 +1819,7 @@ changed: [localhost] => {
     },
     "msg": "",
     "rc": 0,
-    "start": "2025-04-03 20:16:52.047477",
+    "start": "2025-04-03 20:33:56.933741",
     "stderr": "downloading uv 0.6.12 x86_64-unknown-linux-gnu",
     "stderr_lines": [
         "downloading uv 0.6.12 x86_64-unknown-linux-gnu"
@@ -1846,17 +1846,17 @@ TASK [install_rye : Descargar e instalar rye usando el script oficial] *********
 task path: /home/el/dotfiles/ansible/roles/install_rye/tasks/main.yml:2
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
 <localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743711416.1922152-20665-38026103068334 `" && echo ansible-tmp-1743711416.1922152-20665-38026103068334="` echo /home/el/.ansible/tmp/ansible-tmp-1743711416.1922152-20665-38026103068334 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743712441.2784274-20662-220905316296492 `" && echo ansible-tmp-1743712441.2784274-20662-220905316296492="` echo /home/el/.ansible/tmp/ansible-tmp-1743712441.2784274-20662-220905316296492 `" ) && sleep 0'
 Using module file /usr/lib/python3.13/site-packages/ansible/modules/command.py
-<localhost> PUT /home/el/.ansible/tmp/ansible-local-86duava6u6/tmpfscw8ib1 TO /home/el/.ansible/tmp/ansible-tmp-1743711416.1922152-20665-38026103068334/AnsiballZ_command.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743711416.1922152-20665-38026103068334/ /home/el/.ansible/tmp/ansible-tmp-1743711416.1922152-20665-38026103068334/AnsiballZ_command.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743711416.1922152-20665-38026103068334/AnsiballZ_command.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743711416.1922152-20665-38026103068334/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-85r4a55aly/tmplimtm640 TO /home/el/.ansible/tmp/ansible-tmp-1743712441.2784274-20662-220905316296492/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743712441.2784274-20662-220905316296492/ /home/el/.ansible/tmp/ansible-tmp-1743712441.2784274-20662-220905316296492/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743712441.2784274-20662-220905316296492/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743712441.2784274-20662-220905316296492/ > /dev/null 2>&1 && sleep 0'
 changed: [localhost] => {
     "changed": true,
     "cmd": "curl -sSf https://rye.astral.sh/get |  RYE_INSTALL_OPTION=\"--yes\" bash",
-    "delta": "0:00:23.839043",
-    "end": "2025-04-03 20:17:20.336500",
+    "delta": "0:00:27.697541",
+    "end": "2025-04-03 20:34:29.331354",
     "invocation": {
         "module_args": {
             "_raw_params": "curl -sSf https://rye.astral.sh/get |  RYE_INSTALL_OPTION=\"--yes\" bash",
@@ -1874,8 +1874,8 @@ changed: [localhost] => {
     },
     "msg": "",
     "rc": 0,
-    "start": "2025-04-03 20:16:56.497457",
-    "stderr": "\r#=#=#                                                                          \r##O#-#                                                                         \r##O=#  #                                                                       \r#=#=-#  #                                                                      \r-#O#- #   #                                                                    \r                                                                           0.1%\r#                                                                          1.5%\r#####                                                                      7.8%\r##########                                                                15.1%\r#################                                                         25.0%\r###################################                                       49.8%\r#############################################                             63.0%\r######################################################                    76.0%\r################################################################          89.1%\r######################################################################## 100.0%",
+    "start": "2025-04-03 20:34:01.633813",
+    "stderr": "\r#=#=#                                                                          \r##O#-#                                                                         \r##O=#  #                                                                       \r#=#=-#  #                                                                      \r-#O#- #   #                                                                    \r-=#=#   #   #                                                                  \r-=O#-#   #   #                                                                 \r-=O=#  #   #   #                                                               \r                                                                           0.1%\r#                                                                          1.5%\r#####                                                                      7.8%\r##########                                                                15.0%\r#########################                                                 35.5%\r#################################                                         46.5%\r###########################################                               60.9%\r##################################################                        69.6%\r########################################################                  78.8%\r###############################################################           88.1%\r######################################################################    97.9%\r######################################################################## 100.0%",
     "stderr_lines": [
         "",
         "#=#=#                                                                          ",
@@ -1883,15 +1883,20 @@ changed: [localhost] => {
         "##O=#  #                                                                       ",
         "#=#=-#  #                                                                      ",
         "-#O#- #   #                                                                    ",
+        "-=#=#   #   #                                                                  ",
+        "-=O#-#   #   #                                                                 ",
+        "-=O=#  #   #   #                                                               ",
         "                                                                           0.1%",
         "#                                                                          1.5%",
         "#####                                                                      7.8%",
-        "##########                                                                15.1%",
-        "#################                                                         25.0%",
-        "###################################                                       49.8%",
-        "#############################################                             63.0%",
-        "######################################################                    76.0%",
-        "################################################################          89.1%",
+        "##########                                                                15.0%",
+        "#########################                                                 35.5%",
+        "#################################                                         46.5%",
+        "###########################################                               60.9%",
+        "##################################################                        69.6%",
+        "########################################################                  78.8%",
+        "###############################################################           88.1%",
+        "######################################################################    97.9%",
         "######################################################################## 100.0%"
     ],
     "stdout": "This script will automatically download and install rye (latest) for you.\nWelcome to Rye!\n\nThis installer will install rye to /home/el/.rye\nThis path can be changed by exporting the RYE_HOME environment variable.\n\nDetails:\n  Rye Version: 0.44.0\n  Platform: linux (x86_64)\n\nInstalled binary to /home/el/.rye/shims/rye\nBootstrapping rye internals\nDownloading cpython@3.12.9\nChecking checksum\nUnpacking\nDownloaded cpython@3.12.9\nUpdated self-python installation at /home/el/.rye/self\n\nThe rye directory /home/el/.rye/shims was not detected on PATH.\nIt is highly recommended that you add it.\nAdded to PATH.\nnote: for this to take effect you will need to restart your shell or run this manually:\n\n    source \"$HOME/.rye/env\"\n\nTo make it work with zsh, you might need to add this to your .zprofile:\n\n    source \"$HOME/.rye/env\"\n\nFor more information read https://rye.astral.sh/guide/installation/\n\nAll done!",
@@ -1935,132 +1940,3 @@ Read vars_file 'vars/installer_config.yaml'
 
 TASK [install_extended_dependencies : Instalar dependencias extendidas (Fedora)] ***
 task path: /home/el/dotfiles/ansible/roles/install_extended_dependencies/tasks/main.yml:2
-<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
-<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743711440.425-20742-191357196606973 `" && echo ansible-tmp-1743711440.425-20742-191357196606973="` echo /home/el/.ansible/tmp/ansible-tmp-1743711440.425-20742-191357196606973 `" ) && sleep 0'
-Using module file /usr/lib/python3.13/site-packages/ansible/modules/dnf5.py
-<localhost> PUT /home/el/.ansible/tmp/ansible-local-86duava6u6/tmpeszjb8e2 TO /home/el/.ansible/tmp/ansible-tmp-1743711440.425-20742-191357196606973/AnsiballZ_dnf5.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743711440.425-20742-191357196606973/ /home/el/.ansible/tmp/ansible-tmp-1743711440.425-20742-191357196606973/AnsiballZ_dnf5.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-rgnqwucvydutpkhbkpoecrfacifigczm ; /usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743711440.425-20742-191357196606973/AnsiballZ_dnf5.py'"'"' && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743711440.425-20742-191357196606973/ > /dev/null 2>&1 && sleep 0'
-fatal: [localhost]: FAILED! => {
-    "changed": false,
-    "failures": [
-        "No package lazygit available.",
-        "No package docker-ce available.",
-        "No package docker-ce-cli available.",
-        "No package containerd.io available.",
-        "No package docker-compose-plugin available.",
-        "No package discord available."
-    ],
-    "invocation": {
-        "module_args": {
-            "allow_downgrade": false,
-            "allowerasing": true,
-            "auto_install_module_deps": true,
-            "autoremove": false,
-            "bugfix": false,
-            "cacheonly": false,
-            "conf_file": null,
-            "disable_excludes": null,
-            "disable_gpg_check": true,
-            "disable_plugin": [],
-            "disablerepo": [],
-            "download_dir": null,
-            "download_only": false,
-            "enable_plugin": [],
-            "enablerepo": [],
-            "exclude": [],
-            "install_repoquery": true,
-            "install_weak_deps": false,
-            "installroot": "/",
-            "list": null,
-            "lock_timeout": 30,
-            "name": [
-                "lazygit",
-                "ripgrep",
-                "fd-find",
-                "neovim",
-                "fastfetch",
-                "util-linux-user",
-                "anacron",
-                "zoxide",
-                "python3-neovim",
-                "kitty",
-                "lua-devel",
-                "luarocks",
-                "docker-ce",
-                "docker-ce-cli",
-                "containerd.io",
-                "docker-compose-plugin",
-                "bat",
-                "fzf",
-                "httpie",
-                "ripgrep",
-                "tmux",
-                "htop",
-                "proselint",
-                "lm_sensors",
-                "discord",
-                "alacritty",
-                "kde-connect",
-                "dnf-utils",
-                "kdenlive",
-                "openshot",
-                "vlc",
-                "mpv",
-                "soundconverter",
-                "audacity",
-                "muse",
-                "lmms",
-                "amarok",
-                "flowblade",
-                "dnf-plugins-core",
-                "xine-lib",
-                "xine-lib-extras",
-                "xine-lib-extras-freeworld",
-                "libdvdread",
-                "libdvdnav",
-                "lsdvd",
-                "libdvbpsi",
-                "ffmpeg",
-                "libmatroska",
-                "xvidcore",
-                "gimp",
-                "inkscape",
-                "libreoffice-writer",
-                "libreoffice-calc",
-                "libreoffice-impress",
-                "libreoffice-draw",
-                "libreoffice-langpack-es",
-                "gstreamer1-devel",
-                "gstreamer1-plugins-base-tools",
-                "gstreamer1-doc",
-                "gstreamer1-plugins-base-devel",
-                "gstreamer1-plugins-good",
-                "gstreamer1-plugins-good-extras",
-                "gstreamer1-plugins-bad-free",
-                "gstreamer1-plugins-bad-free-devel",
-                "virt-manager",
-                "qemu",
-                "zeal"
-            ],
-            "nobest": false,
-            "releasever": null,
-            "security": false,
-            "skip_broken": false,
-            "sslverify": true,
-            "state": "present",
-            "update_cache": false,
-            "update_only": false,
-            "validate_certs": true
-        }
-    },
-    "msg": "Failed to install some of the specified packages",
-    "rc": 1
-}
-
-PLAY RECAP *********************************************************************
-localhost                  : ok=22   changed=4    unreachable=0    failed=1    skipped=11   rescued=0    ignored=0   
-
-2025-04-03 20:17:27,612 - ERROR - Error al ejecutar el comando 'ansible-playbook --ask-become-pass /home/el/dotfiles/ansible/playbook.yml -i /home/el/dotfiles/ansible/inventory.ini -vvv' en '/home/el/dotfiles/ansible': Command '['ansible-playbook', '--ask-become-pass', '/home/el/dotfiles/ansible/playbook.yml', '-i', '/home/el/dotfiles/ansible/inventory.ini', '-vvv']' returned non-zero exit status 2.
