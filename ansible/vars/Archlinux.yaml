@@ -61,7 +61,7 @@ package_managers:
       - neovim
       - fastfetch
       - util-linux
-      - anacron
+      - cron
       - zoxide
       - python-neovim
       - kitty
