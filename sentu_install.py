@@ -82,52 +82,51 @@ def run_command(command_list: list[str], cwd: Path | None = None) -> None:
         sys.exit(1)
 
 
-def install_paru_python():
-    """Instala paru en Arch Linux utilizando Python.
+def install_yay_python():
+    """Instala yay en Arch Linux utilizando Python.
 
-    Esta función automatiza el proceso de instalación de paru, un ayudante
-    para el AUR (Arch User Repository), realizando los siguientes pasos:
-    1. Asegura que el grupo de paquetes 'base-devel' esté instalado.
-    2. Clona el repositorio de paru desde el AUR en un directorio temporal.
+    Esta función automatiza el proceso de instalación de yay, un popular
+    ayudante para el AUR (Arch User Repository), realizando los siguientes pasos:
+    1. Asegura que los paquetes 'git' y 'base-devel' estén instalados.
+    2. Clona el repositorio de yay desde el AUR en un directorio temporal.
     3. Navega al directorio clonado.
-    4. Construye e instala paru utilizando 'makepkg -si'.
+    4. Construye e instala yay utilizando 'makepkg -si'.
     5. (Opcional) Limpia el directorio temporal después de la instalación.
 
     Requiere privilegios de superusuario (sudo) para instalar paquetes
     y ejecutar makepkg. También asume que 'git' está instalado en el sistema.
     """
     try:
-        logging.info("Asegurando que base-devel esté instalado...")
+        logging.info("Asegurando que git y base-devel estén instalados...")
         subprocess.run(
-            ["sudo", "pacman", "-S", "--needed", "base-devel", "--noconfirm"],
+            ["sudo", "pacman", "-S", "--needed", "git", "base-devel", "--noconfirm"],
             check=True,
         )
-        logging.info("base-devel instalado o ya presente.")
+        logging.info("git y base-devel instalados o ya presentes.")
 
-        paru_dir = Path.home() / ".cache" / "paru"
+        yay_dir = Path.home() / ".cache" / "yay"
 
-        if not paru_dir.exists():
-            logging.info("Clonando el repositorio de paru desde AUR...")
+        if not yay_dir.exists():
+            logging.info("Clonando el repositorio de yay desde AUR...")
             subprocess.run(
-                ["git", "clone", "https://aur.archlinux.org/paru.git", str(paru_dir)],
+                ["git", "clone", "https://aur.archlinux.org/yay.git", str(yay_dir)],
                 check=True,
             )
-            logging.info("Repositorio de paru clonado.")
+            logging.info("Repositorio de yay clonado.")
         else:
-            logging.info("El repositorio de paru ya existe.")
+            logging.info("El repositorio de yay ya existe.")
 
-        logging.info("Navegando al directorio de paru...")
-        os.chdir(str(paru_dir))
+        logging.info("Navegando al directorio de yay...")
+        os.chdir(str(yay_dir))
 
-        logging.info("Construyendo e instalando paru...")
-        # Eliminar 'sudo' de la ejecución de makepkg
+        logging.info("Construyendo e instalando yay...")
         subprocess.run(["makepkg", "-si", "--noconfirm"], check=True)
-        logging.info("Paru instalado exitosamente.")
+        logging.info("Yay instalado exitosamente.")
 
         # Opcional: Limpiar el directorio clonado
-        logging.info("Limpiando el directorio de construcción de paru...")
+        logging.info("Limpiando el directorio de construcción de yay...")
         os.chdir(str(Path.home()))
-        shutil.rmtree(paru_dir)
+        shutil.rmtree(yay_dir)
         logging.info("Limpieza completada.")
 
     except subprocess.CalledProcessError as e:
@@ -165,8 +164,9 @@ def package_core():
                     )
                     run_command(update_cmd)
                     run_command(install_commands[pm])
-                    # if pm == "pacman":
-                    #     install_paru_python()
+
+                    if pm == "pacman":
+                        install_yay_python()
 
                     if check_command("git"):
                         logging.info("Git instalado exitosamente.")
