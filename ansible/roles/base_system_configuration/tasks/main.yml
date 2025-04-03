@@ -13,8 +13,6 @@
   include_vars: "{{ playbook_dir }}/vars/{{ ansible_os_family }}.yaml"
   # when: ansible_os_family == "Debian"
   ignore_errors: true # Por si el archivo no existe en alguna distro
-
-- name: Definir core_dependencies globalmente
   ansible.builtin.set_fact:
     core_dependencies: "{{ package_managers.dependencies.core | default([]) }}"
 
