@@ -1940,3 +1940,132 @@ Read vars_file 'vars/installer_config.yaml'
 
 TASK [install_extended_dependencies : Instalar dependencias extendidas (Fedora)] ***
 task path: /home/el/dotfiles/ansible/roles/install_extended_dependencies/tasks/main.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743712469.451613-20739-162064017854400 `" && echo ansible-tmp-1743712469.451613-20739-162064017854400="` echo /home/el/.ansible/tmp/ansible-tmp-1743712469.451613-20739-162064017854400 `" ) && sleep 0'
+Using module file /usr/lib/python3.13/site-packages/ansible/modules/dnf5.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-85r4a55aly/tmpamf6w19y TO /home/el/.ansible/tmp/ansible-tmp-1743712469.451613-20739-162064017854400/AnsiballZ_dnf5.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743712469.451613-20739-162064017854400/ /home/el/.ansible/tmp/ansible-tmp-1743712469.451613-20739-162064017854400/AnsiballZ_dnf5.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-yfozekgiskqrurnfddhdlgpilyxxnlop ; /usr/bin/python3 /home/el/.ansible/tmp/ansible-tmp-1743712469.451613-20739-162064017854400/AnsiballZ_dnf5.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743712469.451613-20739-162064017854400/ > /dev/null 2>&1 && sleep 0'
+fatal: [localhost]: FAILED! => {
+    "changed": false,
+    "failures": [
+        "No package lazygit available.",
+        "No package docker-ce available.",
+        "No package docker-ce-cli available.",
+        "No package containerd.io available.",
+        "No package docker-compose-plugin available.",
+        "No package discord available."
+    ],
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": true,
+            "auto_install_module_deps": true,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": true,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": false,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "lazygit",
+                "ripgrep",
+                "fd-find",
+                "neovim",
+                "fastfetch",
+                "util-linux-user",
+                "anacron",
+                "zoxide",
+                "python3-neovim",
+                "kitty",
+                "lua-devel",
+                "luarocks",
+                "docker-ce",
+                "docker-ce-cli",
+                "containerd.io",
+                "docker-compose-plugin",
+                "bat",
+                "fzf",
+                "httpie",
+                "ripgrep",
+                "tmux",
+                "htop",
+                "proselint",
+                "lm_sensors",
+                "discord",
+                "alacritty",
+                "kde-connect",
+                "dnf-utils",
+                "kdenlive",
+                "openshot",
+                "vlc",
+                "mpv",
+                "soundconverter",
+                "audacity",
+                "muse",
+                "lmms",
+                "amarok",
+                "flowblade",
+                "dnf-plugins-core",
+                "xine-lib",
+                "xine-lib-extras",
+                "xine-lib-extras-freeworld",
+                "libdvdread",
+                "libdvdnav",
+                "lsdvd",
+                "libdvbpsi",
+                "ffmpeg",
+                "libmatroska",
+                "xvidcore",
+                "gimp",
+                "inkscape",
+                "libreoffice-writer",
+                "libreoffice-calc",
+                "libreoffice-impress",
+                "libreoffice-draw",
+                "libreoffice-langpack-es",
+                "gstreamer1-devel",
+                "gstreamer1-plugins-base-tools",
+                "gstreamer1-doc",
+                "gstreamer1-plugins-base-devel",
+                "gstreamer1-plugins-good",
+                "gstreamer1-plugins-good-extras",
+                "gstreamer1-plugins-bad-free",
+                "gstreamer1-plugins-bad-free-devel",
+                "virt-manager",
+                "qemu",
+                "zeal"
+            ],
+            "nobest": false,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Failed to install some of the specified packages",
+    "rc": 1
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=22   changed=4    unreachable=0    failed=1    skipped=11   rescued=0    ignored=0   
+
+2025-04-03 20:34:37,686 - ERROR - Error al ejecutar el comando 'ansible-playbook --ask-become-pass /home/el/dotfiles/ansible/playbook.yml -i /home/el/dotfiles/ansible/inventory.ini -vvv' en '/home/el/dotfiles/ansible': Command '['ansible-playbook', '--ask-become-pass', '/home/el/dotfiles/ansible/playbook.yml', '-i', '/home/el/dotfiles/ansible/inventory.ini', '-vvv']' returned non-zero exit status 2.
