@@ -7,5 +7,6 @@
     method: user
 
 - name: Install multiple packages
+  become: true
   community.general.flatpak:
     name: "{{ flatpak_apps }}"
