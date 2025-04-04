@@ -10,3 +10,4 @@
   become: true
   community.general.flatpak:
     name: "{{ flatpak_apps }}"
+    method: user
