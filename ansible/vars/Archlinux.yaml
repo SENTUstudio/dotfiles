@@ -12,25 +12,6 @@ package_managers:
     - "--needed"
     - "--noconfirm"
   repo:
-    docker:
-      - sudo
-      - dnf
-      - config-manager
-      - addrepo
-      - "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
-    google-chrome:
-      - sudo
-      - dnf
-      - install
-      - "-y"
-      - "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
-    lazygit:
-      - sudo
-      - dnf
-      - copr
-      - enable
-      - "atim/lazygit"
-      - "-y"
   dependencies:
     core:
       - git
@@ -109,3 +90,4 @@ package_managers:
       - zeal
       - asciiquarium
       - bpytop
+      - google-chrome
