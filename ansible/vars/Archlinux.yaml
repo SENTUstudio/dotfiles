@@ -12,6 +12,12 @@ package_managers:
     - "--needed"
     - "--noconfirm"
   repo:
+    google-chrome:
+      - sudo
+      - dnf
+      - install
+      - "-y"
+      - "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
   dependencies:
     core:
       - git
