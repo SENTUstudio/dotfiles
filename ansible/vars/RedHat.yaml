@@ -139,3 +139,5 @@ package_managers:
       - virt-manager
       - qemu
       - zeal
+      - asciiquarium
+      - bpytop
