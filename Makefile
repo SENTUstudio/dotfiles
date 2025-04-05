@@ -3,9 +3,9 @@
 logo:
 	clear
 	@echo ""
-	@echo "  █▀ █▀▀ █▄░█ ▀█▀ █░█  ┎┤  Ingeniería de Datos & Data Science  ├┒"
-	@echo "  ▄█ ██▄ █░▀█ ░█░ █▄█  ┖┤              en Python               ├┚"
-	@echo "              .studio"
+	@echo "   [1m[33m█▀ █▀▀ █▄░█ ▀█▀ █░█[0m  ┎┤ Ingeniería de Datos & Data Science ├┒"
+	@echo "   [1m[33m▄█ ██▄ █░▀█ ░█░ █▄█[0m  ┖┤ [1m           con Python 🐍           [0m├┚"
+	@echo "               .studio"
 	@echo ""
 
 ## display help message
