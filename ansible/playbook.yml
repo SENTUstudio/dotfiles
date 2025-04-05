@@ -18,6 +18,7 @@
     - role: install_nvm
     - role: install_extended_dependencies
     - role: install_post_install
+    - role: config_zsh
     - role: install_flatpak
     - role: install_fonts
     - role: dotfiles_management
