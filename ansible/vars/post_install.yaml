@@ -13,5 +13,3 @@ install_post_install_commands:
     description: "Añadiendo Atuin, Sync, search and backup shell history"
   - command: "cargo install du-dust"
     description: "Herramienta para ver el uso del disco por el terminal"
-  - command: "chsh manz -s /bin/zsh"
-    description: "Configurando zsh por defecto"
