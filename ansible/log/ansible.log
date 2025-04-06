@@ -1,4 +1,1110 @@
-2025-04-06 03:03:56,981 p=213554 u=el n=ansible INFO| ansible-config [core 2.18.4]
+2025-04-06 17:16:35,604 p=313083 u=el n=ansible INFO| ansible-playbook [core 2.18.4]
+  config file = /home/el/works/dotfiles/ansible/ansible.cfg
+  configured module search path = ['/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/el/.local/lib/python3.13/site-packages/ansible
+  ansible collection location = /home/el/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/el/.local/bin/ansible-playbook
+  python version = 3.13.2 (main, Feb  4 2025, 00:00:00) [GCC 14.2.1 20250110 (Red Hat 14.2.1-7)] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+2025-04-06 17:16:35,604 p=313083 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
+2025-04-06 17:16:38,938 p=313083 u=el n=ansible INFO| setting up inventory plugins
+2025-04-06 17:16:39,130 p=313083 u=el n=ansible INFO| Loading collection ansible.builtin from 
+2025-04-06 17:16:39,148 p=313083 u=el n=ansible INFO| host_list declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+2025-04-06 17:16:39,148 p=313083 u=el n=ansible INFO| script declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+2025-04-06 17:16:39,148 p=313083 u=el n=ansible INFO| auto declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+2025-04-06 17:16:39,149 p=313083 u=el n=ansible INFO| yaml declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+2025-04-06 17:16:39,152 p=313083 u=el n=ansible INFO| Set default localhost to localhost
+2025-04-06 17:16:39,152 p=313083 u=el n=ansible INFO| Parsed /home/el/works/dotfiles/ansible/inventory.ini inventory source with ini plugin
+2025-04-06 17:16:39,224 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,225 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,226 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,226 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,227 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,228 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,316 p=313083 u=el n=ansible INFO| redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+2025-04-06 17:16:39,318 p=313083 u=el n=ansible INFO| redirecting (type: modules) ansible.builtin.pacman to community.general.pacman
+2025-04-06 17:16:39,335 p=313083 u=el n=ansible INFO| Loading collection community.general from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general
+2025-04-06 17:16:39,352 p=313083 u=el n=ansible INFO| Loading callback plugin default of type stdout, v2.0 from /home/el/.local/lib/python3.13/site-packages/ansible/plugins/callback/default.py
+2025-04-06 17:16:39,374 p=313083 u=el n=ansible INFO| Skipping callback 'default', as we already have a stdout callback.
+2025-04-06 17:16:39,374 p=313083 u=el n=ansible INFO| Skipping callback 'minimal', as we already have a stdout callback.
+2025-04-06 17:16:39,374 p=313083 u=el n=ansible INFO| Skipping callback 'oneline', as we already have a stdout callback.
+2025-04-06 17:16:39,374 p=313083 u=el n=ansible INFO| PLAYBOOK: playbook-test.yml ************************************************************************************************************
+2025-04-06 17:16:39,375 p=313083 u=el n=ansible INFO| 1 plays in playbook-test.yml
+2025-04-06 17:16:39,376 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,376 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,378 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,378 p=313083 u=el n=ansible INFO| PLAY [Configuración Inicial del Sistema y Dotfiles] ************************************************************************************
+2025-04-06 17:16:39,404 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:39,405 p=313083 u=el n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************
+2025-04-06 17:16:39,406 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/playbook-test.yml:2
+2025-04-06 17:16:39,428 p=313083 u=el n=ansible INFO| <192.168.122.22> ESTABLISH LOCAL CONNECTION FOR USER: el
+2025-04-06 17:16:39,428 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'echo ~el && sleep 0'
+2025-04-06 17:16:39,434 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743974199.4335961-313102-228570891482866 `" && echo ansible-tmp-1743974199.4335961-313102-228570891482866="` echo /home/el/.ansible/tmp/ansible-tmp-1743974199.4335961-313102-228570891482866 `" ) && sleep 0'
+2025-04-06 17:16:39,850 p=313083 u=el n=ansible INFO| <192.168.122.22> Attempting python interpreter discovery
+2025-04-06 17:16:39,850 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'echo PLATFORM; uname; echo FOUND; command -v '"'"'python3.13'"'"'; command -v '"'"'python3.12'"'"'; command -v '"'"'python3.11'"'"'; command -v '"'"'python3.10'"'"'; command -v '"'"'python3.9'"'"'; command -v '"'"'python3.8'"'"'; command -v '"'"'/usr/bin/python3'"'"'; command -v '"'"'python3'"'"'; echo ENDFOUND && sleep 0'
+2025-04-06 17:16:39,861 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '/usr/bin/python3.13 && sleep 0'
+2025-04-06 17:16:39,940 p=313083 u=el n=ansible INFO| <192.168.122.22> Python interpreter discovery fallback (unsupported Linux distribution: fedora)
+2025-04-06 17:16:39,943 p=313083 u=el n=ansible INFO| Using module file /home/el/.local/lib/python3.13/site-packages/ansible/modules/setup.py
+2025-04-06 17:16:39,944 p=313083 u=el n=ansible INFO| <192.168.122.22> PUT /home/el/.ansible/tmp/ansible-local-313083nd1e7fps/tmpqnmipkwa TO /home/el/.ansible/tmp/ansible-tmp-1743974199.4335961-313102-228570891482866/AnsiballZ_setup.py
+2025-04-06 17:16:39,945 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743974199.4335961-313102-228570891482866/ /home/el/.ansible/tmp/ansible-tmp-1743974199.4335961-313102-228570891482866/AnsiballZ_setup.py && sleep 0'
+2025-04-06 17:16:39,953 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=rvudusjgbbhhveenlcbtxgmlcnvlmfki] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-rvudusjgbbhhveenlcbtxgmlcnvlmfki ; /usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743974199.4335961-313102-228570891482866/AnsiballZ_setup.py'"'"' && sleep 0'
+2025-04-06 17:16:42,293 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743974199.4335961-313102-228570891482866/ > /dev/null 2>&1 && sleep 0'
+2025-04-06 17:16:42,333 p=313083 u=el n=ansible WARNING| [WARNING]: Platform linux on host 192.168.122.22 is using the discovered Python interpreter at /usr/bin/python3.13, but future
+installation of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-04-06 17:16:42,333 p=313083 u=el n=ansible INFO| ok: [192.168.122.22]
+2025-04-06 17:16:42,344 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,348 p=313083 u=el n=ansible INFO| TASK [test : Mostrar Familia] **********************************************************************************************************
+2025-04-06 17:16:42,348 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/test/tasks/main.yml:1
+2025-04-06 17:16:42,380 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "msg": "distribucion: Fedora \nfamilia: RedHat"
+}
+2025-04-06 17:16:42,394 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,395 p=313083 u=el n=ansible INFO| TASK [test : Mostrar playbook_dir] *****************************************************************************************************
+2025-04-06 17:16:42,395 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/test/tasks/main.yml:6
+2025-04-06 17:16:42,433 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "msg": "/home/el/dotfiles/config"
+}
+2025-04-06 17:16:42,444 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,445 p=313083 u=el n=ansible INFO| TASK [test : Mostrar playbook_dir] *****************************************************************************************************
+2025-04-06 17:16:42,445 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/test/tasks/main.yml:10
+2025-04-06 17:16:42,481 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "msg": "Ruta de fileglob para config: /home/el/dotfiles/config/*"
+}
+2025-04-06 17:16:42,496 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,497 p=313083 u=el n=ansible INFO| TASK [test : Debug de archivos en config] **********************************************************************************************
+2025-04-06 17:16:42,497 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/test/tasks/main.yml:14
+2025-04-06 17:16:42,534 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "msg": "Hello world!"
+}
+2025-04-06 17:16:42,546 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,558 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,560 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Establecer la versión de Fedora como un hecho (fact)] ************************************************
+2025-04-06 17:16:42,560 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:2
+2025-04-06 17:16:42,597 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "ansible_facts": {
+        "fedora_version": "41"
+    },
+    "changed": false
+}
+2025-04-06 17:16:42,608 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,610 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Include global variables] ****************************************************************************
+2025-04-06 17:16:42,611 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:7
+2025-04-06 17:16:42,641 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "ansible_facts": {
+        "install_scripts": {
+            "rye": "https://rye.astral.sh/get",
+            "uv": "https://astral.sh/uv/install.sh"
+        }
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/global.yaml"
+    ],
+    "changed": false
+}
+2025-04-06 17:16:42,653 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,654 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Include post-install variables] **********************************************************************
+2025-04-06 17:16:42,655 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:12
+2025-04-06 17:16:42,684 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "ansible_facts": {
+        "install_post_install_commands": [
+            {
+                "command": "go install oss.terrastruct.com/d2@latest",
+                "description": "Instalando d2 diagram"
+            },
+            {
+                "command": "curl -fsS https://dl.brave.com/install.sh | sh",
+                "description": "Instalando Brave"
+            },
+            {
+                "command": "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm",
+                "description": "Configurando tmux plugin manager"
+            },
+            {
+                "command": "gem install tmuxinator",
+                "description": "Instalando tmuxinator"
+            },
+            {
+                "command": "sudo usermod -aG docker $USER",
+                "description": "Añadiendo el usuario al grupo docker (puede requerir reiniciar sesión)"
+            },
+            {
+                "command": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh",
+                "description": "Añadiendo Atuin, Sync, search and backup shell history"
+            },
+            {
+                "command": "cargo install du-dust",
+                "description": "Herramienta para ver el uso del disco por el terminal"
+            }
+        ]
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/post_install.yaml"
+    ],
+    "changed": false
+}
+2025-04-06 17:16:42,695 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,696 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Include flatpak_apps variables] **********************************************************************
+2025-04-06 17:16:42,697 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:17
+2025-04-06 17:16:42,724 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "ansible_facts": {
+        "apps": [
+            "md.obsidian.Obsidian",
+            "io.missioncenter.MissionCenter"
+        ]
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/flatpak.yaml"
+    ],
+    "changed": false
+}
+2025-04-06 17:16:42,735 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,737 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Include wallpapers variables] ************************************************************************
+2025-04-06 17:16:42,737 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:22
+2025-04-06 17:16:42,766 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "ansible_facts": {
+        "wallpaper_base_dir": "~/wallpaper",
+        "wallpaper_img_subdir": "img",
+        "wallpaper_repositories": [
+            {
+                "name": "budgie-wallpapers",
+                "url": "https://github.com/UbuntuBudgie/budgie-wallpapers.git"
+            },
+            {
+                "name": "wallpapers",
+                "url": "https://gitlab.com/dwt1/wallpapers.git"
+            },
+            {
+                "name": "aesthetic-wallpapers",
+                "url": "https://github.com/D3Ext/aesthetic-wallpapers"
+            }
+        ]
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/wallpapers.yaml"
+    ],
+    "changed": false
+}
+2025-04-06 17:16:42,780 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,782 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Incluir variables específicas de la distribución] ****************************************************
+2025-04-06 17:16:42,782 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:27
+2025-04-06 17:16:42,823 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "ansible_facts": {
+        "package_managers": {
+            "dependencies": {
+                "core": [
+                    "git",
+                    "curl",
+                    "wget",
+                    "gcc",
+                    "make",
+                    "unzip",
+                    "zsh",
+                    "golang",
+                    "cargo",
+                    "g++",
+                    "python3",
+                    "ruby",
+                    "unrar",
+                    "p7zip",
+                    "p7zip-plugins",
+                    "xdg-user-dirs",
+                    "lsd",
+                    "java",
+                    "dnf-utils",
+                    "flatpak",
+                    "kernel-devel",
+                    "gcc",
+                    "make",
+                    "automake",
+                    "perl",
+                    "elfutils-libelf-devel"
+                ],
+                "extended": [
+                    "lazygit",
+                    "ripgrep",
+                    "fd-find",
+                    "neovim",
+                    "fastfetch",
+                    "util-linux-user",
+                    "anacron",
+                    "zoxide",
+                    "python3-neovim",
+                    "kitty",
+                    "lua-devel",
+                    "luarocks",
+                    "docker-ce",
+                    "docker-ce-cli",
+                    "containerd.io",
+                    "docker-compose-plugin",
+                    "bat",
+                    "fzf",
+                    "httpie",
+                    "ripgrep",
+                    "tmux",
+                    "htop",
+                    "proselint",
+                    "lm_sensors",
+                    "discord",
+                    "alacritty",
+                    "kde-connect",
+                    "dnf-utils",
+                    "kdenlive",
+                    "openshot",
+                    "vlc",
+                    "mpv",
+                    "soundconverter",
+                    "audacity",
+                    "muse",
+                    "lmms",
+                    "amarok",
+                    "flowblade",
+                    "dnf-plugins-core",
+                    "xine-lib",
+                    "xine-lib-extras",
+                    "xine-lib-extras-freeworld",
+                    "libdvdread",
+                    "libdvdnav",
+                    "lsdvd",
+                    "libdvbpsi",
+                    "ffmpeg",
+                    "libmatroska",
+                    "xvidcore",
+                    "gimp",
+                    "inkscape",
+                    "libreoffice-writer",
+                    "libreoffice-calc",
+                    "libreoffice-impress",
+                    "libreoffice-draw",
+                    "libreoffice-langpack-es",
+                    "gstreamer1-devel",
+                    "gstreamer1-plugins-base-tools",
+                    "gstreamer1-doc",
+                    "gstreamer1-plugins-base-devel",
+                    "gstreamer1-plugins-good",
+                    "gstreamer1-plugins-good-extras",
+                    "gstreamer1-plugins-bad-free",
+                    "gstreamer1-plugins-bad-free-devel",
+                    "virt-manager",
+                    "qemu",
+                    "zeal",
+                    "asciiquarium",
+                    "bpytop"
+                ]
+            },
+            "install": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "--allowerasing"
+            ],
+            "manager": "dnf",
+            "repo": {
+                "docker": [
+                    "sudo",
+                    "dnf",
+                    "config-manager",
+                    "addrepo",
+                    "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
+                ],
+                "google-chrome": [
+                    "sudo",
+                    "dnf",
+                    "install",
+                    "-y",
+                    "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+                ],
+                "lazygit": [
+                    "sudo",
+                    "dnf",
+                    "copr",
+                    "enable",
+                    "atim/lazygit",
+                    "-y"
+                ],
+                "rpmfusion-free": [
+                    "sudo",
+                    "dnf",
+                    "install",
+                    "-y",
+                    "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
+                ],
+                "rpmfusion-nonfree": [
+                    "sudo",
+                    "dnf",
+                    "install",
+                    "-y",
+                    "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
+                ]
+            },
+            "update": [
+                "sudo",
+                "dnf",
+                "update",
+                "-y"
+            ]
+        }
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/RedHat.yaml"
+    ],
+    "changed": false
+}
+2025-04-06 17:16:42,833 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,835 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Depurar contenido de package_managers] ***************************************************************
+2025-04-06 17:16:42,835 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:32
+2025-04-06 17:16:42,871 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "package_managers": {
+        "dependencies": {
+            "core": [
+                "git",
+                "curl",
+                "wget",
+                "gcc",
+                "make",
+                "unzip",
+                "zsh",
+                "golang",
+                "cargo",
+                "g++",
+                "python3",
+                "ruby",
+                "unrar",
+                "p7zip",
+                "p7zip-plugins",
+                "xdg-user-dirs",
+                "lsd",
+                "java",
+                "dnf-utils",
+                "flatpak",
+                "kernel-devel",
+                "gcc",
+                "make",
+                "automake",
+                "perl",
+                "elfutils-libelf-devel"
+            ],
+            "extended": [
+                "lazygit",
+                "ripgrep",
+                "fd-find",
+                "neovim",
+                "fastfetch",
+                "util-linux-user",
+                "anacron",
+                "zoxide",
+                "python3-neovim",
+                "kitty",
+                "lua-devel",
+                "luarocks",
+                "docker-ce",
+                "docker-ce-cli",
+                "containerd.io",
+                "docker-compose-plugin",
+                "bat",
+                "fzf",
+                "httpie",
+                "ripgrep",
+                "tmux",
+                "htop",
+                "proselint",
+                "lm_sensors",
+                "discord",
+                "alacritty",
+                "kde-connect",
+                "dnf-utils",
+                "kdenlive",
+                "openshot",
+                "vlc",
+                "mpv",
+                "soundconverter",
+                "audacity",
+                "muse",
+                "lmms",
+                "amarok",
+                "flowblade",
+                "dnf-plugins-core",
+                "xine-lib",
+                "xine-lib-extras",
+                "xine-lib-extras-freeworld",
+                "libdvdread",
+                "libdvdnav",
+                "lsdvd",
+                "libdvbpsi",
+                "ffmpeg",
+                "libmatroska",
+                "xvidcore",
+                "gimp",
+                "inkscape",
+                "libreoffice-writer",
+                "libreoffice-calc",
+                "libreoffice-impress",
+                "libreoffice-draw",
+                "libreoffice-langpack-es",
+                "gstreamer1-devel",
+                "gstreamer1-plugins-base-tools",
+                "gstreamer1-doc",
+                "gstreamer1-plugins-base-devel",
+                "gstreamer1-plugins-good",
+                "gstreamer1-plugins-good-extras",
+                "gstreamer1-plugins-bad-free",
+                "gstreamer1-plugins-bad-free-devel",
+                "virt-manager",
+                "qemu",
+                "zeal",
+                "asciiquarium",
+                "bpytop"
+            ]
+        },
+        "install": [
+            "sudo",
+            "dnf",
+            "install",
+            "-y",
+            "--allowerasing"
+        ],
+        "manager": "dnf",
+        "repo": {
+            "docker": [
+                "sudo",
+                "dnf",
+                "config-manager",
+                "addrepo",
+                "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
+            ],
+            "google-chrome": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+            ],
+            "lazygit": [
+                "sudo",
+                "dnf",
+                "copr",
+                "enable",
+                "atim/lazygit",
+                "-y"
+            ],
+            "rpmfusion-free": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm"
+            ],
+            "rpmfusion-nonfree": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-41.noarch.rpm"
+            ]
+        },
+        "update": [
+            "sudo",
+            "dnf",
+            "update",
+            "-y"
+        ]
+    }
+}
+2025-04-06 17:16:42,882 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,883 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Definir core_dependencies globalmente] ***************************************************************
+2025-04-06 17:16:42,884 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:36
+2025-04-06 17:16:42,932 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "ansible_facts": {
+        "core_dependencies": [
+            "git",
+            "curl",
+            "wget",
+            "gcc",
+            "make",
+            "unzip",
+            "zsh",
+            "golang",
+            "cargo",
+            "g++",
+            "python3",
+            "ruby",
+            "unrar",
+            "p7zip",
+            "p7zip-plugins",
+            "xdg-user-dirs",
+            "lsd",
+            "java",
+            "dnf-utils",
+            "flatpak",
+            "kernel-devel",
+            "gcc",
+            "make",
+            "automake",
+            "perl",
+            "elfutils-libelf-devel"
+        ]
+    },
+    "changed": false
+}
+2025-04-06 17:16:42,945 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,946 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Depurar contenido de core_dependencies] **************************************************************
+2025-04-06 17:16:42,946 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:40
+2025-04-06 17:16:42,976 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "core_dependencies": [
+        "git",
+        "curl",
+        "wget",
+        "gcc",
+        "make",
+        "unzip",
+        "zsh",
+        "golang",
+        "cargo",
+        "g++",
+        "python3",
+        "ruby",
+        "unrar",
+        "p7zip",
+        "p7zip-plugins",
+        "xdg-user-dirs",
+        "lsd",
+        "java",
+        "dnf-utils",
+        "flatpak",
+        "kernel-devel",
+        "gcc",
+        "make",
+        "automake",
+        "perl",
+        "elfutils-libelf-devel"
+    ]
+}
+2025-04-06 17:16:42,987 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:42,989 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Definir extended_dependencies globalmente] ***********************************************************
+2025-04-06 17:16:42,990 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:44
+2025-04-06 17:16:43,041 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "ansible_facts": {
+        "extended_dependencies": [
+            "lazygit",
+            "ripgrep",
+            "fd-find",
+            "neovim",
+            "fastfetch",
+            "util-linux-user",
+            "anacron",
+            "zoxide",
+            "python3-neovim",
+            "kitty",
+            "lua-devel",
+            "luarocks",
+            "docker-ce",
+            "docker-ce-cli",
+            "containerd.io",
+            "docker-compose-plugin",
+            "bat",
+            "fzf",
+            "httpie",
+            "ripgrep",
+            "tmux",
+            "htop",
+            "proselint",
+            "lm_sensors",
+            "discord",
+            "alacritty",
+            "kde-connect",
+            "dnf-utils",
+            "kdenlive",
+            "openshot",
+            "vlc",
+            "mpv",
+            "soundconverter",
+            "audacity",
+            "muse",
+            "lmms",
+            "amarok",
+            "flowblade",
+            "dnf-plugins-core",
+            "xine-lib",
+            "xine-lib-extras",
+            "xine-lib-extras-freeworld",
+            "libdvdread",
+            "libdvdnav",
+            "lsdvd",
+            "libdvbpsi",
+            "ffmpeg",
+            "libmatroska",
+            "xvidcore",
+            "gimp",
+            "inkscape",
+            "libreoffice-writer",
+            "libreoffice-calc",
+            "libreoffice-impress",
+            "libreoffice-draw",
+            "libreoffice-langpack-es",
+            "gstreamer1-devel",
+            "gstreamer1-plugins-base-tools",
+            "gstreamer1-doc",
+            "gstreamer1-plugins-base-devel",
+            "gstreamer1-plugins-good",
+            "gstreamer1-plugins-good-extras",
+            "gstreamer1-plugins-bad-free",
+            "gstreamer1-plugins-bad-free-devel",
+            "virt-manager",
+            "qemu",
+            "zeal",
+            "asciiquarium",
+            "bpytop"
+        ]
+    },
+    "changed": false
+}
+2025-04-06 17:16:43,054 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:43,056 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Depurar contenido de extended_dependencies] **********************************************************
+2025-04-06 17:16:43,056 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:48
+2025-04-06 17:16:43,087 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "extended_dependencies": [
+        "lazygit",
+        "ripgrep",
+        "fd-find",
+        "neovim",
+        "fastfetch",
+        "util-linux-user",
+        "anacron",
+        "zoxide",
+        "python3-neovim",
+        "kitty",
+        "lua-devel",
+        "luarocks",
+        "docker-ce",
+        "docker-ce-cli",
+        "containerd.io",
+        "docker-compose-plugin",
+        "bat",
+        "fzf",
+        "httpie",
+        "ripgrep",
+        "tmux",
+        "htop",
+        "proselint",
+        "lm_sensors",
+        "discord",
+        "alacritty",
+        "kde-connect",
+        "dnf-utils",
+        "kdenlive",
+        "openshot",
+        "vlc",
+        "mpv",
+        "soundconverter",
+        "audacity",
+        "muse",
+        "lmms",
+        "amarok",
+        "flowblade",
+        "dnf-plugins-core",
+        "xine-lib",
+        "xine-lib-extras",
+        "xine-lib-extras-freeworld",
+        "libdvdread",
+        "libdvdnav",
+        "lsdvd",
+        "libdvbpsi",
+        "ffmpeg",
+        "libmatroska",
+        "xvidcore",
+        "gimp",
+        "inkscape",
+        "libreoffice-writer",
+        "libreoffice-calc",
+        "libreoffice-impress",
+        "libreoffice-draw",
+        "libreoffice-langpack-es",
+        "gstreamer1-devel",
+        "gstreamer1-plugins-base-tools",
+        "gstreamer1-doc",
+        "gstreamer1-plugins-base-devel",
+        "gstreamer1-plugins-good",
+        "gstreamer1-plugins-good-extras",
+        "gstreamer1-plugins-bad-free",
+        "gstreamer1-plugins-bad-free-devel",
+        "virt-manager",
+        "qemu",
+        "zeal",
+        "asciiquarium",
+        "bpytop"
+    ]
+}
+2025-04-06 17:16:43,099 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:43,100 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Definir flatpak_apps globalmente] ********************************************************************
+2025-04-06 17:16:43,100 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:52
+2025-04-06 17:16:43,140 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "ansible_facts": {
+        "flatpak_apps": [
+            "md.obsidian.Obsidian",
+            "io.missioncenter.MissionCenter"
+        ]
+    },
+    "changed": false
+}
+2025-04-06 17:16:43,150 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:43,151 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Depurar contenido de flatpak_apps] *******************************************************************
+2025-04-06 17:16:43,151 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:56
+2025-04-06 17:16:43,181 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "flatpak_apps": [
+        "md.obsidian.Obsidian",
+        "io.missioncenter.MissionCenter"
+    ]
+}
+2025-04-06 17:16:43,193 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:43,195 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Obtener el directorio home del usuario] **************************************************************
+2025-04-06 17:16:43,195 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:60
+2025-04-06 17:16:43,218 p=313083 u=el n=ansible INFO| <192.168.122.22> ESTABLISH LOCAL CONNECTION FOR USER: el
+2025-04-06 17:16:43,219 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'echo ~el && sleep 0'
+2025-04-06 17:16:43,227 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743974203.2263489-313243-162138484009091 `" && echo ansible-tmp-1743974203.2263489-313243-162138484009091="` echo /home/el/.ansible/tmp/ansible-tmp-1743974203.2263489-313243-162138484009091 `" ) && sleep 0'
+2025-04-06 17:16:43,417 p=313083 u=el n=ansible INFO| Using module file /home/el/.local/lib/python3.13/site-packages/ansible/modules/command.py
+2025-04-06 17:16:43,418 p=313083 u=el n=ansible INFO| <192.168.122.22> PUT /home/el/.ansible/tmp/ansible-local-313083nd1e7fps/tmps97n68k1 TO /home/el/.ansible/tmp/ansible-tmp-1743974203.2263489-313243-162138484009091/AnsiballZ_command.py
+2025-04-06 17:16:43,419 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743974203.2263489-313243-162138484009091/ /home/el/.ansible/tmp/ansible-tmp-1743974203.2263489-313243-162138484009091/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:43,428 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '/usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743974203.2263489-313243-162138484009091/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:43,818 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743974203.2263489-313243-162138484009091/ > /dev/null 2>&1 && sleep 0'
+2025-04-06 17:16:43,828 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => {
+    "changed": false,
+    "cmd": [
+        "echo",
+        "$HOME"
+    ],
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "echo $HOME",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+2025-04-06 17:16:43,849 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:43,850 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Actualiza el sistema (Debian/Ubuntu)] ****************************************************************
+2025-04-06 17:16:43,850 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:68
+2025-04-06 17:16:43,873 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Debian\"",
+    "skip_reason": "Conditional result was False"
+}
+2025-04-06 17:16:43,885 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:43,886 p=313083 u=el n=ansible INFO| redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+2025-04-06 17:16:43,888 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Actualiza el sistema (RedHat based, excluyendo Fedora)] **********************************************
+2025-04-06 17:16:43,888 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:74
+2025-04-06 17:16:43,913 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"RedHat\" and ansible_distribution != \"Fedora\"",
+    "skip_reason": "Conditional result was False"
+}
+2025-04-06 17:16:43,927 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:43,928 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Actualiza el sistema (Fedora)] ***********************************************************************
+2025-04-06 17:16:43,928 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:80
+2025-04-06 17:16:43,959 p=313083 u=el n=ansible INFO| Running ansible.legacy.dnf5 as the backend for the dnf action plugin
+2025-04-06 17:16:43,960 p=313083 u=el n=ansible INFO| <192.168.122.22> ESTABLISH LOCAL CONNECTION FOR USER: el
+2025-04-06 17:16:43,960 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'echo ~el && sleep 0'
+2025-04-06 17:16:43,970 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743974203.9689176-313262-214044629264241 `" && echo ansible-tmp-1743974203.9689176-313262-214044629264241="` echo /home/el/.ansible/tmp/ansible-tmp-1743974203.9689176-313262-214044629264241 `" ) && sleep 0'
+2025-04-06 17:16:44,198 p=313083 u=el n=ansible INFO| Using module file /home/el/.local/lib/python3.13/site-packages/ansible/modules/dnf5.py
+2025-04-06 17:16:44,198 p=313083 u=el n=ansible INFO| <192.168.122.22> PUT /home/el/.ansible/tmp/ansible-local-313083nd1e7fps/tmpg1fsa57i TO /home/el/.ansible/tmp/ansible-tmp-1743974203.9689176-313262-214044629264241/AnsiballZ_dnf5.py
+2025-04-06 17:16:44,199 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743974203.9689176-313262-214044629264241/ /home/el/.ansible/tmp/ansible-tmp-1743974203.9689176-313262-214044629264241/AnsiballZ_dnf5.py && sleep 0'
+2025-04-06 17:16:44,209 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=kquyudswjkxhlsjwwaatkynqaixhiujd] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-kquyudswjkxhlsjwwaatkynqaixhiujd ; /usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743974203.9689176-313262-214044629264241/AnsiballZ_dnf5.py'"'"' && sleep 0'
+2025-04-06 17:16:48,924 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743974203.9689176-313262-214044629264241/ > /dev/null 2>&1 && sleep 0'
+2025-04-06 17:16:48,938 p=313083 u=el n=ansible INFO| ok: [192.168.122.22] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "*"
+            ],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "latest",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+2025-04-06 17:16:48,950 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:48,951 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Actualiza el sistema (Arch Linux)] *******************************************************************
+2025-04-06 17:16:48,952 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:86
+2025-04-06 17:16:48,975 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Archlinux\"",
+    "skip_reason": "Conditional result was False"
+}
+2025-04-06 17:16:48,987 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:48,988 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Actualiza el sistema (openSUSE)] *********************************************************************
+2025-04-06 17:16:48,989 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:92
+2025-04-06 17:16:49,012 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"openSUSE Leap\" or ansible_distribution == \"openSUSE Tumbleweed\"",
+    "skip_reason": "Conditional result was False"
+}
+2025-04-06 17:16:49,024 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:49,025 p=313083 u=el n=ansible INFO| TASK [base_system_configuration : Actualiza el sistema (macOS con Homebrew)] ***********************************************************
+2025-04-06 17:16:49,025 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/base_system_configuration/tasks/main.yml:98
+2025-04-06 17:16:49,049 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Darwin\"",
+    "skip_reason": "Conditional result was False"
+}
+2025-04-06 17:16:49,069 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:49,086 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:49,089 p=313083 u=el n=ansible INFO| TASK [install_flatpak : Agrega el repositorio flathub flatpak para la instalación de los usuarios] *************************************
+2025-04-06 17:16:49,089 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/install_flatpak/tasks/main.yml:2
+2025-04-06 17:16:49,120 p=313083 u=el n=ansible INFO| <192.168.122.22> ESTABLISH LOCAL CONNECTION FOR USER: el
+2025-04-06 17:16:49,121 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'echo ~el && sleep 0'
+2025-04-06 17:16:49,127 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743974209.1265895-313290-166877965770906 `" && echo ansible-tmp-1743974209.1265895-313290-166877965770906="` echo /home/el/.ansible/tmp/ansible-tmp-1743974209.1265895-313290-166877965770906 `" ) && sleep 0'
+2025-04-06 17:16:49,143 p=313083 u=el n=ansible INFO| Using module file /home/el/.local/lib/python3.13/site-packages/ansible/modules/command.py
+2025-04-06 17:16:49,144 p=313083 u=el n=ansible INFO| <192.168.122.22> PUT /home/el/.ansible/tmp/ansible-local-313083nd1e7fps/tmpdime9odu TO /home/el/.ansible/tmp/ansible-tmp-1743974209.1265895-313290-166877965770906/AnsiballZ_command.py
+2025-04-06 17:16:49,145 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743974209.1265895-313290-166877965770906/ /home/el/.ansible/tmp/ansible-tmp-1743974209.1265895-313290-166877965770906/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:49,153 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '/usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743974209.1265895-313290-166877965770906/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:49,592 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743974209.1265895-313290-166877965770906/ > /dev/null 2>&1 && sleep 0'
+2025-04-06 17:16:49,604 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => (item=md.obsidian.Obsidian)  => {
+    "ansible_loop_var": "flatpak_item",
+    "changed": false,
+    "cmd": [
+        "flatpak",
+        "install",
+        "flathub",
+        "md.obsidian.Obsidian"
+    ],
+    "delta": null,
+    "end": null,
+    "flatpak_item": "md.obsidian.Obsidian",
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "flatpak",
+                "install",
+                "flathub",
+                "md.obsidian.Obsidian"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+2025-04-06 17:16:49,611 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'echo ~el && sleep 0'
+2025-04-06 17:16:49,617 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743974209.6172562-313290-28713366579610 `" && echo ansible-tmp-1743974209.6172562-313290-28713366579610="` echo /home/el/.ansible/tmp/ansible-tmp-1743974209.6172562-313290-28713366579610 `" ) && sleep 0'
+2025-04-06 17:16:49,634 p=313083 u=el n=ansible INFO| Using module file /home/el/.local/lib/python3.13/site-packages/ansible/modules/command.py
+2025-04-06 17:16:49,635 p=313083 u=el n=ansible INFO| <192.168.122.22> PUT /home/el/.ansible/tmp/ansible-local-313083nd1e7fps/tmpaqpccx4_ TO /home/el/.ansible/tmp/ansible-tmp-1743974209.6172562-313290-28713366579610/AnsiballZ_command.py
+2025-04-06 17:16:49,636 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743974209.6172562-313290-28713366579610/ /home/el/.ansible/tmp/ansible-tmp-1743974209.6172562-313290-28713366579610/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:49,645 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '/usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743974209.6172562-313290-28713366579610/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:50,072 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743974209.6172562-313290-28713366579610/ > /dev/null 2>&1 && sleep 0'
+2025-04-06 17:16:50,084 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => (item=io.missioncenter.MissionCenter)  => {
+    "ansible_loop_var": "flatpak_item",
+    "changed": false,
+    "cmd": [
+        "flatpak",
+        "install",
+        "flathub",
+        "io.missioncenter.MissionCenter"
+    ],
+    "delta": null,
+    "end": null,
+    "flatpak_item": "io.missioncenter.MissionCenter",
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "flatpak",
+                "install",
+                "flathub",
+                "io.missioncenter.MissionCenter"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+2025-04-06 17:16:50,086 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => {
+    "changed": false,
+    "msg": "All items skipped"
+}
+2025-04-06 17:16:50,097 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:50,098 p=313083 u=el n=ansible INFO| TASK [install_flatpak : Instala los paquetes desde flathub para el usuario] ************************************************************
+2025-04-06 17:16:50,098 p=313083 u=el n=ansible INFO| task path: /home/el/works/dotfiles/ansible/roles/install_flatpak/tasks/main.yml:21
+2025-04-06 17:16:50,127 p=313083 u=el n=ansible INFO| <192.168.122.22> ESTABLISH LOCAL CONNECTION FOR USER: el
+2025-04-06 17:16:50,128 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'echo ~el && sleep 0'
+2025-04-06 17:16:50,134 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743974210.133624-313321-131724851977318 `" && echo ansible-tmp-1743974210.133624-313321-131724851977318="` echo /home/el/.ansible/tmp/ansible-tmp-1743974210.133624-313321-131724851977318 `" ) && sleep 0'
+2025-04-06 17:16:50,151 p=313083 u=el n=ansible INFO| Using module file /home/el/.local/lib/python3.13/site-packages/ansible/modules/command.py
+2025-04-06 17:16:50,152 p=313083 u=el n=ansible INFO| <192.168.122.22> PUT /home/el/.ansible/tmp/ansible-local-313083nd1e7fps/tmp159w8b7t TO /home/el/.ansible/tmp/ansible-tmp-1743974210.133624-313321-131724851977318/AnsiballZ_command.py
+2025-04-06 17:16:50,153 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743974210.133624-313321-131724851977318/ /home/el/.ansible/tmp/ansible-tmp-1743974210.133624-313321-131724851977318/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:50,161 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '/usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743974210.133624-313321-131724851977318/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:50,535 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743974210.133624-313321-131724851977318/ > /dev/null 2>&1 && sleep 0'
+2025-04-06 17:16:50,550 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => (item=md.obsidian.Obsidian)  => {
+    "ansible_loop_var": "flatpak_item",
+    "changed": false,
+    "cmd": [
+        "flatpak",
+        "install",
+        "flathub",
+        "md.obsidian.Obsidian"
+    ],
+    "delta": null,
+    "end": null,
+    "flatpak_item": "md.obsidian.Obsidian",
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "flatpak",
+                "install",
+                "flathub",
+                "md.obsidian.Obsidian"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+2025-04-06 17:16:50,562 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'echo ~el && sleep 0'
+2025-04-06 17:16:50,572 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1743974210.5713162-313321-258453261479889 `" && echo ansible-tmp-1743974210.5713162-313321-258453261479889="` echo /home/el/.ansible/tmp/ansible-tmp-1743974210.5713162-313321-258453261479889 `" ) && sleep 0'
+2025-04-06 17:16:50,591 p=313083 u=el n=ansible INFO| Using module file /home/el/.local/lib/python3.13/site-packages/ansible/modules/command.py
+2025-04-06 17:16:50,592 p=313083 u=el n=ansible INFO| <192.168.122.22> PUT /home/el/.ansible/tmp/ansible-local-313083nd1e7fps/tmpipza77xz TO /home/el/.ansible/tmp/ansible-tmp-1743974210.5713162-313321-258453261479889/AnsiballZ_command.py
+2025-04-06 17:16:50,593 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1743974210.5713162-313321-258453261479889/ /home/el/.ansible/tmp/ansible-tmp-1743974210.5713162-313321-258453261479889/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:50,604 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c '/usr/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1743974210.5713162-313321-258453261479889/AnsiballZ_command.py && sleep 0'
+2025-04-06 17:16:51,025 p=313083 u=el n=ansible INFO| <192.168.122.22> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1743974210.5713162-313321-258453261479889/ > /dev/null 2>&1 && sleep 0'
+2025-04-06 17:16:51,037 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => (item=io.missioncenter.MissionCenter)  => {
+    "ansible_loop_var": "flatpak_item",
+    "changed": false,
+    "cmd": [
+        "flatpak",
+        "install",
+        "flathub",
+        "io.missioncenter.MissionCenter"
+    ],
+    "delta": null,
+    "end": null,
+    "flatpak_item": "io.missioncenter.MissionCenter",
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "flatpak",
+                "install",
+                "flathub",
+                "io.missioncenter.MissionCenter"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+2025-04-06 17:16:51,039 p=313083 u=el n=ansible INFO| skipping: [192.168.122.22] => {
+    "changed": false,
+    "msg": "All items skipped"
+}
+2025-04-06 17:16:51,056 p=313083 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 17:16:51,058 p=313083 u=el n=ansible INFO| PLAY RECAP *****************************************************************************************************************************
+2025-04-06 17:16:51,059 p=313083 u=el n=ansible INFO| 192.168.122.22             : ok=19   changed=0    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2025-04-06 17:18:45,804 p=313482 u=el n=ansible INFO| ansible-config [core 2.18.4]
   config file = /home/el/works/dotfiles/ansible/ansible.cfg
   configured module search path = ['/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
   ansible python module location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages/ansible
@@ -7,8 +1113,8 @@
   python version = 3.13.1 (main, Dec  6 2024, 18:40:43) [Clang 18.1.8 ] (/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/python)
   jinja version = 3.1.6
   libyaml = True
-2025-04-06 03:03:56,981 p=213554 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
-2025-04-06 03:03:58,878 p=213570 u=el n=ansible INFO| ansible-doc [core 2.18.4]
+2025-04-06 17:18:45,805 p=313482 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
+2025-04-06 17:18:48,243 p=313498 u=el n=ansible INFO| ansible-doc [core 2.18.4]
   config file = /home/el/works/dotfiles/ansible/ansible.cfg
   configured module search path = ['/home/el/works/dotfiles/ansible/.ansible/modules', '/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
   ansible python module location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages/ansible
@@ -17,195 +1123,195 @@
   python version = 3.13.1 (main, Dec  6 2024, 18:40:43) [Clang 18.1.8 ] (/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/python)
   jinja version = 3.1.6
   libyaml = True
-2025-04-06 03:03:58,878 p=213570 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
-2025-04-06 03:03:58,902 p=213570 u=el n=ansible INFO| Loading collection cisco.intersight from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/intersight
-2025-04-06 03:03:58,904 p=213570 u=el n=ansible INFO| Found installed collection cisco.intersight:2.0.20 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/intersight'
-2025-04-06 03:03:58,909 p=213570 u=el n=ansible INFO| Loading collection cisco.nxos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/nxos
-2025-04-06 03:03:58,910 p=213570 u=el n=ansible INFO| Found installed collection cisco.nxos:9.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/nxos'
-2025-04-06 03:03:58,912 p=213570 u=el n=ansible INFO| Loading collection openstack.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/openstack/cloud
-2025-04-06 03:03:58,912 p=213570 u=el n=ansible INFO| Found installed collection openstack.cloud:2.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/openstack/cloud'
-2025-04-06 03:03:58,914 p=213570 u=el n=ansible INFO| Loading collection splunk.es from /home/el/.local/lib/python3.13/site-packages/ansible_collections/splunk/es
-2025-04-06 03:03:58,914 p=213570 u=el n=ansible INFO| Found installed collection splunk.es:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/splunk/es'
-2025-04-06 03:03:58,917 p=213570 u=el n=ansible INFO| Loading collection cisco.mso from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/mso
-2025-04-06 03:03:58,918 p=213570 u=el n=ansible INFO| Found installed collection cisco.mso:2.9.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/mso'
-2025-04-06 03:03:58,920 p=213570 u=el n=ansible INFO| Loading collection dellemc.unity from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/unity
-2025-04-06 03:03:58,921 p=213570 u=el n=ansible INFO| Found installed collection dellemc.unity:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/unity'
-2025-04-06 03:03:58,923 p=213570 u=el n=ansible INFO| Loading collection arista.eos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/arista/eos
-2025-04-06 03:03:58,923 p=213570 u=el n=ansible INFO| Found installed collection arista.eos:10.1.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/arista/eos'
-2025-04-06 03:03:58,928 p=213570 u=el n=ansible INFO| Loading collection awx.awx from /home/el/.local/lib/python3.13/site-packages/ansible_collections/awx/awx
-2025-04-06 03:03:58,929 p=213570 u=el n=ansible INFO| Found installed collection awx.awx:24.6.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/awx/awx'
-2025-04-06 03:03:58,929 p=213570 u=el n=ansible INFO| Loading collection cisco.ise from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ise
-2025-04-06 03:03:58,930 p=213570 u=el n=ansible INFO| Found installed collection cisco.ise:2.10.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ise'
-2025-04-06 03:03:58,931 p=213570 u=el n=ansible INFO| Loading collection community.routeros from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/routeros
-2025-04-06 03:03:58,932 p=213570 u=el n=ansible INFO| Found installed collection community.routeros:3.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/routeros'
-2025-04-06 03:03:58,932 p=213570 u=el n=ansible INFO| Loading collection ibm.spectrum_virtualize from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/spectrum_virtualize
-2025-04-06 03:03:58,933 p=213570 u=el n=ansible INFO| Found installed collection ibm.spectrum_virtualize:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/spectrum_virtualize'
-2025-04-06 03:03:58,934 p=213570 u=el n=ansible INFO| Loading collection vmware.vmware from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware
-2025-04-06 03:03:58,935 p=213570 u=el n=ansible INFO| Found installed collection vmware.vmware:1.10.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware'
-2025-04-06 03:03:58,938 p=213570 u=el n=ansible INFO| Loading collection netapp.ontap from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/ontap
-2025-04-06 03:03:58,938 p=213570 u=el n=ansible INFO| Found installed collection netapp.ontap:22.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/ontap'
-2025-04-06 03:03:58,940 p=213570 u=el n=ansible INFO| Loading collection cisco.ios from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ios
-2025-04-06 03:03:58,941 p=213570 u=el n=ansible INFO| Found installed collection cisco.ios:9.1.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ios'
-2025-04-06 03:03:58,942 p=213570 u=el n=ansible INFO| Loading collection cisco.iosxr from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/iosxr
-2025-04-06 03:03:58,943 p=213570 u=el n=ansible INFO| Found installed collection cisco.iosxr:10.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/iosxr'
-2025-04-06 03:03:58,944 p=213570 u=el n=ansible INFO| Loading collection netapp_eseries.santricity from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp_eseries/santricity
-2025-04-06 03:03:58,944 p=213570 u=el n=ansible INFO| Found installed collection netapp_eseries.santricity:1.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp_eseries/santricity'
-2025-04-06 03:03:58,945 p=213570 u=el n=ansible INFO| Loading collection community.okd from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/okd
-2025-04-06 03:03:58,946 p=213570 u=el n=ansible INFO| Found installed collection community.okd:4.0.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/okd'
-2025-04-06 03:03:58,947 p=213570 u=el n=ansible INFO| Loading collection community.proxysql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/proxysql
-2025-04-06 03:03:58,947 p=213570 u=el n=ansible INFO| Found installed collection community.proxysql:1.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/proxysql'
-2025-04-06 03:03:58,948 p=213570 u=el n=ansible INFO| Loading collection ansible.posix from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/posix
-2025-04-06 03:03:58,949 p=213570 u=el n=ansible INFO| Found installed collection ansible.posix:1.6.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/posix'
-2025-04-06 03:03:58,950 p=213570 u=el n=ansible INFO| Loading collection kaytus.ksmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kaytus/ksmanage
-2025-04-06 03:03:58,950 p=213570 u=el n=ansible INFO| Found installed collection kaytus.ksmanage:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kaytus/ksmanage'
-2025-04-06 03:03:58,954 p=213570 u=el n=ansible INFO| Loading collection vmware.vmware_rest from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware_rest
-2025-04-06 03:03:58,955 p=213570 u=el n=ansible INFO| Found installed collection vmware.vmware_rest:4.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware_rest'
-2025-04-06 03:03:58,956 p=213570 u=el n=ansible INFO| Loading collection community.postgresql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/postgresql
-2025-04-06 03:03:58,957 p=213570 u=el n=ansible INFO| Found installed collection community.postgresql:3.12.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/postgresql'
-2025-04-06 03:03:58,961 p=213570 u=el n=ansible INFO| Loading collection cisco.meraki from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/meraki
-2025-04-06 03:03:58,962 p=213570 u=el n=ansible INFO| Found installed collection cisco.meraki:2.20.8 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/meraki'
-2025-04-06 03:03:58,975 p=213570 u=el n=ansible INFO| Loading collection community.aws from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/aws
-2025-04-06 03:03:58,976 p=213570 u=el n=ansible INFO| Found installed collection community.aws:9.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/aws'
-2025-04-06 03:03:58,977 p=213570 u=el n=ansible INFO| Loading collection infoblox.nios_modules from /home/el/.local/lib/python3.13/site-packages/ansible_collections/infoblox/nios_modules
-2025-04-06 03:03:58,978 p=213570 u=el n=ansible INFO| Found installed collection infoblox.nios_modules:1.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/infoblox/nios_modules'
-2025-04-06 03:03:58,979 p=213570 u=el n=ansible INFO| Loading collection community.grafana from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/grafana
-2025-04-06 03:03:58,980 p=213570 u=el n=ansible INFO| Found installed collection community.grafana:2.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/grafana'
-2025-04-06 03:03:58,981 p=213570 u=el n=ansible INFO| Loading collection ibm.qradar from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/qradar
-2025-04-06 03:03:58,981 p=213570 u=el n=ansible INFO| Found installed collection ibm.qradar:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/qradar'
-2025-04-06 03:03:58,982 p=213570 u=el n=ansible INFO| Loading collection microsoft.ad from /home/el/.local/lib/python3.13/site-packages/ansible_collections/microsoft/ad
-2025-04-06 03:03:58,983 p=213570 u=el n=ansible INFO| Found installed collection microsoft.ad:1.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/microsoft/ad'
-2025-04-06 03:03:58,985 p=213570 u=el n=ansible INFO| Loading collection community.sap_libs from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sap_libs
-2025-04-06 03:03:58,986 p=213570 u=el n=ansible INFO| Found installed collection community.sap_libs:1.4.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sap_libs'
-2025-04-06 03:03:58,987 p=213570 u=el n=ansible INFO| Loading collection cyberark.pas from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/pas
-2025-04-06 03:03:58,988 p=213570 u=el n=ansible INFO| Found installed collection cyberark.pas:1.0.30 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/pas'
-2025-04-06 03:03:58,990 p=213570 u=el n=ansible INFO| Loading collection ansible.netcommon from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/netcommon
-2025-04-06 03:03:58,991 p=213570 u=el n=ansible INFO| Found installed collection ansible.netcommon:7.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/netcommon'
-2025-04-06 03:03:58,995 p=213570 u=el n=ansible INFO| Loading collection theforeman.foreman from /home/el/.local/lib/python3.13/site-packages/ansible_collections/theforeman/foreman
-2025-04-06 03:03:58,996 p=213570 u=el n=ansible INFO| Found installed collection theforeman.foreman:4.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/theforeman/foreman'
-2025-04-06 03:03:58,998 p=213570 u=el n=ansible INFO| Loading collection dellemc.enterprise_sonic from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/enterprise_sonic
-2025-04-06 03:03:58,999 p=213570 u=el n=ansible INFO| Found installed collection dellemc.enterprise_sonic:2.5.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/enterprise_sonic'
-2025-04-06 03:03:59,000 p=213570 u=el n=ansible INFO| Loading collection lowlydba.sqlserver from /home/el/.local/lib/python3.13/site-packages/ansible_collections/lowlydba/sqlserver
-2025-04-06 03:03:59,001 p=213570 u=el n=ansible INFO| Found installed collection lowlydba.sqlserver:2.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/lowlydba/sqlserver'
-2025-04-06 03:03:59,004 p=213570 u=el n=ansible INFO| Loading collection azure.azcollection from /home/el/.local/lib/python3.13/site-packages/ansible_collections/azure/azcollection
-2025-04-06 03:03:59,005 p=213570 u=el n=ansible INFO| Found installed collection azure.azcollection:3.3.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/azure/azcollection'
-2025-04-06 03:03:59,007 p=213570 u=el n=ansible INFO| Loading collection cloudscale_ch.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cloudscale_ch/cloud
-2025-04-06 03:03:59,008 p=213570 u=el n=ansible INFO| Found installed collection cloudscale_ch.cloud:2.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cloudscale_ch/cloud'
-2025-04-06 03:03:59,008 p=213570 u=el n=ansible INFO| Loading collection infinidat.infinibox from /home/el/.local/lib/python3.13/site-packages/ansible_collections/infinidat/infinibox
-2025-04-06 03:03:59,009 p=213570 u=el n=ansible INFO| Found installed collection infinidat.infinibox:1.4.5 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/infinidat/infinibox'
-2025-04-06 03:03:59,010 p=213570 u=el n=ansible INFO| Loading collection community.zabbix from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/zabbix
-2025-04-06 03:03:59,011 p=213570 u=el n=ansible INFO| Found installed collection community.zabbix:3.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/zabbix'
-2025-04-06 03:03:59,011 p=213570 u=el n=ansible INFO| Loading collection cloud.common from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cloud/common
-2025-04-06 03:03:59,012 p=213570 u=el n=ansible INFO| Found installed collection cloud.common:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cloud/common'
-2025-04-06 03:03:59,013 p=213570 u=el n=ansible INFO| Loading collection dellemc.powerflex from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/powerflex
-2025-04-06 03:03:59,014 p=213570 u=el n=ansible INFO| Found installed collection dellemc.powerflex:2.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/powerflex'
-2025-04-06 03:03:59,016 p=213570 u=el n=ansible INFO| Loading collection hetzner.hcloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/hetzner/hcloud
-2025-04-06 03:03:59,018 p=213570 u=el n=ansible INFO| Found installed collection hetzner.hcloud:4.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/hetzner/hcloud'
-2025-04-06 03:03:59,019 p=213570 u=el n=ansible INFO| Loading collection community.hrobot from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hrobot
-2025-04-06 03:03:59,020 p=213570 u=el n=ansible INFO| Found installed collection community.hrobot:2.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hrobot'
-2025-04-06 03:03:59,021 p=213570 u=el n=ansible INFO| Loading collection cisco.asa from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/asa
-2025-04-06 03:03:59,022 p=213570 u=el n=ansible INFO| Found installed collection cisco.asa:6.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/asa'
-2025-04-06 03:03:59,023 p=213570 u=el n=ansible INFO| Loading collection community.docker from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/docker
-2025-04-06 03:03:59,024 p=213570 u=el n=ansible INFO| Found installed collection community.docker:4.5.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/docker'
-2025-04-06 03:03:59,041 p=213570 u=el n=ansible INFO| Loading collection community.general from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general
-2025-04-06 03:03:59,042 p=213570 u=el n=ansible INFO| Found installed collection community.general:10.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general'
-2025-04-06 03:03:59,043 p=213570 u=el n=ansible INFO| Loading collection cyberark.conjur from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/conjur
-2025-04-06 03:03:59,043 p=213570 u=el n=ansible INFO| Found installed collection cyberark.conjur:1.3.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/conjur'
-2025-04-06 03:03:59,044 p=213570 u=el n=ansible INFO| Loading collection ibm.storage_virtualize from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/storage_virtualize
-2025-04-06 03:03:59,045 p=213570 u=el n=ansible INFO| Found installed collection ibm.storage_virtualize:2.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/storage_virtualize'
-2025-04-06 03:03:59,046 p=213570 u=el n=ansible INFO| Loading collection dellemc.openmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/openmanage
-2025-04-06 03:03:59,047 p=213570 u=el n=ansible INFO| Found installed collection dellemc.openmanage:9.10.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/openmanage'
-2025-04-06 03:03:59,049 p=213570 u=el n=ansible INFO| Loading collection check_point.mgmt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/check_point/mgmt
-2025-04-06 03:03:59,050 p=213570 u=el n=ansible INFO| Found installed collection check_point.mgmt:6.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/check_point/mgmt'
-2025-04-06 03:03:59,051 p=213570 u=el n=ansible INFO| Loading collection grafana.grafana from /home/el/.local/lib/python3.13/site-packages/ansible_collections/grafana/grafana
-2025-04-06 03:03:59,052 p=213570 u=el n=ansible INFO| Found installed collection grafana.grafana:5.7.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/grafana/grafana'
-2025-04-06 03:03:59,054 p=213570 u=el n=ansible INFO| Loading collection amazon.aws from /home/el/.local/lib/python3.13/site-packages/ansible_collections/amazon/aws
-2025-04-06 03:03:59,055 p=213570 u=el n=ansible INFO| Found installed collection amazon.aws:9.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/amazon/aws'
-2025-04-06 03:03:59,056 p=213570 u=el n=ansible INFO| Loading collection wti.remote from /home/el/.local/lib/python3.13/site-packages/ansible_collections/wti/remote
-2025-04-06 03:03:59,057 p=213570 u=el n=ansible INFO| Found installed collection wti.remote:1.0.10 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/wti/remote'
-2025-04-06 03:03:59,058 p=213570 u=el n=ansible INFO| Loading collection community.mongodb from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mongodb
-2025-04-06 03:03:59,059 p=213570 u=el n=ansible INFO| Found installed collection community.mongodb:1.7.9 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mongodb'
-2025-04-06 03:03:59,060 p=213570 u=el n=ansible INFO| Loading collection ngine_io.cloudstack from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ngine_io/cloudstack
-2025-04-06 03:03:59,061 p=213570 u=el n=ansible INFO| Found installed collection ngine_io.cloudstack:2.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ngine_io/cloudstack'
-2025-04-06 03:03:59,061 p=213570 u=el n=ansible INFO| Loading collection inspur.ispim from /home/el/.local/lib/python3.13/site-packages/ansible_collections/inspur/ispim
-2025-04-06 03:03:59,062 p=213570 u=el n=ansible INFO| Found installed collection inspur.ispim:2.2.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/inspur/ispim'
-2025-04-06 03:03:59,063 p=213570 u=el n=ansible INFO| Loading collection f5networks.f5_modules from /home/el/.local/lib/python3.13/site-packages/ansible_collections/f5networks/f5_modules
-2025-04-06 03:03:59,064 p=213570 u=el n=ansible INFO| Found installed collection f5networks.f5_modules:1.34.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/f5networks/f5_modules'
-2025-04-06 03:03:59,067 p=213570 u=el n=ansible INFO| Loading collection community.vmware from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/vmware
-2025-04-06 03:03:59,068 p=213570 u=el n=ansible INFO| Found installed collection community.vmware:5.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/vmware'
-2025-04-06 03:03:59,068 p=213570 u=el n=ansible INFO| Loading collection community.library_inventory_filtering_v1 from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/library_inventory_filtering_v1
-2025-04-06 03:03:59,069 p=213570 u=el n=ansible INFO| Found installed collection community.library_inventory_filtering_v1:1.0.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/library_inventory_filtering_v1'
-2025-04-06 03:03:59,072 p=213570 u=el n=ansible INFO| Loading collection cisco.aci from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/aci
-2025-04-06 03:03:59,073 p=213570 u=el n=ansible INFO| Found installed collection cisco.aci:2.10.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/aci'
-2025-04-06 03:03:59,074 p=213570 u=el n=ansible INFO| Loading collection community.dns from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/dns
-2025-04-06 03:03:59,075 p=213570 u=el n=ansible INFO| Found installed collection community.dns:3.2.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/dns'
-2025-04-06 03:03:59,076 p=213570 u=el n=ansible INFO| Loading collection vultr.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vultr/cloud
-2025-04-06 03:03:59,076 p=213570 u=el n=ansible INFO| Found installed collection vultr.cloud:1.13.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vultr/cloud'
-2025-04-06 03:03:59,077 p=213570 u=el n=ansible INFO| Loading collection community.windows from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/windows
-2025-04-06 03:03:59,078 p=213570 u=el n=ansible INFO| Found installed collection community.windows:2.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/windows'
-2025-04-06 03:03:59,079 p=213570 u=el n=ansible INFO| Loading collection ovirt.ovirt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ovirt/ovirt
-2025-04-06 03:03:59,080 p=213570 u=el n=ansible INFO| Found installed collection ovirt.ovirt:3.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ovirt/ovirt'
-2025-04-06 03:03:59,081 p=213570 u=el n=ansible INFO| Loading collection sensu.sensu_go from /home/el/.local/lib/python3.13/site-packages/ansible_collections/sensu/sensu_go
-2025-04-06 03:03:59,081 p=213570 u=el n=ansible INFO| Found installed collection sensu.sensu_go:1.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/sensu/sensu_go'
-2025-04-06 03:03:59,082 p=213570 u=el n=ansible INFO| Loading collection ieisystem.inmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ieisystem/inmanage
-2025-04-06 03:03:59,083 p=213570 u=el n=ansible INFO| Found installed collection ieisystem.inmanage:3.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ieisystem/inmanage'
-2025-04-06 03:03:59,084 p=213570 u=el n=ansible INFO| Loading collection chocolatey.chocolatey from /home/el/.local/lib/python3.13/site-packages/ansible_collections/chocolatey/chocolatey
-2025-04-06 03:03:59,085 p=213570 u=el n=ansible INFO| Found installed collection chocolatey.chocolatey:1.5.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/chocolatey/chocolatey'
-2025-04-06 03:03:59,085 p=213570 u=el n=ansible INFO| Loading collection purestorage.flashblade from /home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flashblade
-2025-04-06 03:03:59,086 p=213570 u=el n=ansible INFO| Found installed collection purestorage.flashblade:1.19.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flashblade'
-2025-04-06 03:03:59,087 p=213570 u=el n=ansible INFO| Loading collection community.crypto from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/crypto
-2025-04-06 03:03:59,088 p=213570 u=el n=ansible INFO| Found installed collection community.crypto:2.26.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/crypto'
-2025-04-06 03:03:59,089 p=213570 u=el n=ansible INFO| Loading collection telekom_mms.icinga_director from /home/el/.local/lib/python3.13/site-packages/ansible_collections/telekom_mms/icinga_director
-2025-04-06 03:03:59,090 p=213570 u=el n=ansible INFO| Found installed collection telekom_mms.icinga_director:2.2.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/telekom_mms/icinga_director'
-2025-04-06 03:03:59,091 p=213570 u=el n=ansible INFO| Loading collection fortinet.fortimanager from /home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortimanager
-2025-04-06 03:03:59,092 p=213570 u=el n=ansible INFO| Found installed collection fortinet.fortimanager:2.9.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortimanager'
-2025-04-06 03:03:59,092 p=213570 u=el n=ansible INFO| Loading collection cisco.ucs from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ucs
-2025-04-06 03:03:59,093 p=213570 u=el n=ansible INFO| Found installed collection cisco.ucs:1.15.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ucs'
-2025-04-06 03:03:59,093 p=213570 u=el n=ansible INFO| Loading collection purestorage.flasharray from /home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flasharray
-2025-04-06 03:03:59,094 p=213570 u=el n=ansible INFO| Found installed collection purestorage.flasharray:1.33.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flasharray'
-2025-04-06 03:03:59,096 p=213570 u=el n=ansible INFO| Loading collection junipernetworks.junos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/junipernetworks/junos
-2025-04-06 03:03:59,097 p=213570 u=el n=ansible INFO| Found installed collection junipernetworks.junos:9.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/junipernetworks/junos'
-2025-04-06 03:03:59,097 p=213570 u=el n=ansible INFO| Loading collection fortinet.fortios from /home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortios
-2025-04-06 03:03:59,098 p=213570 u=el n=ansible INFO| Found installed collection fortinet.fortios:2.3.9 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortios'
-2025-04-06 03:03:59,098 p=213570 u=el n=ansible INFO| Loading collection community.libvirt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/libvirt
-2025-04-06 03:03:59,099 p=213570 u=el n=ansible INFO| Found installed collection community.libvirt:1.3.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/libvirt'
-2025-04-06 03:03:59,100 p=213570 u=el n=ansible INFO| Loading collection containers.podman from /home/el/.local/lib/python3.13/site-packages/ansible_collections/containers/podman
-2025-04-06 03:03:59,101 p=213570 u=el n=ansible INFO| Found installed collection containers.podman:1.16.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/containers/podman'
-2025-04-06 03:03:59,102 p=213570 u=el n=ansible INFO| Loading collection community.sops from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sops
-2025-04-06 03:03:59,103 p=213570 u=el n=ansible INFO| Found installed collection community.sops:2.0.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sops'
-2025-04-06 03:03:59,104 p=213570 u=el n=ansible INFO| Loading collection ansible.windows from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/windows
-2025-04-06 03:03:59,104 p=213570 u=el n=ansible INFO| Found installed collection ansible.windows:2.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/windows'
-2025-04-06 03:03:59,105 p=213570 u=el n=ansible INFO| Loading collection community.mysql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mysql
-2025-04-06 03:03:59,105 p=213570 u=el n=ansible INFO| Found installed collection community.mysql:3.13.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mysql'
-2025-04-06 03:03:59,106 p=213570 u=el n=ansible INFO| Loading collection kubevirt.core from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kubevirt/core
-2025-04-06 03:03:59,107 p=213570 u=el n=ansible INFO| Found installed collection kubevirt.core:2.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kubevirt/core'
-2025-04-06 03:03:59,107 p=213570 u=el n=ansible INFO| Loading collection community.rabbitmq from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/rabbitmq
-2025-04-06 03:03:59,108 p=213570 u=el n=ansible INFO| Found installed collection community.rabbitmq:1.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/rabbitmq'
-2025-04-06 03:03:59,109 p=213570 u=el n=ansible INFO| Loading collection cisco.dnac from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/dnac
-2025-04-06 03:03:59,109 p=213570 u=el n=ansible INFO| Found installed collection cisco.dnac:6.31.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/dnac'
-2025-04-06 03:03:59,110 p=213570 u=el n=ansible INFO| Loading collection ansible.utils from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/utils
-2025-04-06 03:03:59,111 p=213570 u=el n=ansible INFO| Found installed collection ansible.utils:5.1.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/utils'
-2025-04-06 03:03:59,112 p=213570 u=el n=ansible INFO| Loading collection community.hashi_vault from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hashi_vault
-2025-04-06 03:03:59,112 p=213570 u=el n=ansible INFO| Found installed collection community.hashi_vault:6.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hashi_vault'
-2025-04-06 03:03:59,180 p=213570 u=el n=ansible INFO| Loading collection community.network from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/network
-2025-04-06 03:03:59,181 p=213570 u=el n=ansible INFO| Found installed collection community.network:5.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/network'
-2025-04-06 03:03:59,184 p=213570 u=el n=ansible INFO| Loading collection community.digitalocean from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/digitalocean
-2025-04-06 03:03:59,185 p=213570 u=el n=ansible INFO| Found installed collection community.digitalocean:1.27.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/digitalocean'
-2025-04-06 03:03:59,187 p=213570 u=el n=ansible INFO| Loading collection netbox.netbox from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netbox/netbox
-2025-04-06 03:03:59,188 p=213570 u=el n=ansible INFO| Found installed collection netbox.netbox:3.21.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netbox/netbox'
-2025-04-06 03:03:59,189 p=213570 u=el n=ansible INFO| Loading collection netapp.cloudmanager from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/cloudmanager
-2025-04-06 03:03:59,190 p=213570 u=el n=ansible INFO| Found installed collection netapp.cloudmanager:21.24.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/cloudmanager'
-2025-04-06 03:03:59,191 p=213570 u=el n=ansible INFO| Loading collection vyos.vyos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vyos/vyos
-2025-04-06 03:03:59,192 p=213570 u=el n=ansible INFO| Found installed collection vyos.vyos:5.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vyos/vyos'
-2025-04-06 03:03:59,193 p=213570 u=el n=ansible INFO| Loading collection community.ciscosmb from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/ciscosmb
-2025-04-06 03:03:59,193 p=213570 u=el n=ansible INFO| Found installed collection community.ciscosmb:1.0.10 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/ciscosmb'
-2025-04-06 03:03:59,196 p=213570 u=el n=ansible INFO| Loading collection google.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/google/cloud
-2025-04-06 03:03:59,197 p=213570 u=el n=ansible INFO| Found installed collection google.cloud:1.5.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/google/cloud'
-2025-04-06 03:03:59,198 p=213570 u=el n=ansible INFO| Loading collection kubernetes.core from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kubernetes/core
-2025-04-06 03:03:59,199 p=213570 u=el n=ansible INFO| Found installed collection kubernetes.core:5.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kubernetes/core'
-2025-04-06 03:03:59,201 p=213570 u=el n=ansible INFO| Loading collection netapp.storagegrid from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/storagegrid
-2025-04-06 03:03:59,202 p=213570 u=el n=ansible INFO| Found installed collection netapp.storagegrid:21.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/storagegrid'
-2025-04-06 03:03:59,375 p=213570 u=el n=ansible INFO| Loading collection ansible.builtin from 
-2025-04-06 03:03:59,430 p=213570 u=el n=ansible INFO| {
+2025-04-06 17:18:48,244 p=313498 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
+2025-04-06 17:18:48,271 p=313498 u=el n=ansible INFO| Loading collection inspur.ispim from /home/el/.local/lib/python3.13/site-packages/ansible_collections/inspur/ispim
+2025-04-06 17:18:48,272 p=313498 u=el n=ansible INFO| Found installed collection inspur.ispim:2.2.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/inspur/ispim'
+2025-04-06 17:18:48,273 p=313498 u=el n=ansible INFO| Loading collection cisco.ucs from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ucs
+2025-04-06 17:18:48,274 p=313498 u=el n=ansible INFO| Found installed collection cisco.ucs:1.15.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ucs'
+2025-04-06 17:18:48,274 p=313498 u=el n=ansible INFO| Loading collection community.libvirt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/libvirt
+2025-04-06 17:18:48,275 p=313498 u=el n=ansible INFO| Found installed collection community.libvirt:1.3.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/libvirt'
+2025-04-06 17:18:48,276 p=313498 u=el n=ansible INFO| Loading collection community.zabbix from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/zabbix
+2025-04-06 17:18:48,277 p=313498 u=el n=ansible INFO| Found installed collection community.zabbix:3.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/zabbix'
+2025-04-06 17:18:48,279 p=313498 u=el n=ansible INFO| Loading collection vmware.vmware_rest from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware_rest
+2025-04-06 17:18:48,281 p=313498 u=el n=ansible INFO| Found installed collection vmware.vmware_rest:4.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware_rest'
+2025-04-06 17:18:48,284 p=313498 u=el n=ansible INFO| Loading collection amazon.aws from /home/el/.local/lib/python3.13/site-packages/ansible_collections/amazon/aws
+2025-04-06 17:18:48,286 p=313498 u=el n=ansible INFO| Found installed collection amazon.aws:9.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/amazon/aws'
+2025-04-06 17:18:48,287 p=313498 u=el n=ansible INFO| Loading collection community.crypto from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/crypto
+2025-04-06 17:18:48,288 p=313498 u=el n=ansible INFO| Found installed collection community.crypto:2.26.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/crypto'
+2025-04-06 17:18:48,289 p=313498 u=el n=ansible INFO| Loading collection vultr.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vultr/cloud
+2025-04-06 17:18:48,290 p=313498 u=el n=ansible INFO| Found installed collection vultr.cloud:1.13.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vultr/cloud'
+2025-04-06 17:18:48,290 p=313498 u=el n=ansible INFO| Loading collection kaytus.ksmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kaytus/ksmanage
+2025-04-06 17:18:48,291 p=313498 u=el n=ansible INFO| Found installed collection kaytus.ksmanage:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kaytus/ksmanage'
+2025-04-06 17:18:48,292 p=313498 u=el n=ansible INFO| Loading collection ngine_io.cloudstack from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ngine_io/cloudstack
+2025-04-06 17:18:48,293 p=313498 u=el n=ansible INFO| Found installed collection ngine_io.cloudstack:2.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ngine_io/cloudstack'
+2025-04-06 17:18:48,294 p=313498 u=el n=ansible INFO| Loading collection infinidat.infinibox from /home/el/.local/lib/python3.13/site-packages/ansible_collections/infinidat/infinibox
+2025-04-06 17:18:48,295 p=313498 u=el n=ansible INFO| Found installed collection infinidat.infinibox:1.4.5 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/infinidat/infinibox'
+2025-04-06 17:18:48,296 p=313498 u=el n=ansible INFO| Loading collection infoblox.nios_modules from /home/el/.local/lib/python3.13/site-packages/ansible_collections/infoblox/nios_modules
+2025-04-06 17:18:48,297 p=313498 u=el n=ansible INFO| Found installed collection infoblox.nios_modules:1.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/infoblox/nios_modules'
+2025-04-06 17:18:48,327 p=313498 u=el n=ansible INFO| Loading collection community.general from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general
+2025-04-06 17:18:48,328 p=313498 u=el n=ansible INFO| Found installed collection community.general:10.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general'
+2025-04-06 17:18:48,329 p=313498 u=el n=ansible INFO| Loading collection community.library_inventory_filtering_v1 from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/library_inventory_filtering_v1
+2025-04-06 17:18:48,329 p=313498 u=el n=ansible INFO| Found installed collection community.library_inventory_filtering_v1:1.0.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/library_inventory_filtering_v1'
+2025-04-06 17:18:48,331 p=313498 u=el n=ansible INFO| Loading collection dellemc.enterprise_sonic from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/enterprise_sonic
+2025-04-06 17:18:48,332 p=313498 u=el n=ansible INFO| Found installed collection dellemc.enterprise_sonic:2.5.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/enterprise_sonic'
+2025-04-06 17:18:48,333 p=313498 u=el n=ansible INFO| Loading collection community.docker from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/docker
+2025-04-06 17:18:48,334 p=313498 u=el n=ansible INFO| Found installed collection community.docker:4.5.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/docker'
+2025-04-06 17:18:48,334 p=313498 u=el n=ansible INFO| Loading collection community.sops from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sops
+2025-04-06 17:18:48,335 p=313498 u=el n=ansible INFO| Found installed collection community.sops:2.0.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sops'
+2025-04-06 17:18:48,337 p=313498 u=el n=ansible INFO| Loading collection microsoft.ad from /home/el/.local/lib/python3.13/site-packages/ansible_collections/microsoft/ad
+2025-04-06 17:18:48,338 p=313498 u=el n=ansible INFO| Found installed collection microsoft.ad:1.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/microsoft/ad'
+2025-04-06 17:18:48,339 p=313498 u=el n=ansible INFO| Loading collection netapp.storagegrid from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/storagegrid
+2025-04-06 17:18:48,339 p=313498 u=el n=ansible INFO| Found installed collection netapp.storagegrid:21.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/storagegrid'
+2025-04-06 17:18:48,340 p=313498 u=el n=ansible INFO| Loading collection purestorage.flasharray from /home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flasharray
+2025-04-06 17:18:48,341 p=313498 u=el n=ansible INFO| Found installed collection purestorage.flasharray:1.33.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flasharray'
+2025-04-06 17:18:48,341 p=313498 u=el n=ansible INFO| Loading collection purestorage.flashblade from /home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flashblade
+2025-04-06 17:18:48,342 p=313498 u=el n=ansible INFO| Found installed collection purestorage.flashblade:1.19.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flashblade'
+2025-04-06 17:18:48,343 p=313498 u=el n=ansible INFO| Loading collection f5networks.f5_modules from /home/el/.local/lib/python3.13/site-packages/ansible_collections/f5networks/f5_modules
+2025-04-06 17:18:48,343 p=313498 u=el n=ansible INFO| Found installed collection f5networks.f5_modules:1.34.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/f5networks/f5_modules'
+2025-04-06 17:18:48,344 p=313498 u=el n=ansible INFO| Loading collection cisco.intersight from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/intersight
+2025-04-06 17:18:48,344 p=313498 u=el n=ansible INFO| Found installed collection cisco.intersight:2.0.20 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/intersight'
+2025-04-06 17:18:48,346 p=313498 u=el n=ansible INFO| Loading collection dellemc.openmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/openmanage
+2025-04-06 17:18:48,346 p=313498 u=el n=ansible INFO| Found installed collection dellemc.openmanage:9.10.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/openmanage'
+2025-04-06 17:18:48,348 p=313498 u=el n=ansible INFO| Loading collection junipernetworks.junos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/junipernetworks/junos
+2025-04-06 17:18:48,349 p=313498 u=el n=ansible INFO| Found installed collection junipernetworks.junos:9.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/junipernetworks/junos'
+2025-04-06 17:18:48,352 p=313498 u=el n=ansible INFO| Loading collection google.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/google/cloud
+2025-04-06 17:18:48,353 p=313498 u=el n=ansible INFO| Found installed collection google.cloud:1.5.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/google/cloud'
+2025-04-06 17:18:48,353 p=313498 u=el n=ansible INFO| Loading collection grafana.grafana from /home/el/.local/lib/python3.13/site-packages/ansible_collections/grafana/grafana
+2025-04-06 17:18:48,354 p=313498 u=el n=ansible INFO| Found installed collection grafana.grafana:5.7.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/grafana/grafana'
+2025-04-06 17:18:48,355 p=313498 u=el n=ansible INFO| Loading collection community.mongodb from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mongodb
+2025-04-06 17:18:48,356 p=313498 u=el n=ansible INFO| Found installed collection community.mongodb:1.7.9 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mongodb'
+2025-04-06 17:18:48,356 p=313498 u=el n=ansible INFO| Loading collection community.mysql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mysql
+2025-04-06 17:18:48,357 p=313498 u=el n=ansible INFO| Found installed collection community.mysql:3.13.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mysql'
+2025-04-06 17:18:48,360 p=313498 u=el n=ansible INFO| Loading collection theforeman.foreman from /home/el/.local/lib/python3.13/site-packages/ansible_collections/theforeman/foreman
+2025-04-06 17:18:48,361 p=313498 u=el n=ansible INFO| Found installed collection theforeman.foreman:4.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/theforeman/foreman'
+2025-04-06 17:18:48,363 p=313498 u=el n=ansible INFO| Loading collection kubernetes.core from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kubernetes/core
+2025-04-06 17:18:48,363 p=313498 u=el n=ansible INFO| Found installed collection kubernetes.core:5.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kubernetes/core'
+2025-04-06 17:18:48,364 p=313498 u=el n=ansible INFO| Loading collection community.rabbitmq from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/rabbitmq
+2025-04-06 17:18:48,365 p=313498 u=el n=ansible INFO| Found installed collection community.rabbitmq:1.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/rabbitmq'
+2025-04-06 17:18:48,366 p=313498 u=el n=ansible INFO| Loading collection ovirt.ovirt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ovirt/ovirt
+2025-04-06 17:18:48,367 p=313498 u=el n=ansible INFO| Found installed collection ovirt.ovirt:3.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ovirt/ovirt'
+2025-04-06 17:18:48,368 p=313498 u=el n=ansible INFO| Loading collection fortinet.fortios from /home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortios
+2025-04-06 17:18:48,369 p=313498 u=el n=ansible INFO| Found installed collection fortinet.fortios:2.3.9 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortios'
+2025-04-06 17:18:48,370 p=313498 u=el n=ansible INFO| Loading collection community.postgresql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/postgresql
+2025-04-06 17:18:48,371 p=313498 u=el n=ansible INFO| Found installed collection community.postgresql:3.12.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/postgresql'
+2025-04-06 17:18:48,374 p=313498 u=el n=ansible INFO| Loading collection netbox.netbox from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netbox/netbox
+2025-04-06 17:18:48,374 p=313498 u=el n=ansible INFO| Found installed collection netbox.netbox:3.21.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netbox/netbox'
+2025-04-06 17:18:48,375 p=313498 u=el n=ansible INFO| Loading collection ieisystem.inmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ieisystem/inmanage
+2025-04-06 17:18:48,376 p=313498 u=el n=ansible INFO| Found installed collection ieisystem.inmanage:3.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ieisystem/inmanage'
+2025-04-06 17:18:48,376 p=313498 u=el n=ansible INFO| Loading collection ibm.spectrum_virtualize from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/spectrum_virtualize
+2025-04-06 17:18:48,378 p=313498 u=el n=ansible INFO| Found installed collection ibm.spectrum_virtualize:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/spectrum_virtualize'
+2025-04-06 17:18:48,378 p=313498 u=el n=ansible INFO| Loading collection cisco.asa from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/asa
+2025-04-06 17:18:48,379 p=313498 u=el n=ansible INFO| Found installed collection cisco.asa:6.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/asa'
+2025-04-06 17:18:48,389 p=313498 u=el n=ansible INFO| Loading collection community.aws from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/aws
+2025-04-06 17:18:48,390 p=313498 u=el n=ansible INFO| Found installed collection community.aws:9.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/aws'
+2025-04-06 17:18:48,392 p=313498 u=el n=ansible INFO| Loading collection netapp.ontap from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/ontap
+2025-04-06 17:18:48,394 p=313498 u=el n=ansible INFO| Found installed collection netapp.ontap:22.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/ontap'
+2025-04-06 17:18:48,394 p=313498 u=el n=ansible INFO| Loading collection netapp_eseries.santricity from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp_eseries/santricity
+2025-04-06 17:18:48,395 p=313498 u=el n=ansible INFO| Found installed collection netapp_eseries.santricity:1.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp_eseries/santricity'
+2025-04-06 17:18:48,398 p=313498 u=el n=ansible INFO| Loading collection community.digitalocean from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/digitalocean
+2025-04-06 17:18:48,399 p=313498 u=el n=ansible INFO| Found installed collection community.digitalocean:1.27.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/digitalocean'
+2025-04-06 17:18:48,400 p=313498 u=el n=ansible INFO| Loading collection netapp.cloudmanager from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/cloudmanager
+2025-04-06 17:18:48,401 p=313498 u=el n=ansible INFO| Found installed collection netapp.cloudmanager:21.24.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/cloudmanager'
+2025-04-06 17:18:48,403 p=313498 u=el n=ansible INFO| Loading collection check_point.mgmt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/check_point/mgmt
+2025-04-06 17:18:48,404 p=313498 u=el n=ansible INFO| Found installed collection check_point.mgmt:6.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/check_point/mgmt'
+2025-04-06 17:18:48,406 p=313498 u=el n=ansible INFO| Loading collection arista.eos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/arista/eos
+2025-04-06 17:18:48,407 p=313498 u=el n=ansible INFO| Found installed collection arista.eos:10.1.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/arista/eos'
+2025-04-06 17:18:48,407 p=313498 u=el n=ansible INFO| Loading collection community.ciscosmb from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/ciscosmb
+2025-04-06 17:18:48,408 p=313498 u=el n=ansible INFO| Found installed collection community.ciscosmb:1.0.10 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/ciscosmb'
+2025-04-06 17:18:48,409 p=313498 u=el n=ansible INFO| Loading collection dellemc.powerflex from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/powerflex
+2025-04-06 17:18:48,410 p=313498 u=el n=ansible INFO| Found installed collection dellemc.powerflex:2.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/powerflex'
+2025-04-06 17:18:48,410 p=313498 u=el n=ansible INFO| Loading collection fortinet.fortimanager from /home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortimanager
+2025-04-06 17:18:48,411 p=313498 u=el n=ansible INFO| Found installed collection fortinet.fortimanager:2.9.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortimanager'
+2025-04-06 17:18:48,414 p=313498 u=el n=ansible INFO| Loading collection hetzner.hcloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/hetzner/hcloud
+2025-04-06 17:18:48,414 p=313498 u=el n=ansible INFO| Found installed collection hetzner.hcloud:4.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/hetzner/hcloud'
+2025-04-06 17:18:48,415 p=313498 u=el n=ansible INFO| Loading collection cyberark.pas from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/pas
+2025-04-06 17:18:48,416 p=313498 u=el n=ansible INFO| Found installed collection cyberark.pas:1.0.30 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/pas'
+2025-04-06 17:18:48,417 p=313498 u=el n=ansible INFO| Loading collection community.sap_libs from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sap_libs
+2025-04-06 17:18:48,419 p=313498 u=el n=ansible INFO| Found installed collection community.sap_libs:1.4.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sap_libs'
+2025-04-06 17:18:48,420 p=313498 u=el n=ansible INFO| Loading collection sensu.sensu_go from /home/el/.local/lib/python3.13/site-packages/ansible_collections/sensu/sensu_go
+2025-04-06 17:18:48,421 p=313498 u=el n=ansible INFO| Found installed collection sensu.sensu_go:1.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/sensu/sensu_go'
+2025-04-06 17:18:48,425 p=313498 u=el n=ansible INFO| Loading collection community.vmware from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/vmware
+2025-04-06 17:18:48,425 p=313498 u=el n=ansible INFO| Found installed collection community.vmware:5.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/vmware'
+2025-04-06 17:18:48,427 p=313498 u=el n=ansible INFO| Loading collection ansible.posix from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/posix
+2025-04-06 17:18:48,427 p=313498 u=el n=ansible INFO| Found installed collection ansible.posix:1.6.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/posix'
+2025-04-06 17:18:48,429 p=313498 u=el n=ansible INFO| Loading collection splunk.es from /home/el/.local/lib/python3.13/site-packages/ansible_collections/splunk/es
+2025-04-06 17:18:48,430 p=313498 u=el n=ansible INFO| Found installed collection splunk.es:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/splunk/es'
+2025-04-06 17:18:48,431 p=313498 u=el n=ansible INFO| Loading collection openstack.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/openstack/cloud
+2025-04-06 17:18:48,432 p=313498 u=el n=ansible INFO| Found installed collection openstack.cloud:2.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/openstack/cloud'
+2025-04-06 17:18:48,433 p=313498 u=el n=ansible INFO| Loading collection community.hashi_vault from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hashi_vault
+2025-04-06 17:18:48,433 p=313498 u=el n=ansible INFO| Found installed collection community.hashi_vault:6.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hashi_vault'
+2025-04-06 17:18:48,434 p=313498 u=el n=ansible INFO| Loading collection ansible.windows from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/windows
+2025-04-06 17:18:48,436 p=313498 u=el n=ansible INFO| Found installed collection ansible.windows:2.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/windows'
+2025-04-06 17:18:48,437 p=313498 u=el n=ansible INFO| Loading collection community.windows from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/windows
+2025-04-06 17:18:48,438 p=313498 u=el n=ansible INFO| Found installed collection community.windows:2.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/windows'
+2025-04-06 17:18:48,439 p=313498 u=el n=ansible INFO| Loading collection vmware.vmware from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware
+2025-04-06 17:18:48,440 p=313498 u=el n=ansible INFO| Found installed collection vmware.vmware:1.10.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware'
+2025-04-06 17:18:48,442 p=313498 u=el n=ansible INFO| Loading collection ansible.netcommon from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/netcommon
+2025-04-06 17:18:48,443 p=313498 u=el n=ansible INFO| Found installed collection ansible.netcommon:7.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/netcommon'
+2025-04-06 17:18:48,447 p=313498 u=el n=ansible INFO| Loading collection cisco.nxos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/nxos
+2025-04-06 17:18:48,448 p=313498 u=el n=ansible INFO| Found installed collection cisco.nxos:9.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/nxos'
+2025-04-06 17:18:48,449 p=313498 u=el n=ansible INFO| Loading collection community.grafana from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/grafana
+2025-04-06 17:18:48,450 p=313498 u=el n=ansible INFO| Found installed collection community.grafana:2.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/grafana'
+2025-04-06 17:18:48,453 p=313498 u=el n=ansible INFO| Loading collection cisco.ios from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ios
+2025-04-06 17:18:48,454 p=313498 u=el n=ansible INFO| Found installed collection cisco.ios:9.1.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ios'
+2025-04-06 17:18:48,459 p=313498 u=el n=ansible INFO| Loading collection cisco.mso from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/mso
+2025-04-06 17:18:48,460 p=313498 u=el n=ansible INFO| Found installed collection cisco.mso:2.9.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/mso'
+2025-04-06 17:18:48,462 p=313498 u=el n=ansible INFO| Loading collection community.okd from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/okd
+2025-04-06 17:18:48,462 p=313498 u=el n=ansible INFO| Found installed collection community.okd:4.0.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/okd'
+2025-04-06 17:18:48,463 p=313498 u=el n=ansible INFO| Loading collection community.dns from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/dns
+2025-04-06 17:18:48,464 p=313498 u=el n=ansible INFO| Found installed collection community.dns:3.2.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/dns'
+2025-04-06 17:18:48,468 p=313498 u=el n=ansible INFO| Loading collection cisco.meraki from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/meraki
+2025-04-06 17:18:48,469 p=313498 u=el n=ansible INFO| Found installed collection cisco.meraki:2.20.8 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/meraki'
+2025-04-06 17:18:48,470 p=313498 u=el n=ansible INFO| Loading collection kubevirt.core from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kubevirt/core
+2025-04-06 17:18:48,471 p=313498 u=el n=ansible INFO| Found installed collection kubevirt.core:2.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kubevirt/core'
+2025-04-06 17:18:48,472 p=313498 u=el n=ansible INFO| Loading collection ansible.utils from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/utils
+2025-04-06 17:18:48,473 p=313498 u=el n=ansible INFO| Found installed collection ansible.utils:5.1.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/utils'
+2025-04-06 17:18:48,474 p=313498 u=el n=ansible INFO| Loading collection community.proxysql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/proxysql
+2025-04-06 17:18:48,474 p=313498 u=el n=ansible INFO| Found installed collection community.proxysql:1.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/proxysql'
+2025-04-06 17:18:48,475 p=313498 u=el n=ansible INFO| Loading collection cloud.common from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cloud/common
+2025-04-06 17:18:48,476 p=313498 u=el n=ansible INFO| Found installed collection cloud.common:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cloud/common'
+2025-04-06 17:18:48,477 p=313498 u=el n=ansible INFO| Loading collection lowlydba.sqlserver from /home/el/.local/lib/python3.13/site-packages/ansible_collections/lowlydba/sqlserver
+2025-04-06 17:18:48,478 p=313498 u=el n=ansible INFO| Found installed collection lowlydba.sqlserver:2.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/lowlydba/sqlserver'
+2025-04-06 17:18:48,481 p=313498 u=el n=ansible INFO| Loading collection azure.azcollection from /home/el/.local/lib/python3.13/site-packages/ansible_collections/azure/azcollection
+2025-04-06 17:18:48,482 p=313498 u=el n=ansible INFO| Found installed collection azure.azcollection:3.3.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/azure/azcollection'
+2025-04-06 17:18:48,482 p=313498 u=el n=ansible INFO| Loading collection community.routeros from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/routeros
+2025-04-06 17:18:48,483 p=313498 u=el n=ansible INFO| Found installed collection community.routeros:3.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/routeros'
+2025-04-06 17:18:48,486 p=313498 u=el n=ansible INFO| Loading collection cisco.iosxr from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/iosxr
+2025-04-06 17:18:48,488 p=313498 u=el n=ansible INFO| Found installed collection cisco.iosxr:10.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/iosxr'
+2025-04-06 17:18:48,489 p=313498 u=el n=ansible INFO| Loading collection community.hrobot from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hrobot
+2025-04-06 17:18:48,490 p=313498 u=el n=ansible INFO| Found installed collection community.hrobot:2.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hrobot'
+2025-04-06 17:18:48,494 p=313498 u=el n=ansible INFO| Loading collection cisco.aci from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/aci
+2025-04-06 17:18:48,495 p=313498 u=el n=ansible INFO| Found installed collection cisco.aci:2.10.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/aci'
+2025-04-06 17:18:48,496 p=313498 u=el n=ansible INFO| Loading collection cisco.ise from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ise
+2025-04-06 17:18:48,497 p=313498 u=el n=ansible INFO| Found installed collection cisco.ise:2.10.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ise'
+2025-04-06 17:18:48,497 p=313498 u=el n=ansible INFO| Loading collection cyberark.conjur from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/conjur
+2025-04-06 17:18:48,498 p=313498 u=el n=ansible INFO| Found installed collection cyberark.conjur:1.3.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/conjur'
+2025-04-06 17:18:48,506 p=313498 u=el n=ansible INFO| Loading collection awx.awx from /home/el/.local/lib/python3.13/site-packages/ansible_collections/awx/awx
+2025-04-06 17:18:48,508 p=313498 u=el n=ansible INFO| Found installed collection awx.awx:24.6.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/awx/awx'
+2025-04-06 17:18:48,509 p=313498 u=el n=ansible INFO| Loading collection ibm.storage_virtualize from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/storage_virtualize
+2025-04-06 17:18:48,510 p=313498 u=el n=ansible INFO| Found installed collection ibm.storage_virtualize:2.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/storage_virtualize'
+2025-04-06 17:18:48,510 p=313498 u=el n=ansible INFO| Loading collection containers.podman from /home/el/.local/lib/python3.13/site-packages/ansible_collections/containers/podman
+2025-04-06 17:18:48,511 p=313498 u=el n=ansible INFO| Found installed collection containers.podman:1.16.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/containers/podman'
+2025-04-06 17:18:48,513 p=313498 u=el n=ansible INFO| Loading collection cloudscale_ch.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cloudscale_ch/cloud
+2025-04-06 17:18:48,514 p=313498 u=el n=ansible INFO| Found installed collection cloudscale_ch.cloud:2.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cloudscale_ch/cloud'
+2025-04-06 17:18:48,515 p=313498 u=el n=ansible INFO| Loading collection chocolatey.chocolatey from /home/el/.local/lib/python3.13/site-packages/ansible_collections/chocolatey/chocolatey
+2025-04-06 17:18:48,516 p=313498 u=el n=ansible INFO| Found installed collection chocolatey.chocolatey:1.5.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/chocolatey/chocolatey'
+2025-04-06 17:18:48,519 p=313498 u=el n=ansible INFO| Loading collection vyos.vyos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vyos/vyos
+2025-04-06 17:18:48,520 p=313498 u=el n=ansible INFO| Found installed collection vyos.vyos:5.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vyos/vyos'
+2025-04-06 17:18:48,522 p=313498 u=el n=ansible INFO| Loading collection ibm.qradar from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/qradar
+2025-04-06 17:18:48,523 p=313498 u=el n=ansible INFO| Found installed collection ibm.qradar:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/qradar'
+2025-04-06 17:18:48,523 p=313498 u=el n=ansible INFO| Loading collection wti.remote from /home/el/.local/lib/python3.13/site-packages/ansible_collections/wti/remote
+2025-04-06 17:18:48,524 p=313498 u=el n=ansible INFO| Found installed collection wti.remote:1.0.10 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/wti/remote'
+2025-04-06 17:18:48,526 p=313498 u=el n=ansible INFO| Loading collection cisco.dnac from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/dnac
+2025-04-06 17:18:48,527 p=313498 u=el n=ansible INFO| Found installed collection cisco.dnac:6.31.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/dnac'
+2025-04-06 17:18:48,529 p=313498 u=el n=ansible INFO| Loading collection dellemc.unity from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/unity
+2025-04-06 17:18:48,530 p=313498 u=el n=ansible INFO| Found installed collection dellemc.unity:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/unity'
+2025-04-06 17:18:48,614 p=313498 u=el n=ansible INFO| Loading collection community.network from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/network
+2025-04-06 17:18:48,615 p=313498 u=el n=ansible INFO| Found installed collection community.network:5.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/network'
+2025-04-06 17:18:48,618 p=313498 u=el n=ansible INFO| Loading collection telekom_mms.icinga_director from /home/el/.local/lib/python3.13/site-packages/ansible_collections/telekom_mms/icinga_director
+2025-04-06 17:18:48,619 p=313498 u=el n=ansible INFO| Found installed collection telekom_mms.icinga_director:2.2.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/telekom_mms/icinga_director'
+2025-04-06 17:18:48,857 p=313498 u=el n=ansible INFO| Loading collection ansible.builtin from 
+2025-04-06 17:18:48,915 p=313498 u=el n=ansible INFO| {
     "ansible.builtin.runas": "Run As user",
     "ansible.builtin.su": "Substitute User",
     "ansible.builtin.sudo": "Substitute User DO",

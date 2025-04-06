@@ -96,3 +96,5 @@ package_managers:
       - zeal
       - asciiquarium
       - bpytop
+      - obsidian
+      - mission-center

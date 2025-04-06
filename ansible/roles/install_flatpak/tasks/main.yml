@@ -1,13 +1,32 @@
 ---
-- name: Add the flathub flatpak repository remote to the user installation
-  community.general.flatpak_remote:
-    name: flathub
-    state: present
-    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
-    method: user
+- name: Agrega el repositorio flathub flatpak para la instalación de los usuarios
+  ansible.builtin.shell:
+    argv:
+      - "flatpak"
+      - "install"
+      - "flathub"
+      - "{{ flatpak_item }}"
+  become: no
+  loop: "{{ flatpak_apps }}"
+  loop_control:
+    loop_var: flatpak_item
+  when: ansible_os_family != "Archlinux"
 
-- name: Install multiple packages
-  become: true
-  community.general.flatpak:
-    name: "{{ flatpak_apps }}"
-    method: user
+# - name: Instala los paquetes desde flathub para el usuario
+#   community.general.flatpak:
+#     name: "{{ flatpak_apps }}"
+#     state: present
+#     method: user
+
+- name: Instala los paquetes desde flathub para el usuario
+  ansible.builtin.shell:
+    argv:
+      - "flatpak"
+      - "install"
+      - "flathub"
+      - "{{ flatpak_item }}"
+  become: no
+  loop: "{{ flatpak_apps }}"
+  loop_control:
+    loop_var: flatpak_item
+  when: ansible_os_family != "Archlinux"
