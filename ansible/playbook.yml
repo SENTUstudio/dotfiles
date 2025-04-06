@@ -1,6 +1,6 @@
 ---
 - name: Configuración Inicial del Sistema y Dotfiles
-  hosts: local
+  hosts: localhost
   connection: local
   become: true
   gather_facts: true

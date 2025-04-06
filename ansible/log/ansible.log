@@ -3023,3 +3023,391 @@ core/2.18/reference_appendices/interpreter_discovery.html for more information.
     "community.general.sudosu": "Run tasks using sudo su -",
     "containers.podman.podman_unshare": "Run tasks using podman unshare"
 }
+2025-04-06 19:38:18,230 p=326392 u=el n=ansible INFO| ansible-config [core 2.18.4]
+  config file = /home/el/works/dotfiles/ansible/ansible.cfg
+  configured module search path = ['/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages/ansible
+  ansible collection location = /home/el/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/ansible-config
+  python version = 3.13.1 (main, Dec  6 2024, 18:40:43) [Clang 18.1.8 ] (/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/python)
+  jinja version = 3.1.6
+  libyaml = True
+2025-04-06 19:38:18,230 p=326392 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
+2025-04-06 19:38:20,042 p=326425 u=el n=ansible INFO| ansible-playbook [core 2.18.4]
+  config file = /home/el/works/dotfiles/ansible/ansible.cfg
+  configured module search path = ['/home/el/works/dotfiles/ansible/.ansible/modules', '/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages/ansible
+  ansible collection location = /home/el/works/dotfiles/ansible/.ansible/collections:/home/el/.ansible/collections:/usr/share/ansible/collections:/home/el/.local/lib/python3.13/site-packages:/home/el/.rye/py/cpython@3.13.1/lib/python3.13/site-packages:/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages
+  executable location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/ansible-playbook
+  python version = 3.13.1 (main, Dec  6 2024, 18:40:43) [Clang 18.1.8 ] (/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/python)
+  jinja version = 3.1.6
+  libyaml = True
+2025-04-06 19:38:20,042 p=326425 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
+2025-04-06 19:38:20,043 p=326425 u=el n=ansible INFO| setting up inventory plugins
+2025-04-06 19:38:20,240 p=326425 u=el n=ansible INFO| Loading collection ansible.builtin from 
+2025-04-06 19:38:20,258 p=326425 u=el n=ansible INFO| host_list declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+2025-04-06 19:38:20,259 p=326425 u=el n=ansible INFO| script declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+2025-04-06 19:38:20,259 p=326425 u=el n=ansible INFO| auto declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+2025-04-06 19:38:20,259 p=326425 u=el n=ansible INFO| yaml declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+2025-04-06 19:38:20,261 p=326425 u=el n=ansible INFO| Set default localhost to localhost
+2025-04-06 19:38:20,261 p=326425 u=el n=ansible INFO| Parsed /home/el/works/dotfiles/ansible/inventory.ini inventory source with ini plugin
+2025-04-06 19:38:20,330 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,330 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,330 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,330 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,330 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,331 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,331 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,331 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,331 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,331 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,332 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,333 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,333 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,333 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,333 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,333 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,334 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,334 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,334 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,334 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,335 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,335 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,336 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,336 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,336 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,336 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,336 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,336 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,336 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,337 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,337 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,337 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,337 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,338 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,338 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,338 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,338 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,338 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,338 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,338 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,339 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,339 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,339 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,339 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,339 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,340 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,340 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,340 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,340 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,340 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,341 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,341 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,341 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,341 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,342 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,342 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,342 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,342 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,342 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,342 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,344 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,344 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,344 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,344 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,344 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,344 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,345 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,345 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,345 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,345 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,345 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,346 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,346 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,346 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,346 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,346 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,346 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,346 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,347 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,347 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,347 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,347 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,347 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,348 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,348 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,348 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,348 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,348 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,348 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,348 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,349 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,349 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,349 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,349 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,349 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,350 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,350 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,350 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,350 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,351 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,352 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,352 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,352 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,353 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,353 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,353 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,353 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,353 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,353 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,354 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,354 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,355 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,355 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,355 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,355 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,355 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,355 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,355 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,355 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,355 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,356 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,356 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,356 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,357 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,357 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,357 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,357 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,357 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,357 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,357 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,447 p=326425 u=el n=ansible INFO| redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+2025-04-06 19:38:20,449 p=326425 u=el n=ansible INFO| redirecting (type: modules) ansible.builtin.pacman to community.general.pacman
+2025-04-06 19:38:20,468 p=326425 u=el n=ansible INFO| Loading collection community.general from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general
+2025-04-06 19:38:20,485 p=326425 u=el n=ansible INFO| redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+2025-04-06 19:38:20,565 p=326425 u=el n=ansible INFO| 1 plays in playbook.yml
+2025-04-06 19:38:20,566 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,566 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,566 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,566 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,566 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,567 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,567 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,567 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/vars/installer_config.yaml"
+2025-04-06 19:38:20,567 p=326425 u=el n=ansible INFO| looking for "vars/installer_config.yaml" at "/home/el/works/dotfiles/ansible/vars/installer_config.yaml"
+2025-04-06 19:38:20,568 p=326425 u=el n=ansible INFO| Read vars_file 'vars/installer_config.yaml'
+2025-04-06 19:38:20,568 p=326425 u=el n=ansible INFO| playbook: playbook.yml
+2025-04-06 19:38:21,981 p=326444 u=el n=ansible INFO| ansible-doc [core 2.18.4]
+  config file = /home/el/works/dotfiles/ansible/ansible.cfg
+  configured module search path = ['/home/el/works/dotfiles/ansible/.ansible/modules', '/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages/ansible
+  ansible collection location = /home/el/.ansible/collections:/usr/share/ansible/collections:/home/el/.local/lib/python3.13/site-packages:/home/el/.rye/py/cpython@3.13.1/lib/python3.13/site-packages:/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages
+  executable location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/ansible-doc
+  python version = 3.13.1 (main, Dec  6 2024, 18:40:43) [Clang 18.1.8 ] (/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/python)
+  jinja version = 3.1.6
+  libyaml = True
+2025-04-06 19:38:21,981 p=326444 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
+2025-04-06 19:38:21,996 p=326444 u=el n=ansible INFO| Loading collection ibm.qradar from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/qradar
+2025-04-06 19:38:21,997 p=326444 u=el n=ansible INFO| Found installed collection ibm.qradar:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/qradar'
+2025-04-06 19:38:21,997 p=326444 u=el n=ansible INFO| Loading collection ibm.spectrum_virtualize from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/spectrum_virtualize
+2025-04-06 19:38:21,998 p=326444 u=el n=ansible INFO| Found installed collection ibm.spectrum_virtualize:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/spectrum_virtualize'
+2025-04-06 19:38:21,999 p=326444 u=el n=ansible INFO| Loading collection community.hashi_vault from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hashi_vault
+2025-04-06 19:38:22,000 p=326444 u=el n=ansible INFO| Found installed collection community.hashi_vault:6.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hashi_vault'
+2025-04-06 19:38:22,001 p=326444 u=el n=ansible INFO| Loading collection cloud.common from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cloud/common
+2025-04-06 19:38:22,002 p=326444 u=el n=ansible INFO| Found installed collection cloud.common:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cloud/common'
+2025-04-06 19:38:22,006 p=326444 u=el n=ansible INFO| Loading collection community.vmware from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/vmware
+2025-04-06 19:38:22,007 p=326444 u=el n=ansible INFO| Found installed collection community.vmware:5.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/vmware'
+2025-04-06 19:38:22,008 p=326444 u=el n=ansible INFO| Loading collection wti.remote from /home/el/.local/lib/python3.13/site-packages/ansible_collections/wti/remote
+2025-04-06 19:38:22,008 p=326444 u=el n=ansible INFO| Found installed collection wti.remote:1.0.10 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/wti/remote'
+2025-04-06 19:38:22,011 p=326444 u=el n=ansible INFO| Loading collection azure.azcollection from /home/el/.local/lib/python3.13/site-packages/ansible_collections/azure/azcollection
+2025-04-06 19:38:22,012 p=326444 u=el n=ansible INFO| Found installed collection azure.azcollection:3.3.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/azure/azcollection'
+2025-04-06 19:38:22,013 p=326444 u=el n=ansible INFO| Loading collection dellemc.enterprise_sonic from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/enterprise_sonic
+2025-04-06 19:38:22,014 p=326444 u=el n=ansible INFO| Found installed collection dellemc.enterprise_sonic:2.5.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/enterprise_sonic'
+2025-04-06 19:38:22,015 p=326444 u=el n=ansible INFO| Loading collection kubernetes.core from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kubernetes/core
+2025-04-06 19:38:22,016 p=326444 u=el n=ansible INFO| Found installed collection kubernetes.core:5.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kubernetes/core'
+2025-04-06 19:38:22,018 p=326444 u=el n=ansible INFO| Loading collection cloudscale_ch.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cloudscale_ch/cloud
+2025-04-06 19:38:22,020 p=326444 u=el n=ansible INFO| Found installed collection cloudscale_ch.cloud:2.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cloudscale_ch/cloud'
+2025-04-06 19:38:22,021 p=326444 u=el n=ansible INFO| Loading collection community.docker from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/docker
+2025-04-06 19:38:22,022 p=326444 u=el n=ansible INFO| Found installed collection community.docker:4.5.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/docker'
+2025-04-06 19:38:22,025 p=326444 u=el n=ansible INFO| Loading collection vmware.vmware_rest from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware_rest
+2025-04-06 19:38:22,027 p=326444 u=el n=ansible INFO| Found installed collection vmware.vmware_rest:4.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware_rest'
+2025-04-06 19:38:22,027 p=326444 u=el n=ansible INFO| Loading collection cyberark.pas from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/pas
+2025-04-06 19:38:22,028 p=326444 u=el n=ansible INFO| Found installed collection cyberark.pas:1.0.30 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/pas'
+2025-04-06 19:38:22,029 p=326444 u=el n=ansible INFO| Loading collection fortinet.fortimanager from /home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortimanager
+2025-04-06 19:38:22,030 p=326444 u=el n=ansible INFO| Found installed collection fortinet.fortimanager:2.9.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortimanager'
+2025-04-06 19:38:22,033 p=326444 u=el n=ansible INFO| Loading collection dellemc.unity from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/unity
+2025-04-06 19:38:22,034 p=326444 u=el n=ansible INFO| Found installed collection dellemc.unity:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/unity'
+2025-04-06 19:38:22,034 p=326444 u=el n=ansible INFO| Loading collection community.library_inventory_filtering_v1 from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/library_inventory_filtering_v1
+2025-04-06 19:38:22,035 p=326444 u=el n=ansible INFO| Found installed collection community.library_inventory_filtering_v1:1.0.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/library_inventory_filtering_v1'
+2025-04-06 19:38:22,037 p=326444 u=el n=ansible INFO| Loading collection vyos.vyos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vyos/vyos
+2025-04-06 19:38:22,038 p=326444 u=el n=ansible INFO| Found installed collection vyos.vyos:5.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vyos/vyos'
+2025-04-06 19:38:22,039 p=326444 u=el n=ansible INFO| Loading collection check_point.mgmt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/check_point/mgmt
+2025-04-06 19:38:22,039 p=326444 u=el n=ansible INFO| Found installed collection check_point.mgmt:6.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/check_point/mgmt'
+2025-04-06 19:38:22,040 p=326444 u=el n=ansible INFO| Loading collection cyberark.conjur from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/conjur
+2025-04-06 19:38:22,041 p=326444 u=el n=ansible INFO| Found installed collection cyberark.conjur:1.3.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/conjur'
+2025-04-06 19:38:22,041 p=326444 u=el n=ansible INFO| Loading collection cisco.ise from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ise
+2025-04-06 19:38:22,042 p=326444 u=el n=ansible INFO| Found installed collection cisco.ise:2.10.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ise'
+2025-04-06 19:38:22,044 p=326444 u=el n=ansible INFO| Loading collection hetzner.hcloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/hetzner/hcloud
+2025-04-06 19:38:22,044 p=326444 u=el n=ansible INFO| Found installed collection hetzner.hcloud:4.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/hetzner/hcloud'
+2025-04-06 19:38:22,045 p=326444 u=el n=ansible INFO| Loading collection cisco.asa from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/asa
+2025-04-06 19:38:22,046 p=326444 u=el n=ansible INFO| Found installed collection cisco.asa:6.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/asa'
+2025-04-06 19:38:22,048 p=326444 u=el n=ansible INFO| Loading collection junipernetworks.junos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/junipernetworks/junos
+2025-04-06 19:38:22,049 p=326444 u=el n=ansible INFO| Found installed collection junipernetworks.junos:9.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/junipernetworks/junos'
+2025-04-06 19:38:22,050 p=326444 u=el n=ansible INFO| Loading collection telekom_mms.icinga_director from /home/el/.local/lib/python3.13/site-packages/ansible_collections/telekom_mms/icinga_director
+2025-04-06 19:38:22,051 p=326444 u=el n=ansible INFO| Found installed collection telekom_mms.icinga_director:2.2.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/telekom_mms/icinga_director'
+2025-04-06 19:38:22,053 p=326444 u=el n=ansible INFO| Loading collection dellemc.openmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/openmanage
+2025-04-06 19:38:22,054 p=326444 u=el n=ansible INFO| Found installed collection dellemc.openmanage:9.10.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/openmanage'
+2025-04-06 19:38:22,055 p=326444 u=el n=ansible INFO| Loading collection community.grafana from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/grafana
+2025-04-06 19:38:22,057 p=326444 u=el n=ansible INFO| Found installed collection community.grafana:2.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/grafana'
+2025-04-06 19:38:22,058 p=326444 u=el n=ansible INFO| Loading collection community.postgresql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/postgresql
+2025-04-06 19:38:22,059 p=326444 u=el n=ansible INFO| Found installed collection community.postgresql:3.12.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/postgresql'
+2025-04-06 19:38:22,060 p=326444 u=el n=ansible INFO| Loading collection ieisystem.inmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ieisystem/inmanage
+2025-04-06 19:38:22,061 p=326444 u=el n=ansible INFO| Found installed collection ieisystem.inmanage:3.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ieisystem/inmanage'
+2025-04-06 19:38:22,062 p=326444 u=el n=ansible INFO| Loading collection inspur.ispim from /home/el/.local/lib/python3.13/site-packages/ansible_collections/inspur/ispim
+2025-04-06 19:38:22,063 p=326444 u=el n=ansible INFO| Found installed collection inspur.ispim:2.2.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/inspur/ispim'
+2025-04-06 19:38:22,064 p=326444 u=el n=ansible INFO| Loading collection community.hrobot from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hrobot
+2025-04-06 19:38:22,064 p=326444 u=el n=ansible INFO| Found installed collection community.hrobot:2.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hrobot'
+2025-04-06 19:38:22,065 p=326444 u=el n=ansible INFO| Loading collection ansible.posix from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/posix
+2025-04-06 19:38:22,066 p=326444 u=el n=ansible INFO| Found installed collection ansible.posix:1.6.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/posix'
+2025-04-06 19:38:22,067 p=326444 u=el n=ansible INFO| Loading collection lowlydba.sqlserver from /home/el/.local/lib/python3.13/site-packages/ansible_collections/lowlydba/sqlserver
+2025-04-06 19:38:22,068 p=326444 u=el n=ansible INFO| Found installed collection lowlydba.sqlserver:2.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/lowlydba/sqlserver'
+2025-04-06 19:38:22,069 p=326444 u=el n=ansible INFO| Loading collection community.okd from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/okd
+2025-04-06 19:38:22,070 p=326444 u=el n=ansible INFO| Found installed collection community.okd:4.0.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/okd'
+2025-04-06 19:38:22,070 p=326444 u=el n=ansible INFO| Loading collection f5networks.f5_modules from /home/el/.local/lib/python3.13/site-packages/ansible_collections/f5networks/f5_modules
+2025-04-06 19:38:22,071 p=326444 u=el n=ansible INFO| Found installed collection f5networks.f5_modules:1.34.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/f5networks/f5_modules'
+2025-04-06 19:38:22,076 p=326444 u=el n=ansible INFO| Loading collection awx.awx from /home/el/.local/lib/python3.13/site-packages/ansible_collections/awx/awx
+2025-04-06 19:38:22,077 p=326444 u=el n=ansible INFO| Found installed collection awx.awx:24.6.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/awx/awx'
+2025-04-06 19:38:22,077 p=326444 u=el n=ansible INFO| Loading collection community.sap_libs from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sap_libs
+2025-04-06 19:38:22,078 p=326444 u=el n=ansible INFO| Found installed collection community.sap_libs:1.4.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sap_libs'
+2025-04-06 19:38:22,079 p=326444 u=el n=ansible INFO| Loading collection kubevirt.core from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kubevirt/core
+2025-04-06 19:38:22,079 p=326444 u=el n=ansible INFO| Found installed collection kubevirt.core:2.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kubevirt/core'
+2025-04-06 19:38:22,080 p=326444 u=el n=ansible INFO| Loading collection cisco.dnac from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/dnac
+2025-04-06 19:38:22,081 p=326444 u=el n=ansible INFO| Found installed collection cisco.dnac:6.31.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/dnac'
+2025-04-06 19:38:22,082 p=326444 u=el n=ansible INFO| Loading collection cisco.mso from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/mso
+2025-04-06 19:38:22,083 p=326444 u=el n=ansible INFO| Found installed collection cisco.mso:2.9.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/mso'
+2025-04-06 19:38:22,084 p=326444 u=el n=ansible INFO| Loading collection community.crypto from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/crypto
+2025-04-06 19:38:22,085 p=326444 u=el n=ansible INFO| Found installed collection community.crypto:2.26.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/crypto'
+2025-04-06 19:38:22,086 p=326444 u=el n=ansible INFO| Loading collection infoblox.nios_modules from /home/el/.local/lib/python3.13/site-packages/ansible_collections/infoblox/nios_modules
+2025-04-06 19:38:22,087 p=326444 u=el n=ansible INFO| Found installed collection infoblox.nios_modules:1.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/infoblox/nios_modules'
+2025-04-06 19:38:22,168 p=326444 u=el n=ansible INFO| Loading collection community.network from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/network
+2025-04-06 19:38:22,169 p=326444 u=el n=ansible INFO| Found installed collection community.network:5.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/network'
+2025-04-06 19:38:22,170 p=326444 u=el n=ansible INFO| Loading collection grafana.grafana from /home/el/.local/lib/python3.13/site-packages/ansible_collections/grafana/grafana
+2025-04-06 19:38:22,171 p=326444 u=el n=ansible INFO| Found installed collection grafana.grafana:5.7.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/grafana/grafana'
+2025-04-06 19:38:22,172 p=326444 u=el n=ansible INFO| Loading collection community.rabbitmq from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/rabbitmq
+2025-04-06 19:38:22,172 p=326444 u=el n=ansible INFO| Found installed collection community.rabbitmq:1.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/rabbitmq'
+2025-04-06 19:38:22,175 p=326444 u=el n=ansible INFO| Loading collection amazon.aws from /home/el/.local/lib/python3.13/site-packages/ansible_collections/amazon/aws
+2025-04-06 19:38:22,175 p=326444 u=el n=ansible INFO| Found installed collection amazon.aws:9.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/amazon/aws'
+2025-04-06 19:38:22,177 p=326444 u=el n=ansible INFO| Loading collection netapp.ontap from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/ontap
+2025-04-06 19:38:22,178 p=326444 u=el n=ansible INFO| Found installed collection netapp.ontap:22.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/ontap'
+2025-04-06 19:38:22,178 p=326444 u=el n=ansible INFO| Loading collection community.proxysql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/proxysql
+2025-04-06 19:38:22,179 p=326444 u=el n=ansible INFO| Found installed collection community.proxysql:1.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/proxysql'
+2025-04-06 19:38:22,181 p=326444 u=el n=ansible INFO| Loading collection community.digitalocean from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/digitalocean
+2025-04-06 19:38:22,182 p=326444 u=el n=ansible INFO| Found installed collection community.digitalocean:1.27.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/digitalocean'
+2025-04-06 19:38:22,183 p=326444 u=el n=ansible INFO| Loading collection vmware.vmware from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware
+2025-04-06 19:38:22,183 p=326444 u=el n=ansible INFO| Found installed collection vmware.vmware:1.10.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware'
+2025-04-06 19:38:22,184 p=326444 u=el n=ansible INFO| Loading collection community.sops from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sops
+2025-04-06 19:38:22,185 p=326444 u=el n=ansible INFO| Found installed collection community.sops:2.0.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sops'
+2025-04-06 19:38:22,187 p=326444 u=el n=ansible INFO| Loading collection google.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/google/cloud
+2025-04-06 19:38:22,188 p=326444 u=el n=ansible INFO| Found installed collection google.cloud:1.5.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/google/cloud'
+2025-04-06 19:38:22,189 p=326444 u=el n=ansible INFO| Loading collection vultr.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vultr/cloud
+2025-04-06 19:38:22,190 p=326444 u=el n=ansible INFO| Found installed collection vultr.cloud:1.13.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vultr/cloud'
+2025-04-06 19:38:22,190 p=326444 u=el n=ansible INFO| Loading collection sensu.sensu_go from /home/el/.local/lib/python3.13/site-packages/ansible_collections/sensu/sensu_go
+2025-04-06 19:38:22,191 p=326444 u=el n=ansible INFO| Found installed collection sensu.sensu_go:1.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/sensu/sensu_go'
+2025-04-06 19:38:22,192 p=326444 u=el n=ansible INFO| Loading collection chocolatey.chocolatey from /home/el/.local/lib/python3.13/site-packages/ansible_collections/chocolatey/chocolatey
+2025-04-06 19:38:22,192 p=326444 u=el n=ansible INFO| Found installed collection chocolatey.chocolatey:1.5.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/chocolatey/chocolatey'
+2025-04-06 19:38:22,193 p=326444 u=el n=ansible INFO| Loading collection microsoft.ad from /home/el/.local/lib/python3.13/site-packages/ansible_collections/microsoft/ad
+2025-04-06 19:38:22,194 p=326444 u=el n=ansible INFO| Found installed collection microsoft.ad:1.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/microsoft/ad'
+2025-04-06 19:38:22,194 p=326444 u=el n=ansible INFO| Loading collection netapp.storagegrid from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/storagegrid
+2025-04-06 19:38:22,195 p=326444 u=el n=ansible INFO| Found installed collection netapp.storagegrid:21.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/storagegrid'
+2025-04-06 19:38:22,196 p=326444 u=el n=ansible INFO| Loading collection community.mysql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mysql
+2025-04-06 19:38:22,196 p=326444 u=el n=ansible INFO| Found installed collection community.mysql:3.13.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mysql'
+2025-04-06 19:38:22,197 p=326444 u=el n=ansible INFO| Loading collection containers.podman from /home/el/.local/lib/python3.13/site-packages/ansible_collections/containers/podman
+2025-04-06 19:38:22,197 p=326444 u=el n=ansible INFO| Found installed collection containers.podman:1.16.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/containers/podman'
+2025-04-06 19:38:22,198 p=326444 u=el n=ansible INFO| Loading collection dellemc.powerflex from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/powerflex
+2025-04-06 19:38:22,199 p=326444 u=el n=ansible INFO| Found installed collection dellemc.powerflex:2.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/powerflex'
+2025-04-06 19:38:22,200 p=326444 u=el n=ansible INFO| Loading collection ansible.windows from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/windows
+2025-04-06 19:38:22,201 p=326444 u=el n=ansible INFO| Found installed collection ansible.windows:2.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/windows'
+2025-04-06 19:38:22,202 p=326444 u=el n=ansible INFO| Loading collection community.routeros from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/routeros
+2025-04-06 19:38:22,203 p=326444 u=el n=ansible INFO| Found installed collection community.routeros:3.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/routeros'
+2025-04-06 19:38:22,205 p=326444 u=el n=ansible INFO| Loading collection kaytus.ksmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kaytus/ksmanage
+2025-04-06 19:38:22,206 p=326444 u=el n=ansible INFO| Found installed collection kaytus.ksmanage:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kaytus/ksmanage'
+2025-04-06 19:38:22,206 p=326444 u=el n=ansible INFO| Loading collection purestorage.flashblade from /home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flashblade
+2025-04-06 19:38:22,207 p=326444 u=el n=ansible INFO| Found installed collection purestorage.flashblade:1.19.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flashblade'
+2025-04-06 19:38:22,208 p=326444 u=el n=ansible INFO| Loading collection ansible.utils from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/utils
+2025-04-06 19:38:22,208 p=326444 u=el n=ansible INFO| Found installed collection ansible.utils:5.1.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/utils'
+2025-04-06 19:38:22,210 p=326444 u=el n=ansible INFO| Loading collection cisco.iosxr from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/iosxr
+2025-04-06 19:38:22,211 p=326444 u=el n=ansible INFO| Found installed collection cisco.iosxr:10.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/iosxr'
+2025-04-06 19:38:22,212 p=326444 u=el n=ansible INFO| Loading collection ovirt.ovirt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ovirt/ovirt
+2025-04-06 19:38:22,213 p=326444 u=el n=ansible INFO| Found installed collection ovirt.ovirt:3.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ovirt/ovirt'
+2025-04-06 19:38:22,213 p=326444 u=el n=ansible INFO| Loading collection netapp_eseries.santricity from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp_eseries/santricity
+2025-04-06 19:38:22,214 p=326444 u=el n=ansible INFO| Found installed collection netapp_eseries.santricity:1.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp_eseries/santricity'
+2025-04-06 19:38:22,214 p=326444 u=el n=ansible INFO| Loading collection infinidat.infinibox from /home/el/.local/lib/python3.13/site-packages/ansible_collections/infinidat/infinibox
+2025-04-06 19:38:22,215 p=326444 u=el n=ansible INFO| Found installed collection infinidat.infinibox:1.4.5 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/infinidat/infinibox'
+2025-04-06 19:38:22,217 p=326444 u=el n=ansible INFO| Loading collection netbox.netbox from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netbox/netbox
+2025-04-06 19:38:22,218 p=326444 u=el n=ansible INFO| Found installed collection netbox.netbox:3.21.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netbox/netbox'
+2025-04-06 19:38:22,219 p=326444 u=el n=ansible INFO| Loading collection community.mongodb from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mongodb
+2025-04-06 19:38:22,221 p=326444 u=el n=ansible INFO| Found installed collection community.mongodb:1.7.9 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mongodb'
+2025-04-06 19:38:22,222 p=326444 u=el n=ansible INFO| Loading collection cisco.ios from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ios
+2025-04-06 19:38:22,223 p=326444 u=el n=ansible INFO| Found installed collection cisco.ios:9.1.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ios'
+2025-04-06 19:38:22,224 p=326444 u=el n=ansible INFO| Loading collection community.dns from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/dns
+2025-04-06 19:38:22,225 p=326444 u=el n=ansible INFO| Found installed collection community.dns:3.2.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/dns'
+2025-04-06 19:38:22,226 p=326444 u=el n=ansible INFO| Loading collection netapp.cloudmanager from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/cloudmanager
+2025-04-06 19:38:22,226 p=326444 u=el n=ansible INFO| Found installed collection netapp.cloudmanager:21.24.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/cloudmanager'
+2025-04-06 19:38:22,227 p=326444 u=el n=ansible INFO| Loading collection community.windows from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/windows
+2025-04-06 19:38:22,228 p=326444 u=el n=ansible INFO| Found installed collection community.windows:2.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/windows'
+2025-04-06 19:38:22,230 p=326444 u=el n=ansible INFO| Loading collection ansible.netcommon from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/netcommon
+2025-04-06 19:38:22,230 p=326444 u=el n=ansible INFO| Found installed collection ansible.netcommon:7.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/netcommon'
+2025-04-06 19:38:22,231 p=326444 u=el n=ansible INFO| Loading collection ngine_io.cloudstack from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ngine_io/cloudstack
+2025-04-06 19:38:22,232 p=326444 u=el n=ansible INFO| Found installed collection ngine_io.cloudstack:2.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ngine_io/cloudstack'
+2025-04-06 19:38:22,236 p=326444 u=el n=ansible INFO| Loading collection cisco.meraki from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/meraki
+2025-04-06 19:38:22,237 p=326444 u=el n=ansible INFO| Found installed collection cisco.meraki:2.20.8 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/meraki'
+2025-04-06 19:38:22,239 p=326444 u=el n=ansible INFO| Loading collection openstack.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/openstack/cloud
+2025-04-06 19:38:22,240 p=326444 u=el n=ansible INFO| Found installed collection openstack.cloud:2.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/openstack/cloud'
+2025-04-06 19:38:22,240 p=326444 u=el n=ansible INFO| Loading collection cisco.ucs from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ucs
+2025-04-06 19:38:22,241 p=326444 u=el n=ansible INFO| Found installed collection cisco.ucs:1.15.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ucs'
+2025-04-06 19:38:22,242 p=326444 u=el n=ansible INFO| Loading collection community.zabbix from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/zabbix
+2025-04-06 19:38:22,242 p=326444 u=el n=ansible INFO| Found installed collection community.zabbix:3.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/zabbix'
+2025-04-06 19:38:22,243 p=326444 u=el n=ansible INFO| Loading collection cisco.intersight from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/intersight
+2025-04-06 19:38:22,244 p=326444 u=el n=ansible INFO| Found installed collection cisco.intersight:2.0.20 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/intersight'
+2025-04-06 19:38:22,250 p=326444 u=el n=ansible INFO| Loading collection community.aws from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/aws
+2025-04-06 19:38:22,250 p=326444 u=el n=ansible INFO| Found installed collection community.aws:9.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/aws'
+2025-04-06 19:38:22,252 p=326444 u=el n=ansible INFO| Loading collection arista.eos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/arista/eos
+2025-04-06 19:38:22,253 p=326444 u=el n=ansible INFO| Found installed collection arista.eos:10.1.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/arista/eos'
+2025-04-06 19:38:22,254 p=326444 u=el n=ansible INFO| Loading collection purestorage.flasharray from /home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flasharray
+2025-04-06 19:38:22,255 p=326444 u=el n=ansible INFO| Found installed collection purestorage.flasharray:1.33.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flasharray'
+2025-04-06 19:38:22,257 p=326444 u=el n=ansible INFO| Loading collection cisco.aci from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/aci
+2025-04-06 19:38:22,258 p=326444 u=el n=ansible INFO| Found installed collection cisco.aci:2.10.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/aci'
+2025-04-06 19:38:22,258 p=326444 u=el n=ansible INFO| Loading collection ibm.storage_virtualize from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/storage_virtualize
+2025-04-06 19:38:22,259 p=326444 u=el n=ansible INFO| Found installed collection ibm.storage_virtualize:2.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/storage_virtualize'
+2025-04-06 19:38:22,263 p=326444 u=el n=ansible INFO| Loading collection cisco.nxos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/nxos
+2025-04-06 19:38:22,264 p=326444 u=el n=ansible INFO| Found installed collection cisco.nxos:9.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/nxos'
+2025-04-06 19:38:22,265 p=326444 u=el n=ansible INFO| Loading collection community.ciscosmb from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/ciscosmb
+2025-04-06 19:38:22,266 p=326444 u=el n=ansible INFO| Found installed collection community.ciscosmb:1.0.10 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/ciscosmb'
+2025-04-06 19:38:22,266 p=326444 u=el n=ansible INFO| Loading collection community.libvirt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/libvirt
+2025-04-06 19:38:22,267 p=326444 u=el n=ansible INFO| Found installed collection community.libvirt:1.3.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/libvirt'
+2025-04-06 19:38:22,270 p=326444 u=el n=ansible INFO| Loading collection splunk.es from /home/el/.local/lib/python3.13/site-packages/ansible_collections/splunk/es
+2025-04-06 19:38:22,270 p=326444 u=el n=ansible INFO| Found installed collection splunk.es:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/splunk/es'
+2025-04-06 19:38:22,286 p=326444 u=el n=ansible INFO| Loading collection community.general from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general
+2025-04-06 19:38:22,287 p=326444 u=el n=ansible INFO| Found installed collection community.general:10.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general'
+2025-04-06 19:38:22,288 p=326444 u=el n=ansible INFO| Loading collection fortinet.fortios from /home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortios
+2025-04-06 19:38:22,289 p=326444 u=el n=ansible INFO| Found installed collection fortinet.fortios:2.3.9 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortios'
+2025-04-06 19:38:22,292 p=326444 u=el n=ansible INFO| Loading collection theforeman.foreman from /home/el/.local/lib/python3.13/site-packages/ansible_collections/theforeman/foreman
+2025-04-06 19:38:22,293 p=326444 u=el n=ansible INFO| Found installed collection theforeman.foreman:4.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/theforeman/foreman'
+2025-04-06 19:38:22,469 p=326444 u=el n=ansible INFO| Loading collection ansible.builtin from 
+2025-04-06 19:38:22,508 p=326444 u=el n=ansible INFO| {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
