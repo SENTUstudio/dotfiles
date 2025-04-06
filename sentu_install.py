@@ -164,6 +164,8 @@ def package_core():
             command_list = ["bash", "-c", install_rye]
             logging.info("Instalando rye...")
             run_command(command_list)
+            rye_source = ["source", "$HOME/.rye/env"]
+            run_command(rye_source)
             rye_sync = ["rye", "sync"]
             run_command(rye_sync, cwd=DOTFILES_DIR)
             for pm, update_cmd in package_managers.items():
