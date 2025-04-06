@@ -2635,3 +2635,13 @@ core/2.18/reference_appendices/interpreter_discovery.html for more information.
     "community.general.sudosu": "Run tasks using sudo su -",
     "containers.podman.podman_unshare": "Run tasks using podman unshare"
 }
+2025-04-06 19:33:58,162 p=325952 u=el n=ansible INFO| ansible-config [core 2.18.4]
+  config file = /home/el/works/dotfiles/ansible/ansible.cfg
+  configured module search path = ['/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages/ansible
+  ansible collection location = /home/el/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/ansible-config
+  python version = 3.13.1 (main, Dec  6 2024, 18:40:43) [Clang 18.1.8 ] (/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/python)
+  jinja version = 3.1.6
+  libyaml = True
+2025-04-06 19:33:58,163 p=325952 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
