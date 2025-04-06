@@ -1,0 +1,224 @@
+2025-04-06 03:03:56,981 p=213554 u=el n=ansible INFO| ansible-config [core 2.18.4]
+  config file = /home/el/works/dotfiles/ansible/ansible.cfg
+  configured module search path = ['/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages/ansible
+  ansible collection location = /home/el/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/ansible-config
+  python version = 3.13.1 (main, Dec  6 2024, 18:40:43) [Clang 18.1.8 ] (/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/python)
+  jinja version = 3.1.6
+  libyaml = True
+2025-04-06 03:03:56,981 p=213554 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
+2025-04-06 03:03:58,878 p=213570 u=el n=ansible INFO| ansible-doc [core 2.18.4]
+  config file = /home/el/works/dotfiles/ansible/ansible.cfg
+  configured module search path = ['/home/el/works/dotfiles/ansible/.ansible/modules', '/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages/ansible
+  ansible collection location = /home/el/.ansible/collections:/usr/share/ansible/collections:/home/el/.local/lib/python3.13/site-packages:/home/el/.rye/py/cpython@3.13.1/lib/python3.13/site-packages:/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/lib/python3.13/site-packages
+  executable location = /home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/ansible-doc
+  python version = 3.13.1 (main, Dec  6 2024, 18:40:43) [Clang 18.1.8 ] (/home/el/.local/share/nvim/mason/packages/ansible-lint/venv/bin/python)
+  jinja version = 3.1.6
+  libyaml = True
+2025-04-06 03:03:58,878 p=213570 u=el n=ansible INFO| Using /home/el/works/dotfiles/ansible/ansible.cfg as config file
+2025-04-06 03:03:58,902 p=213570 u=el n=ansible INFO| Loading collection cisco.intersight from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/intersight
+2025-04-06 03:03:58,904 p=213570 u=el n=ansible INFO| Found installed collection cisco.intersight:2.0.20 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/intersight'
+2025-04-06 03:03:58,909 p=213570 u=el n=ansible INFO| Loading collection cisco.nxos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/nxos
+2025-04-06 03:03:58,910 p=213570 u=el n=ansible INFO| Found installed collection cisco.nxos:9.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/nxos'
+2025-04-06 03:03:58,912 p=213570 u=el n=ansible INFO| Loading collection openstack.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/openstack/cloud
+2025-04-06 03:03:58,912 p=213570 u=el n=ansible INFO| Found installed collection openstack.cloud:2.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/openstack/cloud'
+2025-04-06 03:03:58,914 p=213570 u=el n=ansible INFO| Loading collection splunk.es from /home/el/.local/lib/python3.13/site-packages/ansible_collections/splunk/es
+2025-04-06 03:03:58,914 p=213570 u=el n=ansible INFO| Found installed collection splunk.es:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/splunk/es'
+2025-04-06 03:03:58,917 p=213570 u=el n=ansible INFO| Loading collection cisco.mso from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/mso
+2025-04-06 03:03:58,918 p=213570 u=el n=ansible INFO| Found installed collection cisco.mso:2.9.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/mso'
+2025-04-06 03:03:58,920 p=213570 u=el n=ansible INFO| Loading collection dellemc.unity from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/unity
+2025-04-06 03:03:58,921 p=213570 u=el n=ansible INFO| Found installed collection dellemc.unity:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/unity'
+2025-04-06 03:03:58,923 p=213570 u=el n=ansible INFO| Loading collection arista.eos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/arista/eos
+2025-04-06 03:03:58,923 p=213570 u=el n=ansible INFO| Found installed collection arista.eos:10.1.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/arista/eos'
+2025-04-06 03:03:58,928 p=213570 u=el n=ansible INFO| Loading collection awx.awx from /home/el/.local/lib/python3.13/site-packages/ansible_collections/awx/awx
+2025-04-06 03:03:58,929 p=213570 u=el n=ansible INFO| Found installed collection awx.awx:24.6.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/awx/awx'
+2025-04-06 03:03:58,929 p=213570 u=el n=ansible INFO| Loading collection cisco.ise from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ise
+2025-04-06 03:03:58,930 p=213570 u=el n=ansible INFO| Found installed collection cisco.ise:2.10.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ise'
+2025-04-06 03:03:58,931 p=213570 u=el n=ansible INFO| Loading collection community.routeros from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/routeros
+2025-04-06 03:03:58,932 p=213570 u=el n=ansible INFO| Found installed collection community.routeros:3.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/routeros'
+2025-04-06 03:03:58,932 p=213570 u=el n=ansible INFO| Loading collection ibm.spectrum_virtualize from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/spectrum_virtualize
+2025-04-06 03:03:58,933 p=213570 u=el n=ansible INFO| Found installed collection ibm.spectrum_virtualize:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/spectrum_virtualize'
+2025-04-06 03:03:58,934 p=213570 u=el n=ansible INFO| Loading collection vmware.vmware from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware
+2025-04-06 03:03:58,935 p=213570 u=el n=ansible INFO| Found installed collection vmware.vmware:1.10.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware'
+2025-04-06 03:03:58,938 p=213570 u=el n=ansible INFO| Loading collection netapp.ontap from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/ontap
+2025-04-06 03:03:58,938 p=213570 u=el n=ansible INFO| Found installed collection netapp.ontap:22.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/ontap'
+2025-04-06 03:03:58,940 p=213570 u=el n=ansible INFO| Loading collection cisco.ios from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ios
+2025-04-06 03:03:58,941 p=213570 u=el n=ansible INFO| Found installed collection cisco.ios:9.1.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ios'
+2025-04-06 03:03:58,942 p=213570 u=el n=ansible INFO| Loading collection cisco.iosxr from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/iosxr
+2025-04-06 03:03:58,943 p=213570 u=el n=ansible INFO| Found installed collection cisco.iosxr:10.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/iosxr'
+2025-04-06 03:03:58,944 p=213570 u=el n=ansible INFO| Loading collection netapp_eseries.santricity from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp_eseries/santricity
+2025-04-06 03:03:58,944 p=213570 u=el n=ansible INFO| Found installed collection netapp_eseries.santricity:1.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp_eseries/santricity'
+2025-04-06 03:03:58,945 p=213570 u=el n=ansible INFO| Loading collection community.okd from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/okd
+2025-04-06 03:03:58,946 p=213570 u=el n=ansible INFO| Found installed collection community.okd:4.0.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/okd'
+2025-04-06 03:03:58,947 p=213570 u=el n=ansible INFO| Loading collection community.proxysql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/proxysql
+2025-04-06 03:03:58,947 p=213570 u=el n=ansible INFO| Found installed collection community.proxysql:1.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/proxysql'
+2025-04-06 03:03:58,948 p=213570 u=el n=ansible INFO| Loading collection ansible.posix from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/posix
+2025-04-06 03:03:58,949 p=213570 u=el n=ansible INFO| Found installed collection ansible.posix:1.6.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/posix'
+2025-04-06 03:03:58,950 p=213570 u=el n=ansible INFO| Loading collection kaytus.ksmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kaytus/ksmanage
+2025-04-06 03:03:58,950 p=213570 u=el n=ansible INFO| Found installed collection kaytus.ksmanage:2.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kaytus/ksmanage'
+2025-04-06 03:03:58,954 p=213570 u=el n=ansible INFO| Loading collection vmware.vmware_rest from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware_rest
+2025-04-06 03:03:58,955 p=213570 u=el n=ansible INFO| Found installed collection vmware.vmware_rest:4.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vmware/vmware_rest'
+2025-04-06 03:03:58,956 p=213570 u=el n=ansible INFO| Loading collection community.postgresql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/postgresql
+2025-04-06 03:03:58,957 p=213570 u=el n=ansible INFO| Found installed collection community.postgresql:3.12.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/postgresql'
+2025-04-06 03:03:58,961 p=213570 u=el n=ansible INFO| Loading collection cisco.meraki from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/meraki
+2025-04-06 03:03:58,962 p=213570 u=el n=ansible INFO| Found installed collection cisco.meraki:2.20.8 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/meraki'
+2025-04-06 03:03:58,975 p=213570 u=el n=ansible INFO| Loading collection community.aws from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/aws
+2025-04-06 03:03:58,976 p=213570 u=el n=ansible INFO| Found installed collection community.aws:9.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/aws'
+2025-04-06 03:03:58,977 p=213570 u=el n=ansible INFO| Loading collection infoblox.nios_modules from /home/el/.local/lib/python3.13/site-packages/ansible_collections/infoblox/nios_modules
+2025-04-06 03:03:58,978 p=213570 u=el n=ansible INFO| Found installed collection infoblox.nios_modules:1.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/infoblox/nios_modules'
+2025-04-06 03:03:58,979 p=213570 u=el n=ansible INFO| Loading collection community.grafana from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/grafana
+2025-04-06 03:03:58,980 p=213570 u=el n=ansible INFO| Found installed collection community.grafana:2.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/grafana'
+2025-04-06 03:03:58,981 p=213570 u=el n=ansible INFO| Loading collection ibm.qradar from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/qradar
+2025-04-06 03:03:58,981 p=213570 u=el n=ansible INFO| Found installed collection ibm.qradar:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/qradar'
+2025-04-06 03:03:58,982 p=213570 u=el n=ansible INFO| Loading collection microsoft.ad from /home/el/.local/lib/python3.13/site-packages/ansible_collections/microsoft/ad
+2025-04-06 03:03:58,983 p=213570 u=el n=ansible INFO| Found installed collection microsoft.ad:1.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/microsoft/ad'
+2025-04-06 03:03:58,985 p=213570 u=el n=ansible INFO| Loading collection community.sap_libs from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sap_libs
+2025-04-06 03:03:58,986 p=213570 u=el n=ansible INFO| Found installed collection community.sap_libs:1.4.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sap_libs'
+2025-04-06 03:03:58,987 p=213570 u=el n=ansible INFO| Loading collection cyberark.pas from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/pas
+2025-04-06 03:03:58,988 p=213570 u=el n=ansible INFO| Found installed collection cyberark.pas:1.0.30 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/pas'
+2025-04-06 03:03:58,990 p=213570 u=el n=ansible INFO| Loading collection ansible.netcommon from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/netcommon
+2025-04-06 03:03:58,991 p=213570 u=el n=ansible INFO| Found installed collection ansible.netcommon:7.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/netcommon'
+2025-04-06 03:03:58,995 p=213570 u=el n=ansible INFO| Loading collection theforeman.foreman from /home/el/.local/lib/python3.13/site-packages/ansible_collections/theforeman/foreman
+2025-04-06 03:03:58,996 p=213570 u=el n=ansible INFO| Found installed collection theforeman.foreman:4.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/theforeman/foreman'
+2025-04-06 03:03:58,998 p=213570 u=el n=ansible INFO| Loading collection dellemc.enterprise_sonic from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/enterprise_sonic
+2025-04-06 03:03:58,999 p=213570 u=el n=ansible INFO| Found installed collection dellemc.enterprise_sonic:2.5.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/enterprise_sonic'
+2025-04-06 03:03:59,000 p=213570 u=el n=ansible INFO| Loading collection lowlydba.sqlserver from /home/el/.local/lib/python3.13/site-packages/ansible_collections/lowlydba/sqlserver
+2025-04-06 03:03:59,001 p=213570 u=el n=ansible INFO| Found installed collection lowlydba.sqlserver:2.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/lowlydba/sqlserver'
+2025-04-06 03:03:59,004 p=213570 u=el n=ansible INFO| Loading collection azure.azcollection from /home/el/.local/lib/python3.13/site-packages/ansible_collections/azure/azcollection
+2025-04-06 03:03:59,005 p=213570 u=el n=ansible INFO| Found installed collection azure.azcollection:3.3.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/azure/azcollection'
+2025-04-06 03:03:59,007 p=213570 u=el n=ansible INFO| Loading collection cloudscale_ch.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cloudscale_ch/cloud
+2025-04-06 03:03:59,008 p=213570 u=el n=ansible INFO| Found installed collection cloudscale_ch.cloud:2.4.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cloudscale_ch/cloud'
+2025-04-06 03:03:59,008 p=213570 u=el n=ansible INFO| Loading collection infinidat.infinibox from /home/el/.local/lib/python3.13/site-packages/ansible_collections/infinidat/infinibox
+2025-04-06 03:03:59,009 p=213570 u=el n=ansible INFO| Found installed collection infinidat.infinibox:1.4.5 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/infinidat/infinibox'
+2025-04-06 03:03:59,010 p=213570 u=el n=ansible INFO| Loading collection community.zabbix from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/zabbix
+2025-04-06 03:03:59,011 p=213570 u=el n=ansible INFO| Found installed collection community.zabbix:3.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/zabbix'
+2025-04-06 03:03:59,011 p=213570 u=el n=ansible INFO| Loading collection cloud.common from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cloud/common
+2025-04-06 03:03:59,012 p=213570 u=el n=ansible INFO| Found installed collection cloud.common:4.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cloud/common'
+2025-04-06 03:03:59,013 p=213570 u=el n=ansible INFO| Loading collection dellemc.powerflex from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/powerflex
+2025-04-06 03:03:59,014 p=213570 u=el n=ansible INFO| Found installed collection dellemc.powerflex:2.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/powerflex'
+2025-04-06 03:03:59,016 p=213570 u=el n=ansible INFO| Loading collection hetzner.hcloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/hetzner/hcloud
+2025-04-06 03:03:59,018 p=213570 u=el n=ansible INFO| Found installed collection hetzner.hcloud:4.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/hetzner/hcloud'
+2025-04-06 03:03:59,019 p=213570 u=el n=ansible INFO| Loading collection community.hrobot from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hrobot
+2025-04-06 03:03:59,020 p=213570 u=el n=ansible INFO| Found installed collection community.hrobot:2.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hrobot'
+2025-04-06 03:03:59,021 p=213570 u=el n=ansible INFO| Loading collection cisco.asa from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/asa
+2025-04-06 03:03:59,022 p=213570 u=el n=ansible INFO| Found installed collection cisco.asa:6.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/asa'
+2025-04-06 03:03:59,023 p=213570 u=el n=ansible INFO| Loading collection community.docker from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/docker
+2025-04-06 03:03:59,024 p=213570 u=el n=ansible INFO| Found installed collection community.docker:4.5.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/docker'
+2025-04-06 03:03:59,041 p=213570 u=el n=ansible INFO| Loading collection community.general from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general
+2025-04-06 03:03:59,042 p=213570 u=el n=ansible INFO| Found installed collection community.general:10.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/general'
+2025-04-06 03:03:59,043 p=213570 u=el n=ansible INFO| Loading collection cyberark.conjur from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/conjur
+2025-04-06 03:03:59,043 p=213570 u=el n=ansible INFO| Found installed collection cyberark.conjur:1.3.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cyberark/conjur'
+2025-04-06 03:03:59,044 p=213570 u=el n=ansible INFO| Loading collection ibm.storage_virtualize from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/storage_virtualize
+2025-04-06 03:03:59,045 p=213570 u=el n=ansible INFO| Found installed collection ibm.storage_virtualize:2.6.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ibm/storage_virtualize'
+2025-04-06 03:03:59,046 p=213570 u=el n=ansible INFO| Loading collection dellemc.openmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/openmanage
+2025-04-06 03:03:59,047 p=213570 u=el n=ansible INFO| Found installed collection dellemc.openmanage:9.10.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/dellemc/openmanage'
+2025-04-06 03:03:59,049 p=213570 u=el n=ansible INFO| Loading collection check_point.mgmt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/check_point/mgmt
+2025-04-06 03:03:59,050 p=213570 u=el n=ansible INFO| Found installed collection check_point.mgmt:6.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/check_point/mgmt'
+2025-04-06 03:03:59,051 p=213570 u=el n=ansible INFO| Loading collection grafana.grafana from /home/el/.local/lib/python3.13/site-packages/ansible_collections/grafana/grafana
+2025-04-06 03:03:59,052 p=213570 u=el n=ansible INFO| Found installed collection grafana.grafana:5.7.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/grafana/grafana'
+2025-04-06 03:03:59,054 p=213570 u=el n=ansible INFO| Loading collection amazon.aws from /home/el/.local/lib/python3.13/site-packages/ansible_collections/amazon/aws
+2025-04-06 03:03:59,055 p=213570 u=el n=ansible INFO| Found installed collection amazon.aws:9.3.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/amazon/aws'
+2025-04-06 03:03:59,056 p=213570 u=el n=ansible INFO| Loading collection wti.remote from /home/el/.local/lib/python3.13/site-packages/ansible_collections/wti/remote
+2025-04-06 03:03:59,057 p=213570 u=el n=ansible INFO| Found installed collection wti.remote:1.0.10 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/wti/remote'
+2025-04-06 03:03:59,058 p=213570 u=el n=ansible INFO| Loading collection community.mongodb from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mongodb
+2025-04-06 03:03:59,059 p=213570 u=el n=ansible INFO| Found installed collection community.mongodb:1.7.9 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mongodb'
+2025-04-06 03:03:59,060 p=213570 u=el n=ansible INFO| Loading collection ngine_io.cloudstack from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ngine_io/cloudstack
+2025-04-06 03:03:59,061 p=213570 u=el n=ansible INFO| Found installed collection ngine_io.cloudstack:2.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ngine_io/cloudstack'
+2025-04-06 03:03:59,061 p=213570 u=el n=ansible INFO| Loading collection inspur.ispim from /home/el/.local/lib/python3.13/site-packages/ansible_collections/inspur/ispim
+2025-04-06 03:03:59,062 p=213570 u=el n=ansible INFO| Found installed collection inspur.ispim:2.2.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/inspur/ispim'
+2025-04-06 03:03:59,063 p=213570 u=el n=ansible INFO| Loading collection f5networks.f5_modules from /home/el/.local/lib/python3.13/site-packages/ansible_collections/f5networks/f5_modules
+2025-04-06 03:03:59,064 p=213570 u=el n=ansible INFO| Found installed collection f5networks.f5_modules:1.34.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/f5networks/f5_modules'
+2025-04-06 03:03:59,067 p=213570 u=el n=ansible INFO| Loading collection community.vmware from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/vmware
+2025-04-06 03:03:59,068 p=213570 u=el n=ansible INFO| Found installed collection community.vmware:5.5.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/vmware'
+2025-04-06 03:03:59,068 p=213570 u=el n=ansible INFO| Loading collection community.library_inventory_filtering_v1 from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/library_inventory_filtering_v1
+2025-04-06 03:03:59,069 p=213570 u=el n=ansible INFO| Found installed collection community.library_inventory_filtering_v1:1.0.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/library_inventory_filtering_v1'
+2025-04-06 03:03:59,072 p=213570 u=el n=ansible INFO| Loading collection cisco.aci from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/aci
+2025-04-06 03:03:59,073 p=213570 u=el n=ansible INFO| Found installed collection cisco.aci:2.10.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/aci'
+2025-04-06 03:03:59,074 p=213570 u=el n=ansible INFO| Loading collection community.dns from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/dns
+2025-04-06 03:03:59,075 p=213570 u=el n=ansible INFO| Found installed collection community.dns:3.2.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/dns'
+2025-04-06 03:03:59,076 p=213570 u=el n=ansible INFO| Loading collection vultr.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vultr/cloud
+2025-04-06 03:03:59,076 p=213570 u=el n=ansible INFO| Found installed collection vultr.cloud:1.13.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vultr/cloud'
+2025-04-06 03:03:59,077 p=213570 u=el n=ansible INFO| Loading collection community.windows from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/windows
+2025-04-06 03:03:59,078 p=213570 u=el n=ansible INFO| Found installed collection community.windows:2.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/windows'
+2025-04-06 03:03:59,079 p=213570 u=el n=ansible INFO| Loading collection ovirt.ovirt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ovirt/ovirt
+2025-04-06 03:03:59,080 p=213570 u=el n=ansible INFO| Found installed collection ovirt.ovirt:3.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ovirt/ovirt'
+2025-04-06 03:03:59,081 p=213570 u=el n=ansible INFO| Loading collection sensu.sensu_go from /home/el/.local/lib/python3.13/site-packages/ansible_collections/sensu/sensu_go
+2025-04-06 03:03:59,081 p=213570 u=el n=ansible INFO| Found installed collection sensu.sensu_go:1.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/sensu/sensu_go'
+2025-04-06 03:03:59,082 p=213570 u=el n=ansible INFO| Loading collection ieisystem.inmanage from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ieisystem/inmanage
+2025-04-06 03:03:59,083 p=213570 u=el n=ansible INFO| Found installed collection ieisystem.inmanage:3.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ieisystem/inmanage'
+2025-04-06 03:03:59,084 p=213570 u=el n=ansible INFO| Loading collection chocolatey.chocolatey from /home/el/.local/lib/python3.13/site-packages/ansible_collections/chocolatey/chocolatey
+2025-04-06 03:03:59,085 p=213570 u=el n=ansible INFO| Found installed collection chocolatey.chocolatey:1.5.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/chocolatey/chocolatey'
+2025-04-06 03:03:59,085 p=213570 u=el n=ansible INFO| Loading collection purestorage.flashblade from /home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flashblade
+2025-04-06 03:03:59,086 p=213570 u=el n=ansible INFO| Found installed collection purestorage.flashblade:1.19.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flashblade'
+2025-04-06 03:03:59,087 p=213570 u=el n=ansible INFO| Loading collection community.crypto from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/crypto
+2025-04-06 03:03:59,088 p=213570 u=el n=ansible INFO| Found installed collection community.crypto:2.26.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/crypto'
+2025-04-06 03:03:59,089 p=213570 u=el n=ansible INFO| Loading collection telekom_mms.icinga_director from /home/el/.local/lib/python3.13/site-packages/ansible_collections/telekom_mms/icinga_director
+2025-04-06 03:03:59,090 p=213570 u=el n=ansible INFO| Found installed collection telekom_mms.icinga_director:2.2.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/telekom_mms/icinga_director'
+2025-04-06 03:03:59,091 p=213570 u=el n=ansible INFO| Loading collection fortinet.fortimanager from /home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortimanager
+2025-04-06 03:03:59,092 p=213570 u=el n=ansible INFO| Found installed collection fortinet.fortimanager:2.9.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortimanager'
+2025-04-06 03:03:59,092 p=213570 u=el n=ansible INFO| Loading collection cisco.ucs from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ucs
+2025-04-06 03:03:59,093 p=213570 u=el n=ansible INFO| Found installed collection cisco.ucs:1.15.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/ucs'
+2025-04-06 03:03:59,093 p=213570 u=el n=ansible INFO| Loading collection purestorage.flasharray from /home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flasharray
+2025-04-06 03:03:59,094 p=213570 u=el n=ansible INFO| Found installed collection purestorage.flasharray:1.33.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/purestorage/flasharray'
+2025-04-06 03:03:59,096 p=213570 u=el n=ansible INFO| Loading collection junipernetworks.junos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/junipernetworks/junos
+2025-04-06 03:03:59,097 p=213570 u=el n=ansible INFO| Found installed collection junipernetworks.junos:9.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/junipernetworks/junos'
+2025-04-06 03:03:59,097 p=213570 u=el n=ansible INFO| Loading collection fortinet.fortios from /home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortios
+2025-04-06 03:03:59,098 p=213570 u=el n=ansible INFO| Found installed collection fortinet.fortios:2.3.9 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/fortinet/fortios'
+2025-04-06 03:03:59,098 p=213570 u=el n=ansible INFO| Loading collection community.libvirt from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/libvirt
+2025-04-06 03:03:59,099 p=213570 u=el n=ansible INFO| Found installed collection community.libvirt:1.3.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/libvirt'
+2025-04-06 03:03:59,100 p=213570 u=el n=ansible INFO| Loading collection containers.podman from /home/el/.local/lib/python3.13/site-packages/ansible_collections/containers/podman
+2025-04-06 03:03:59,101 p=213570 u=el n=ansible INFO| Found installed collection containers.podman:1.16.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/containers/podman'
+2025-04-06 03:03:59,102 p=213570 u=el n=ansible INFO| Loading collection community.sops from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sops
+2025-04-06 03:03:59,103 p=213570 u=el n=ansible INFO| Found installed collection community.sops:2.0.3 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/sops'
+2025-04-06 03:03:59,104 p=213570 u=el n=ansible INFO| Loading collection ansible.windows from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/windows
+2025-04-06 03:03:59,104 p=213570 u=el n=ansible INFO| Found installed collection ansible.windows:2.8.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/windows'
+2025-04-06 03:03:59,105 p=213570 u=el n=ansible INFO| Loading collection community.mysql from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mysql
+2025-04-06 03:03:59,105 p=213570 u=el n=ansible INFO| Found installed collection community.mysql:3.13.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/mysql'
+2025-04-06 03:03:59,106 p=213570 u=el n=ansible INFO| Loading collection kubevirt.core from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kubevirt/core
+2025-04-06 03:03:59,107 p=213570 u=el n=ansible INFO| Found installed collection kubevirt.core:2.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kubevirt/core'
+2025-04-06 03:03:59,107 p=213570 u=el n=ansible INFO| Loading collection community.rabbitmq from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/rabbitmq
+2025-04-06 03:03:59,108 p=213570 u=el n=ansible INFO| Found installed collection community.rabbitmq:1.4.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/rabbitmq'
+2025-04-06 03:03:59,109 p=213570 u=el n=ansible INFO| Loading collection cisco.dnac from /home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/dnac
+2025-04-06 03:03:59,109 p=213570 u=el n=ansible INFO| Found installed collection cisco.dnac:6.31.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/cisco/dnac'
+2025-04-06 03:03:59,110 p=213570 u=el n=ansible INFO| Loading collection ansible.utils from /home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/utils
+2025-04-06 03:03:59,111 p=213570 u=el n=ansible INFO| Found installed collection ansible.utils:5.1.2 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/ansible/utils'
+2025-04-06 03:03:59,112 p=213570 u=el n=ansible INFO| Loading collection community.hashi_vault from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hashi_vault
+2025-04-06 03:03:59,112 p=213570 u=el n=ansible INFO| Found installed collection community.hashi_vault:6.2.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/hashi_vault'
+2025-04-06 03:03:59,180 p=213570 u=el n=ansible INFO| Loading collection community.network from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/network
+2025-04-06 03:03:59,181 p=213570 u=el n=ansible INFO| Found installed collection community.network:5.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/network'
+2025-04-06 03:03:59,184 p=213570 u=el n=ansible INFO| Loading collection community.digitalocean from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/digitalocean
+2025-04-06 03:03:59,185 p=213570 u=el n=ansible INFO| Found installed collection community.digitalocean:1.27.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/digitalocean'
+2025-04-06 03:03:59,187 p=213570 u=el n=ansible INFO| Loading collection netbox.netbox from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netbox/netbox
+2025-04-06 03:03:59,188 p=213570 u=el n=ansible INFO| Found installed collection netbox.netbox:3.21.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netbox/netbox'
+2025-04-06 03:03:59,189 p=213570 u=el n=ansible INFO| Loading collection netapp.cloudmanager from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/cloudmanager
+2025-04-06 03:03:59,190 p=213570 u=el n=ansible INFO| Found installed collection netapp.cloudmanager:21.24.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/cloudmanager'
+2025-04-06 03:03:59,191 p=213570 u=el n=ansible INFO| Loading collection vyos.vyos from /home/el/.local/lib/python3.13/site-packages/ansible_collections/vyos/vyos
+2025-04-06 03:03:59,192 p=213570 u=el n=ansible INFO| Found installed collection vyos.vyos:5.0.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/vyos/vyos'
+2025-04-06 03:03:59,193 p=213570 u=el n=ansible INFO| Loading collection community.ciscosmb from /home/el/.local/lib/python3.13/site-packages/ansible_collections/community/ciscosmb
+2025-04-06 03:03:59,193 p=213570 u=el n=ansible INFO| Found installed collection community.ciscosmb:1.0.10 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/community/ciscosmb'
+2025-04-06 03:03:59,196 p=213570 u=el n=ansible INFO| Loading collection google.cloud from /home/el/.local/lib/python3.13/site-packages/ansible_collections/google/cloud
+2025-04-06 03:03:59,197 p=213570 u=el n=ansible INFO| Found installed collection google.cloud:1.5.1 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/google/cloud'
+2025-04-06 03:03:59,198 p=213570 u=el n=ansible INFO| Loading collection kubernetes.core from /home/el/.local/lib/python3.13/site-packages/ansible_collections/kubernetes/core
+2025-04-06 03:03:59,199 p=213570 u=el n=ansible INFO| Found installed collection kubernetes.core:5.1.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/kubernetes/core'
+2025-04-06 03:03:59,201 p=213570 u=el n=ansible INFO| Loading collection netapp.storagegrid from /home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/storagegrid
+2025-04-06 03:03:59,202 p=213570 u=el n=ansible INFO| Found installed collection netapp.storagegrid:21.14.0 at '/home/el/.local/lib/python3.13/site-packages/ansible_collections/netapp/storagegrid'
+2025-04-06 03:03:59,375 p=213570 u=el n=ansible INFO| Loading collection ansible.builtin from 
+2025-04-06 03:03:59,430 p=213570 u=el n=ansible INFO| {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}

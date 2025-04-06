@@ -19,6 +19,11 @@
     file: "{{ playbook_dir }}/vars/flatpak.yaml"
   tags: flatpak_apps_vars
 
+- name: Include wallpapers variables
+  include_vars:
+    file: "{{ playbook_dir }}/vars/wallpapers.yaml"
+  tags: wallpapers_apps_vars
+
 - name: Incluir variables específicas de la distribución
   ansible.builtin.include_vars:
     file: "{{ playbook_dir }}/vars/{{ ansible_os_family }}.yaml"

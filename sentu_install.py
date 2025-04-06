@@ -294,14 +294,7 @@ def run_ansible_playbook():
 
     logging.info("Ejecutando Ansible Playbook...")
     try:
-        command = [
-            "ansible-playbook",
-            "--ask-become-pass",
-            str(playbook_path),
-            "-i",
-            str(inventory_file_path),
-            "-vvv",
-        ]
+        command = ["ansible-playbook", "--ask-become-pass", str(playbook_path)]
         run_command(command, cwd=ansible_dir)
         logging.info("Ansible Playbook ejecutado exitosamente.")
         return True
