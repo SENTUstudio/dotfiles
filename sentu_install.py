@@ -301,6 +301,8 @@ def run_ansible_playbook():
 
     logging.info("Ejecutando Ansible Playbook...")
     try:
+        rye_shims_path = os.path.expanduser("~/.rye/shims")
+        os.environ["PATH"] = f"{os.environ['PATH']}:{rye_shims_path}"
         rye_sync = ["rye", "sync"]
         run_command(rye_sync, cwd=DOTFILES_DIR)
         command = [
