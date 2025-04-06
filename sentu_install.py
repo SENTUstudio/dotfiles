@@ -164,8 +164,6 @@ def package_core():
             command_list = ["bash", "-c", install_rye]
             logging.info("Instalando rye...")
             run_command(command_list)
-            rye_sync = ["rye", "sync"]
-            run_command(rye_sync, cwd=DOTFILES_DIR)
             for pm, update_cmd in package_managers.items():
                 if check_command(pm):
                     logging.info(
@@ -303,6 +301,8 @@ def run_ansible_playbook():
 
     logging.info("Ejecutando Ansible Playbook...")
     try:
+        rye_sync = ["rye", "sync"]
+        run_command(rye_sync, cwd=DOTFILES_DIR)
         command = [
             "rye",
             "run",
