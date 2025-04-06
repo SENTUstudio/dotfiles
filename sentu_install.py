@@ -140,6 +140,7 @@ def install_yay_python():
 def package_core():
     """Verifica e instala Git si no está presente."""
     os_name = platform.system()
+
     logging.info("Instalando dependencias...")
     match os_name:
         case "Linux":
@@ -157,6 +158,14 @@ def package_core():
                 "yum": ["sudo", "yum", "install", "-y", "git", "ansible"],
                 "zypper": ["sudo", "zypper", "install", "-y", "git", "ansible"],
             }
+            install_rye = (
+                'curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash'
+            )
+            command_list = ["bash", "-c", install_rye]
+            logging.info("Instalando rye...")
+            run_command(command_list)
+            rye_sync = ["rye", "sync"]
+            run_command(rye_sync, cwd=DOTFILES_DIR)
             for pm, update_cmd in package_managers.items():
                 if check_command(pm):
                     logging.info(
@@ -294,8 +303,14 @@ def run_ansible_playbook():
 
     logging.info("Ejecutando Ansible Playbook...")
     try:
-        command = ["/usr/bin/ansible-playbook", "--ask-become-pass", str(playbook_path)]
-        run_command(command, cwd=ansible_dir)
+        command = [
+            "rye",
+            "run",
+            "ansible-playbook",
+            "--ask-become-pass",
+            str(playbook_path),
+        ]
+        run_command(command, cwd=DOTFILES_DIR)
         logging.info("Ansible Playbook ejecutado exitosamente.")
         return True
     except subprocess.CalledProcessError as e:

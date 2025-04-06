@@ -14,7 +14,7 @@
     - role: add_repositories
     - role: install_core_dependencies
     - role: install_uv
-    - role: install_rye
+    # - role: install_rye
     - role: install_nvm
     - role: install_extended_dependencies
     - role: install_post_install
