@@ -153,7 +153,7 @@ def package_core():
             }
             install_commands = {
                 "apt-get": ["sudo", "apt-get", "install", "-y", "git", "ansible"],
-                "dnf": ["sudo", "dnf", "install", "-y", "git", "ansible"],
+                "dnf": ["sudo", "dnf", "install", "-y", "git", "python3-libdnf5"],
                 "pacman": ["sudo", "pacman", "-S", "--noconfirm", "git", "ansible"],
                 "yum": ["sudo", "yum", "install", "-y", "git", "ansible"],
                 "zypper": ["sudo", "zypper", "install", "-y", "git", "ansible"],
