@@ -3,6 +3,7 @@
   ansible.builtin.shell:
     argv: "{{ repo_item.value | format(fedora_version=fedora_version) }}"
   become: true
+  ignore_errors: true
   when:
     - ansible_distribution == "Fedora"
     - package_managers is defined
