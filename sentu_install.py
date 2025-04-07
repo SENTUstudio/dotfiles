@@ -290,9 +290,9 @@ def run_ansible_playbook():
     rye_sync = ["rye", "sync"]
     run_command(rye_sync, cwd=DOTFILES_DIR)
 
-    if not check_command("ansible-playbook"):
-        logging.error("Ansible no está instalado, no se puede ejecutar el playbook.")
-        return False
+    # if not check_command("ansible-playbook"):
+    #     logging.error("Ansible no está instalado, no se puede ejecutar el playbook.")
+    #     return False
 
     if not playbook_path.exists():
         logging.error(f"No se encontró el playbook de Ansible en: {playbook_path}")
