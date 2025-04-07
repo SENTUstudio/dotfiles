@@ -26,26 +26,18 @@
   loop: "{{ wallpaper_repositories }}"
 
 - name: Encontrar archivos de imágenes en los proyectos clonados
-  ansible.builtin.find:
-    paths: "{{ wallpaper_base_dir }}/{{ item.name }}"
-    patterns:
-      - "*.jpg"
-      - "*.png"
+  find:
+    paths: "{{ wallpaper_base_dir }}"
+    patterns: "*.jpg,*.png"
     file_type: file
     recurse: yes
   register: found_images
   become: no
-  loop: "{{ wallpaper_repositories }}"
-  loop_control:
-    loop_var: proyecto
 
 - name: Mover archivos de imágenes a la carpeta img
-  ansible.builtin.file:
-    src: "{{ item.path }}"
-    dest: "{{ wallpaper_base_dir }}/{{ wallpaper_img_subdir }}/{{ item.basename }}"
-    state: moved
+  command: mv "{{ item.path }}" "{{ wallpaper_base_dir }}/{{ wallpaper_img_subdir }}/{{ item.path | basename }}"
   become: no
-  loop: "{{ found_images.results | map(attribute='files') | flatten }}"
+  loop: "{{ found_images.files }}"
 
 - name: Eliminar los directorios de los proyectos clonados
   ansible.builtin.file:
