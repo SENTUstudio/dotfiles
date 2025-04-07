@@ -20,6 +20,8 @@ cryptography==44.0.2
     # via ansible-core
 jinja2==3.1.6
     # via ansible-core
+libdnf5==0.0.1a1
+    # via dotfiles
 markupsafe==3.0.2
     # via jinja2
 packaging==24.2
