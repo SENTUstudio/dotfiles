@@ -285,6 +285,10 @@ def run_ansible_playbook():
     inventory_file_path = (
         ansible_dir / "inventory.ini"
     )  # Asumo que el inventario está en la misma carpeta
+    rye_shims_path = os.path.expanduser("~/.rye/shims")
+    os.environ["PATH"] = f"{os.environ['PATH']}:{rye_shims_path}"
+    rye_sync = ["rye", "sync"]
+    run_command(rye_sync, cwd=DOTFILES_DIR)
 
     if not check_command("ansible-playbook"):
         logging.error("Ansible no está instalado, no se puede ejecutar el playbook.")
@@ -301,10 +305,6 @@ def run_ansible_playbook():
 
     logging.info("Ejecutando Ansible Playbook...")
     try:
-        rye_shims_path = os.path.expanduser("~/.rye/shims")
-        os.environ["PATH"] = f"{os.environ['PATH']}:{rye_shims_path}"
-        rye_sync = ["rye", "sync"]
-        run_command(rye_sync, cwd=DOTFILES_DIR)
         command = [
             "rye",
             "run",
