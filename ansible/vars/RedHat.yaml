@@ -24,12 +24,6 @@ package_managers:
       - install
       - "-y"
       - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
-    docker:
-      - sudo
-      - dnf
-      - config-manager
-      - addrepo
-      - "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
     google-chrome:
       - sudo
       - dnf
@@ -84,10 +78,10 @@ package_managers:
       - kitty
       - lua-devel
       - luarocks
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - docker-compose-plugin
+      - docker-cli
+      - containerd
+      - docker-compose
+      - docker-switch
       - bat
       - fzf
       - httpie
