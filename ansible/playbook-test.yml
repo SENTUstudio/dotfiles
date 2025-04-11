@@ -21,6 +21,6 @@
     # - role: config_zsh
     # - role: install_flatpak
     # - role: install_fonts
-    - role: install_wallpapers
+    # - role: install_wallpapers
     # - role: dotfiles_management
-    # ... (añadiremos más roles aquí)
+    - pluggero.lazygit
