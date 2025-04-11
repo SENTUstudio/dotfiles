@@ -309,6 +309,16 @@ def run_ansible_playbook():
         command = [
             "rye",
             "run",
+            "ansible-galaxy",
+            "role",
+            "install",
+            "pluggero.lazygit",
+        ]
+        run_command(command, cwd=DOTFILES_DIR)
+        logging.info("Ansible Playbook ejecutado exitosamente.")
+        command = [
+            "rye",
+            "run",
             "ansible-playbook",
             "--ask-become-pass",
             str(playbook_path),
