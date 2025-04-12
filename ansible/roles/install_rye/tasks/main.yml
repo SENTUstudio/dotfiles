@@ -1,6 +1,0 @@
----
-- name: Descargar e instalar rye usando el script oficial
-  shell: 'curl -sSf {{ install_scripts.rye }} |  RYE_INSTALL_OPTION="--yes" bash'
-  become: false
-  register: rye_install_output
-  changed_when: "'Rye installed successfully' not in rye_install_output.stdout"

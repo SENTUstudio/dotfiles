@@ -1,0 +1,50 @@
+---
+- name: Actualiza el sistema
+  become: true # Generalmente se necesita elevación de privilegios para actualizar el sistema
+  block:
+    - name: Actualiza el sistema (Debian/Ubuntu)
+      ansible.builtin.apt:
+        update_cache: yes
+        upgrade: safe
+      when: ansible_os_family == "Debian"
+
+    - name: Actualiza el sistema (RedHat based, excluyendo Fedora)
+      ansible.builtin.yum:
+        name: "*"
+        state: latest
+      when: ansible_os_family == "RedHat" and ansible_distribution != "Fedora"
+
+    - name: Actualiza el sistema (Fedora)
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+      when: ansible_distribution == "Fedora"
+
+    - name: Actualiza el sistema (Arch Linux)
+      ansible.builtin.pacman:
+        update_cache: yes
+        upgrade: yes
+      when: ansible_os_family == "Archlinux"
+
+    - name: Actualiza el sistema (openSUSE)
+      community.general.zypper:
+        name: "*"
+        state: latest
+      when: ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE Tumbleweed"
+
+    - name: Actualiza el sistema (macOS con Homebrew)
+      community.general.homebrew:
+        update_homebrew: yes
+        upgrade_all: yes
+      when: ansible_os_family == "Darwin"
+
+    # - name: Actualiza el sistema (Windows)
+    #   community.windows.win_updates:
+    #     category_names: "*"
+    #     state: installed
+    #   when: ansible_os_family == "Windows"
+    #
+  rescue:
+    - name: Mostrar mensaje de error si no se pudo actualizar
+      ansible.builtin.debug:
+        msg: "No se pudo determinar cómo actualizar el sistema operativo: {{ ansible_distribution }}."
