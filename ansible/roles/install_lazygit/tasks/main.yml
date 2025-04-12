@@ -1,8 +1,8 @@
 ---
 - name: Instalar lazygit (git clone y go install)
-  become: false # No necesitas sudo, instalamos en el directorio del usuario
   block:
     - name: Clonar el repositorio de lazygit
+      become: false # No necesitas sudo, instalamos en el directorio del usuario
       ansible.builtin.git:
         repo: "https://github.com/jesseduffield/lazygit.git"
         dest: "{{ ansible_env.HOME }}/.lazygit-src" # Ruta donde quieres clonar
@@ -11,9 +11,9 @@
       register: git_result
 
     - name: Instalar lazygit con go install
+      become: false # No necesitas sudo, instalamos en el directorio del usuario
       when: git_result.changed
       shell: "go install"
       args:
         chdir: "{{ ansible_env.HOME }}/.lazygit-src" # Navega al directorio clonado
         creates: "{{ ansible_env.HOME }}/go/bin/lazygit" # Comprueba si ya existe
-
