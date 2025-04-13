@@ -11,26 +11,86 @@
     msg: "Docker no parece estar instalado. Por favor, instala Docker primero."
   when: docker_check.rc != 0
 
-- name: Verificar si el usuario ya está en el grupo docker
-  ansible.builtin.shell:
-    cmd: |
-      set -o pipefail
-      "id -Gn {{ ansible_user_id }} | grep -q docker"
-  register: user_in_docker_group
-  changed_when: false
-  failed_when: false
-  check_mode: false
+# Continuar solo si Docker está instalado
+- name: Configurar Docker para usuarios no-root
+  block:
+    # 1. Crear el grupo docker si no existe
+    - name: Crear grupo docker
+      ansible.builtin.group:
+        name: docker
+        state: present
+      become: true
+
+    # 2. Verificar si el usuario ya está en el grupo docker
+    - name: Verificar si el usuario ya está en el grupo docker
+      ansible.builtin.shell: "id -Gn {{ ansible_user_id }} | grep -q docker"
+      register: user_in_docker_group
+      changed_when: false
+      failed_when: false
+      check_mode: false
+
+    # 3. Añadir usuario al grupo docker
+    - name: Añadir usuario al grupo docker
+      ansible.builtin.user:
+        name: "{{ ansible_user_id }}"
+        groups: docker
+        append: true
+      become: true
+      when: user_in_docker_group.rc != 0
+
+    # 4. Configurar Docker para iniciar en el arranque (systemd)
+    - name: Verificar si systemd está disponible
+      ansible.builtin.stat:
+        path: /bin/systemctl
+      register: systemd_check
+
+    - name: Habilitar servicio docker en arranque
+      ansible.builtin.systemd:
+        name: docker.service
+        enabled: true
+        state: started
+      become: true
+      when: systemd_check.stat.exists
+
+    - name: Habilitar servicio containerd en arranque
+      ansible.builtin.systemd:
+        name: containerd.service
+        enabled: true
+        state: started
+      become: true
+      when: systemd_check.stat.exists and (ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian')
+
+    # 5. Corregir permisos del directorio .docker si existe
+    - name: Comprobar si existe directorio .docker
+      ansible.builtin.stat:
+        path: "{{ user_home }}/.docker"
+      register: docker_config_dir
+
+    - name: Corregir permisos del directorio .docker
+      block:
+        - name: Establecer propietario correcto para directorio .docker
+          ansible.builtin.file:
+            path: "{{ user_home }}/.docker"
+            owner: "{{ ansible_user_id }}"
+            group: "{{ ansible_user_id }}"
+            recurse: true
+          become: true
+
+        - name: Establecer permisos correctos para directorio .docker
+          ansible.builtin.file:
+            path: "{{ user_home }}/.docker"
+            mode: "g+rwx"
+            recurse: true
+          become: true
+      when: docker_config_dir.stat.exists
+
+    # 6. Informar que puede ser necesario reiniciar la sesión
+    - name: Informar que puede ser necesario reiniciar la sesión
+      ansible.builtin.debug:
+        msg: >
+          Usuario añadido al grupo docker. Para que los cambios surtan efecto, debes:
+          1. Cerrar sesión y volver a entrar, o
+          2. Ejecutar 'newgrp docker' en la terminal actual.
+          Después, verifica con 'docker run hello-world' sin sudo.
+      when: user_in_docker_group.rc != 0
   when: docker_check.rc == 0
-
-- name: Añadir usuario al grupo docker
-  ansible.builtin.user:
-    name: "{{ ansible_user_id }}"
-    groups: docker
-    append: true
-  become: true
-  when: docker_check.rc == 0 and user_in_docker_group.rc != 0
-
-- name: Informar que puede ser necesario reiniciar la sesión
-  ansible.builtin.debug:
-    msg: "Usuario añadido al grupo docker. Es necesario cerrar sesión y volver a entrar para que los cambios surtan efecto."
-  when: docker_check.rc == 0 and user_in_docker_group.rc != 0
