@@ -1,0 +1,102 @@
+---
+- name: Verificar si Docker ya está instalado
+  ansible.builtin.command: which docker
+  register: docker_check
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: Instalar paquetes prerequisitos
+  ansible.builtin.package:
+    name:
+      - curl
+      - ca-certificates
+    state: present
+  become: true
+  when: docker_check.rc != 0
+
+- name: Instalar Docker usando el script oficial
+  block:
+    - name: Descargar script de instalación de Docker
+      ansible.builtin.get_url:
+        url: https://get.docker.com
+        dest: /tmp/get-docker.sh
+        mode: "0755"
+      become: true
+
+    - name: Ejecutar script de instalación de Docker
+      ansible.builtin.command: sh /tmp/get-docker.sh
+      become: true
+      register: docker_install_result
+      changed_when: docker_install_result.rc == 0
+      notify: restart docker
+
+    - name: Eliminar script de instalación
+      ansible.builtin.file:
+        path: /tmp/get-docker.sh
+        state: absent
+      become: true
+  when: docker_check.rc != 0
+
+- name: Crear grupo docker (si no existe)
+  ansible.builtin.group:
+    name: docker
+    state: present
+  become: true
+
+# Obtener el usuario actual que ejecuta Ansible
+- name: Obtener el usuario actual
+  become: no
+  ansible.builtin.set_fact:
+    current_user: "{{ ansible_user_id }}"
+
+# Verificar si el usuario actual ya está en el grupo docker
+- name: Verificar si el usuario actual ya está en el grupo docker
+  ansible.builtin.shell: "id -Gn {{ current_user }} | grep -q docker"
+  register: user_in_docker_group
+  changed_when: false
+  failed_when: false
+  check_mode: false
+  become: true
+  when: docker_add_current_user | bool
+
+# Añadir el usuario actual al grupo docker si no está ya
+- name: Añadir el usuario actual al grupo docker
+  ansible.builtin.user:
+    name: "{{ current_user }}"
+    groups: docker
+    append: true
+  become: true
+  when:
+    - docker_add_current_user | bool
+    - user_in_docker_group.rc != 0 or user_in_docker_group.rc is not defined
+
+# Añadir usuarios adicionales especificados al grupo docker
+- name: Añadir usuarios adicionales al grupo docker
+  ansible.builtin.user:
+    name: "{{ item }}"
+    groups: docker
+    append: true
+  with_items: "{{ docker_additional_users }}"
+  become: true
+  when: docker_additional_users | length > 0
+
+- name: Configurar Docker para iniciar en el arranque
+  ansible.builtin.systemd:
+    name: docker
+    enabled: "{{ docker_start_on_boot }}"
+    state: started
+  become: true
+  when: docker_start_on_boot
+
+- name: Mostrar mensaje informativo
+  ansible.builtin.debug:
+    msg: >
+      Docker ha sido instalado correctamente. 
+      {% if docker_add_current_user | bool and (user_in_docker_group.rc != 0 or user_in_docker_group.rc is not defined) %}
+      El usuario '{{ current_user }}' ha sido añadido al grupo docker.
+      Para usar Docker sin sudo:
+      1. Cierra sesión y vuelve a iniciar sesión, o
+      2. Ejecuta 'newgrp docker' en la terminal actual.
+      {% endif %}
+      Verifica la instalación con 'docker run hello-world'

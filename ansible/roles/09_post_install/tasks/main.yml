@@ -28,9 +28,9 @@
   ansible.builtin.include_tasks: ruby.yml
   when: install_tmuxinator | bool
 
-- name: Include Docker user setup tasks
-  ansible.builtin.include_tasks: docker.yml
-  when: setup_docker_user | bool
+# - name: Include Docker user setup tasks
+#   ansible.builtin.include_tasks: docker.yml
+#   when: setup_docker_user | bool
 
 - name: Include Atuin tasks
   ansible.builtin.include_tasks: atuin.yml
