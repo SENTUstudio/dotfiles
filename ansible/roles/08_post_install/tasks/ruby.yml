@@ -1,0 +1,25 @@
+---
+- name: Verificar si Ruby está instalado
+  ansible.builtin.command: which gem
+  register: ruby_check
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: Instalar paquetes Ruby
+  block:
+    - name: Verificar si tmuxinator ya está instalado
+      ansible.builtin.command: which tmuxinator
+      register: tmuxinator_check
+      changed_when: false
+      failed_when: false
+      check_mode: false
+
+    - name: Instalar tmuxinator con gem
+      ansible.builtin.gem:
+        name: tmuxinator
+        state: present
+        user_install: true
+      become: false
+      when: tmuxinator_check.rc != 0
+  when: ruby_check.rc != 0

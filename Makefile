@@ -22,7 +22,7 @@ ansible-check: logo
 		--ask-become-pass \
 		--check ansible/playbook.yml \
 		-i ansible/inventory.ini \
-		-v
+		-vvv
 
 ## Ejecuta la prueba del script en un contenedor Docker de openSUSE Tumbleweed
 test-opensuse: logo

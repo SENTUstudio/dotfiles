@@ -18,7 +18,7 @@
     - role: 05_install_nvm
     - role: 06_install_lazygit
     - role: 07_install_extended_dependencies
-    - role: 08_install_post_install
+    - role: 08_post_install
     - role: 09_config_zsh
     - role: 10_install_flatpak
     - role: 11_install_fonts
