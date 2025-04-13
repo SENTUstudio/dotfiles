@@ -1,0 +1,26 @@
+---
+- name: Verificar si tmux está instalado
+  ansible.builtin.command: which tmux
+  register: tmux_check
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: Instalar tmux si no está disponible
+  ansible.builtin.package:
+    name: tmux
+    state: present
+  become: true
+  when: tmux_check.rc != 0
+
+- name: Verificar si tpm ya está instalado
+  ansible.builtin.stat:
+    path: "{{ user_home }}/.tmux/plugins/tpm"
+  register: tpm_dir
+
+- name: Instalar Tmux Plugin Manager (tpm)
+  ansible.builtin.git:
+    repo: "https://github.com/tmux-plugins/tpm"
+    dest: "{{ user_home }}/.tmux/plugins/tpm"
+  become: false
+  when: not tpm_dir.stat.exists

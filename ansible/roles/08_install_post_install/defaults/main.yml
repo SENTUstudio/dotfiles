@@ -1,0 +1,23 @@
+---
+# Variables que pueden ser sobrescritas por el usuario
+install_d2: true
+install_brave: true
+install_tmux_plugins: true
+install_tmuxinator: true
+setup_docker_user: true
+install_atuin: true
+install_dust: true
+
+# Para go tools
+go_bin_path: "{{ user_home }}/go/bin"
+
+# Para rust tools
+cargo_bin_path: "{{ user_home }}/.cargo/bin"
+
+# Si quieres instalar algo específico para cada distribución
+supported_distributions:
+  - Debian
+  - Ubuntu
+  - CentOS
+  - Fedora
+  - Arch

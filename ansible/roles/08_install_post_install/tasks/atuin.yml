@@ -1,0 +1,16 @@
+---
+- name: Verificar si Atuin ya está instalado
+  ansible.builtin.command: which atuin
+  register: atuin_check
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: Instalar Atuin usando el script oficial
+  block:
+    - name: Descargar e instalar Atuin
+      ansible.builtin.shell: "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | bash"
+      become: false
+      args:
+        creates: "{{ user_home }}/.cargo/bin/atuin"
+  when: atuin_check.rc != 0

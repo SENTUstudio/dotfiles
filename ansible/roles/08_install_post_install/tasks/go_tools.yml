@@ -1,0 +1,54 @@
+---
+- name: Verificar si Go está instalado
+  ansible.builtin.command: which go
+  register: go_check
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: Instalar Go si no está disponible
+  block:
+    - name: Instalar Go en Debian/Ubuntu
+      ansible.builtin.apt:
+        name: golang
+        state: present
+      become: true
+      when: ansible_os_family == "Debian"
+
+    - name: Instalar Go en CentOS/RHEL
+      ansible.builtin.yum:
+        name: golang
+        state: present
+      become: true
+      when: ansible_os_family == "RedHat"
+
+    - name: Instalar Go en Fedora
+      ansible.builtin.dnf:
+        name: golang
+        state: present
+      become: true
+      when: ansible_distribution == "Fedora"
+
+    - name: Instalar Go en Arch Linux
+      ansible.builtin.pacman:
+        name: go
+        state: present
+      become: true
+      when: ansible_distribution == "Archlinux"
+  when: go_check.rc != 0
+
+- name: Crear directorio Go/bin si no existe
+  ansible.builtin.file:
+    path: "{{ go_bin_path }}"
+    state: directory
+    mode: "0755"
+  become: false
+
+- name: Instalar d2 diagram
+  ansible.builtin.command: "go install oss.terrastruct.com/d2@latest"
+  become: false
+  args:
+    creates: "{{ go_bin_path }}/d2"
+  environment:
+    PATH: "{{ ansible_env.PATH }}:/usr/local/go/bin"
+    GOPATH: "{{ user_home }}/go"

@@ -1,0 +1,68 @@
+---
+- name: Instalar dependencias para Brave
+  ansible.builtin.package:
+    name: "{{ brave_dependencies[ansible_distribution] }}"
+    state: present
+  become: true
+
+- name: Instalar Brave en Debian/Ubuntu
+  block:
+    - name: Añadir clave GPG de Brave
+      ansible.builtin.apt_key:
+        url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+        state: present
+      become: true
+
+    - name: Añadir repositorio de Brave
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"
+        state: present
+        filename: brave-browser
+      become: true
+
+    - name: Instalar Brave Browser
+      ansible.builtin.apt:
+        name: brave-browser
+        state: present
+        update_cache: true
+      become: true
+  when: ansible_os_family == "Debian"
+
+- name: Instalar Brave en CentOS/RHEL/Fedora
+  block:
+    - name: Añadir repositorio de Brave
+      ansible.builtin.get_url:
+        url: https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+        dest: /etc/yum.repos.d/brave-browser.repo
+        mode: "0644"
+      become: true
+
+    - name: Instalar Brave Browser
+      ansible.builtin.package:
+        name: brave-browser
+        state: present
+      become: true
+  when: ansible_os_family == "RedHat"
+
+- name: Instalar Brave en Arch Linux usando yay
+  block:
+    - name: Verificar si yay está instalado
+      ansible.builtin.command: which yay
+      register: yay_check
+      changed_when: false
+      failed_when: false
+      check_mode: false
+
+    - name: Instalar yay si no está disponible
+      ansible.builtin.shell: |
+        git clone https://aur.archlinux.org/yay.git /tmp/yay
+        cd /tmp/yay
+        makepkg -si --noconfirm
+      become: true
+      become_user: "{{ ansible_user_id }}"
+      when: yay_check.rc != 0
+
+    - name: Instalar Brave con yay
+      ansible.builtin.command: yay -S --noconfirm brave-bin
+      become: false
+  when: ansible_distribution == "Archlinux"

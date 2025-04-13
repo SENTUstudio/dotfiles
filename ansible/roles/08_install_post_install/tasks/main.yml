@@ -1,9 +1,41 @@
-- name: Ejecutar comandos post-instalación
-  ansible.builtin.shell: "{{ item.command }}"
-  become: no
-  loop: "{{ install_post_install_commands }}"
-  when:
-    - install_post_install_commands is defined
-    - item.command is defined
-  loop_control:
-    loop_var: item
+---
+- name: Include OS-specific variables
+  ansible.builtin.include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "default.yml"
+  ignore_errors: true
+
+- name: Verify OS support
+  ansible.builtin.fail:
+    msg: "Sistema operativo {{ ansible_distribution }} no soportado."
+  when: ansible_distribution not in supported_distributions
+
+- name: Include Go tools tasks
+  ansible.builtin.include_tasks: go_tools.yml
+  when: install_d2 | bool
+
+- name: Include Brave browser tasks
+  ansible.builtin.include_tasks: brave.yml
+  when: install_brave | bool
+
+- name: Include Tmux plugin manager tasks
+  ansible.builtin.include_tasks: tmux.yml
+  when: install_tmux_plugins | bool
+
+- name: Include Ruby/Tmuxinator tasks
+  ansible.builtin.include_tasks: ruby.yml
+  when: install_tmuxinator | bool
+
+- name: Include Docker user setup tasks
+  ansible.builtin.include_tasks: docker.yml
+  when: setup_docker_user | bool
+
+- name: Include Atuin tasks
+  ansible.builtin.include_tasks: atuin.yml
+  when: install_atuin | bool
+
+- name: Include Rust tools tasks
+  ansible.builtin.include_tasks: rust_tools.yml
+  when: install_dust | bool

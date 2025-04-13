@@ -1,0 +1,33 @@
+---
+- name: Verificar si Docker está instalado
+  ansible.builtin.command: which docker
+  register: docker_check
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: Advertir si Docker no está instalado
+  ansible.builtin.debug:
+    msg: "Docker no parece estar instalado. Por favor, instala Docker primero."
+  when: docker_check.rc != 0
+
+- name: Verificar si el usuario ya está en el grupo docker
+  ansible.builtin.shell: "id -Gn {{ ansible_user_id }} | grep -q docker"
+  register: user_in_docker_group
+  changed_when: false
+  failed_when: false
+  check_mode: false
+  when: docker_check.rc == 0
+
+- name: Añadir usuario al grupo docker
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: true
+  become: true
+  when: docker_check.rc == 0 and user_in_docker_group.rc != 0
+
+- name: Informar que puede ser necesario reiniciar la sesión
+  ansible.builtin.debug:
+    msg: "Usuario añadido al grupo docker. Es necesario cerrar sesión y volver a entrar para que los cambios surtan efecto."
+  when: docker_check.rc == 0 and user_in_docker_group.rc != 0

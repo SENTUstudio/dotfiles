@@ -1,0 +1,22 @@
+---
+# Variables internas que no deben ser modificadas por el usuario
+brave_dependencies:
+  Debian:
+    - apt-transport-https
+    - curl
+  Ubuntu:
+    - apt-transport-https
+    - curl
+  CentOS:
+    - curl
+  Fedora:
+    - curl
+  Arch:
+    - curl
+
+ruby_packages:
+  Debian: ruby ruby-dev
+  Ubuntu: ruby ruby-dev
+  CentOS: ruby ruby-devel
+  Fedora: ruby ruby-devel
+  Arch: ruby
