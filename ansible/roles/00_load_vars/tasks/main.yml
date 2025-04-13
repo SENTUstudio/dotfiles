@@ -57,7 +57,12 @@
   ansible.builtin.debug:
     var: flatpak_apps
 
-- name: Obtener el directorio home del usuario
-  ansible.builtin.command: echo $HOME
-  register: user_home
+- name: Get real user home directory
+  command: echo $HOME
+  register: user_home_output
+  changed_when: false
   become: no
+
+- name: Set user home directory as fact
+  ansible.builtin.set_fact:
+    user_home: "{{ user_home_output.stdout }}"
