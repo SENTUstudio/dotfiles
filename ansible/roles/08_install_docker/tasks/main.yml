@@ -16,6 +16,7 @@
   when: docker_check.rc != 0
 
 - name: Instalar Docker usando el script oficial
+  when: docker_check.rc != 0
   block:
     - name: Descargar script de instalación de Docker
       ansible.builtin.get_url:
@@ -36,7 +37,6 @@
         path: /tmp/get-docker.sh
         state: absent
       become: true
-  when: docker_check.rc != 0
 
 - name: Crear grupo docker (si no existe)
   ansible.builtin.group:
