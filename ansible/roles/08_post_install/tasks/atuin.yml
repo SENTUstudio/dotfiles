@@ -7,10 +7,13 @@
   check_mode: false
 
 - name: Instalar Atuin usando el script oficial
+  when: atuin_check.rc != 0
   block:
     - name: Descargar e instalar Atuin
-      ansible.builtin.shell: "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | bash"
-      become: false
+      ansible.builtin.shell:
+        cmd: |
+          set -o pipefail
+          curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | bash
+
       args:
         creates: "{{ user_home }}/.cargo/bin/atuin"
-  when: atuin_check.rc != 0

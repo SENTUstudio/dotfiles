@@ -6,6 +6,7 @@
   become: true
 
 - name: Instalar Brave en Debian/Ubuntu
+  when: ansible_os_family == "Debian"
   block:
     - name: Añadir clave GPG de Brave
       ansible.builtin.apt_key:
@@ -26,9 +27,9 @@
         state: present
         update_cache: true
       become: true
-  when: ansible_os_family == "Debian"
 
 - name: Instalar Brave en CentOS/RHEL/Fedora
+  when: ansible_os_family == "RedHat"
   block:
     - name: Añadir repositorio de Brave
       ansible.builtin.get_url:
@@ -42,9 +43,9 @@
         name: brave-browser
         state: present
       become: true
-  when: ansible_os_family == "RedHat"
 
 - name: Instalar Brave en Arch Linux usando yay
+  when: ansible_distribution == "Archlinux"
   block:
     - name: Verificar si yay está instalado
       ansible.builtin.command: which yay
@@ -53,16 +54,7 @@
       failed_when: false
       check_mode: false
 
-    - name: Instalar yay si no está disponible
-      ansible.builtin.shell: |
-        git clone https://aur.archlinux.org/yay.git /tmp/yay
-        cd /tmp/yay
-        makepkg -si --noconfirm
-      become: true
-      become_user: "{{ ansible_user_id }}"
-      when: yay_check.rc != 0
-
     - name: Instalar Brave con yay
+      when: yay_check.rc == 0
       ansible.builtin.command: yay -S --noconfirm brave-bin
       become: false
-  when: ansible_distribution == "Archlinux"

@@ -12,23 +12,79 @@
 -e file:.
 ansible==11.4.0
     # via dotfiles
+ansible-compat==25.1.5
+    # via ansible-lint
 ansible-core==2.18.4
     # via ansible
+    # via ansible-compat
+    # via ansible-lint
+ansible-lint==25.2.1
+    # via dotfiles
+attrs==25.3.0
+    # via jsonschema
+    # via referencing
+black==25.1.0
+    # via ansible-lint
+bracex==2.5.post1
+    # via wcmatch
 cffi==1.17.1
     # via cryptography
+click==8.1.8
+    # via black
 cryptography==44.0.2
     # via ansible-core
+filelock==3.18.0
+    # via ansible-lint
+importlib-metadata==8.6.1
+    # via ansible-lint
 jinja2==3.1.6
     # via ansible-core
+jsonschema==4.23.0
+    # via ansible-compat
+    # via ansible-lint
+jsonschema-specifications==2024.10.1
+    # via jsonschema
 libdnf5==0.0.1a1
     # via dotfiles
 markupsafe==3.0.2
     # via jinja2
+mypy-extensions==1.0.0
+    # via black
 packaging==24.2
+    # via ansible-compat
     # via ansible-core
+    # via ansible-lint
+    # via black
+pathspec==0.12.1
+    # via ansible-lint
+    # via black
+    # via yamllint
+platformdirs==4.3.7
+    # via black
 pycparser==2.22
     # via cffi
 pyyaml==6.0.2
+    # via ansible-compat
     # via ansible-core
+    # via ansible-lint
+    # via yamllint
+referencing==0.36.2
+    # via ansible-lint
+    # via jsonschema
+    # via jsonschema-specifications
 resolvelib==1.0.1
     # via ansible-core
+rpds-py==0.24.0
+    # via jsonschema
+    # via referencing
+ruamel-yaml==0.18.10
+    # via ansible-lint
+subprocess-tee==0.4.2
+    # via ansible-compat
+    # via ansible-lint
+wcmatch==10.0
+    # via ansible-lint
+yamllint==1.37.0
+    # via ansible-lint
+zipp==3.21.0
+    # via importlib-metadata

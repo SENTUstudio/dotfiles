@@ -7,6 +7,7 @@
   check_mode: false
 
 - name: Instalar paquetes Ruby
+  when: ruby_check.rc != 0
   block:
     - name: Verificar si tmuxinator ya está instalado
       ansible.builtin.command: which tmuxinator
@@ -22,4 +23,3 @@
         user_install: true
       become: false
       when: tmuxinator_check.rc != 0
-  when: ruby_check.rc != 0

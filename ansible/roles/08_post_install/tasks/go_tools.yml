@@ -7,6 +7,7 @@
   check_mode: false
 
 - name: Instalar Go si no está disponible
+  when: go_check.rc != 0
   block:
     - name: Instalar Go en Debian/Ubuntu
       ansible.builtin.apt:
@@ -35,7 +36,6 @@
         state: present
       become: true
       when: ansible_distribution == "Archlinux"
-  when: go_check.rc != 0
 
 - name: Crear directorio Go/bin si no existe
   ansible.builtin.file:
