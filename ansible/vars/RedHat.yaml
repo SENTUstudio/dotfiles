@@ -24,6 +24,12 @@ package_managers:
       - install
       - "-y"
       - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
+    docker:
+      - sudo
+      - dnf
+      - config-manager
+      - addrepo
+      - "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
     google-chrome:
       - sudo
       - dnf
