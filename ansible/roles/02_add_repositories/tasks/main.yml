@@ -1,5 +1,5 @@
 ---
-- name: Añadir repositorio {{ repo_item.key }} ({{ ansible_distribution }})
+- name: Añadir repositorio
   ansible.builtin.shell:
     argv: "{{ repo_item.value | format(fedora_version=fedora_version) }}"
   become: true

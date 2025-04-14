@@ -10,17 +10,18 @@
 
   roles:
     - role: test
-    - role: base_system_configuration
-    # - role: add_repositories
-    # - role: install_core_dependencies
-    # - role: install_uv
-    # - role: install_rye
-    # - role: install_nvm
-    # - role: install_extended_dependencies
-    # - role: install_post_install
-    # - role: config_zsh
-    # - role: install_flatpak
-    # - role: install_fonts
-    # - role: install_wallpapers
-    # - role: dotfiles_management
-    - pluggero.lazygit
+    # - role: 00_load_vars
+    # - role: 01_base_system_configuration
+    # - role: 02_add_repositories
+    # - role: 03_install_core_dependencies
+    # - role: 04_install_uv
+    # - role: 05_install_nvm
+    # - role: 06_install_lazygit
+    # - role: 07_install_extended_dependencies
+    - role: 08_install_docker
+    # - role: 09_post_install
+    # - role: 10_config_zsh
+    # - role: 11_install_flatpak
+    # - role: 12_install_fonts
+    # - role: 13_install_wallpapers
+    # - role: 14_dotfiles_management
