@@ -13,11 +13,11 @@
   become: true
   when: docker_check.rc != 0
 
-- name: Añadir el repositorio de Docker a Fedora
-  ansible.builtin.shell:
-    cmd: sudo dnf config-manager addrepo "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
-  become: true
-  when: docker_check.rc != 0
+# - name: Añadir el repositorio de Docker a Fedora
+#   ansible.builtin.shell:
+#     cmd: sudo dnf config-manager addrepo "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
+#   become: true
+#   when: docker_check.rc != 0
 
 - name: Instalar Docker CE, CLI y containerd.io en Fedora
   ansible.builtin.dnf:

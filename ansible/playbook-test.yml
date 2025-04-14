@@ -10,9 +10,9 @@
 
   roles:
     - role: test
-    # - role: 00_load_vars
-    # - role: 01_base_system_configuration
-    # - role: 02_add_repositories
+    - role: 00_load_vars
+    - role: 01_base_system_configuration
+    - role: 02_add_repositories
     # - role: 03_install_core_dependencies
     # - role: 04_install_uv
     # - role: 05_install_nvm
