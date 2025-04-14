@@ -30,3 +30,5 @@
   become: true
   when: docker_check.rc != 0
   notify: restart docker
+  vars:
+    update_cache: yes
