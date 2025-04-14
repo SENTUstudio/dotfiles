@@ -84,9 +84,9 @@ package_managers:
       - kitty
       - lua-devel
       - luarocks
-      # - docker-cli
-      # - containerd
-      # - docker-compose
+      - docker-cli
+      - containerd
+      - docker-compose
       - bat
       - fzf
       - httpie
