@@ -14,8 +14,13 @@
   when: docker_check.rc != 0
 
 - name: Añadir el repositorio de Docker a Fedora
-  ansible.builtin.shell:
-    cmd: sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+  ansible.builtin.yum_repository:
+    name: docker-ce
+    description: Docker CE Stable - $releasever
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+    enabled: yes
   become: true
   when: docker_check.rc != 0
 
