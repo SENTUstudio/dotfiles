@@ -3,4 +3,5 @@
   ansible.builtin.systemd:
     name: docker
     state: restarted
+    daemon_reload: yes
   become: true

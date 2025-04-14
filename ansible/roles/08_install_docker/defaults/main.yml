@@ -1,5 +1,3 @@
----
-# Variables predeterminadas
-docker_add_current_user: true # Añadir automáticamente el usuario que ejecuta Ansible al grupo docker
-docker_additional_users: [] # Lista adicional de usuarios para añadir al grupo docker
-docker_start_on_boot: true # Habilitar Docker para iniciar en el arranque
+docker_add_current_user: true
+docker_additional_users: []
+docker_start_on_boot: true

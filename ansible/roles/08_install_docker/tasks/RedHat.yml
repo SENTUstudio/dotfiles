@@ -1,0 +1,30 @@
+---
+- name: Verificar si Docker ya está instalado
+  ansible.builtin.command: which docker
+  register: docker_check
+  changed_when: false
+  failed_when: false
+
+- name: Instalar paquetes prerequisitos para Docker en Fedora
+  ansible.builtin.package:
+    name:
+      - dnf-plugins-core
+    state: present
+  become: true
+  when: docker_check.rc != 0
+
+- name: Añadir el repositorio de Docker a Fedora
+  ansible.builtin.command: dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+  become: true
+  when: docker_check.rc != 0
+
+- name: Instalar Docker CE, CLI y containerd.io en Fedora
+  ansible.builtin.package:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: present
+  become: true
+  when: docker_check.rc != 0
+  notify: restart docker
