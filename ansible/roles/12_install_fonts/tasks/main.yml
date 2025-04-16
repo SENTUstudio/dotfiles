@@ -6,30 +6,29 @@
   failed_when: false
 
 - name: Instalar fontconfig
-  when: fontconfig_check.rc != 0
   become: yes
   block:
     - name: Instalar fontconfig (Debian/Ubuntu)
       ansible.builtin.apt:
         name: fontconfig
         state: present
-      when: ansible_os_family == "Debian"
+      when: ansible_os_family == "Debian" and fontconfig_check.rc != 0
 
     - name: Instalar fontconfig (Red Hat/CentOS/Fedora)
       ansible.builtin.dnf:
         name: fontconfig
         state: present
-      when: ansible_os_family == "RedHat"
+      when: ansible_os_family == "RedHat" and fontconfig_check.rc != 0
 
     - name: Instalar fontconfig (openSUSE)
       community.general.zypper:
         name: fontconfig
         state: present
-      when: ansible_os_family == "Suse"
+      when: ansible_os_family == "Suse" and fontconfig_check.rc != 0
 
 - name: Crear directorio de fuentes
   ansible.builtin.file:
-    path: "{{ user_home.stdout }}/.local/share/fonts"
+    path: "{{ user_home }}/.local/share/fonts"
     state: directory
     mode: "0755"
   become: no
@@ -37,7 +36,7 @@
 - name: Descargar Meslo Nerd Font
   ansible.builtin.get_url:
     url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Meslo.zip"
-    dest: "{{ user_home.stdout }}/Meslo.zip"
+    dest: "{{ user_home }}/Meslo.zip"
     mode: "0644"
   become: no
   register: download_meslo
@@ -45,44 +44,44 @@
 - name: Descargar JetBrainsMono Nerd Font
   ansible.builtin.get_url:
     url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip"
-    dest: "{{ user_home.stdout }}/JetBrainsMono.zip"
+    dest: "{{ user_home }}/JetBrainsMono.zip"
     mode: "0644"
   become: no
   register: download_jetbrains
 
 - name: Descomprimir Meslo Nerd Font
   ansible.builtin.unarchive:
-    src: "{{ user_home.stdout }}/Meslo.zip"
-    dest: "{{ user_home.stdout }}/.local/share/fonts"
+    src: "{{ user_home }}/Meslo.zip"
+    dest: "{{ user_home }}/.local/share/fonts"
     remote_src: yes
   become: no
   when: download_meslo.changed
 
 - name: Descomprimir JetBrainsMono Nerd Font
   ansible.builtin.unarchive:
-    src: "{{ user_home.stdout }}/JetBrainsMono.zip"
-    dest: "{{ user_home.stdout }}/.local/share/fonts"
+    src: "{{ user_home }}/JetBrainsMono.zip"
+    dest: "{{ user_home }}/.local/share/fonts"
     remote_src: yes
   become: no
   when: download_jetbrains.changed
 
 - name: Eliminar archivo zip de Meslo
   ansible.builtin.file:
-    path: "{{ user_home.stdout }}/Meslo.zip"
+    path: "{{ user_home }}/Meslo.zip"
     state: absent
   become: no
   when: download_meslo.changed
 
 - name: Eliminar archivo zip de JetBrainsMono
   ansible.builtin.file:
-    path: "{{ user_home.stdout }}/JetBrainsMono.zip"
+    path: "{{ user_home }}/JetBrainsMono.zip"
     state: absent
   become: no
   when: download_jetbrains.changed
 
 - name: Encontrar archivos de Windows para eliminar
   ansible.builtin.find:
-    paths: "{{ user_home.stdout }}/.local/share/fonts"
+    paths: "{{ user_home }}/.local/share/fonts"
     patterns: "*Windows*"
     recurse: no
   register: windows_files
