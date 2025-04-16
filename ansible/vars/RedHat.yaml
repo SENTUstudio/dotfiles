@@ -71,6 +71,7 @@ package_managers:
       - automake
       - perl
       - elfutils-libelf-devel
+      - fontconfig
     extended:
       # - lazygit
       - ripgrep

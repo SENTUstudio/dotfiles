@@ -1,6 +1,13 @@
 ---
-# tasks/main.yml
+- name: Verificar si fontconfig ya está instalado
+  ansible.builtin.command: which fontconfig
+  register: fontconfig_check
+  changed_when: false
+  failed_when: false
+
 - name: Instalar fontconfig
+  when: fontconfig_check.rc != 0
+  become: yes
   block:
     - name: Instalar fontconfig (Debian/Ubuntu)
       ansible.builtin.apt:
@@ -19,7 +26,6 @@
         name: fontconfig
         state: present
       when: ansible_os_family == "Suse"
-  become: yes
 
 - name: Crear directorio de fuentes
   ansible.builtin.file:

@@ -41,6 +41,7 @@ package_managers:
       - automake
       - perl
       - elfutils
+      - fontconfig
     extended:
       - lazygit
       - ripgrep
