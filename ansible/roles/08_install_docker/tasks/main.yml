@@ -45,6 +45,6 @@
   become: true
   when: docker_start_on_boot
   ansible.builtin.systemd_service:
-    name: docker
+    name: docker.service
     enabled: true
     masked: no
