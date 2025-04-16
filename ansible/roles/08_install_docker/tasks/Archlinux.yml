@@ -1,0 +1,5 @@
+---
+- name: Instalacion en Archlinux
+  ansible.builtin.debug:
+    msg: "Docker ya se instaló en {{ ansible_distribution }} \nfamilia: {{ ansible_os_family }}"
+  become: false
