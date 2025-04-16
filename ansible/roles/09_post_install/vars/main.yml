@@ -11,7 +11,7 @@ brave_dependencies:
     - curl
   Fedora:
     - curl
-  Arch:
+  Archlinux:
     - curl
 
 ruby_packages:
@@ -19,4 +19,4 @@ ruby_packages:
   Ubuntu: ruby ruby-dev
   CentOS: ruby ruby-devel
   Fedora: ruby ruby-devel
-  Arch: ruby
+  Archlinux: ruby
