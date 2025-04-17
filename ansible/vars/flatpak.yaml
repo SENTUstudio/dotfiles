@@ -1,3 +1,4 @@
 apps:
   - "md.obsidian.Obsidian"
   - "io.missioncenter.MissionCenter"
+  - "com.bitwarden.desktop"
