@@ -322,7 +322,8 @@ def run_ansible_playbook():
             "ansible-playbook",
             "--ask-become-pass",
             str(playbook_path),
-            "-vvv",
+            # "-vvv",
+            "-v",
         ]
         run_command(command, cwd=DOTFILES_DIR)
         logging.info("Ansible Playbook ejecutado exitosamente.")
