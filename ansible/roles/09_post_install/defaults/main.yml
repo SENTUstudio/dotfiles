@@ -7,6 +7,7 @@ install_tmuxinator: true
 setup_docker_user: true
 install_atuin: true
 install_dust: true
+install_musikcube: true
 
 # Para go tools
 go_bin_path: "{{ user_home }}/go/bin"

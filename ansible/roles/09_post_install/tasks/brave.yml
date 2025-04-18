@@ -44,7 +44,7 @@
         state: present
       become: true
 
-- name: Instalar Brave en Arch Linux usando yay
+- name: Instalar Navegadores en Arch Linux usando yay
   when: ansible_distribution == "Archlinux"
   block:
     - name: Verificar si yay está instalado
@@ -56,5 +56,5 @@
 
     - name: Instalar Brave con yay
       when: yay_check.rc == 0
-      ansible.builtin.command: yay -S --noconfirm brave-bin
+      ansible.builtin.command: yay -S --noconfirm brave-bin google-chrome
       become: false

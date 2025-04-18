@@ -16,7 +16,7 @@
   ansible.builtin.include_tasks: go_tools.yml
   when: install_d2 | bool
 
-- name: Include Brave browser tasks
+- name: Include browsers tasks
   ansible.builtin.include_tasks: brave.yml
   when: install_brave | bool
 
@@ -39,3 +39,7 @@
 - name: Include Rust tools tasks
   ansible.builtin.include_tasks: rust_tools.yml
   when: install_dust | bool
+
+- name: Include Musikcube tasks
+  ansible.builtin.include_tasks: musikcube.yml
+  when: install_musikcube | bool
