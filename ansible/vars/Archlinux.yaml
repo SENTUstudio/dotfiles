@@ -42,6 +42,7 @@ package_managers:
       - perl
       - elfutils
       - fontconfig
+      - btop
     extended:
       - lazygit
       - ripgrep

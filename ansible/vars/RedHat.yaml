@@ -72,6 +72,7 @@ package_managers:
       - perl
       - elfutils-libelf-devel
       - fontconfig
+      - btop
     extended:
       # - lazygit
       - ripgrep
