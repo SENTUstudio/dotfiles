@@ -12,12 +12,9 @@ package_managers:
     - "--needed"
     - "--noconfirm"
   repo:
-    google-chrome:
-      - sudo
-      - dnf
-      - install
-      - "-y"
-      - "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+    base:
+      - echo
+      - "Archlinux no requiere repo adicionales a yay"
   dependencies:
     core:
       - git
@@ -100,3 +97,5 @@ package_managers:
       - bpytop
       - obsidian
       - mission-center
+      - musikcube
+      - google-chrome
