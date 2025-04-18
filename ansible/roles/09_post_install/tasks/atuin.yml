@@ -1,5 +1,6 @@
 ---
 - name: Verificar si Atuin ya está instalado
+  become: no
   ansible.builtin.command: which atuin
   register: atuin_check
   changed_when: false
@@ -7,6 +8,7 @@
   check_mode: false
 
 - name: Instalar Atuin usando el script oficial
+  become: no
   when: atuin_check.rc != 0
   block:
     - name: Descargar e instalar Atuin
