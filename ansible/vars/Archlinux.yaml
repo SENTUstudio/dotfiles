@@ -60,6 +60,7 @@ package_managers:
       - fzf
       - httpie
       - tmux
+      - tmuxinator
       - htop
       - lm_sensors
       - discord
