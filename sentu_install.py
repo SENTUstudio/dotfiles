@@ -152,11 +152,11 @@ def package_core():
                 "zypper": ["sudo", "zypper", "update", "-y"],
             }
             install_commands = {
-                "apt-get": ["sudo", "apt-get", "install", "-y", "git", "ansible"],
+                "apt-get": ["sudo", "apt-get", "install", "-y", "git"],
                 "dnf": ["sudo", "dnf", "install", "-y", "git", "python3-libdnf5"],
-                "pacman": ["sudo", "pacman", "-S", "--noconfirm", "git", "ansible"],
-                "yum": ["sudo", "yum", "install", "-y", "git", "ansible"],
-                "zypper": ["sudo", "zypper", "install", "-y", "git", "ansible"],
+                "pacman": ["sudo", "pacman", "-S", "--noconfirm", "git"],
+                "yum": ["sudo", "yum", "install", "-y", "git"],
+                "zypper": ["sudo", "zypper", "install", "-y", "git"],
             }
             install_rye = (
                 'curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash'
