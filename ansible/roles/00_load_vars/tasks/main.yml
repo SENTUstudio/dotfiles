@@ -57,12 +57,22 @@
   ansible.builtin.debug:
     var: flatpak_apps
 
-- name: Get real user home directory
+- name: Obtener el directorio personal real del usuario
   command: echo $HOME
   register: user_home_output
   changed_when: false
   become: no
 
-- name: Set user home directory as fact
+- name: Establecer el directorio personal del usuario como fact
   ansible.builtin.set_fact:
     user_home: "{{ user_home_output.stdout }}"
+
+- name: Obtener el nombre de usuario
+  command: echo $USER
+  register: user_name_output
+  changed_when: false
+  become: no
+
+- name: Establecer el nombre de usuario como fact
+  ansible.builtin.set_fact:
+    current_user: "{{ user_name_output.stdout }}"

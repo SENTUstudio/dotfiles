@@ -9,10 +9,10 @@
     state: present
   become: true
 
-- name: Obtener el usuario actual
-  become: false
-  ansible.builtin.set_fact:
-    current_user: "{{ ansible_user_id }}"
+# - name: Obtener el usuario actual
+#   become: false
+#   ansible.builtin.set_fact:
+#     current_user: "{{ ansible_user_id }}"
 
 - name: Añadir el usuario actual al grupo docker
   ansible.builtin.user:
