@@ -306,16 +306,6 @@ def run_ansible_playbook():
 
     logging.info("Ejecutando Ansible Playbook...")
     try:
-        # command = [
-        #     "rye",
-        #     "run",
-        #     "ansible-galaxy",
-        #     "role",
-        #     "install",
-        #     "pluggero.lazygit",
-        # ]
-        # run_command(command, cwd=DOTFILES_DIR)
-        # logging.info("Ansible Playbook ejecutado exitosamente.")
         command = [
             "rye",
             "run",
