@@ -1,9 +1,11 @@
 ---
 - name: Definir la versión de Node.js a instalar (opcional, puedes cambiarla)
+  become: no
   set_fact:
     nodejs_version: "lts/*" # Instala la última LTS
 
 - name: Verificar si NVM está instalado
+  become: no
   command: "command -v nvm"
   register: nvm_check
   ignore_errors: true
@@ -29,12 +31,14 @@
     #     state: absent
     #   when: nvm_download.changed or nvm_check.rc != 0
     - name: Install nvm
+      become: no
       ansible.builtin.shell: >
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
       args:
         creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
     - name: Asegurar que NVM esté en el PATH para futuras tareas
+      become: no
       ansible.builtin.shell: |
         export NVM_DIR="$([ -s "$HOME/.nvm/nvm.sh" ] && printf '%s' "$HOME/.nvm" || printf '/opt/nvm')"
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -45,6 +49,7 @@
   when: nvm_check.rc != 0
 
 - name: Instalar Node.js usando NVM
+  become: no
   shell: |
     export NVM_DIR="$([ -s "$HOME/.nvm/nvm.sh" ] && printf '%s' "$HOME/.nvm" || printf '/opt/nvm')"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
