@@ -278,11 +278,13 @@ def clone_repo():
         sys.exit(1)
 
 
-def run_ansible_playbook():
+def run_ansible_playbook(test: bool = False):
     """Ejecuta el playbook de Ansible si Ansible está instalado."""
     ansible_dir = DOTFILES_DIR / "ansible"
-    playbook_path = ansible_dir / "playbook.yml"
-    # playbook_path = ansible_dir / "playbook-test.yml"
+    if test:
+        playbook_path = ansible_dir / "playbook-test.yml"
+    else:
+        playbook_path = ansible_dir / "playbook.yml"
     inventory_file_path = (
         ansible_dir / "inventory.ini"
     )  # Asumo que el inventario está en la misma carpeta
@@ -337,7 +339,7 @@ def main():
     logging.info("💾 Clonación de dotfiles terminada")
 
     show("⚙️  Iniciando instalación de paquetes")
-    run_ansible_playbook()
+    run_ansible_playbook(test=True)
     show("✅ Configuración completa. Te invito a reiniciar tu sistema y disfrutar")
 
 
