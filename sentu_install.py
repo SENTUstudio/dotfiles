@@ -338,7 +338,7 @@ def main():
 
     show("⚙️  Iniciando instalación de paquetes")
     run_ansible_playbook()
-    show("✅ Configuración completa")
+    show("✅ Configuración completa. Te invito a reiniciar tu sistema y disfrutar")
 
 
 if __name__ == "__main__":
