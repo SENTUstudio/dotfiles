@@ -60,7 +60,7 @@ package_managers:
       - fzf
       - httpie
       - tmux
-      - tmuxinator
+      # - tmuxinator
       - htop
       - lm_sensors
       - discord
@@ -98,5 +98,5 @@ package_managers:
       - bpytop
       - obsidian
       - mission-center
-      - musikcube
-      - google-chrome
+      # - musikcube
+      # - google-chrome
