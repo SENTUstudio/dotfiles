@@ -1,4 +1,5 @@
 ---
+# Asegurar que los directorios necesarios existen
 - name: Asegurar que los directorios base existen
   file:
     path: "{{ item }}"
@@ -7,6 +8,10 @@
   loop:
     - "{{ user_home }}/.config"
     - "{{ user_home }}/.local/share"
+    - "{{ user_home }}/.sentu_backup"
+    - "{{ user_home }}/.sentu_backup/.config"
+    - "{{ user_home }}/.sentu_backup/.local"
+    - "{{ user_home }}/.sentu_backup/.local/share"
   become: no
 
 # Manejo de dotfiles/config (directorios)
@@ -28,8 +33,21 @@
 - name: Crear backup ZIP de directorios conflictivos existentes en .config
   archive:
     path: "{{ user_home }}/.config/{{ item.item.path | basename }}"
-    dest: "{{ user_home }}/.config/{{ item.item.path | basename }}_backup_{{ ansible_date_time.date }}.zip"
+    dest: "{{ user_home }}/.sentu_backup/.config/{{ item.item.path | basename }}_backup_{{ ansible_date_time.date }}.zip"
     format: zip
+  loop: "{{ info_destino_config_dir.results }}"
+  become: no
+  when:
+    - item.stat is defined
+    - item.stat.exists
+    - item.stat.isdir
+    - item.stat.size > 0
+    - not item.stat.islnk
+
+- name: Eliminar directorios originales en .config después del backup
+  file:
+    path: "{{ user_home }}/.config/{{ item.item.path | basename }}"
+    state: absent
   loop: "{{ info_destino_config_dir.results }}"
   become: no
   when:
@@ -56,6 +74,35 @@
     recurse: no
   register: archivos_config
   become: no
+
+- name: Verificar archivos existentes en .config
+  stat:
+    path: "{{ user_home }}/.config/{{ item.path | basename }}"
+  register: archivo_config_stat
+  loop: "{{ archivos_config.files }}"
+  become: no
+  ignore_errors: yes
+
+- name: Hacer backup de archivos existentes en .config
+  copy:
+    src: "{{ user_home }}/.config/{{ item.item.path | basename }}"
+    dest: "{{ user_home }}/.sentu_backup/.config/{{ item.item.path | basename }}.bak.{{ ansible_date_time.date }}"
+    remote_src: yes
+  loop: "{{ archivo_config_stat.results }}"
+  become: no
+  when:
+    - item.stat.exists | default(false)
+    - not item.stat.islnk | default(false)
+
+- name: Eliminar archivos originales en .config después del backup
+  file:
+    path: "{{ user_home }}/.config/{{ item.item.path | basename }}"
+    state: absent
+  loop: "{{ archivo_config_stat.results }}"
+  become: no
+  when:
+    - item.stat.exists | default(false)
+    - not item.stat.islnk | default(false)
 
 - name: Crear enlaces simbólicos para los archivos de configuración
   file:
@@ -87,8 +134,18 @@
 - name: Hacer backup de archivos de home existentes que serán reemplazados
   copy:
     src: "{{ user_home }}/{{ item.item.path | basename }}"
-    dest: "{{ user_home }}/{{ item.item.path | basename }}.bak.{{ ansible_date_time.date }}"
+    dest: "{{ user_home }}/.sentu_backup/{{ item.item.path | basename }}.bak.{{ ansible_date_time.date }}"
     remote_src: yes
+  loop: "{{ archivo_home_stat.results }}"
+  become: no
+  when:
+    - item.stat.exists | default(false)
+    - not item.stat.islnk | default(false)
+
+- name: Eliminar archivos originales de home después del backup
+  file:
+    path: "{{ user_home }}/{{ item.item.path | basename }}"
+    state: absent
   loop: "{{ archivo_home_stat.results }}"
   become: no
   when:
@@ -131,8 +188,21 @@
 - name: Crear backup de directorios conflictivos en .local/share
   archive:
     path: "{{ user_home }}/.local/share/{{ item.item.path | basename }}"
-    dest: "{{ user_home }}/.local/share/{{ item.item.path | basename }}_backup_{{ ansible_date_time.date }}.zip"
+    dest: "{{ user_home }}/.sentu_backup/.local/share/{{ item.item.path | basename }}_backup_{{ ansible_date_time.date }}.zip"
     format: zip
+  loop: "{{ info_destino_local_share.results | default([]) }}"
+  become: no
+  when:
+    - item.stat is defined
+    - item.stat.exists
+    - item.stat.isdir
+    - item.stat.size > 0
+    - not item.stat.islnk
+
+- name: Eliminar directorios originales en .local/share después del backup
+  file:
+    path: "{{ user_home }}/.local/share/{{ item.item.path | basename }}"
+    state: absent
   loop: "{{ info_destino_local_share.results | default([]) }}"
   become: no
   when:
