@@ -315,7 +315,7 @@ def run_ansible_playbook(test: bool = False):
             "--ask-become-pass",
             str(playbook_path),
             # "-vvv",
-            "-v",
+            # "-v",
         ]
         run_command(command, cwd=DOTFILES_DIR)
         logging.info("Ansible Playbook ejecutado exitosamente.")
@@ -339,7 +339,7 @@ def main():
     logging.info("💾 Clonación de dotfiles terminada")
 
     show("⚙️  Iniciando instalación de paquetes")
-    run_ansible_playbook(test=True)
+    run_ansible_playbook(test=False)
     show("✅ Configuración completa. Te invito a reiniciar tu sistema y disfrutar")
 
 
