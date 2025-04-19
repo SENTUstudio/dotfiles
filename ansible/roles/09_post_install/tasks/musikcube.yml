@@ -11,5 +11,5 @@
 
     - name: Instalar Musikcube con yay
       when: yay_check.rc == 0
-      ansible.builtin.command: yay -S --noconfirm musikcube
+      ansible.builtin.command: yay -Syu --noconfirm musikcube
       become: false
