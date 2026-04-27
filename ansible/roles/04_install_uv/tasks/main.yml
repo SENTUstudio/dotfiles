@@ -1,0 +1,8 @@
+---
+- name: Descargar e instalar uv usando el script oficial
+  shell: "curl -LsSf {{ install_scripts.uv }} | sh"
+  become: false
+  register: uv_install_output
+  changed_when: "'uv installed successfully' not in uv_install_output.stdout"
+  when: install_scripts.uv is defined
+  tags: install_uv

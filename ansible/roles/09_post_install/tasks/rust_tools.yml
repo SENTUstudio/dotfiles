@@ -1,0 +1,32 @@
+---
+- name: Verificar si Rust está instalado
+  ansible.builtin.command: which cargo
+  register: cargo_check
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: Instalar Rust si no está disponible
+  block:
+    - name: Descargar e instalar Rust
+      ansible.builtin.shell: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+      become: false
+      args:
+        creates: "{{ cargo_bin_path }}/cargo"
+  when: cargo_check.rc != 0
+
+- name: Verificar si du-dust ya está instalado
+  ansible.builtin.command: which dust
+  register: dust_check
+  changed_when: false
+  failed_when: false
+  check_mode: false
+
+- name: Instalar du-dust con cargo
+  ansible.builtin.command: "cargo install du-dust"
+  become: false
+  args:
+    creates: "{{ cargo_bin_path }}/dust"
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ cargo_bin_path }}"
+  when: dust_check.rc != 0

@@ -1,0 +1,109 @@
+---
+- name: Establecer la versión de Fedora como un hecho (fact)
+  ansible.builtin.set_fact:
+    fedora_version: "{{ ansible_distribution_major_version }}"
+  when: ansible_distribution == "Fedora"
+
+- name: Include global variables
+  include_vars:
+    file: "{{ playbook_dir }}/vars/global.yaml"
+  tags: global_vars
+
+- name: Include post-install variables
+  include_vars:
+    file: "{{ playbook_dir }}/vars/post_install.yaml"
+  tags: post_install_vars
+
+- name: Include flatpak_apps variables
+  include_vars:
+    file: "{{ playbook_dir }}/vars/flatpak.yaml"
+  tags: flatpak_apps_vars
+
+- name: Include wallpapers variables
+  include_vars:
+    file: "{{ playbook_dir }}/vars/wallpapers.yaml"
+  tags: wallpapers_apps_vars
+
+- name: Incluir variables específicas de la distribución
+  ansible.builtin.include_vars:
+    file: "{{ playbook_dir }}/vars/{{ ansible_os_family }}.yaml"
+  ignore_errors: true # Evita fallos si el archivo no existe
+
+- name: Cargar selection.yaml si existe
+  ansible.builtin.include_vars:
+    file: "{{ playbook_dir }}/vars/selection.yaml"
+  ignore_errors: true
+
+- name: Depurar contenido de package_managers
+  ansible.builtin.debug:
+    var: package_managers
+
+- name: Definir core_dependencies globalmente
+  ansible.builtin.set_fact:
+    core_dependencies: "{{ package_managers.dependencies.core | default([]) }}"
+
+- name: Depurar contenido de core_dependencies
+  ansible.builtin.debug:
+    var: core_dependencies
+
+- name: Calcular fallback de extended_dependencies desde categorized o extended
+  ansible.builtin.set_fact:
+    _extended_fallback: >-
+      {{
+        package_managers.dependencies.categorized | default({}) | dict2items | map(attribute='value') | flatten
+        if package_managers.dependencies.categorized is defined
+        else package_managers.dependencies.extended | default([])
+      }}
+
+- name: Calcular fallback de extended_cask_dependencies desde categorized_cask o extended_cask
+  ansible.builtin.set_fact:
+    _extended_cask_fallback: >-
+      {{
+        package_managers.dependencies.categorized_cask | default({}) | dict2items | map(attribute='value') | flatten
+        if package_managers.dependencies.categorized_cask is defined
+        else package_managers.dependencies.extended_cask | default([])
+      }}
+
+- name: Definir extended_dependencies globalmente
+  ansible.builtin.set_fact:
+    extended_dependencies: "{{ selected_packages | default(_extended_fallback) }}"
+
+- name: Depurar contenido de extended_dependencies
+  ansible.builtin.debug:
+    var: extended_dependencies
+
+- name: Definir extended_cask_dependencies globalmente (Darwin)
+  ansible.builtin.set_fact:
+    extended_cask_dependencies: "{{ selected_cask_packages | default(_extended_cask_fallback) }}"
+
+- name: Depurar contenido de extended_cask_dependencies
+  ansible.builtin.debug:
+    var: extended_cask_dependencies
+
+- name: Definir flatpak_apps globalmente
+  ansible.builtin.set_fact:
+    flatpak_apps: "{{ apps | default([]) }}"
+
+- name: Depurar contenido de flatpak_apps
+  ansible.builtin.debug:
+    var: flatpak_apps
+
+- name: Obtener el directorio personal real del usuario
+  command: echo $HOME
+  register: user_home_output
+  changed_when: false
+  become: no
+
+- name: Establecer el directorio personal del usuario como fact
+  ansible.builtin.set_fact:
+    user_home: "{{ user_home_output.stdout }}"
+
+- name: Obtener el nombre de usuario
+  command: echo $USER
+  register: user_name_output
+  changed_when: false
+  become: no
+
+- name: Establecer el nombre de usuario como fact
+  ansible.builtin.set_fact:
+    current_user: "{{ user_name_output.stdout }}"

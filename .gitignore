@@ -1,0 +1,19 @@
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# venv
+.venv
+
+ansible/log/
+
+# generated selections
+ansible/vars/selection.yaml
+
+# secrets
+home/.zshrc.secrets
+*.secrets

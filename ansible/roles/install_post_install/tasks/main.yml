@@ -1,9 +1,0 @@
-- name: Ejecutar comandos post-instalación
-  ansible.builtin.shell: "{{ item.command }}"
-  become: true
-  loop: "{{ sentu_install.install_post_install_commands }}"
-  when:
-    - sentu_install.install_post_install_commands is defined
-    - item.command is defined
-  loop_control:
-    loop_var: item

@@ -1,0 +1,35 @@
+---
+- name: Instalar dependencias extendidas (Fedora)
+  ansible.builtin.dnf:
+    name: "{{ extended_dependencies | intersect(selected_packages | default(extended_dependencies)) }}"
+    state: present
+    allowerasing: yes
+    disable_gpg_check: yes
+    install_weak_deps: no
+  when: ansible_distribution == "Fedora"
+
+- name: Install package from AUR using a Pacman compatible AUR helper
+  community.general.pacman:
+    name: "{{ extended_dependencies | intersect(selected_packages | default(extended_dependencies)) }}"
+    state: present
+    executable: yay
+    extra_args: --builddir /var/cache/yay
+  when: ansible_os_family == "Archlinux"
+
+- name: Instalar dependencias extendidas (macOS)
+  community.general.homebrew:
+    name: "{{ extended_dependencies | intersect(selected_packages | default(extended_dependencies)) }}"
+    state: present
+  when: ansible_os_family == "Darwin"
+  become: false
+  ignore_errors: true
+
+- name: Instalar dependencias extendidas cask (macOS)
+  community.general.homebrew_cask:
+    name: "{{ extended_cask_dependencies | intersect(selected_cask_packages | default(extended_cask_dependencies)) }}"
+    state: present
+  when:
+    - ansible_os_family == "Darwin"
+    - extended_cask_dependencies | length > 0
+  become: false
+  ignore_errors: true

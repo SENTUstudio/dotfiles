@@ -1,0 +1,9 @@
+wallpaper_repositories:
+  - name: budgie-wallpapers
+    url: https://github.com/UbuntuBudgie/budgie-wallpapers.git
+  - name: wallpapers
+    url: https://gitlab.com/dwt1/wallpapers.git
+  - name: aesthetic-wallpapers
+    url: https://github.com/D3Ext/aesthetic-wallpapers
+wallpaper_base_dir: "~/wallpaper"
+wallpaper_img_subdir: "img"

@@ -1,0 +1,7 @@
+---
+- name: Instalar Docker Desktop via Homebrew Cask
+  community.general.homebrew_cask:
+    name: docker
+    state: present
+  become: false
+  when: ansible_os_family == "Darwin"

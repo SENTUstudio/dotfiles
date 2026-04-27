@@ -1,0 +1,153 @@
+---
+- name: Verificar si fontconfig ya está instalado
+  ansible.builtin.command: which fontconfig
+  register: fontconfig_check
+  changed_when: false
+  failed_when: false
+
+- name: Instalar fontconfig
+  become: yes
+  block:
+    - name: Instalar fontconfig (Debian/Ubuntu)
+      ansible.builtin.apt:
+        name: fontconfig
+        state: present
+      when: ansible_os_family == "Debian" and fontconfig_check.rc != 0
+
+    - name: Instalar fontconfig (Red Hat/CentOS/Fedora)
+      ansible.builtin.dnf:
+        name: fontconfig
+        state: present
+      when: ansible_os_family == "RedHat" and fontconfig_check.rc != 0
+
+    - name: Instalar fontconfig (openSUSE)
+      community.general.zypper:
+        name: fontconfig
+        state: present
+      when: ansible_os_family == "Suse" and fontconfig_check.rc != 0
+
+- name: Crear directorio de fuentes (Linux)
+  ansible.builtin.file:
+    path: "{{ user_home }}/.local/share/fonts"
+    state: directory
+    mode: "0755"
+  become: no
+  when: ansible_os_family != "Darwin"
+
+- name: Crear directorio de fuentes (macOS)
+  ansible.builtin.file:
+    path: "{{ user_home }}/Library/Fonts"
+    state: directory
+    mode: "0755"
+  become: no
+  when: ansible_os_family == "Darwin"
+
+- name: Descargar Meslo Nerd Font
+  ansible.builtin.get_url:
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Meslo.zip"
+    dest: "{{ user_home }}/Meslo.zip"
+    mode: "0644"
+  become: no
+  register: download_meslo
+
+- name: Descargar JetBrainsMono Nerd Font
+  ansible.builtin.get_url:
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip"
+    dest: "{{ user_home }}/JetBrainsMono.zip"
+    mode: "0644"
+  become: no
+  register: download_jetbrains
+
+- name: Descomprimir Meslo Nerd Font (Linux)
+  ansible.builtin.unarchive:
+    src: "{{ user_home }}/Meslo.zip"
+    dest: "{{ user_home }}/.local/share/fonts"
+    remote_src: yes
+  become: no
+  when:
+    - download_meslo.changed
+    - ansible_os_family != "Darwin"
+
+- name: Descomprimir JetBrainsMono Nerd Font (Linux)
+  ansible.builtin.unarchive:
+    src: "{{ user_home }}/JetBrainsMono.zip"
+    dest: "{{ user_home }}/.local/share/fonts"
+    remote_src: yes
+  become: no
+  when:
+    - download_jetbrains.changed
+    - ansible_os_family != "Darwin"
+
+- name: Descomprimir Meslo Nerd Font (macOS)
+  ansible.builtin.unarchive:
+    src: "{{ user_home }}/Meslo.zip"
+    dest: "{{ user_home }}/Library/Fonts"
+    remote_src: yes
+  become: no
+  when:
+    - download_meslo.changed
+    - ansible_os_family == "Darwin"
+
+- name: Descomprimir JetBrainsMono Nerd Font (macOS)
+  ansible.builtin.unarchive:
+    src: "{{ user_home }}/JetBrainsMono.zip"
+    dest: "{{ user_home }}/Library/Fonts"
+    remote_src: yes
+  become: no
+  when:
+    - download_jetbrains.changed
+    - ansible_os_family == "Darwin"
+
+- name: Eliminar archivo zip de Meslo
+  ansible.builtin.file:
+    path: "{{ user_home }}/Meslo.zip"
+    state: absent
+  become: no
+  when: download_meslo.changed
+
+- name: Eliminar archivo zip de JetBrainsMono
+  ansible.builtin.file:
+    path: "{{ user_home }}/JetBrainsMono.zip"
+    state: absent
+  become: no
+  when: download_jetbrains.changed
+
+- name: Encontrar archivos de Windows para eliminar (Linux)
+  ansible.builtin.find:
+    paths: "{{ user_home }}/.local/share/fonts"
+    patterns: "*Windows*"
+    recurse: no
+  register: windows_files
+  become: no
+  when: ansible_os_family != "Darwin"
+
+- name: Eliminar archivos de Windows (Linux)
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: absent
+  loop: "{{ windows_files.files }}"
+  become: no
+  when: ansible_os_family != "Darwin"
+
+- name: Encontrar archivos de Windows para eliminar (macOS)
+  ansible.builtin.find:
+    paths: "{{ user_home }}/Library/Fonts"
+    patterns: "*Windows*"
+    recurse: no
+  register: windows_files_macos
+  become: no
+  when: ansible_os_family == "Darwin"
+
+- name: Eliminar archivos de Windows (macOS)
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: absent
+  loop: "{{ windows_files_macos.files | default([]) }}"
+  become: no
+  when: ansible_os_family == "Darwin"
+
+- name: Actualizar cache de fuentes
+  ansible.builtin.command: fc-cache -fv
+  become: no
+  changed_when: true
+  when: ansible_os_family != "Darwin"

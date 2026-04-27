@@ -1,0 +1,3639 @@
+ansible-playbook [core 2.18.4]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/home/el/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible
+  ansible collection location = /home/el/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/el/works/dotfiles/.venv/bin/ansible-playbook
+  python version = 3.13.1 (main, Dec  6 2024, 18:40:43) [Clang 18.1.8 ] (/home/el/works/dotfiles/.venv/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /etc/ansible/ansible.cfg as config file
+host_list declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+script declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+auto declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+yaml declined parsing /home/el/works/dotfiles/ansible/inventory.ini as it did not pass its verify_file() method
+Parsed /home/el/works/dotfiles/ansible/inventory.ini inventory source with ini plugin
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+redirecting (type: modules) ansible.builtin.pacman to community.general.pacman
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: playbook.yml *********************************************************
+1 plays in ansible/playbook.yml
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+PLAY [Configuración Inicial del Sistema y Dotfiles] ****************************
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [Gathering Facts] *********************************************************
+task path: /home/el/works/dotfiles/ansible/playbook.yml:2
+[WARNING]: Platform linux on host localhost is using the discovered Python
+interpreter at /home/el/works/dotfiles/.venv/bin/python3.13, but future
+installation of another Python interpreter could change the meaning of that
+path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528735.539282-296094-183121350181226 `" && echo ansible-tmp-1744528735.539282-296094-183121350181226="` echo /home/el/.ansible/tmp/ansible-tmp-1744528735.539282-296094-183121350181226 `" ) && sleep 0'
+<localhost> Attempting python interpreter discovery
+<localhost> EXEC /bin/sh -c 'echo PLATFORM; uname; echo FOUND; command -v '"'"'python3.13'"'"'; command -v '"'"'python3.12'"'"'; command -v '"'"'python3.11'"'"'; command -v '"'"'python3.10'"'"'; command -v '"'"'python3.9'"'"'; command -v '"'"'python3.8'"'"'; command -v '"'"'/usr/bin/python3'"'"'; command -v '"'"'python3'"'"'; echo ENDFOUND && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 && sleep 0'
+<localhost> Python interpreter discovery fallback (unsupported Linux distribution: fedora)
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/setup.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpgt4svcn4 TO /home/el/.ansible/tmp/ansible-tmp-1744528735.539282-296094-183121350181226/AnsiballZ_setup.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528735.539282-296094-183121350181226/ /home/el/.ansible/tmp/ansible-tmp-1744528735.539282-296094-183121350181226/AnsiballZ_setup.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=ierrtowpwnadehkeihchkicjrxheuknc] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-ierrtowpwnadehkeihchkicjrxheuknc ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528735.539282-296094-183121350181226/AnsiballZ_setup.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528735.539282-296094-183121350181226/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [test : Mostrar Familia] **************************************************
+task path: /home/el/works/dotfiles/ansible/roles/test/tasks/main.yml:1
+ok: [localhost] => {
+    "msg": "distribucion: Fedora \nfamilia: RedHat"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [test : Mostrar playbook_dir] *********************************************
+task path: /home/el/works/dotfiles/ansible/roles/test/tasks/main.yml:6
+ok: [localhost] => {
+    "msg": "/home/el/dotfiles/config"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [test : Mostrar playbook_dir] *********************************************
+task path: /home/el/works/dotfiles/ansible/roles/test/tasks/main.yml:10
+ok: [localhost] => {
+    "msg": "Ruta de fileglob para config: /home/el/dotfiles/config/*"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [test : Debug de archivos en config] **************************************
+task path: /home/el/works/dotfiles/ansible/roles/test/tasks/main.yml:14
+ok: [localhost] => {
+    "msg": "Hello world!"
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Establecer la versión de Fedora como un hecho (fact)] *****
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:2
+ok: [localhost] => {
+    "ansible_facts": {
+        "fedora_version": "41"
+    },
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Include global variables] *********************************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:7
+ok: [localhost] => {
+    "ansible_facts": {
+        "install_scripts": {
+            "rye": "https://rye.astral.sh/get",
+            "uv": "https://astral.sh/uv/install.sh"
+        }
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/global.yaml"
+    ],
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Include post-install variables] ***************************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:12
+ok: [localhost] => {
+    "ansible_facts": {
+        "install_post_install_commands": [
+            {
+                "command": "go install oss.terrastruct.com/d2@latest",
+                "description": "Instalando d2 diagram"
+            },
+            {
+                "command": "curl -fsS https://dl.brave.com/install.sh | sh",
+                "description": "Instalando Brave"
+            },
+            {
+                "command": "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm",
+                "description": "Configurando tmux plugin manager"
+            },
+            {
+                "command": "gem install tmuxinator",
+                "description": "Instalando tmuxinator"
+            },
+            {
+                "command": "sudo usermod -aG docker $USER",
+                "description": "Añadiendo el usuario al grupo docker (puede requerir reiniciar sesión)"
+            },
+            {
+                "command": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh",
+                "description": "Añadiendo Atuin, Sync, search and backup shell history"
+            },
+            {
+                "command": "cargo install du-dust",
+                "description": "Herramienta para ver el uso del disco por el terminal"
+            }
+        ]
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/post_install.yaml"
+    ],
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Include flatpak_apps variables] ***************************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:17
+ok: [localhost] => {
+    "ansible_facts": {
+        "apps": [
+            "md.obsidian.Obsidian",
+            "io.missioncenter.MissionCenter"
+        ]
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/flatpak.yaml"
+    ],
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Include wallpapers variables] *****************************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:22
+ok: [localhost] => {
+    "ansible_facts": {
+        "wallpaper_base_dir": "~/wallpaper",
+        "wallpaper_img_subdir": "img",
+        "wallpaper_repositories": [
+            {
+                "name": "budgie-wallpapers",
+                "url": "https://github.com/UbuntuBudgie/budgie-wallpapers.git"
+            },
+            {
+                "name": "wallpapers",
+                "url": "https://gitlab.com/dwt1/wallpapers.git"
+            },
+            {
+                "name": "aesthetic-wallpapers",
+                "url": "https://github.com/D3Ext/aesthetic-wallpapers"
+            }
+        ]
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/wallpapers.yaml"
+    ],
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Incluir variables específicas de la distribución] *********
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:27
+ok: [localhost] => {
+    "ansible_facts": {
+        "package_managers": {
+            "dependencies": {
+                "core": [
+                    "git",
+                    "curl",
+                    "wget",
+                    "gcc",
+                    "make",
+                    "unzip",
+                    "zsh",
+                    "golang",
+                    "cargo",
+                    "g++",
+                    "python3",
+                    "ruby",
+                    "unrar",
+                    "p7zip",
+                    "p7zip-plugins",
+                    "xdg-user-dirs",
+                    "lsd",
+                    "java",
+                    "dnf-utils",
+                    "flatpak",
+                    "kernel-devel",
+                    "gcc",
+                    "make",
+                    "automake",
+                    "perl",
+                    "elfutils-libelf-devel"
+                ],
+                "extended": [
+                    "ripgrep",
+                    "fd-find",
+                    "neovim",
+                    "fastfetch",
+                    "util-linux-user",
+                    "anacron",
+                    "zoxide",
+                    "python3-neovim",
+                    "kitty",
+                    "lua-devel",
+                    "luarocks",
+                    "docker-cli",
+                    "containerd",
+                    "docker-compose",
+                    "bat",
+                    "fzf",
+                    "httpie",
+                    "ripgrep",
+                    "tmux",
+                    "htop",
+                    "proselint",
+                    "lm_sensors",
+                    "discord",
+                    "alacritty",
+                    "kde-connect",
+                    "dnf-utils",
+                    "kdenlive",
+                    "openshot",
+                    "vlc",
+                    "mpv",
+                    "soundconverter",
+                    "audacity",
+                    "muse",
+                    "lmms",
+                    "amarok",
+                    "flowblade",
+                    "dnf-plugins-core",
+                    "xine-lib",
+                    "xine-lib-extras",
+                    "xine-lib-extras-freeworld",
+                    "libdvdread",
+                    "libdvdnav",
+                    "lsdvd",
+                    "libdvbpsi",
+                    "ffmpeg",
+                    "libmatroska",
+                    "xvidcore",
+                    "gimp",
+                    "inkscape",
+                    "libreoffice-writer",
+                    "libreoffice-calc",
+                    "libreoffice-impress",
+                    "libreoffice-draw",
+                    "libreoffice-langpack-es",
+                    "gstreamer1-devel",
+                    "gstreamer1-plugins-base-tools",
+                    "gstreamer1-doc",
+                    "gstreamer1-plugins-base-devel",
+                    "gstreamer1-plugins-good",
+                    "gstreamer1-plugins-good-extras",
+                    "gstreamer1-plugins-bad-free",
+                    "gstreamer1-plugins-bad-free-devel",
+                    "virt-manager",
+                    "qemu",
+                    "zeal",
+                    "asciiquarium",
+                    "bpytop"
+                ]
+            },
+            "install": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "--allowerasing"
+            ],
+            "manager": "dnf",
+            "repo": {
+                "google-chrome": [
+                    "sudo",
+                    "dnf",
+                    "install",
+                    "-y",
+                    "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+                ],
+                "rpmfusion-free": [
+                    "sudo",
+                    "dnf",
+                    "install",
+                    "-y",
+                    "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
+                ],
+                "rpmfusion-nonfree": [
+                    "sudo",
+                    "dnf",
+                    "install",
+                    "-y",
+                    "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
+                ]
+            },
+            "update": [
+                "sudo",
+                "dnf",
+                "update",
+                "-y"
+            ]
+        }
+    },
+    "ansible_included_var_files": [
+        "/home/el/works/dotfiles/ansible/vars/RedHat.yaml"
+    ],
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Depurar contenido de package_managers] ********************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:32
+ok: [localhost] => {
+    "package_managers": {
+        "dependencies": {
+            "core": [
+                "git",
+                "curl",
+                "wget",
+                "gcc",
+                "make",
+                "unzip",
+                "zsh",
+                "golang",
+                "cargo",
+                "g++",
+                "python3",
+                "ruby",
+                "unrar",
+                "p7zip",
+                "p7zip-plugins",
+                "xdg-user-dirs",
+                "lsd",
+                "java",
+                "dnf-utils",
+                "flatpak",
+                "kernel-devel",
+                "gcc",
+                "make",
+                "automake",
+                "perl",
+                "elfutils-libelf-devel"
+            ],
+            "extended": [
+                "ripgrep",
+                "fd-find",
+                "neovim",
+                "fastfetch",
+                "util-linux-user",
+                "anacron",
+                "zoxide",
+                "python3-neovim",
+                "kitty",
+                "lua-devel",
+                "luarocks",
+                "docker-cli",
+                "containerd",
+                "docker-compose",
+                "bat",
+                "fzf",
+                "httpie",
+                "ripgrep",
+                "tmux",
+                "htop",
+                "proselint",
+                "lm_sensors",
+                "discord",
+                "alacritty",
+                "kde-connect",
+                "dnf-utils",
+                "kdenlive",
+                "openshot",
+                "vlc",
+                "mpv",
+                "soundconverter",
+                "audacity",
+                "muse",
+                "lmms",
+                "amarok",
+                "flowblade",
+                "dnf-plugins-core",
+                "xine-lib",
+                "xine-lib-extras",
+                "xine-lib-extras-freeworld",
+                "libdvdread",
+                "libdvdnav",
+                "lsdvd",
+                "libdvbpsi",
+                "ffmpeg",
+                "libmatroska",
+                "xvidcore",
+                "gimp",
+                "inkscape",
+                "libreoffice-writer",
+                "libreoffice-calc",
+                "libreoffice-impress",
+                "libreoffice-draw",
+                "libreoffice-langpack-es",
+                "gstreamer1-devel",
+                "gstreamer1-plugins-base-tools",
+                "gstreamer1-doc",
+                "gstreamer1-plugins-base-devel",
+                "gstreamer1-plugins-good",
+                "gstreamer1-plugins-good-extras",
+                "gstreamer1-plugins-bad-free",
+                "gstreamer1-plugins-bad-free-devel",
+                "virt-manager",
+                "qemu",
+                "zeal",
+                "asciiquarium",
+                "bpytop"
+            ]
+        },
+        "install": [
+            "sudo",
+            "dnf",
+            "install",
+            "-y",
+            "--allowerasing"
+        ],
+        "manager": "dnf",
+        "repo": {
+            "google-chrome": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+            ],
+            "rpmfusion-free": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm"
+            ],
+            "rpmfusion-nonfree": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-41.noarch.rpm"
+            ]
+        },
+        "update": [
+            "sudo",
+            "dnf",
+            "update",
+            "-y"
+        ]
+    }
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Definir core_dependencies globalmente] ********************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:36
+ok: [localhost] => {
+    "ansible_facts": {
+        "core_dependencies": [
+            "git",
+            "curl",
+            "wget",
+            "gcc",
+            "make",
+            "unzip",
+            "zsh",
+            "golang",
+            "cargo",
+            "g++",
+            "python3",
+            "ruby",
+            "unrar",
+            "p7zip",
+            "p7zip-plugins",
+            "xdg-user-dirs",
+            "lsd",
+            "java",
+            "dnf-utils",
+            "flatpak",
+            "kernel-devel",
+            "gcc",
+            "make",
+            "automake",
+            "perl",
+            "elfutils-libelf-devel"
+        ]
+    },
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Depurar contenido de core_dependencies] *******************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:40
+ok: [localhost] => {
+    "core_dependencies": [
+        "git",
+        "curl",
+        "wget",
+        "gcc",
+        "make",
+        "unzip",
+        "zsh",
+        "golang",
+        "cargo",
+        "g++",
+        "python3",
+        "ruby",
+        "unrar",
+        "p7zip",
+        "p7zip-plugins",
+        "xdg-user-dirs",
+        "lsd",
+        "java",
+        "dnf-utils",
+        "flatpak",
+        "kernel-devel",
+        "gcc",
+        "make",
+        "automake",
+        "perl",
+        "elfutils-libelf-devel"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Definir extended_dependencies globalmente] ****************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:44
+ok: [localhost] => {
+    "ansible_facts": {
+        "extended_dependencies": [
+            "ripgrep",
+            "fd-find",
+            "neovim",
+            "fastfetch",
+            "util-linux-user",
+            "anacron",
+            "zoxide",
+            "python3-neovim",
+            "kitty",
+            "lua-devel",
+            "luarocks",
+            "docker-cli",
+            "containerd",
+            "docker-compose",
+            "bat",
+            "fzf",
+            "httpie",
+            "ripgrep",
+            "tmux",
+            "htop",
+            "proselint",
+            "lm_sensors",
+            "discord",
+            "alacritty",
+            "kde-connect",
+            "dnf-utils",
+            "kdenlive",
+            "openshot",
+            "vlc",
+            "mpv",
+            "soundconverter",
+            "audacity",
+            "muse",
+            "lmms",
+            "amarok",
+            "flowblade",
+            "dnf-plugins-core",
+            "xine-lib",
+            "xine-lib-extras",
+            "xine-lib-extras-freeworld",
+            "libdvdread",
+            "libdvdnav",
+            "lsdvd",
+            "libdvbpsi",
+            "ffmpeg",
+            "libmatroska",
+            "xvidcore",
+            "gimp",
+            "inkscape",
+            "libreoffice-writer",
+            "libreoffice-calc",
+            "libreoffice-impress",
+            "libreoffice-draw",
+            "libreoffice-langpack-es",
+            "gstreamer1-devel",
+            "gstreamer1-plugins-base-tools",
+            "gstreamer1-doc",
+            "gstreamer1-plugins-base-devel",
+            "gstreamer1-plugins-good",
+            "gstreamer1-plugins-good-extras",
+            "gstreamer1-plugins-bad-free",
+            "gstreamer1-plugins-bad-free-devel",
+            "virt-manager",
+            "qemu",
+            "zeal",
+            "asciiquarium",
+            "bpytop"
+        ]
+    },
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Depurar contenido de extended_dependencies] ***************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:48
+ok: [localhost] => {
+    "extended_dependencies": [
+        "ripgrep",
+        "fd-find",
+        "neovim",
+        "fastfetch",
+        "util-linux-user",
+        "anacron",
+        "zoxide",
+        "python3-neovim",
+        "kitty",
+        "lua-devel",
+        "luarocks",
+        "docker-cli",
+        "containerd",
+        "docker-compose",
+        "bat",
+        "fzf",
+        "httpie",
+        "ripgrep",
+        "tmux",
+        "htop",
+        "proselint",
+        "lm_sensors",
+        "discord",
+        "alacritty",
+        "kde-connect",
+        "dnf-utils",
+        "kdenlive",
+        "openshot",
+        "vlc",
+        "mpv",
+        "soundconverter",
+        "audacity",
+        "muse",
+        "lmms",
+        "amarok",
+        "flowblade",
+        "dnf-plugins-core",
+        "xine-lib",
+        "xine-lib-extras",
+        "xine-lib-extras-freeworld",
+        "libdvdread",
+        "libdvdnav",
+        "lsdvd",
+        "libdvbpsi",
+        "ffmpeg",
+        "libmatroska",
+        "xvidcore",
+        "gimp",
+        "inkscape",
+        "libreoffice-writer",
+        "libreoffice-calc",
+        "libreoffice-impress",
+        "libreoffice-draw",
+        "libreoffice-langpack-es",
+        "gstreamer1-devel",
+        "gstreamer1-plugins-base-tools",
+        "gstreamer1-doc",
+        "gstreamer1-plugins-base-devel",
+        "gstreamer1-plugins-good",
+        "gstreamer1-plugins-good-extras",
+        "gstreamer1-plugins-bad-free",
+        "gstreamer1-plugins-bad-free-devel",
+        "virt-manager",
+        "qemu",
+        "zeal",
+        "asciiquarium",
+        "bpytop"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Definir flatpak_apps globalmente] *************************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:52
+ok: [localhost] => {
+    "ansible_facts": {
+        "flatpak_apps": [
+            "md.obsidian.Obsidian",
+            "io.missioncenter.MissionCenter"
+        ]
+    },
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Depurar contenido de flatpak_apps] ************************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:56
+ok: [localhost] => {
+    "flatpak_apps": [
+        "md.obsidian.Obsidian",
+        "io.missioncenter.MissionCenter"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Get real user home directory] *****************************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:60
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528738.9362357-296251-124686748075820 `" && echo ansible-tmp-1744528738.9362357-296251-124686748075820="` echo /home/el/.ansible/tmp/ansible-tmp-1744528738.9362357-296251-124686748075820 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmptngu3p32 TO /home/el/.ansible/tmp/ansible-tmp-1744528738.9362357-296251-124686748075820/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528738.9362357-296251-124686748075820/ /home/el/.ansible/tmp/ansible-tmp-1744528738.9362357-296251-124686748075820/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528738.9362357-296251-124686748075820/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528738.9362357-296251-124686748075820/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => {
+    "changed": false,
+    "cmd": [
+        "echo",
+        "$HOME"
+    ],
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "echo $HOME",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [00_load_vars : Set user home directory as fact] **************************
+task path: /home/el/works/dotfiles/ansible/roles/00_load_vars/tasks/main.yml:66
+ok: [localhost] => {
+    "ansible_facts": {
+        "user_home": ""
+    },
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [01_base_system_configuration : Actualiza el sistema (Debian/Ubuntu)] *****
+task path: /home/el/works/dotfiles/ansible/roles/01_base_system_configuration/tasks/main.yml:5
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Debian\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+
+TASK [01_base_system_configuration : Actualiza el sistema (RedHat based, excluyendo Fedora)] ***
+task path: /home/el/works/dotfiles/ansible/roles/01_base_system_configuration/tasks/main.yml:11
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"RedHat\" and ansible_distribution != \"Fedora\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [01_base_system_configuration : Actualiza el sistema (Fedora)] ************
+task path: /home/el/works/dotfiles/ansible/roles/01_base_system_configuration/tasks/main.yml:17
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528739.6468172-296276-153066990426898 `" && echo ansible-tmp-1744528739.6468172-296276-153066990426898="` echo /home/el/.ansible/tmp/ansible-tmp-1744528739.6468172-296276-153066990426898 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/dnf5.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpchx87n9l TO /home/el/.ansible/tmp/ansible-tmp-1744528739.6468172-296276-153066990426898/AnsiballZ_dnf5.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528739.6468172-296276-153066990426898/ /home/el/.ansible/tmp/ansible-tmp-1744528739.6468172-296276-153066990426898/AnsiballZ_dnf5.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=wbytgvmnuiahtmsoauttqfevixjfiomx] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-wbytgvmnuiahtmsoauttqfevixjfiomx ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528739.6468172-296276-153066990426898/AnsiballZ_dnf5.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528739.6468172-296276-153066990426898/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "*"
+            ],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "latest",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Check mode: No changes made, but would have if not in check mode",
+    "rc": 0,
+    "results": [
+        "Installed: kernel-modules-6.13.10-200.fc41.x86_64",
+        "Installed: kernel-core-6.13.10-200.fc41.x86_64",
+        "Installed: kernel-modules-core-6.13.10-200.fc41.x86_64",
+        "Installed: kernel-devel-6.13.10-200.fc41.x86_64",
+        "Installed: kernel-6.13.10-200.fc41.x86_64",
+        "Installed: kernel-modules-extra-6.13.10-200.fc41.x86_64",
+        "Installed: libgit2-1.9.0-4.fc41.x86_64",
+        "Installed: mariadb-client-utils-3:10.11.11-1.fc41.x86_64",
+        "Installed: perl-DBI-1.645-1.fc41.x86_64",
+        "Installed: alsa-sof-firmware-2025.01.1-1.fc41.noarch",
+        "Installed: blender-1:4.4.0-1.fc41.x86_64",
+        "Installed: bluez-5.81-2.fc41.x86_64",
+        "Installed: bluez-obexd-5.81-2.fc41.x86_64",
+        "Installed: bluez-cups-5.81-2.fc41.x86_64",
+        "Installed: bluez-libs-5.81-2.fc41.x86_64",
+        "Installed: brave-browser-1.77.97-1.x86_64",
+        "Installed: cargo-1.86.0-1.fc41.x86_64",
+        "Installed: rust-1.86.0-1.fc41.x86_64",
+        "Installed: rust-std-static-1.86.0-1.fc41.x86_64",
+        "Installed: crun-1.21-1.fc41.x86_64",
+        "Installed: dnf5-5.2.12.0-2.fc41.x86_64",
+        "Installed: libdnf5-5.2.12.0-2.fc41.x86_64",
+        "Installed: libdnf5-cli-5.2.12.0-2.fc41.x86_64",
+        "Installed: dnf5-plugins-5.2.12.0-2.fc41.x86_64",
+        "Installed: python3-libdnf5-5.2.12.0-2.fc41.x86_64",
+        "Installed: fzf-0.61.0-1.fc41.x86_64",
+        "Installed: google-chrome-stable-135.0.7049.84-1.x86_64",
+        "Installed: gutenprint-5.3.5-5.fc41.x86_64",
+        "Installed: gutenprint-libs-5.3.5-5.fc41.x86_64",
+        "Installed: gutenprint-cups-5.3.5-5.fc41.x86_64",
+        "Installed: hwdata-0.394-1.fc41.noarch",
+        "Installed: ibus-typing-booster-2.27.30-1.fc41.noarch",
+        "Installed: javascriptcoregtk4.1-2.48.1-2.fc41.x86_64",
+        "Installed: webkit2gtk4.1-2.48.1-2.fc41.x86_64",
+        "Installed: kernel-tools-6.13.10-200.fc41.x86_64",
+        "Installed: kernel-tools-libs-6.13.10-200.fc41.x86_64",
+        "Installed: libldb-2:4.21.5-1.fc41.x86_64",
+        "Installed: libnetapi-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-client-libs-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-common-2:4.21.5-1.fc41.noarch",
+        "Installed: libwbclient-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-common-libs-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-dcerpc-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-common-tools-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-libs-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-ldb-ldap-modules-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-client-2:4.21.5-1.fc41.x86_64",
+        "Installed: libsmbclient-2:4.21.5-1.fc41.x86_64",
+        "Installed: samba-usershares-2:4.21.5-1.fc41.x86_64",
+        "Installed: libxcrypt-4.4.38-7.fc41.x86_64",
+        "Installed: libxcrypt-devel-4.4.38-7.fc41.x86_64",
+        "Installed: mariadb-3:10.11.11-1.fc41.x86_64",
+        "Installed: mariadb-common-3:10.11.11-1.fc41.noarch",
+        "Installed: mariadb-server-3:10.11.11-1.fc41.x86_64",
+        "Installed: mariadb-gssapi-server-3:10.11.11-1.fc41.x86_64",
+        "Installed: mariadb-cracklib-password-check-3:10.11.11-1.fc41.x86_64",
+        "Installed: mariadb-backup-3:10.11.11-1.fc41.x86_64",
+        "Installed: mariadb-errmsg-3:10.11.11-1.fc41.noarch",
+        "Installed: mariadb-embedded-3:10.11.11-1.fc41.x86_64",
+        "Installed: openvpn-2.6.14-1.fc41.x86_64",
+        "Installed: podman-5:5.4.2-1.fc41.x86_64",
+        "Installed: python3-boto3-1.37.30-1.fc41.noarch",
+        "Installed: python3-botocore-1.37.30-1.fc41.noarch",
+        "Installed: python3-perf-6.13.10-200.fc41.x86_64",
+        "Installed: spirv-tools-2025.1-1.fc41.x86_64",
+        "Installed: spirv-tools-libs-2025.1-1.fc41.x86_64",
+        "Installed: spirv-tools-libs-2025.1-1.fc41.i686",
+        "Installed: unrar-7.1.6-1.fc41.x86_64",
+        "Installed: upower-1.90.8-1.fc41.x86_64",
+        "Installed: upower-libs-1.90.8-1.fc41.x86_64",
+        "Installed: vim-data-2:9.1.1275-1.fc41.noarch",
+        "Installed: vim-minimal-2:9.1.1275-1.fc41.x86_64",
+        "Installed: vim-filesystem-2:9.1.1275-1.fc41.noarch",
+        "Installed: vulkan-headers-1.4.309.0-1.fc41.noarch",
+        "Installed: vulkan-loader-1.4.309.0-1.fc41.x86_64",
+        "Installed: vulkan-loader-devel-1.4.309.0-1.fc41.x86_64",
+        "Installed: vulkan-tools-1.4.309.0-1.fc41.x86_64",
+        "Installed: warp-terminal-v0.2025.04.09.08.11.stable_02-1.x86_64",
+        "Removed: kernel-6.13.5-200.fc41.x86_64",
+        "Removed: kernel-core-6.13.5-200.fc41.x86_64",
+        "Removed: kernel-devel-6.13.5-200.fc41.x86_64",
+        "Removed: kernel-modules-6.13.5-200.fc41.x86_64",
+        "Removed: kernel-modules-core-6.13.5-200.fc41.x86_64",
+        "Removed: kernel-modules-extra-6.13.5-200.fc41.x86_64",
+        "Removed: alsa-sof-firmware-2025.01-1.fc41.noarch",
+        "Removed: blender-1:4.3.2-2.fc41.x86_64",
+        "Removed: bluez-5.79-1.fc41.x86_64",
+        "Removed: bluez-cups-5.79-1.fc41.x86_64",
+        "Removed: bluez-libs-5.79-1.fc41.x86_64",
+        "Removed: bluez-obexd-5.79-1.fc41.x86_64",
+        "Removed: brave-browser-1.77.95-1.x86_64",
+        "Removed: cargo-1.85.1-1.fc41.x86_64",
+        "Removed: crun-1.20-2.fc41.x86_64",
+        "Removed: dnf5-5.2.12.0-1.fc41.x86_64",
+        "Removed: dnf5-plugins-5.2.12.0-1.fc41.x86_64",
+        "Removed: fzf-0.60.3-1.fc41.x86_64",
+        "Removed: google-chrome-stable-135.0.7049.52-1.x86_64",
+        "Removed: gutenprint-5.3.5-4.fc41.x86_64",
+        "Removed: gutenprint-cups-5.3.5-4.fc41.x86_64",
+        "Removed: gutenprint-libs-5.3.5-4.fc41.x86_64",
+        "Removed: hwdata-0.393-1.fc41.noarch",
+        "Removed: ibus-typing-booster-2.27.29-1.fc41.noarch",
+        "Removed: javascriptcoregtk4.1-2.48.0-1.fc41.x86_64",
+        "Removed: kernel-tools-6.13.9-200.fc41.x86_64",
+        "Removed: kernel-tools-libs-6.13.9-200.fc41.x86_64",
+        "Removed: libdnf5-5.2.12.0-1.fc41.x86_64",
+        "Removed: libdnf5-cli-5.2.12.0-1.fc41.x86_64",
+        "Removed: libldb-2:4.21.4-1.fc41.x86_64",
+        "Removed: libnetapi-2:4.21.4-1.fc41.x86_64",
+        "Removed: libsmbclient-2:4.21.4-1.fc41.x86_64",
+        "Removed: libwbclient-2:4.21.4-1.fc41.x86_64",
+        "Removed: libxcrypt-4.4.38-6.fc41.x86_64",
+        "Removed: libxcrypt-devel-4.4.38-6.fc41.x86_64",
+        "Removed: mariadb-3:10.11.10-1.fc41.x86_64",
+        "Removed: mariadb-backup-3:10.11.10-1.fc41.x86_64",
+        "Removed: mariadb-common-3:10.11.10-1.fc41.noarch",
+        "Removed: mariadb-cracklib-password-check-3:10.11.10-1.fc41.x86_64",
+        "Removed: mariadb-embedded-3:10.11.10-1.fc41.x86_64",
+        "Removed: mariadb-errmsg-3:10.11.10-1.fc41.noarch",
+        "Removed: mariadb-gssapi-server-3:10.11.10-1.fc41.x86_64",
+        "Removed: mariadb-server-3:10.11.10-1.fc41.x86_64",
+        "Removed: openvpn-2.6.13-1.fc41.x86_64",
+        "Removed: podman-5:5.4.1-1.fc41.x86_64",
+        "Removed: python3-boto3-1.37.25-1.fc41.noarch",
+        "Removed: python3-botocore-1.37.25-1.fc41.noarch",
+        "Removed: python3-libdnf5-5.2.12.0-1.fc41.x86_64",
+        "Removed: python3-perf-6.13.9-200.fc41.x86_64",
+        "Removed: rust-1.85.1-1.fc41.x86_64",
+        "Removed: rust-std-static-1.85.1-1.fc41.x86_64",
+        "Removed: samba-2:4.21.4-1.fc41.x86_64",
+        "Removed: samba-client-2:4.21.4-1.fc41.x86_64",
+        "Removed: samba-client-libs-2:4.21.4-1.fc41.x86_64",
+        "Removed: samba-common-2:4.21.4-1.fc41.noarch",
+        "Removed: samba-common-libs-2:4.21.4-1.fc41.x86_64",
+        "Removed: samba-common-tools-2:4.21.4-1.fc41.x86_64",
+        "Removed: samba-dcerpc-2:4.21.4-1.fc41.x86_64",
+        "Removed: samba-ldb-ldap-modules-2:4.21.4-1.fc41.x86_64",
+        "Removed: samba-libs-2:4.21.4-1.fc41.x86_64",
+        "Removed: samba-usershares-2:4.21.4-1.fc41.x86_64",
+        "Removed: spirv-tools-2024.4-1.fc41.x86_64",
+        "Removed: spirv-tools-libs-2024.4-1.fc41.x86_64",
+        "Removed: spirv-tools-libs-2024.4-1.fc41.i686",
+        "Removed: unrar-7.0.7-2.fc41.x86_64",
+        "Removed: upower-1.90.7-1.fc41.x86_64",
+        "Removed: upower-libs-1.90.7-1.fc41.x86_64",
+        "Removed: vim-data-2:9.1.1227-1.fc41.noarch",
+        "Removed: vim-filesystem-2:9.1.1227-1.fc41.noarch",
+        "Removed: vim-minimal-2:9.1.1227-1.fc41.x86_64",
+        "Removed: vulkan-headers-1.4.304.0-1.fc41.noarch",
+        "Removed: vulkan-loader-1.4.304.0-1.fc41.x86_64",
+        "Removed: vulkan-loader-devel-1.4.304.0-1.fc41.x86_64",
+        "Removed: vulkan-tools-1.4.304.0-1.fc41.x86_64",
+        "Removed: warp-terminal-v0.2025.04.02.08.11.stable_03-1.x86_64",
+        "Removed: webkit2gtk4.1-2.48.0-1.fc41.x86_64"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [01_base_system_configuration : Actualiza el sistema (Arch Linux)] ********
+task path: /home/el/works/dotfiles/ansible/roles/01_base_system_configuration/tasks/main.yml:23
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Archlinux\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [01_base_system_configuration : Actualiza el sistema (openSUSE)] **********
+task path: /home/el/works/dotfiles/ansible/roles/01_base_system_configuration/tasks/main.yml:29
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"openSUSE Leap\" or ansible_distribution == \"openSUSE Tumbleweed\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [01_base_system_configuration : Actualiza el sistema (macOS con Homebrew)] ***
+task path: /home/el/works/dotfiles/ansible/roles/01_base_system_configuration/tasks/main.yml:35
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Darwin\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [02_add_repositories : Añadir repositorio {{ repo_item.key }} ({{ ansible_distribution }})] ***
+task path: /home/el/works/dotfiles/ansible/roles/02_add_repositories/tasks/main.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528744.695025-296335-222912605695701 `" && echo ansible-tmp-1744528744.695025-296335-222912605695701="` echo /home/el/.ansible/tmp/ansible-tmp-1744528744.695025-296335-222912605695701 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpl9c1vnzn TO /home/el/.ansible/tmp/ansible-tmp-1744528744.695025-296335-222912605695701/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528744.695025-296335-222912605695701/ /home/el/.ansible/tmp/ansible-tmp-1744528744.695025-296335-222912605695701/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=koammctvytlldwcmiiwrxxueshhoezsw] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-koammctvytlldwcmiiwrxxueshhoezsw ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528744.695025-296335-222912605695701/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528744.695025-296335-222912605695701/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => (item={'key': 'rpmfusion-nonfree', 'value': ['sudo', 'dnf', 'install', '-y', 'https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-41.noarch.rpm']})  => {
+    "ansible_loop_var": "repo_item",
+    "changed": false,
+    "cmd": [
+        "sudo",
+        "dnf",
+        "install",
+        "-y",
+        "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-41.noarch.rpm"
+    ],
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-41.noarch.rpm"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "repo_item": {
+        "key": "rpmfusion-nonfree",
+        "value": [
+            "sudo",
+            "dnf",
+            "install",
+            "-y",
+            "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-41.noarch.rpm"
+        ]
+    },
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528745.1914132-296335-279940586856053 `" && echo ansible-tmp-1744528745.1914132-296335-279940586856053="` echo /home/el/.ansible/tmp/ansible-tmp-1744528745.1914132-296335-279940586856053 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpr8fbczg5 TO /home/el/.ansible/tmp/ansible-tmp-1744528745.1914132-296335-279940586856053/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528745.1914132-296335-279940586856053/ /home/el/.ansible/tmp/ansible-tmp-1744528745.1914132-296335-279940586856053/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=unrmzooinrhnitddyuoxwzemgwofhprt] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-unrmzooinrhnitddyuoxwzemgwofhprt ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528745.1914132-296335-279940586856053/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528745.1914132-296335-279940586856053/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => (item={'key': 'rpmfusion-free', 'value': ['sudo', 'dnf', 'install', '-y', 'https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm']})  => {
+    "ansible_loop_var": "repo_item",
+    "changed": false,
+    "cmd": [
+        "sudo",
+        "dnf",
+        "install",
+        "-y",
+        "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm"
+    ],
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "repo_item": {
+        "key": "rpmfusion-free",
+        "value": [
+            "sudo",
+            "dnf",
+            "install",
+            "-y",
+            "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm"
+        ]
+    },
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528745.6495004-296335-255277466887902 `" && echo ansible-tmp-1744528745.6495004-296335-255277466887902="` echo /home/el/.ansible/tmp/ansible-tmp-1744528745.6495004-296335-255277466887902 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpm0mfh9ov TO /home/el/.ansible/tmp/ansible-tmp-1744528745.6495004-296335-255277466887902/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528745.6495004-296335-255277466887902/ /home/el/.ansible/tmp/ansible-tmp-1744528745.6495004-296335-255277466887902/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=rtpskyfcpfkybrutximpjhgzapfhikry] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-rtpskyfcpfkybrutximpjhgzapfhikry ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528745.6495004-296335-255277466887902/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528745.6495004-296335-255277466887902/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => (item={'key': 'google-chrome', 'value': ['sudo', 'dnf', 'install', '-y', 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm']})  => {
+    "ansible_loop_var": "repo_item",
+    "changed": false,
+    "cmd": [
+        "sudo",
+        "dnf",
+        "install",
+        "-y",
+        "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+    ],
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "sudo",
+                "dnf",
+                "install",
+                "-y",
+                "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "repo_item": {
+        "key": "google-chrome",
+        "value": [
+            "sudo",
+            "dnf",
+            "install",
+            "-y",
+            "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+        ]
+    },
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+skipping: [localhost] => {
+    "changed": false,
+    "msg": "All items skipped"
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [03_install_core_dependencies : Instalar dependencias core (Fedora)] ******
+task path: /home/el/works/dotfiles/ansible/roles/03_install_core_dependencies/tasks/main.yml:4
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528746.1314938-296399-158059816976684 `" && echo ansible-tmp-1744528746.1314938-296399-158059816976684="` echo /home/el/.ansible/tmp/ansible-tmp-1744528746.1314938-296399-158059816976684 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/dnf5.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpm9p055_e TO /home/el/.ansible/tmp/ansible-tmp-1744528746.1314938-296399-158059816976684/AnsiballZ_dnf5.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528746.1314938-296399-158059816976684/ /home/el/.ansible/tmp/ansible-tmp-1744528746.1314938-296399-158059816976684/AnsiballZ_dnf5.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=pyjjjtzoatksbuqomztbmzijqfuyxvto] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-pyjjjtzoatksbuqomztbmzijqfuyxvto ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528746.1314938-296399-158059816976684/AnsiballZ_dnf5.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528746.1314938-296399-158059816976684/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "git",
+                "curl",
+                "wget",
+                "gcc",
+                "make",
+                "unzip",
+                "zsh",
+                "golang",
+                "cargo",
+                "g++",
+                "python3",
+                "ruby",
+                "unrar",
+                "p7zip",
+                "p7zip-plugins",
+                "xdg-user-dirs",
+                "lsd",
+                "java",
+                "dnf-utils",
+                "flatpak",
+                "kernel-devel",
+                "gcc",
+                "make",
+                "automake",
+                "perl",
+                "elfutils-libelf-devel"
+            ],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [03_install_core_dependencies : Instalar dependencias core (Debian/Ubuntu)] ***
+task path: /home/el/works/dotfiles/ansible/roles/03_install_core_dependencies/tasks/main.yml:12
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Debian\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+
+TASK [03_install_core_dependencies : Instalar dependencias core (Red Hat/CentOS)] ***
+task path: /home/el/works/dotfiles/ansible/roles/03_install_core_dependencies/tasks/main.yml:21
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"RedHat\" and ansible_distribution != \"Fedora\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [03_install_core_dependencies : Install package from AUR using a Pacman compatible AUR helper] ***
+task path: /home/el/works/dotfiles/ansible/roles/03_install_core_dependencies/tasks/main.yml:29
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Archlinux\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [03_install_core_dependencies : Instalar dependencias core (openSUSE)] ****
+task path: /home/el/works/dotfiles/ansible/roles/03_install_core_dependencies/tasks/main.yml:39
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"openSUSE Leap\" or ansible_distribution == \"openSUSE Tumbleweed\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [03_install_core_dependencies : Mostrar mensaje si la distribución no está soportada para dependencias core] ***
+task path: /home/el/works/dotfiles/ansible/roles/03_install_core_dependencies/tasks/main.yml:48
+skipping: [localhost] => {
+    "false_condition": "ansible_distribution != \"Fedora\""
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [04_install_uv : Descargar e instalar uv usando el script oficial] ********
+task path: /home/el/works/dotfiles/ansible/roles/04_install_uv/tasks/main.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528750.931356-296460-195063008951364 `" && echo ansible-tmp-1744528750.931356-296460-195063008951364="` echo /home/el/.ansible/tmp/ansible-tmp-1744528750.931356-296460-195063008951364 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpjlnkc9ip TO /home/el/.ansible/tmp/ansible-tmp-1744528750.931356-296460-195063008951364/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528750.931356-296460-195063008951364/ /home/el/.ansible/tmp/ansible-tmp-1744528750.931356-296460-195063008951364/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528750.931356-296460-195063008951364/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528750.931356-296460-195063008951364/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => {
+    "changed": false,
+    "cmd": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+            "_uses_shell": true,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [05_install_nvm : Definir la versión de Node.js a instalar (opcional, puedes cambiarla)] ***
+task path: /home/el/works/dotfiles/ansible/roles/05_install_nvm/tasks/main.yml:2
+ok: [localhost] => {
+    "ansible_facts": {
+        "nodejs_version": "lts/*"
+    },
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [05_install_nvm : Verificar si NVM está instalado] ************************
+task path: /home/el/works/dotfiles/ansible/roles/05_install_nvm/tasks/main.yml:6
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528751.4016337-296477-85740851259071 `" && echo ansible-tmp-1744528751.4016337-296477-85740851259071="` echo /home/el/.ansible/tmp/ansible-tmp-1744528751.4016337-296477-85740851259071 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpn35g8d1z TO /home/el/.ansible/tmp/ansible-tmp-1744528751.4016337-296477-85740851259071/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528751.4016337-296477-85740851259071/ /home/el/.ansible/tmp/ansible-tmp-1744528751.4016337-296477-85740851259071/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=fxpzdqpruiyezqcebydmlvirmnphmpnp] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-fxpzdqpruiyezqcebydmlvirmnphmpnp ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528751.4016337-296477-85740851259071/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528751.4016337-296477-85740851259071/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => {
+    "changed": false,
+    "cmd": [
+        "command",
+        "-v",
+        "nvm"
+    ],
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "command -v nvm",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [05_install_nvm : Install nvm] ********************************************
+task path: /home/el/works/dotfiles/ansible/roles/05_install_nvm/tasks/main.yml:31
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "nvm_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [05_install_nvm : Asegurar que NVM esté en el PATH para futuras tareas] ***
+task path: /home/el/works/dotfiles/ansible/roles/05_install_nvm/tasks/main.yml:37
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "nvm_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [05_install_nvm : Instalar Node.js usando NVM] ****************************
+task path: /home/el/works/dotfiles/ansible/roles/05_install_nvm/tasks/main.yml:47
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528751.94976-296505-78424634610023 `" && echo ansible-tmp-1744528751.94976-296505-78424634610023="` echo /home/el/.ansible/tmp/ansible-tmp-1744528751.94976-296505-78424634610023 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmphuph0613 TO /home/el/.ansible/tmp/ansible-tmp-1744528751.94976-296505-78424634610023/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528751.94976-296505-78424634610023/ /home/el/.ansible/tmp/ansible-tmp-1744528751.94976-296505-78424634610023/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=kpsjkfnzgdvbsgooqwkrdzkvmcbfrwgy] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-kpsjkfnzgdvbsgooqwkrdzkvmcbfrwgy ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528751.94976-296505-78424634610023/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528751.94976-296505-78424634610023/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => {
+    "changed": false,
+    "cmd": "export NVM_DIR=\"$([ -s \"$HOME/.nvm/nvm.sh\" ] && printf '%s' \"$HOME/.nvm\" || printf '/opt/nvm')\"\n[ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" # This loads nvm\nnvm install node\n",
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "export NVM_DIR=\"$([ -s \"$HOME/.nvm/nvm.sh\" ] && printf '%s' \"$HOME/.nvm\" || printf '/opt/nvm')\"\n[ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" # This loads nvm\nnvm install node\n",
+            "_uses_shell": true,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [06_install_lazygit : Clonar el repositorio de lazygit] *******************
+task path: /home/el/works/dotfiles/ansible/roles/06_install_lazygit/tasks/main.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528752.4326198-296525-85209192816112 `" && echo ansible-tmp-1744528752.4326198-296525-85209192816112="` echo /home/el/.ansible/tmp/ansible-tmp-1744528752.4326198-296525-85209192816112 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/git.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpa5uu4rnh TO /home/el/.ansible/tmp/ansible-tmp-1744528752.4326198-296525-85209192816112/AnsiballZ_git.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528752.4326198-296525-85209192816112/ /home/el/.ansible/tmp/ansible-tmp-1744528752.4326198-296525-85209192816112/AnsiballZ_git.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528752.4326198-296525-85209192816112/AnsiballZ_git.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528752.4326198-296525-85209192816112/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "after": "61636d820c9bb6f0f52b0821b7114e9c7ba38e0b",
+    "before": null,
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "accept_hostkey": false,
+            "accept_newhostkey": false,
+            "archive": null,
+            "archive_prefix": null,
+            "bare": false,
+            "clone": true,
+            "depth": null,
+            "dest": "/.lazygit-src",
+            "executable": null,
+            "force": false,
+            "gpg_allowlist": [],
+            "key_file": null,
+            "recursive": true,
+            "reference": null,
+            "refspec": null,
+            "remote": "origin",
+            "repo": "https://github.com/jesseduffield/lazygit.git",
+            "separate_git_dir": null,
+            "single_branch": false,
+            "ssh_opts": null,
+            "track_submodules": false,
+            "umask": null,
+            "update": true,
+            "verify_commit": false,
+            "version": "master"
+        }
+    }
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [06_install_lazygit : Instalar lazygit con go install] ********************
+task path: /home/el/works/dotfiles/ansible/roles/06_install_lazygit/tasks/main.yml:11
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528754.0740585-296563-11651246092820 `" && echo ansible-tmp-1744528754.0740585-296563-11651246092820="` echo /home/el/.ansible/tmp/ansible-tmp-1744528754.0740585-296563-11651246092820 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpfjvu33vo TO /home/el/.ansible/tmp/ansible-tmp-1744528754.0740585-296563-11651246092820/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528754.0740585-296563-11651246092820/ /home/el/.ansible/tmp/ansible-tmp-1744528754.0740585-296563-11651246092820/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528754.0740585-296563-11651246092820/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528754.0740585-296563-11651246092820/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "cmd": "cd /.lazygit-src && go install .",
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "cd /.lazygit-src && go install .",
+            "_uses_shell": true,
+            "argv": null,
+            "chdir": null,
+            "creates": "/go/bin/lazygit",
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [07_install_extended_dependencies : Instalar dependencias extendidas (Fedora)] ***
+task path: /home/el/works/dotfiles/ansible/roles/07_install_extended_dependencies/tasks/main.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528754.5804343-296585-16562403966566 `" && echo ansible-tmp-1744528754.5804343-296585-16562403966566="` echo /home/el/.ansible/tmp/ansible-tmp-1744528754.5804343-296585-16562403966566 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/dnf5.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmp3tbb2gy7 TO /home/el/.ansible/tmp/ansible-tmp-1744528754.5804343-296585-16562403966566/AnsiballZ_dnf5.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528754.5804343-296585-16562403966566/ /home/el/.ansible/tmp/ansible-tmp-1744528754.5804343-296585-16562403966566/AnsiballZ_dnf5.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=llynkgfmpjdsbmqmwjwzzraejupkcecz] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-llynkgfmpjdsbmqmwjwzzraejupkcecz ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528754.5804343-296585-16562403966566/AnsiballZ_dnf5.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528754.5804343-296585-16562403966566/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": true,
+            "autoremove": false,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": true,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": false,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "ripgrep",
+                "fd-find",
+                "neovim",
+                "fastfetch",
+                "util-linux-user",
+                "anacron",
+                "zoxide",
+                "python3-neovim",
+                "kitty",
+                "lua-devel",
+                "luarocks",
+                "docker-cli",
+                "containerd",
+                "docker-compose",
+                "bat",
+                "fzf",
+                "httpie",
+                "ripgrep",
+                "tmux",
+                "htop",
+                "proselint",
+                "lm_sensors",
+                "discord",
+                "alacritty",
+                "kde-connect",
+                "dnf-utils",
+                "kdenlive",
+                "openshot",
+                "vlc",
+                "mpv",
+                "soundconverter",
+                "audacity",
+                "muse",
+                "lmms",
+                "amarok",
+                "flowblade",
+                "dnf-plugins-core",
+                "xine-lib",
+                "xine-lib-extras",
+                "xine-lib-extras-freeworld",
+                "libdvdread",
+                "libdvdnav",
+                "lsdvd",
+                "libdvbpsi",
+                "ffmpeg",
+                "libmatroska",
+                "xvidcore",
+                "gimp",
+                "inkscape",
+                "libreoffice-writer",
+                "libreoffice-calc",
+                "libreoffice-impress",
+                "libreoffice-draw",
+                "libreoffice-langpack-es",
+                "gstreamer1-devel",
+                "gstreamer1-plugins-base-tools",
+                "gstreamer1-doc",
+                "gstreamer1-plugins-base-devel",
+                "gstreamer1-plugins-good",
+                "gstreamer1-plugins-good-extras",
+                "gstreamer1-plugins-bad-free",
+                "gstreamer1-plugins-bad-free-devel",
+                "virt-manager",
+                "qemu",
+                "zeal",
+                "asciiquarium",
+                "bpytop"
+            ],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Check mode: No changes made, but would have if not in check mode",
+    "rc": 0,
+    "results": [
+        "Installed: docker-cli-27.3.1-2.fc41.x86_64",
+        "Installed: moby-filesystem-27.3.1-2.fc41.noarch",
+        "Installed: docker-compose-2.30.3-1.fc41.x86_64",
+        "Installed: qemu-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-aarch64-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-alpha-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-arm-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-avr-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-cris-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-loongarch64-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-m68k-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-microblaze-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-mips-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-or1k-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-ppc-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-riscv-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-rx-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-s390x-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-sh4-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-sparc-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-tricore-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-xtensa-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-tools-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-user-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-aarch64-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-alpha-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-arm-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-avr-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-cris-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-loongarch64-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-m68k-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-microblaze-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-mips-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-or1k-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-ppc-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-riscv-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-rx-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-s390x-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-sh4-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-sparc-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-tricore-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: qemu-system-xtensa-core-2:9.1.3-2.fc41.x86_64",
+        "Installed: SLOF-20220719-5.git6b6c16b4.fc41.noarch",
+        "Installed: openbios-1:20230126-4.gitaf97fd7.fc41.noarch",
+        "Installed: edk2-riscv64-20241117-5.fc41.noarch",
+        "Installed: edk2-aarch64-20241117-5.fc41.noarch",
+        "Removed: docker-ce-3:28.0.4-1.fc41.x86_64",
+        "Removed: docker-ce-cli-1:28.0.4-1.fc41.x86_64",
+        "Removed: docker-ce-rootless-extras-28.0.4-1.fc41.x86_64",
+        "Removed: docker-compose-plugin-2.34.0-1.fc41.x86_64"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [07_install_extended_dependencies : Install package from AUR using a Pacman compatible AUR helper] ***
+task path: /home/el/works/dotfiles/ansible/roles/07_install_extended_dependencies/tasks/main.yml:13
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Archlinux\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Verificar si Docker ya está instalado] ***************
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528759.2503467-296640-94051306669199 `" && echo ansible-tmp-1744528759.2503467-296640-94051306669199="` echo /home/el/.ansible/tmp/ansible-tmp-1744528759.2503467-296640-94051306669199 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpkrktf8wi TO /home/el/.ansible/tmp/ansible-tmp-1744528759.2503467-296640-94051306669199/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528759.2503467-296640-94051306669199/ /home/el/.ansible/tmp/ansible-tmp-1744528759.2503467-296640-94051306669199/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=qptsegbxahtawcbnflkztmqxcfyllswt] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-qptsegbxahtawcbnflkztmqxcfyllswt ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528759.2503467-296640-94051306669199/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528759.2503467-296640-94051306669199/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "cmd": [
+        "which",
+        "docker"
+    ],
+    "delta": "0:00:00.004451",
+    "end": "2025-04-13 03:19:19.671718",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "which docker",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "start": "2025-04-13 03:19:19.667267",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "/usr/bin/docker",
+    "stdout_lines": [
+        "/usr/bin/docker"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Instalar paquetes prerequisitos] *********************
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:9
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "docker_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Descargar script de instalación de Docker] ***********
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:20
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "docker_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Ejecutar script de instalación de Docker] ************
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:27
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "docker_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Eliminar script de instalación] **********************
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:34
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "docker_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Crear grupo docker (si no existe)] *******************
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:41
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528759.8701954-296671-48360725621413 `" && echo ansible-tmp-1744528759.8701954-296671-48360725621413="` echo /home/el/.ansible/tmp/ansible-tmp-1744528759.8701954-296671-48360725621413 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/group.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmp3kbb71an TO /home/el/.ansible/tmp/ansible-tmp-1744528759.8701954-296671-48360725621413/AnsiballZ_group.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528759.8701954-296671-48360725621413/ /home/el/.ansible/tmp/ansible-tmp-1744528759.8701954-296671-48360725621413/AnsiballZ_group.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=cthwnymdrwqrjmeqdrfnorxoxmdcgyka] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-cthwnymdrwqrjmeqdrfnorxoxmdcgyka ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528759.8701954-296671-48360725621413/AnsiballZ_group.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528759.8701954-296671-48360725621413/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "gid": 978,
+    "invocation": {
+        "module_args": {
+            "force": false,
+            "gid": null,
+            "gid_max": null,
+            "gid_min": null,
+            "local": false,
+            "name": "docker",
+            "non_unique": false,
+            "state": "present",
+            "system": false
+        }
+    },
+    "name": "docker",
+    "state": "present",
+    "system": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Obtener el usuario actual] ***************************
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:48
+ok: [localhost] => {
+    "ansible_facts": {
+        "current_user": "root"
+    },
+    "changed": false
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Verificar si el usuario actual ya está en el grupo docker] ***
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:54
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528760.6060107-296698-26026876456293 `" && echo ansible-tmp-1744528760.6060107-296698-26026876456293="` echo /home/el/.ansible/tmp/ansible-tmp-1744528760.6060107-296698-26026876456293 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpb79a62j5 TO /home/el/.ansible/tmp/ansible-tmp-1744528760.6060107-296698-26026876456293/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528760.6060107-296698-26026876456293/ /home/el/.ansible/tmp/ansible-tmp-1744528760.6060107-296698-26026876456293/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=grpooamzueyihfxuivykbxfyodwxjvau] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-grpooamzueyihfxuivykbxfyodwxjvau ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528760.6060107-296698-26026876456293/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528760.6060107-296698-26026876456293/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "cmd": "id -Gn root | grep -q docker",
+    "delta": "0:00:00.008510",
+    "end": "2025-04-13 03:19:21.031031",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "id -Gn root | grep -q docker",
+            "_uses_shell": true,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "non-zero return code",
+    "rc": 1,
+    "start": "2025-04-13 03:19:21.022521",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Añadir el usuario actual al grupo docker] ************
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:64
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528761.135554-296721-106974429266200 `" && echo ansible-tmp-1744528761.135554-296721-106974429266200="` echo /home/el/.ansible/tmp/ansible-tmp-1744528761.135554-296721-106974429266200 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/user.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpitjaleo5 TO /home/el/.ansible/tmp/ansible-tmp-1744528761.135554-296721-106974429266200/AnsiballZ_user.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528761.135554-296721-106974429266200/ /home/el/.ansible/tmp/ansible-tmp-1744528761.135554-296721-106974429266200/AnsiballZ_user.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=jdoufmhkbnbzqipjktidetdbapjoxjkq] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-jdoufmhkbnbzqipjktidetdbapjoxjkq ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528761.135554-296721-106974429266200/AnsiballZ_user.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528761.135554-296721-106974429266200/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "append": true,
+    "changed": true,
+    "comment": "Super User",
+    "group": 0,
+    "groups": "docker",
+    "home": "/root",
+    "invocation": {
+        "module_args": {
+            "append": true,
+            "authorization": null,
+            "comment": null,
+            "create_home": true,
+            "expires": null,
+            "force": false,
+            "generate_ssh_key": null,
+            "group": null,
+            "groups": [
+                "docker"
+            ],
+            "hidden": null,
+            "home": null,
+            "local": null,
+            "login_class": null,
+            "move_home": false,
+            "name": "root",
+            "non_unique": false,
+            "password": null,
+            "password_expire_account_disable": null,
+            "password_expire_max": null,
+            "password_expire_min": null,
+            "password_expire_warn": null,
+            "password_lock": null,
+            "profile": null,
+            "remove": false,
+            "role": null,
+            "seuser": null,
+            "shell": null,
+            "skeleton": null,
+            "ssh_key_bits": 0,
+            "ssh_key_comment": "ansible-generated on sentu",
+            "ssh_key_file": null,
+            "ssh_key_passphrase": null,
+            "ssh_key_type": "rsa",
+            "state": "present",
+            "system": false,
+            "uid": null,
+            "uid_max": null,
+            "uid_min": null,
+            "umask": null,
+            "update_password": "always"
+        }
+    },
+    "move_home": false,
+    "name": "root",
+    "shell": "/bin/bash",
+    "state": "present",
+    "uid": 0
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Añadir usuarios adicionales al grupo docker] *********
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:75
+skipping: [localhost] => {
+    "changed": false,
+    "skipped_reason": "No items in the list"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Configurar Docker para iniciar en el arranque] *******
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:84
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528761.9933147-296755-239437339659936 `" && echo ansible-tmp-1744528761.9933147-296755-239437339659936="` echo /home/el/.ansible/tmp/ansible-tmp-1744528761.9933147-296755-239437339659936 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/systemd.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmp1iyxzoag TO /home/el/.ansible/tmp/ansible-tmp-1744528761.9933147-296755-239437339659936/AnsiballZ_systemd.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528761.9933147-296755-239437339659936/ /home/el/.ansible/tmp/ansible-tmp-1744528761.9933147-296755-239437339659936/AnsiballZ_systemd.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=ammpdyzmoxpemmfadzaopabonnghdmdc] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-ammpdyzmoxpemmfadzaopabonnghdmdc ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528761.9933147-296755-239437339659936/AnsiballZ_systemd.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528761.9933147-296755-239437339659936/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "enabled": true,
+    "invocation": {
+        "module_args": {
+            "daemon_reexec": false,
+            "daemon_reload": false,
+            "enabled": true,
+            "force": null,
+            "masked": null,
+            "name": "docker",
+            "no_block": false,
+            "scope": "system",
+            "state": "started"
+        }
+    },
+    "name": "docker",
+    "state": "started",
+    "status": {
+        "AccessSELinuxContext": "system_u:object_r:container_unit_file_t:s0",
+        "ActiveEnterTimestamp": "Fri 2025-04-11 20:58:29 -04",
+        "ActiveEnterTimestampMonotonic": "11632161",
+        "ActiveExitTimestampMonotonic": "0",
+        "ActiveState": "active",
+        "After": "systemd-journald.socket system.slice docker.socket network-online.target nss-lookup.target containerd.service time-set.target firewalld.service basic.target sysinit.target",
+        "AllowIsolate": "no",
+        "AssertResult": "yes",
+        "AssertTimestamp": "Fri 2025-04-11 20:58:27 -04",
+        "AssertTimestampMonotonic": "9323068",
+        "Before": "multi-user.target shutdown.target",
+        "BlockIOAccounting": "no",
+        "BlockIOWeight": "[not set]",
+        "CPUAccounting": "yes",
+        "CPUAffinityFromNUMA": "no",
+        "CPUQuotaPerSecUSec": "infinity",
+        "CPUQuotaPeriodUSec": "infinity",
+        "CPUSchedulingPolicy": "0",
+        "CPUSchedulingPriority": "0",
+        "CPUSchedulingResetOnFork": "no",
+        "CPUShares": "[not set]",
+        "CPUUsageNSec": "16630654000",
+        "CPUWeight": "[not set]",
+        "CacheDirectoryMode": "0755",
+        "CanFreeze": "yes",
+        "CanIsolate": "no",
+        "CanReload": "yes",
+        "CanStart": "yes",
+        "CanStop": "yes",
+        "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon cap_bpf cap_checkpoint_restore",
+        "CleanResult": "success",
+        "CollectMode": "inactive",
+        "ConditionResult": "yes",
+        "ConditionTimestamp": "Fri 2025-04-11 20:58:27 -04",
+        "ConditionTimestampMonotonic": "9323067",
+        "ConfigurationDirectoryMode": "0755",
+        "Conflicts": "shutdown.target",
+        "ControlGroup": "/system.slice/docker.service",
+        "ControlGroupId": "7564",
+        "ControlPID": "0",
+        "CoredumpFilter": "0x33",
+        "CoredumpReceive": "no",
+        "DefaultDependencies": "yes",
+        "DefaultMemoryLow": "0",
+        "DefaultMemoryMin": "0",
+        "DefaultStartupMemoryLow": "0",
+        "Delegate": "yes",
+        "DelegateControllers": "cpu cpuset io memory pids",
+        "Description": "Docker Application Container Engine",
+        "DevicePolicy": "auto",
+        "Documentation": "https://docs.docker.com",
+        "DropInPaths": "/usr/lib/systemd/system/service.d/10-timeout-abort.conf /usr/lib/systemd/system/service.d/50-keep-warm.conf",
+        "DynamicUser": "no",
+        "EffectiveCPUs": "0-7",
+        "EffectiveMemoryHigh": "16487211008",
+        "EffectiveMemoryMax": "16487211008",
+        "EffectiveMemoryNodes": "0",
+        "EffectiveTasksMax": "124852",
+        "Environment": "SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=0",
+        "ExecMainCode": "0",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ExecMainHandoffTimestamp": "Fri 2025-04-11 20:58:27 -04",
+        "ExecMainHandoffTimestampMonotonic": "9343741",
+        "ExecMainPID": "1276",
+        "ExecMainStartTimestamp": "Fri 2025-04-11 20:58:27 -04",
+        "ExecMainStartTimestampMonotonic": "9325176",
+        "ExecMainStatus": "0",
+        "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -s HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "ExecReloadEx": "{ path=/bin/kill ; argv[]=/bin/kill -s HUP $MAINPID ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "ExecStart": "{ path=/usr/bin/dockerd ; argv[]=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock ; ignore_errors=no ; start_time=[Fri 2025-04-11 20:58:27 -04] ; stop_time=[n/a] ; pid=1276 ; code=(null) ; status=0/0 }",
+        "ExecStartEx": "{ path=/usr/bin/dockerd ; argv[]=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock ; flags= ; start_time=[Fri 2025-04-11 20:58:27 -04] ; stop_time=[n/a] ; pid=1276 ; code=(null) ; status=0/0 }",
+        "ExitType": "main",
+        "ExtensionImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent",
+        "FailureAction": "none",
+        "FileDescriptorStoreMax": "0",
+        "FileDescriptorStorePreserve": "restart",
+        "FinalKillSignal": "9",
+        "FragmentPath": "/usr/lib/systemd/system/docker.service",
+        "FreezerState": "running",
+        "GID": "[not set]",
+        "GuessMainPID": "yes",
+        "IOAccounting": "no",
+        "IOReadBytes": "[not set]",
+        "IOReadOperations": "[not set]",
+        "IOSchedulingClass": "2",
+        "IOSchedulingPriority": "4",
+        "IOWeight": "[not set]",
+        "IOWriteBytes": "[not set]",
+        "IOWriteOperations": "[not set]",
+        "IPAccounting": "no",
+        "IPEgressBytes": "[no data]",
+        "IPEgressPackets": "[no data]",
+        "IPIngressBytes": "[no data]",
+        "IPIngressPackets": "[no data]",
+        "Id": "docker.service",
+        "IgnoreOnIsolate": "no",
+        "IgnoreSIGPIPE": "yes",
+        "InactiveEnterTimestampMonotonic": "0",
+        "InactiveExitTimestamp": "Fri 2025-04-11 20:58:27 -04",
+        "InactiveExitTimestampMonotonic": "9325793",
+        "InvocationID": "1059de9fe90f44edbe7a4b2c585f54b2",
+        "JobRunningTimeoutUSec": "infinity",
+        "JobTimeoutAction": "none",
+        "JobTimeoutUSec": "infinity",
+        "KeyringMode": "private",
+        "KillMode": "process",
+        "KillSignal": "15",
+        "LimitAS": "infinity",
+        "LimitASSoft": "infinity",
+        "LimitCORE": "infinity",
+        "LimitCORESoft": "infinity",
+        "LimitCPU": "infinity",
+        "LimitCPUSoft": "infinity",
+        "LimitDATA": "infinity",
+        "LimitDATASoft": "infinity",
+        "LimitFSIZE": "infinity",
+        "LimitFSIZESoft": "infinity",
+        "LimitLOCKS": "infinity",
+        "LimitLOCKSSoft": "infinity",
+        "LimitMEMLOCK": "8388608",
+        "LimitMEMLOCKSoft": "8388608",
+        "LimitMSGQUEUE": "819200",
+        "LimitMSGQUEUESoft": "819200",
+        "LimitNICE": "0",
+        "LimitNICESoft": "0",
+        "LimitNOFILE": "524288",
+        "LimitNOFILESoft": "1024",
+        "LimitNPROC": "infinity",
+        "LimitNPROCSoft": "infinity",
+        "LimitRSS": "infinity",
+        "LimitRSSSoft": "infinity",
+        "LimitRTPRIO": "0",
+        "LimitRTPRIOSoft": "0",
+        "LimitRTTIME": "infinity",
+        "LimitRTTIMESoft": "infinity",
+        "LimitSIGPENDING": "62426",
+        "LimitSIGPENDINGSoft": "62426",
+        "LimitSTACK": "infinity",
+        "LimitSTACKSoft": "8388608",
+        "LoadState": "loaded",
+        "LockPersonality": "no",
+        "LogLevelMax": "-1",
+        "LogRateLimitBurst": "0",
+        "LogRateLimitIntervalUSec": "0",
+        "LogsDirectoryMode": "0755",
+        "MainPID": "1276",
+        "ManagedOOMMemoryPressure": "auto",
+        "ManagedOOMMemoryPressureLimit": "0",
+        "ManagedOOMPreference": "none",
+        "ManagedOOMSwap": "auto",
+        "MemoryAccounting": "yes",
+        "MemoryAvailable": "4803895296",
+        "MemoryCurrent": "42160128",
+        "MemoryDenyWriteExecute": "no",
+        "MemoryHigh": "infinity",
+        "MemoryKSM": "no",
+        "MemoryLimit": "infinity",
+        "MemoryLow": "0",
+        "MemoryMax": "infinity",
+        "MemoryMin": "0",
+        "MemoryPeak": "195391488",
+        "MemoryPressureThresholdUSec": "200ms",
+        "MemoryPressureWatch": "auto",
+        "MemorySwapCurrent": "11419648",
+        "MemorySwapMax": "infinity",
+        "MemorySwapPeak": "18112512",
+        "MemoryZSwapCurrent": "0",
+        "MemoryZSwapMax": "infinity",
+        "MemoryZSwapWriteback": "yes",
+        "MountAPIVFS": "no",
+        "MountImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent",
+        "NFileDescriptorStore": "0",
+        "NRestarts": "0",
+        "NUMAPolicy": "n/a",
+        "Names": "docker.service",
+        "NeedDaemonReload": "no",
+        "Nice": "0",
+        "NoNewPrivileges": "no",
+        "NonBlocking": "no",
+        "NotifyAccess": "main",
+        "OOMPolicy": "continue",
+        "OOMScoreAdjust": "-500",
+        "OnFailureJobMode": "replace",
+        "OnSuccessJobMode": "fail",
+        "Perpetual": "no",
+        "PrivateDevices": "no",
+        "PrivateIPC": "no",
+        "PrivateMounts": "no",
+        "PrivateNetwork": "no",
+        "PrivateTmp": "no",
+        "PrivateUsers": "no",
+        "ProcSubset": "all",
+        "ProtectClock": "no",
+        "ProtectControlGroups": "no",
+        "ProtectHome": "no",
+        "ProtectHostname": "no",
+        "ProtectKernelLogs": "no",
+        "ProtectKernelModules": "no",
+        "ProtectKernelTunables": "no",
+        "ProtectProc": "default",
+        "ProtectSystem": "no",
+        "RefuseManualStart": "no",
+        "RefuseManualStop": "no",
+        "ReloadResult": "success",
+        "ReloadSignal": "1",
+        "RemainAfterExit": "no",
+        "RemoveIPC": "no",
+        "Requires": "sysinit.target docker.socket system.slice",
+        "Restart": "always",
+        "RestartKillSignal": "15",
+        "RestartMaxDelayUSec": "infinity",
+        "RestartMode": "normal",
+        "RestartSteps": "0",
+        "RestartUSec": "2s",
+        "RestartUSecNext": "2s",
+        "RestrictNamespaces": "no",
+        "RestrictRealtime": "no",
+        "RestrictSUIDSGID": "no",
+        "Result": "success",
+        "RootDirectoryStartOnly": "no",
+        "RootEphemeral": "no",
+        "RootImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent",
+        "RuntimeDirectoryMode": "0755",
+        "RuntimeDirectoryPreserve": "no",
+        "RuntimeMaxUSec": "infinity",
+        "RuntimeRandomizedExtraUSec": "0",
+        "SameProcessGroup": "no",
+        "SecureBits": "0",
+        "SendSIGHUP": "no",
+        "SendSIGKILL": "yes",
+        "SetLoginEnvironment": "no",
+        "Slice": "system.slice",
+        "StandardError": "inherit",
+        "StandardInput": "null",
+        "StandardOutput": "journal",
+        "StartLimitAction": "none",
+        "StartLimitBurst": "3",
+        "StartLimitIntervalUSec": "1min",
+        "StartupBlockIOWeight": "[not set]",
+        "StartupCPUShares": "[not set]",
+        "StartupCPUWeight": "[not set]",
+        "StartupIOWeight": "[not set]",
+        "StartupMemoryHigh": "infinity",
+        "StartupMemoryLow": "0",
+        "StartupMemoryMax": "infinity",
+        "StartupMemorySwapMax": "infinity",
+        "StartupMemoryZSwapMax": "infinity",
+        "StateChangeTimestamp": "Fri 2025-04-11 20:58:29 -04",
+        "StateChangeTimestampMonotonic": "11632161",
+        "StateDirectoryMode": "0755",
+        "StatusErrno": "0",
+        "StopWhenUnneeded": "no",
+        "SubState": "running",
+        "SuccessAction": "none",
+        "SurviveFinalKillSignal": "no",
+        "SyslogFacility": "3",
+        "SyslogLevel": "6",
+        "SyslogLevelPrefix": "yes",
+        "SyslogPriority": "30",
+        "SystemCallErrorNumber": "2147483646",
+        "TTYReset": "no",
+        "TTYVHangup": "no",
+        "TTYVTDisallocate": "no",
+        "TasksAccounting": "yes",
+        "TasksCurrent": "23",
+        "TasksMax": "infinity",
+        "TimeoutAbortUSec": "45s",
+        "TimeoutCleanUSec": "infinity",
+        "TimeoutStartFailureMode": "terminate",
+        "TimeoutStartUSec": "infinity",
+        "TimeoutStopFailureMode": "abort",
+        "TimeoutStopUSec": "45s",
+        "TimerSlackNSec": "50000",
+        "Transient": "no",
+        "TriggeredBy": "docker.socket",
+        "Type": "notify",
+        "UID": "[not set]",
+        "UMask": "0022",
+        "UnitFilePreset": "disabled",
+        "UnitFileState": "enabled",
+        "UtmpMode": "init",
+        "WantedBy": "multi-user.target",
+        "Wants": "network-online.target containerd.service",
+        "WatchdogSignal": "6",
+        "WatchdogTimestampMonotonic": "0",
+        "WatchdogUSec": "0"
+    }
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [08_install_docker : Mostrar mensaje informativo] *************************
+task path: /home/el/works/dotfiles/ansible/roles/08_install_docker/tasks/main.yml:92
+ok: [localhost] => {
+    "msg": "Docker ha sido instalado correctamente.   El usuario 'root' ha sido añadido al grupo docker. Para usar Docker sin sudo: 1. Cierra sesión y vuelve a iniciar sesión, o 2. Ejecuta 'newgrp docker' en la terminal actual.  Verifica la instalación con 'docker run hello-world'\n"
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Include OS-specific variables] *************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/main.yml:2
+fatal: [localhost]: FAILED! => {
+    "msg": "No file was found when using first_found."
+}
+...ignoring
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verify OS support] *************************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/main.yml:10
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution not in supported_distributions",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Include Go tools tasks] ********************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/main.yml:15
+Read vars_file 'vars/installer_config.yaml'
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+redirecting (type: modules) ansible.builtin.pacman to community.general.pacman
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+included: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/go_tools.yml for localhost
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verificar si Go está instalado] ************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/go_tools.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528763.6462488-296793-264422566963575 `" && echo ansible-tmp-1744528763.6462488-296793-264422566963575="` echo /home/el/.ansible/tmp/ansible-tmp-1744528763.6462488-296793-264422566963575 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpmhu3a5u3 TO /home/el/.ansible/tmp/ansible-tmp-1744528763.6462488-296793-264422566963575/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528763.6462488-296793-264422566963575/ /home/el/.ansible/tmp/ansible-tmp-1744528763.6462488-296793-264422566963575/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=vtuxbobkesstvdzcgojiusncktfleppe] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-vtuxbobkesstvdzcgojiusncktfleppe ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528763.6462488-296793-264422566963575/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528763.6462488-296793-264422566963575/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "cmd": [
+        "which",
+        "go"
+    ],
+    "delta": "0:00:00.005109",
+    "end": "2025-04-13 03:19:24.071742",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "which go",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "start": "2025-04-13 03:19:24.066633",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "/usr/bin/go",
+    "stdout_lines": [
+        "/usr/bin/go"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar Go en Debian/Ubuntu] **************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/go_tools.yml:12
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "go_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+redirecting (type: action) ansible.builtin.yum to ansible.builtin.dnf
+
+TASK [09_post_install : Instalar Go en CentOS/RHEL] ****************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/go_tools.yml:19
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "go_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar Go en Fedora] *********************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/go_tools.yml:26
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "go_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar Go en Arch Linux] *****************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/go_tools.yml:33
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "go_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Crear directorio Go/bin si no existe] ******************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/go_tools.yml:40
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528764.3063762-296828-153748384292541 `" && echo ansible-tmp-1744528764.3063762-296828-153748384292541="` echo /home/el/.ansible/tmp/ansible-tmp-1744528764.3063762-296828-153748384292541 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/file.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpb71s9wvq TO /home/el/.ansible/tmp/ansible-tmp-1744528764.3063762-296828-153748384292541/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528764.3063762-296828-153748384292541/ /home/el/.ansible/tmp/ansible-tmp-1744528764.3063762-296828-153748384292541/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528764.3063762-296828-153748384292541/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528764.3063762-296828-153748384292541/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "diff": {
+        "after": {
+            "path": "/go/bin",
+            "state": "directory"
+        },
+        "before": {
+            "path": "/go/bin",
+            "state": "absent"
+        }
+    },
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/go/bin",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "path": "/go/bin"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar d2 diagram] ***********************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/go_tools.yml:47
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528764.9714122-296850-137709286027077 `" && echo ansible-tmp-1744528764.9714122-296850-137709286027077="` echo /home/el/.ansible/tmp/ansible-tmp-1744528764.9714122-296850-137709286027077 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmp2yqjccip TO /home/el/.ansible/tmp/ansible-tmp-1744528764.9714122-296850-137709286027077/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528764.9714122-296850-137709286027077/ /home/el/.ansible/tmp/ansible-tmp-1744528764.9714122-296850-137709286027077/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin:/usr/local/go/bin GOPATH=/go /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528764.9714122-296850-137709286027077/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528764.9714122-296850-137709286027077/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "cmd": [
+        "go",
+        "install",
+        "oss.terrastruct.com/d2@latest"
+    ],
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "go install oss.terrastruct.com/d2@latest",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": "/go/bin/d2",
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Include Brave browser tasks] ***************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/main.yml:19
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+included: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/brave.yml for localhost
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar dependencias para Brave] **********************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/brave.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528765.4595191-296869-31173387014706 `" && echo ansible-tmp-1744528765.4595191-296869-31173387014706="` echo /home/el/.ansible/tmp/ansible-tmp-1744528765.4595191-296869-31173387014706 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/dnf5.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmp3hk0ulio TO /home/el/.ansible/tmp/ansible-tmp-1744528765.4595191-296869-31173387014706/AnsiballZ_dnf5.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528765.4595191-296869-31173387014706/ /home/el/.ansible/tmp/ansible-tmp-1744528765.4595191-296869-31173387014706/AnsiballZ_dnf5.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=chgkamjkbqyanfryfuywbwkmdajljzei] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-chgkamjkbqyanfryfuywbwkmdajljzei ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528765.4595191-296869-31173387014706/AnsiballZ_dnf5.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528765.4595191-296869-31173387014706/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "curl"
+            ],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Añadir clave GPG de Brave] *****************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/brave.yml:11
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Debian\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Añadir repositorio de Brave] ***************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/brave.yml:17
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Debian\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar Brave Browser] ********************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/brave.yml:24
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Debian\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Añadir repositorio de Brave] ***************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/brave.yml:34
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528770.1136253-296930-12104634095595 `" && echo ansible-tmp-1744528770.1136253-296930-12104634095595="` echo /home/el/.ansible/tmp/ansible-tmp-1744528770.1136253-296930-12104634095595 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/get_url.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpexx4tani TO /home/el/.ansible/tmp/ansible-tmp-1744528770.1136253-296930-12104634095595/AnsiballZ_get_url.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528770.1136253-296930-12104634095595/ /home/el/.ansible/tmp/ansible-tmp-1744528770.1136253-296930-12104634095595/AnsiballZ_get_url.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=nulronzokyufcokqxazrviyylxsapyka] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-nulronzokyufcokqxazrviyylxsapyka ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528770.1136253-296930-12104634095595/AnsiballZ_get_url.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528770.1136253-296930-12104634095595/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "checksum_dest": "76e4621e2c7c18933dcea09d0cdf91805a952d7a",
+    "checksum_src": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "dest": "/etc/yum.repos.d/brave-browser.repo",
+    "elapsed": 0,
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backup": false,
+            "checksum": "",
+            "ciphers": null,
+            "client_cert": null,
+            "client_key": null,
+            "decompress": true,
+            "dest": "/etc/yum.repos.d/brave-browser.repo",
+            "force": false,
+            "force_basic_auth": false,
+            "group": null,
+            "headers": null,
+            "http_agent": "ansible-httpget",
+            "mode": "0644",
+            "owner": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "timeout": 10,
+            "tmp_dest": null,
+            "unredirected_headers": [],
+            "unsafe_writes": false,
+            "url": "https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo",
+            "url_password": null,
+            "url_username": null,
+            "use_gssapi": false,
+            "use_netrc": true,
+            "use_proxy": true,
+            "validate_certs": true
+        }
+    },
+    "mode": "0644",
+    "msg": "OK (190 bytes)",
+    "owner": "root",
+    "secontext": "unconfined_u:object_r:system_conf_t:s0",
+    "size": 190,
+    "src": "/home/el/.ansible/tmp/ansible-tmp-1744528770.1136253-296930-12104634095595/tmpffogkxv5",
+    "state": "file",
+    "uid": 0,
+    "url": "https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar Brave Browser] ********************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/brave.yml:41
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528771.7206488-296962-225671078726324 `" && echo ansible-tmp-1744528771.7206488-296962-225671078726324="` echo /home/el/.ansible/tmp/ansible-tmp-1744528771.7206488-296962-225671078726324 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/dnf5.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmp6pczh8dn TO /home/el/.ansible/tmp/ansible-tmp-1744528771.7206488-296962-225671078726324/AnsiballZ_dnf5.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528771.7206488-296962-225671078726324/ /home/el/.ansible/tmp/ansible-tmp-1744528771.7206488-296962-225671078726324/AnsiballZ_dnf5.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=pcqwchxlrucrwisrvchgbuklwttauqit] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-pcqwchxlrucrwisrvchgbuklwttauqit ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528771.7206488-296962-225671078726324/AnsiballZ_dnf5.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528771.7206488-296962-225671078726324/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "brave-browser"
+            ],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verificar si yay está instalado] ***********************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/brave.yml:50
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"Archlinux\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar Brave con yay] ********************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/brave.yml:57
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_distribution == \"Archlinux\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Include Tmux plugin manager tasks] *********************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/main.yml:23
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+included: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/tmux.yml for localhost
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verificar si tmux está instalado] **********************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/tmux.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528776.5903666-297054-17492241964220 `" && echo ansible-tmp-1744528776.5903666-297054-17492241964220="` echo /home/el/.ansible/tmp/ansible-tmp-1744528776.5903666-297054-17492241964220 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpbuubmq2w TO /home/el/.ansible/tmp/ansible-tmp-1744528776.5903666-297054-17492241964220/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528776.5903666-297054-17492241964220/ /home/el/.ansible/tmp/ansible-tmp-1744528776.5903666-297054-17492241964220/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=gredgcoeoargkgjeunymztmprqvvfite] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-gredgcoeoargkgjeunymztmprqvvfite ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528776.5903666-297054-17492241964220/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528776.5903666-297054-17492241964220/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "cmd": [
+        "which",
+        "tmux"
+    ],
+    "delta": "0:00:00.004602",
+    "end": "2025-04-13 03:19:37.011588",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "which tmux",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "start": "2025-04-13 03:19:37.006986",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "/usr/bin/tmux",
+    "stdout_lines": [
+        "/usr/bin/tmux"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar tmux si no está disponible] *******************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/tmux.yml:9
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "tmux_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verificar si tpm ya está instalado] ********************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/tmux.yml:16
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528777.1369405-297076-131428302984319 `" && echo ansible-tmp-1744528777.1369405-297076-131428302984319="` echo /home/el/.ansible/tmp/ansible-tmp-1744528777.1369405-297076-131428302984319 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/stat.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmphbq32gpg TO /home/el/.ansible/tmp/ansible-tmp-1744528777.1369405-297076-131428302984319/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528777.1369405-297076-131428302984319/ /home/el/.ansible/tmp/ansible-tmp-1744528777.1369405-297076-131428302984319/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=pexgatubojlhkfmpfnoajsohjfwonswg] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-pexgatubojlhkfmpfnoajsohjfwonswg ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528777.1369405-297076-131428302984319/AnsiballZ_stat.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528777.1369405-297076-131428302984319/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1",
+            "follow": false,
+            "get_attributes": true,
+            "get_checksum": true,
+            "get_mime": true,
+            "path": "/.tmux/plugins/tpm"
+        }
+    },
+    "stat": {
+        "exists": false
+    }
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar Tmux Plugin Manager (tpm)] ********************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/tmux.yml:21
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528777.866017-297102-189110364235008 `" && echo ansible-tmp-1744528777.866017-297102-189110364235008="` echo /home/el/.ansible/tmp/ansible-tmp-1744528777.866017-297102-189110364235008 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/git.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpld7gd8ei TO /home/el/.ansible/tmp/ansible-tmp-1744528777.866017-297102-189110364235008/AnsiballZ_git.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528777.866017-297102-189110364235008/ /home/el/.ansible/tmp/ansible-tmp-1744528777.866017-297102-189110364235008/AnsiballZ_git.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528777.866017-297102-189110364235008/AnsiballZ_git.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528777.866017-297102-189110364235008/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "after": "99469c4a9b1ccf77fade25842dc7bafbc8ce9946",
+    "before": null,
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "accept_hostkey": false,
+            "accept_newhostkey": false,
+            "archive": null,
+            "archive_prefix": null,
+            "bare": false,
+            "clone": true,
+            "depth": null,
+            "dest": "/.tmux/plugins/tpm",
+            "executable": null,
+            "force": false,
+            "gpg_allowlist": [],
+            "key_file": null,
+            "recursive": true,
+            "reference": null,
+            "refspec": null,
+            "remote": "origin",
+            "repo": "https://github.com/tmux-plugins/tpm",
+            "separate_git_dir": null,
+            "single_branch": false,
+            "ssh_opts": null,
+            "track_submodules": false,
+            "umask": null,
+            "update": true,
+            "verify_commit": false,
+            "version": "HEAD"
+        }
+    }
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Include Ruby/Tmuxinator tasks] *************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/main.yml:27
+Read vars_file 'vars/installer_config.yaml'
+redirecting (type: modules) ansible.builtin.gem to community.general.gem
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+included: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/ruby.yml for localhost
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verificar si Ruby está instalado] **********************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/ruby.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528778.8184125-297144-55896888640343 `" && echo ansible-tmp-1744528778.8184125-297144-55896888640343="` echo /home/el/.ansible/tmp/ansible-tmp-1744528778.8184125-297144-55896888640343 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpwbw2oamj TO /home/el/.ansible/tmp/ansible-tmp-1744528778.8184125-297144-55896888640343/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528778.8184125-297144-55896888640343/ /home/el/.ansible/tmp/ansible-tmp-1744528778.8184125-297144-55896888640343/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=dzlupyhkbbejjvyubzuhmkfpxuzvinxg] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-dzlupyhkbbejjvyubzuhmkfpxuzvinxg ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528778.8184125-297144-55896888640343/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528778.8184125-297144-55896888640343/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "cmd": [
+        "which",
+        "gem"
+    ],
+    "delta": "0:00:00.005747",
+    "end": "2025-04-13 03:19:39.359687",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "which gem",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "start": "2025-04-13 03:19:39.353940",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "/usr/bin/gem",
+    "stdout_lines": [
+        "/usr/bin/gem"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verificar si tmuxinator ya está instalado] *************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/ruby.yml:12
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ruby_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar tmuxinator con gem] ***************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/ruby.yml:19
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ruby_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Include Atuin tasks] ***********************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/main.yml:35
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+included: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/atuin.yml for localhost
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verificar si Atuin ya está instalado] ******************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/atuin.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528779.6038-297176-257590941384995 `" && echo ansible-tmp-1744528779.6038-297176-257590941384995="` echo /home/el/.ansible/tmp/ansible-tmp-1744528779.6038-297176-257590941384995 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpluqs9hn4 TO /home/el/.ansible/tmp/ansible-tmp-1744528779.6038-297176-257590941384995/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528779.6038-297176-257590941384995/ /home/el/.ansible/tmp/ansible-tmp-1744528779.6038-297176-257590941384995/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=hijkkkwmwpuompjjaobzxmtfsfteygae] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-hijkkkwmwpuompjjaobzxmtfsfteygae ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528779.6038-297176-257590941384995/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528779.6038-297176-257590941384995/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "cmd": [
+        "which",
+        "atuin"
+    ],
+    "delta": "0:00:00.004852",
+    "end": "2025-04-13 03:19:40.041987",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "which atuin",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "non-zero return code",
+    "rc": 1,
+    "start": "2025-04-13 03:19:40.037135",
+    "stderr": "which: no atuin in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin)",
+    "stderr_lines": [
+        "which: no atuin in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin)"
+    ],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Descargar e instalar Atuin] ****************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/atuin.yml:12
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528780.1428437-297197-14030094101531 `" && echo ansible-tmp-1744528780.1428437-297197-14030094101531="` echo /home/el/.ansible/tmp/ansible-tmp-1744528780.1428437-297197-14030094101531 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpo1g0mu81 TO /home/el/.ansible/tmp/ansible-tmp-1744528780.1428437-297197-14030094101531/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528780.1428437-297197-14030094101531/ /home/el/.ansible/tmp/ansible-tmp-1744528780.1428437-297197-14030094101531/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=nwvzpatgfsohnxbpvmnknzwblmveitvi] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-nwvzpatgfsohnxbpvmnknzwblmveitvi ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528780.1428437-297197-14030094101531/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528780.1428437-297197-14030094101531/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "cmd": "set -o pipefail\ncurl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | bash\n",
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "set -o pipefail\ncurl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | bash\n",
+            "_uses_shell": true,
+            "argv": null,
+            "chdir": null,
+            "creates": "/.cargo/bin/atuin",
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Include Rust tools tasks] ******************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/main.yml:39
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+included: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/rust_tools.yml for localhost
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verificar si Rust está instalado] **********************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/rust_tools.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528780.7317164-297224-165940619375433 `" && echo ansible-tmp-1744528780.7317164-297224-165940619375433="` echo /home/el/.ansible/tmp/ansible-tmp-1744528780.7317164-297224-165940619375433 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpb11o1me4 TO /home/el/.ansible/tmp/ansible-tmp-1744528780.7317164-297224-165940619375433/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528780.7317164-297224-165940619375433/ /home/el/.ansible/tmp/ansible-tmp-1744528780.7317164-297224-165940619375433/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=fbuaixngumwuijjkftyeklxmcuglejts] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-fbuaixngumwuijjkftyeklxmcuglejts ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528780.7317164-297224-165940619375433/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528780.7317164-297224-165940619375433/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "cmd": [
+        "which",
+        "cargo"
+    ],
+    "delta": "0:00:00.004820",
+    "end": "2025-04-13 03:19:41.158580",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "which cargo",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "start": "2025-04-13 03:19:41.153760",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "/usr/bin/cargo",
+    "stdout_lines": [
+        "/usr/bin/cargo"
+    ]
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Descargar e instalar Rust] *****************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/rust_tools.yml:11
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "cargo_check.rc != 0",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Verificar si du-dust ya está instalado] ****************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/rust_tools.yml:18
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528781.2694287-297246-124681951599366 `" && echo ansible-tmp-1744528781.2694287-297246-124681951599366="` echo /home/el/.ansible/tmp/ansible-tmp-1744528781.2694287-297246-124681951599366 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpkunvkoct TO /home/el/.ansible/tmp/ansible-tmp-1744528781.2694287-297246-124681951599366/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528781.2694287-297246-124681951599366/ /home/el/.ansible/tmp/ansible-tmp-1744528781.2694287-297246-124681951599366/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=vbwezznlosxalgduveljsqbekfvqjyee] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-vbwezznlosxalgduveljsqbekfvqjyee ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528781.2694287-297246-124681951599366/AnsiballZ_command.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528781.2694287-297246-124681951599366/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "cmd": [
+        "which",
+        "dust"
+    ],
+    "delta": "0:00:00.005237",
+    "end": "2025-04-13 03:19:41.705931",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "which dust",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "non-zero return code",
+    "rc": 1,
+    "start": "2025-04-13 03:19:41.700694",
+    "stderr": "which: no dust in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin)",
+    "stderr_lines": [
+        "which: no dust in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin)"
+    ],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [09_post_install : Instalar du-dust con cargo] ****************************
+task path: /home/el/works/dotfiles/ansible/roles/09_post_install/tasks/rust_tools.yml:25
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528781.8404217-297273-182153183405077 `" && echo ansible-tmp-1744528781.8404217-297273-182153183405077="` echo /home/el/.ansible/tmp/ansible-tmp-1744528781.8404217-297273-182153183405077 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpvvnsu09p TO /home/el/.ansible/tmp/ansible-tmp-1744528781.8404217-297273-182153183405077/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528781.8404217-297273-182153183405077/ /home/el/.ansible/tmp/ansible-tmp-1744528781.8404217-297273-182153183405077/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin:/.cargo/bin /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528781.8404217-297273-182153183405077/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528781.8404217-297273-182153183405077/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "cmd": [
+        "cargo",
+        "install",
+        "du-dust"
+    ],
+    "delta": null,
+    "end": null,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "cargo install du-dust",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": "/.cargo/bin/dust",
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [10_config_zsh : Cambiar el shell del usuario actual a Zsh] ***************
+task path: /home/el/works/dotfiles/ansible/roles/10_config_zsh/tasks/main.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528782.2987032-297289-260554755785097 `" && echo ansible-tmp-1744528782.2987032-297289-260554755785097="` echo /home/el/.ansible/tmp/ansible-tmp-1744528782.2987032-297289-260554755785097 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/user.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpnslcuyrs TO /home/el/.ansible/tmp/ansible-tmp-1744528782.2987032-297289-260554755785097/AnsiballZ_user.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528782.2987032-297289-260554755785097/ /home/el/.ansible/tmp/ansible-tmp-1744528782.2987032-297289-260554755785097/AnsiballZ_user.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=fqbnsdbgfgmlobsbfrgnkvoapvghxata] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-fqbnsdbgfgmlobsbfrgnkvoapvghxata ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528782.2987032-297289-260554755785097/AnsiballZ_user.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528782.2987032-297289-260554755785097/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "append": false,
+    "changed": true,
+    "comment": "Super User",
+    "group": 0,
+    "home": "/root",
+    "invocation": {
+        "module_args": {
+            "append": false,
+            "authorization": null,
+            "comment": null,
+            "create_home": true,
+            "expires": null,
+            "force": false,
+            "generate_ssh_key": null,
+            "group": null,
+            "groups": null,
+            "hidden": null,
+            "home": null,
+            "local": null,
+            "login_class": null,
+            "move_home": false,
+            "name": "root",
+            "non_unique": false,
+            "password": null,
+            "password_expire_account_disable": null,
+            "password_expire_max": null,
+            "password_expire_min": null,
+            "password_expire_warn": null,
+            "password_lock": null,
+            "profile": null,
+            "remove": false,
+            "role": null,
+            "seuser": null,
+            "shell": "/bin/zsh",
+            "skeleton": null,
+            "ssh_key_bits": 0,
+            "ssh_key_comment": "ansible-generated on sentu",
+            "ssh_key_file": null,
+            "ssh_key_passphrase": null,
+            "ssh_key_type": "rsa",
+            "state": "present",
+            "system": false,
+            "uid": null,
+            "uid_max": null,
+            "uid_min": null,
+            "umask": null,
+            "update_password": "always"
+        }
+    },
+    "move_home": false,
+    "name": "root",
+    "shell": "/bin/bash",
+    "state": "present",
+    "uid": 0
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [11_install_flatpak : Agrega el repositorio flathub flatpak para la instalación de los usuarios] ***
+task path: /home/el/works/dotfiles/ansible/roles/11_install_flatpak/tasks/main.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528782.9498672-297317-219965299320174 `" && echo ansible-tmp-1744528782.9498672-297317-219965299320174="` echo /home/el/.ansible/tmp/ansible-tmp-1744528782.9498672-297317-219965299320174 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpui3au9q8 TO /home/el/.ansible/tmp/ansible-tmp-1744528782.9498672-297317-219965299320174/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528782.9498672-297317-219965299320174/ /home/el/.ansible/tmp/ansible-tmp-1744528782.9498672-297317-219965299320174/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528782.9498672-297317-219965299320174/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528782.9498672-297317-219965299320174/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => (item=md.obsidian.Obsidian)  => {
+    "ansible_loop_var": "flatpak_item",
+    "changed": false,
+    "cmd": [
+        "flatpak",
+        "install",
+        "flathub",
+        "md.obsidian.Obsidian"
+    ],
+    "delta": null,
+    "end": null,
+    "flatpak_item": "md.obsidian.Obsidian",
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "flatpak",
+                "install",
+                "flathub",
+                "md.obsidian.Obsidian"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528783.3300989-297317-93056310542523 `" && echo ansible-tmp-1744528783.3300989-297317-93056310542523="` echo /home/el/.ansible/tmp/ansible-tmp-1744528783.3300989-297317-93056310542523 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpb11d99px TO /home/el/.ansible/tmp/ansible-tmp-1744528783.3300989-297317-93056310542523/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528783.3300989-297317-93056310542523/ /home/el/.ansible/tmp/ansible-tmp-1744528783.3300989-297317-93056310542523/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528783.3300989-297317-93056310542523/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528783.3300989-297317-93056310542523/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => (item=io.missioncenter.MissionCenter)  => {
+    "ansible_loop_var": "flatpak_item",
+    "changed": false,
+    "cmd": [
+        "flatpak",
+        "install",
+        "flathub",
+        "io.missioncenter.MissionCenter"
+    ],
+    "delta": null,
+    "end": null,
+    "flatpak_item": "io.missioncenter.MissionCenter",
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "flatpak",
+                "install",
+                "flathub",
+                "io.missioncenter.MissionCenter"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+skipping: [localhost] => {
+    "changed": false,
+    "msg": "All items skipped"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [11_install_flatpak : Instala los paquetes desde flathub para el usuario] ***
+task path: /home/el/works/dotfiles/ansible/roles/11_install_flatpak/tasks/main.yml:21
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528783.76234-297353-230886980071667 `" && echo ansible-tmp-1744528783.76234-297353-230886980071667="` echo /home/el/.ansible/tmp/ansible-tmp-1744528783.76234-297353-230886980071667 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmppk63lx_b TO /home/el/.ansible/tmp/ansible-tmp-1744528783.76234-297353-230886980071667/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528783.76234-297353-230886980071667/ /home/el/.ansible/tmp/ansible-tmp-1744528783.76234-297353-230886980071667/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528783.76234-297353-230886980071667/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528783.76234-297353-230886980071667/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => (item=md.obsidian.Obsidian)  => {
+    "ansible_loop_var": "flatpak_item",
+    "changed": false,
+    "cmd": [
+        "flatpak",
+        "install",
+        "flathub",
+        "md.obsidian.Obsidian"
+    ],
+    "delta": null,
+    "end": null,
+    "flatpak_item": "md.obsidian.Obsidian",
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "flatpak",
+                "install",
+                "flathub",
+                "md.obsidian.Obsidian"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528784.1600301-297353-138944435378116 `" && echo ansible-tmp-1744528784.1600301-297353-138944435378116="` echo /home/el/.ansible/tmp/ansible-tmp-1744528784.1600301-297353-138944435378116 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/command.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmpku1eghsr TO /home/el/.ansible/tmp/ansible-tmp-1744528784.1600301-297353-138944435378116/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528784.1600301-297353-138944435378116/ /home/el/.ansible/tmp/ansible-tmp-1744528784.1600301-297353-138944435378116/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528784.1600301-297353-138944435378116/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528784.1600301-297353-138944435378116/ > /dev/null 2>&1 && sleep 0'
+skipping: [localhost] => (item=io.missioncenter.MissionCenter)  => {
+    "ansible_loop_var": "flatpak_item",
+    "changed": false,
+    "cmd": [
+        "flatpak",
+        "install",
+        "flathub",
+        "io.missioncenter.MissionCenter"
+    ],
+    "delta": null,
+    "end": null,
+    "flatpak_item": "io.missioncenter.MissionCenter",
+    "invocation": {
+        "module_args": {
+            "_raw_params": null,
+            "_uses_shell": true,
+            "argv": [
+                "flatpak",
+                "install",
+                "flathub",
+                "io.missioncenter.MissionCenter"
+            ],
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "expand_argument_vars": true,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true
+        }
+    },
+    "msg": "Command would have run if not in check mode",
+    "rc": 0,
+    "start": null,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+skipping: [localhost] => {
+    "changed": false,
+    "msg": "All items skipped"
+}
+Read vars_file 'vars/installer_config.yaml'
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [12_install_fonts : Instalar fontconfig (Debian/Ubuntu)] ******************
+task path: /home/el/works/dotfiles/ansible/roles/12_install_fonts/tasks/main.yml:5
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Debian\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [12_install_fonts : Instalar fontconfig (Red Hat/CentOS/Fedora)] **********
+task path: /home/el/works/dotfiles/ansible/roles/12_install_fonts/tasks/main.yml:11
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: el
+<localhost> EXEC /bin/sh -c 'echo ~el && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/el/.ansible/tmp `"&& mkdir "` echo /home/el/.ansible/tmp/ansible-tmp-1744528784.6267998-297390-244950416388663 `" && echo ansible-tmp-1744528784.6267998-297390-244950416388663="` echo /home/el/.ansible/tmp/ansible-tmp-1744528784.6267998-297390-244950416388663 `" ) && sleep 0'
+Using module file /home/el/works/dotfiles/.venv/lib/python3.13/site-packages/ansible/modules/dnf5.py
+<localhost> PUT /home/el/.ansible/tmp/ansible-local-295825o89gu8wb/tmp77uz81q0 TO /home/el/.ansible/tmp/ansible-tmp-1744528784.6267998-297390-244950416388663/AnsiballZ_dnf5.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/el/.ansible/tmp/ansible-tmp-1744528784.6267998-297390-244950416388663/ /home/el/.ansible/tmp/ansible-tmp-1744528784.6267998-297390-244950416388663/AnsiballZ_dnf5.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'sudo -H -S -p "[sudo via ansible, key=hxxxsfortllitpmiakrxdbctqnuszqjz] password:" -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-hxxxsfortllitpmiakrxdbctqnuszqjz ; /home/el/works/dotfiles/.venv/bin/python3.13 /home/el/.ansible/tmp/ansible-tmp-1744528784.6267998-297390-244950416388663/AnsiballZ_dnf5.py'"'"' && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/el/.ansible/tmp/ansible-tmp-1744528784.6267998-297390-244950416388663/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "best": null,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "fontconfig"
+            ],
+            "nobest": null,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [12_install_fonts : Instalar fontconfig (openSUSE)] ***********************
+task path: /home/el/works/dotfiles/ansible/roles/12_install_fonts/tasks/main.yml:17
+skipping: [localhost] => {
+    "changed": false,
+    "false_condition": "ansible_os_family == \"Suse\"",
+    "skip_reason": "Conditional result was False"
+}
+Read vars_file 'vars/installer_config.yaml'
+
+TASK [12_install_fonts : Crear directorio de fuentes] **************************
+task path: /home/el/works/dotfiles/ansible/roles/12_install_fonts/tasks/main.yml:24
+fatal: [localhost]: FAILED! => {
+    "msg": "The task includes an option with an undefined variable.. 'ansible.utils.unsafe_proxy.AnsibleUnsafeText object' has no attribute 'stdout'\n\nThe error appears to be in '/home/el/works/dotfiles/ansible/roles/12_install_fonts/tasks/main.yml': line 24, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Crear directorio de fuentes\n  ^ here\n"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=56   changed=12   unreachable=0    failed=1    skipped=41   rescued=0    ignored=1   
+

@@ -129,6 +129,15 @@ eval "$(zoxide init --cmd cd zsh)"
 # ▄▀█ █░█ ▀█▀ █▀█   █▀ ▀█▀ ▄▀█ █▀█ ▀█▀
 # █▀█ █▄█ ░█░ █▄█   ▄█ ░█░ █▀█ █▀▄ ░█░
 
+# NVM 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion 
+
+export NVM_COMPLETION=true
+export NVM_SYMLINK_CURRENT="true"
+zinit wait lucid light-mode for lukechilds/zsh-nvm
+
 # Get local IP addresses
 if [[ -x "$(command -v ip)" ]]; then
     alias iplocal="ip -br -c a"
@@ -163,33 +172,53 @@ eval "$(atuin init zsh)"
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# QT6
-export PATH=/usr/lib64/qt6/bin:$PATH
-export QT_SELECT=6
+# QT6 (Linux-only)
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  export PATH=/usr/lib64/qt6/bin:$PATH
+  export QT_SELECT=6
+fi
 
+# LM Studio CLI
+export PATH="$PATH:$HOME/.lmstudio/bin"
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/el/.lmstudio/bin"
-
-# Go 
-export PATH="$PATH:/home/el/go/bin"
+# Go
+export PATH="$PATH:$HOME/go/bin"
 
 # Ollama
 export OLLAMA_NUM_THREADS=7
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Linuxbrew (descomentar si se usa en Linux)
+# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source "$HOME/.rye/env"
+# uv (gestor de paquetes Python) — el binario está en ~/.local/bin
+# El PATH ya se configura más abajo en la sección de OpenCode
 
 # bun completions
-[ -s "/home/el/.bun/_bun" ] && source "/home/el/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# OpenCode
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Kiro CLI (macOS)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PATH="$PATH:$HOME/.kiro/bin"
+fi
+
+# Cargar variables sensibles si existen
+if [ -f "$HOME/.zshrc.secrets" ]; then
+  source "$HOME/.zshrc.secrets"
+fi
 
 #uv Python
 eval "$(uv generate-shell-completion zsh)"

@@ -1,0 +1,56 @@
+---
+- name: Mensaje de instalación
+  ansible.builtin.debug:
+    msg: "Instalando Wallpaper extras"
+
+- name: Crear directorio principal para wallpapers
+  ansible.builtin.file:
+    path: "{{ wallpaper_base_dir }}"
+    state: directory
+    mode: "0755"
+  become: no
+
+- name: Crear carpeta para imágenes
+  ansible.builtin.file:
+    path: "{{ wallpaper_base_dir }}/{{ wallpaper_img_subdir }}"
+    state: directory
+    mode: "0755"
+  become: no
+
+- name: Clonar proyectos de wallpapers
+  ansible.builtin.git:
+    repo: "{{ item.url }}"
+    dest: "{{ wallpaper_base_dir }}/{{ item.name }}"
+    update: no # Evitar la actualización si ya existe
+  become: no
+  loop: "{{ wallpaper_repositories }}"
+
+- name: Encontrar archivos de imágenes en los proyectos clonados
+  find:
+    paths: "{{ wallpaper_base_dir }}"
+    patterns: "*.jpg,*.png"
+    file_type: file
+    recurse: yes
+  register: found_images
+  become: no
+
+- name: Mover archivos de imágenes a la carpeta img
+  command: mv "{{ item.path }}" "{{ wallpaper_base_dir }}/{{ wallpaper_img_subdir }}/{{ item.path | basename }}"
+  become: no
+  loop: "{{ found_images.files }}"
+
+- name: Eliminar los directorios de los proyectos clonados
+  ansible.builtin.file:
+    path: "{{ wallpaper_base_dir }}/{{ item.name }}"
+    state: absent
+    force: yes
+  become: no
+  loop: "{{ wallpaper_repositories }}"
+
+- name: Mensaje de finalización
+  ansible.builtin.debug:
+    msg: "**¡Instalación completada!**"
+
+- name: Mostrar ubicación de las imágenes
+  ansible.builtin.debug:
+    msg: "Las imágenes se encuentran en la carpeta {{ wallpaper_base_dir }}/{{ wallpaper_img_subdir }}"

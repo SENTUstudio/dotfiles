@@ -1,0 +1,110 @@
+package_managers:
+  manager: pacman
+  update:
+    - sudo
+    - pacman
+    - "-Suy"
+    - "--noconfirm"
+  install:
+    - sudo
+    - pacman
+    - "-Sy"
+    - "--needed"
+    - "--noconfirm"
+  repo:
+    base:
+      - echo
+      - "Archlinux no requiere repo adicionales a yay"
+  dependencies:
+    core:
+      - git
+      - curl
+      - wget
+      - gcc
+      - make
+      - unzip
+      - zsh
+      - go
+      - cargo
+      - python
+      - ruby
+      - unrar
+      - p7zip
+      - xdg-user-dirs
+      - lsd
+      - jdk-openjdk
+      - flatpak
+      - linux-headers
+      - automake
+      - perl
+      - elfutils
+      - fontconfig
+      - btop
+    categorized:
+      Desarrollo y Productividad:
+        - lazygit
+        - ripgrep
+        - fd
+        - neovim
+        - bat
+        - fzf
+        - httpie
+        - zoxide
+        - zeal
+        - asciiquarium
+        - obsidian
+        - mission-center
+      Terminales y Multiplexores:
+        - kitty
+        - alacritty
+        - ghostty
+        - tmux
+      Sistema y Monitoreo:
+        - fastfetch
+        - util-linux
+        - cron
+        - htop
+        - lm_sensors
+        - bpytop
+      Lua y Soporte Neovim:
+        - python-neovim
+        - lua
+        - luarocks
+      Docker y Contenedores:
+        - docker
+        - containerd
+        - docker-compose
+      Multimedia — Editores y Reproductores:
+        - kdenlive
+        - openshot
+        - vlc
+        - mpv
+        - soundconverter
+        - audacity
+        - muse
+        - lmms
+        - flowblade
+      Multimedia — Codecs y Librerías:
+        - xine-lib
+        - libdvdread
+        - libdvdnav
+        - lsdvd
+        - libdvbpsi
+        - ffmpeg
+        - libmatroska
+        - xvidcore
+        - gstreamer
+        - gst-plugins-base
+        - gst-plugins-good
+        - gst-plugins-bad
+      Gráficos y Oficina:
+        - gimp
+        - inkscape
+        - libreoffice-fresh
+        - libreoffice-fresh-es
+      Comunicación y Conectividad:
+        - discord
+        - kdeconnect
+      Virtualización:
+        - virt-manager
+        - qemu

@@ -1,0 +1,160 @@
+package_managers:
+  manager: dnf
+  update:
+    - sudo
+    - dnf
+    - update
+    - "-y"
+  install:
+    - sudo
+    - dnf
+    - install
+    - "-y"
+    - "--allowerasing"
+  repo:
+    rpmfusion-nonfree:
+      - sudo
+      - dnf
+      - install
+      - "-y"
+      - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
+    rpmfusion-free:
+      - sudo
+      - dnf
+      - install
+      - "-y"
+      - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
+    ghostty:
+      - sudo
+      - dnf
+      - copr
+      - enable
+      - scottames/ghostty
+      - "-y"
+    docker:
+      - sudo
+      - dnf
+      - config-manager
+      - addrepo
+      - "--from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo"
+    google-chrome:
+      - sudo
+      - dnf
+      - install
+      - "-y"
+      - "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+    # lazygit:
+    #   - sudo
+    #   - dnf
+    #   - copr
+    #   - enable
+    #   - "atim/lazygit"
+    #   - "-y"
+  dependencies:
+    core:
+      - git
+      - curl
+      - wget
+      - gcc
+      - make
+      - unzip
+      - zsh
+      - golang
+      - cargo
+      - g++
+      - python3
+      - ruby
+      - unrar
+      - p7zip
+      - p7zip-plugins
+      - xdg-user-dirs
+      - lsd
+      - java
+      - dnf-utils
+      - flatpak
+      - kernel-devel
+      - gcc
+      - make
+      - automake
+      - perl
+      - elfutils-libelf-devel
+      - fontconfig
+      - btop
+    categorized:
+      Desarrollo y Productividad:
+        - ripgrep
+        - fd-find
+        - neovim
+        - bat
+        - fzf
+        - httpie
+        - zoxide
+        - zeal
+        - asciiquarium
+      Terminales y Multiplexores:
+        - kitty
+        - alacritty
+        - ghostty
+        - tmux
+      Sistema y Monitoreo:
+        - fastfetch
+        - util-linux-user
+        - anacron
+        - htop
+        - proselint
+        - lm_sensors
+        - dnf-utils
+        - dnf-plugins-core
+        - bpytop
+      Lua y Soporte Neovim:
+        - python3-neovim
+        - lua-devel
+        - luarocks
+      Docker y Contenedores:
+        - docker-cli
+        - containerd
+        - docker-compose
+      Multimedia — Editores y Reproductores:
+        - kdenlive
+        - openshot
+        - vlc
+        - mpv
+        - soundconverter
+        - audacity
+        - muse
+        - lmms
+        - amarok
+        - flowblade
+      Multimedia — Codecs y Librerías:
+        - xine-lib
+        - xine-lib-extras
+        - xine-lib-extras-freeworld
+        - libdvdread
+        - libdvdnav
+        - lsdvd
+        - libdvbpsi
+        - ffmpeg
+        - libmatroska
+        - xvidcore
+        - gstreamer1-devel
+        - gstreamer1-plugins-base-tools
+        - gstreamer1-doc
+        - gstreamer1-plugins-base-devel
+        - gstreamer1-plugins-good
+        - gstreamer1-plugins-good-extras
+        - gstreamer1-plugins-bad-free
+        - gstreamer1-plugins-bad-free-devel
+      Gráficos y Oficina:
+        - gimp
+        - inkscape
+        - libreoffice-writer
+        - libreoffice-calc
+        - libreoffice-impress
+        - libreoffice-draw
+        - libreoffice-langpack-es
+      Comunicación y Conectividad:
+        - discord
+        - kde-connect
+      Virtualización:
+        - virt-manager
+        - qemu
