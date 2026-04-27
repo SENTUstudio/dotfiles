@@ -160,107 +160,106 @@ def package_core():
     os_name = platform.system()
 
     logging.info("Instalando dependencias...")
-    match os_name:
-        case "Linux":
-            package_managers = {
-                "apt-get": ["sudo", "apt-get", "update"],
-                "dnf": ["sudo", "dnf", "update", "-y"],
-                "pacman": ["sudo", "pacman", "-Syy", "--noconfirm"],
-                "yum": ["sudo", "yum", "update", "-y"],
-                "zypper": ["sudo", "zypper", "update", "-y"],
-            }
-            install_commands = {
-                "apt-get": ["sudo", "apt-get", "install", "-y", "git"],
-                "dnf": ["sudo", "dnf", "install", "-y", "git", "python3-libdnf5"],
-                "pacman": ["sudo", "pacman", "-S", "--noconfirm", "git"],
-                "yum": ["sudo", "yum", "install", "-y", "git"],
-                "zypper": ["sudo", "zypper", "install", "-y", "git"],
-            }
-            install_uv()
-            for pm, update_cmd in package_managers.items():
-                if check_command(pm):
-                    logging.info(
-                        f"Gestor de paquetes '{pm}' detectado. Intentando instalar Paquetes..."
-                    )
-                    run_command(update_cmd)
-                    run_command(install_commands[pm])
-
-                    if pm == "pacman":
-                        show("💾 Instalando yay")
-                        install_yay_python()
-
-                    if check_command("git"):
-                        logging.info("Git instalado exitosamente.")
-                        return True
-                    logging.error(f"Falló la instalación de Git con '{pm}'.")
-                    break  # Salir del bucle si se intentó con un gestor de paquetes
-            else:
-                logging.error(
-                    "No se reconoció un gestor de paquetes compatible para la instalación automática de Git."
-                )
+    if os_name == "Linux":
+        package_managers = {
+            "apt-get": ["sudo", "apt-get", "update"],
+            "dnf": ["sudo", "dnf", "update", "-y"],
+            "pacman": ["sudo", "pacman", "-Syy", "--noconfirm"],
+            "yum": ["sudo", "yum", "update", "-y"],
+            "zypper": ["sudo", "zypper", "update", "-y"],
+        }
+        install_commands = {
+            "apt-get": ["sudo", "apt-get", "install", "-y", "git"],
+            "dnf": ["sudo", "dnf", "install", "-y", "git", "python3-libdnf5"],
+            "pacman": ["sudo", "pacman", "-S", "--noconfirm", "git"],
+            "yum": ["sudo", "yum", "install", "-y", "git"],
+            "zypper": ["sudo", "zypper", "install", "-y", "git"],
+        }
+        install_uv()
+        for pm, update_cmd in package_managers.items():
+            if check_command(pm):
                 logging.info(
-                    "Por favor, instala Git manualmente y vuelve a ejecutar el script."
+                    f"Gestor de paquetes '{pm}' detectado. Intentando instalar Paquetes..."
                 )
-                sys.exit(1)
-        case "Darwin":
-            # -----------------------------------------------------------------
-            # DARWIN BOOTSTRAP FLOW (macOS)
-            # -----------------------------------------------------------------
-            # 1. Homebrew es el gestor de paquetes estándar en macOS.
-            #    Si no está instalado, ejecutamos el script oficial de
-            #    https://brew.sh que maneja automáticamente la arquitectura
-            #    (Intel vs Apple Silicon) y las rutas (/usr/local vs /opt/homebrew).
-            # 2. Una vez Homebrew disponible, instalamos git via brew para
-            #    asegurar una versión actual y compatible.
-            # 3. rye se instala universalmente (Linux y Darwin) via su script
-            #    curl oficial, manteniendo paridad entre plataformas.
-            # -----------------------------------------------------------------
+                run_command(update_cmd)
+                run_command(install_commands[pm])
 
-            # Bootstrap Homebrew en macOS si no está presente
-            if not check_command("brew"):
-                logging.info("Homebrew no encontrado. Ejecutando instalador oficial...")
-                try:
-                    subprocess.run(
-                        [
-                            "/bin/bash",
-                            "-c",
-                            '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)',
-                        ],
-                        check=True,
-                    )
-                    logging.info("Homebrew instalado exitosamente.")
-                except subprocess.CalledProcessError as e:
-                    logging.error(f"Error instalando Homebrew: {e}")
-                    sys.exit(1)
-            else:
-                logging.info("Homebrew ya está instalado.")
+                if pm == "pacman":
+                    show("💾 Instalando yay")
+                    install_yay_python()
 
-            # Instalar git via Homebrew
-            logging.info("Instalando git via Homebrew...")
-            try:
-                subprocess.run(["brew", "install", "git"], check=True)
-                logging.info("Git instalado exitosamente via Homebrew.")
-            except subprocess.CalledProcessError as e:
-                logging.error(f"Error instalando git via Homebrew: {e}")
-                sys.exit(1)
-
-            # Instalar uv en macOS
-            install_uv()
-            return True
-        case "Windows":
-            logging.info(
-                "Por favor, instala Git en Windows (por ejemplo, desde https://git-scm.com/download/win)."
-            )
-            logging.info("Luego, vuelve a ejecutar este script.")
-            sys.exit(1)
-        case _:
+                if check_command("git"):
+                    logging.info("Git instalado exitosamente.")
+                    return True
+                logging.error(f"Falló la instalación de Git con '{pm}'.")
+                break  # Salir del bucle si se intentó con un gestor de paquetes
+        else:
             logging.error(
-                f"Sistema operativo '{os_name}' no reconocido para la instalación automática de Git."
+                "No se reconoció un gestor de paquetes compatible para la instalación automática de Git."
             )
             logging.info(
-                "Por favor, instala Git manualmente y vuelve a ejecutar este script."
+                "Por favor, instala Git manualmente y vuelve a ejecutar el script."
             )
             sys.exit(1)
+    elif os_name == "Darwin":
+        # -----------------------------------------------------------------
+        # DARWIN BOOTSTRAP FLOW (macOS)
+        # -----------------------------------------------------------------
+        # 1. Homebrew es el gestor de paquetes estándar en macOS.
+        #    Si no está instalado, ejecutamos el script oficial de
+        #    https://brew.sh que maneja automáticamente la arquitectura
+        #    (Intel vs Apple Silicon) y las rutas (/usr/local vs /opt/homebrew).
+        # 2. Una vez Homebrew disponible, instalamos git via brew para
+        #    asegurar una versión actual y compatible.
+        # 3. uv se instala universalmente (Linux y Darwin) via su script
+        #    curl oficial, manteniendo paridad entre plataformas.
+        # -----------------------------------------------------------------
+
+        # Bootstrap Homebrew en macOS si no está presente
+        if not check_command("brew"):
+            logging.info("Homebrew no encontrado. Ejecutando instalador oficial...")
+            try:
+                subprocess.run(
+                    [
+                        "/bin/bash",
+                        "-c",
+                        '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)',
+                    ],
+                    check=True,
+                )
+                logging.info("Homebrew instalado exitosamente.")
+            except subprocess.CalledProcessError as e:
+                logging.error(f"Error instalando Homebrew: {e}")
+                sys.exit(1)
+        else:
+            logging.info("Homebrew ya está instalado.")
+
+        # Instalar git via Homebrew
+        logging.info("Instalando git via Homebrew...")
+        try:
+            subprocess.run(["brew", "install", "git"], check=True)
+            logging.info("Git instalado exitosamente via Homebrew.")
+        except subprocess.CalledProcessError as e:
+            logging.error(f"Error instalando git via Homebrew: {e}")
+            sys.exit(1)
+
+        # Instalar uv en macOS
+        install_uv()
+        return True
+    elif os_name == "Windows":
+        logging.info(
+            "Por favor, instala Git en Windows (por ejemplo, desde https://git-scm.com/download/win)."
+        )
+        logging.info("Luego, vuelve a ejecutar este script.")
+        sys.exit(1)
+    else:
+        logging.error(
+            f"Sistema operativo '{os_name}' no reconocido para la instalación automática de Git."
+        )
+        logging.info(
+            "Por favor, instala Git manualmente y vuelve a ejecutar el script."
+        )
+        sys.exit(1)
     return False  # Debería haber salido antes si la instalación falla
 
 

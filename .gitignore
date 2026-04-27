@@ -10,3 +10,7 @@ wheels/
 .venv
 
 ansible/log/
+
+# secrets
+home/.zshrc.secrets
+*.secrets
