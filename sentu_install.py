@@ -18,7 +18,7 @@ REPO_URL = "https://github.com/SENTUstudio/dotfiles.git"
 DOTFILES_DIR = Path.home() / "dotfiles"
 REPO_NAME = "dotfiles"
 REPO_BRANCH = (
-    "develop"  # "main", "develop" | Variable para la rama, se puede modificar aquí
+    "main"  # "main", "develop" | Variable para la rama, se puede modificar aquí
 )
 
 

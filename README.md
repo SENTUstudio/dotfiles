@@ -139,7 +139,7 @@ dotfiles/
 # Instalación Rápida
 
 ```bash
-curl -LsSf https://raw.githubusercontent.com/SENTUstudio/dotfiles/refs/heads/develop/sentu_install.py | python3
+curl -LsSf https://raw.githubusercontent.com/SENTUstudio/dotfiles/refs/heads/main/sentu_install.py | python3
 ```
 
 > **Nota:** Requiere **Python 3.9+**. En macOS 13-14 se instala Python 3 automáticamente si falta.
