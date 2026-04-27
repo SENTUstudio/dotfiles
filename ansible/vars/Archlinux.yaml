@@ -66,6 +66,7 @@ package_managers:
         - htop
         - lm_sensors
         - bpytop
+        - atuin
       Lua y Soporte Neovim:
         - python-neovim
         - lua
