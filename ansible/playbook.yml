@@ -5,9 +5,6 @@
   become: true
   gather_facts: true
 
-  vars_files:
-    - vars/installer_config.yaml
-
   roles:
     - role: test
     - role: 00_load_vars

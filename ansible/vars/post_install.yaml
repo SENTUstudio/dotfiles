@@ -13,3 +13,8 @@ install_post_install_commands:
     description: "Añadiendo Atuin, Sync, search and backup shell history"
   - command: "cargo install du-dust"
     description: "Herramienta para ver el uso del disco por el terminal"
+  - command: "curl -fsSL https://opencode.ai/install | bash"
+    description: "Instalando OpenCode AI coding agent"
+  - command: "sudo snap install ghostty --classic"
+    description: "Instalando Ghostty terminal (Debian/Ubuntu via Snap)"
+    when: "ansible_os_family == 'Debian'"

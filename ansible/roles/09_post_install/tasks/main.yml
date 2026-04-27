@@ -43,3 +43,10 @@
 - name: Include Musikcube tasks
   ansible.builtin.include_tasks: musikcube.yml
   when: install_musikcube | bool
+
+- name: Include OpenCode tasks
+  ansible.builtin.include_tasks: opencode.yml
+
+- name: Include Ghostty tasks (Debian/Ubuntu)
+  ansible.builtin.include_tasks: ghostty.yml
+  when: ansible_os_family == "Debian"

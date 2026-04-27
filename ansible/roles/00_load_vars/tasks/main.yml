@@ -49,6 +49,14 @@
   ansible.builtin.debug:
     var: extended_dependencies
 
+- name: Definir extended_cask_dependencies globalmente (Darwin)
+  ansible.builtin.set_fact:
+    extended_cask_dependencies: "{{ package_managers.dependencies.extended_cask | default([]) }}"
+
+- name: Depurar contenido de extended_cask_dependencies
+  ansible.builtin.debug:
+    var: extended_cask_dependencies
+
 - name: Definir flatpak_apps globalmente
   ansible.builtin.set_fact:
     flatpak_apps: "{{ apps | default([]) }}"

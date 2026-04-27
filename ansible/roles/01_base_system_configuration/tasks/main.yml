@@ -37,6 +37,7 @@
         update_homebrew: yes
         upgrade_all: yes
       when: ansible_os_family == "Darwin"
+      become: false
 
     # - name: Actualiza el sistema (Windows)
     #   community.windows.win_updates:

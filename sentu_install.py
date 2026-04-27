@@ -137,6 +137,16 @@ def install_yay_python():
         logging.error(f"Ocurrió un error inesperado: {e}")
 
 
+def install_rye():
+    """Instala rye (gestor de paquetes Python de Astral) via script curl."""
+    install_rye_cmd = (
+        'curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash'
+    )
+    command_list = ["bash", "-c", install_rye_cmd]
+    logging.info("Instalando rye...")
+    run_command(command_list)
+
+
 def package_core():
     """Verifica e instala Git si no está presente."""
     os_name = platform.system()
@@ -158,12 +168,7 @@ def package_core():
                 "yum": ["sudo", "yum", "install", "-y", "git"],
                 "zypper": ["sudo", "zypper", "install", "-y", "git"],
             }
-            install_rye = (
-                'curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash'
-            )
-            command_list = ["bash", "-c", install_rye]
-            logging.info("Instalando rye...")
-            run_command(command_list)
+            install_rye()
             for pm, update_cmd in package_managers.items():
                 if check_command(pm):
                     logging.info(
@@ -190,11 +195,37 @@ def package_core():
                 )
                 sys.exit(1)
         case "Darwin":
-            logging.info(
-                "Por favor, instala Git en macOS (por ejemplo, usando Xcode Command Line Tools o Homebrew)."
-            )
-            logging.info("Luego, vuelve a ejecutar este script.")
-            sys.exit(1)
+            # Bootstrap Homebrew en macOS si no está presente
+            if not check_command("brew"):
+                logging.info("Homebrew no encontrado. Ejecutando instalador oficial...")
+                try:
+                    subprocess.run(
+                        [
+                            "/bin/bash",
+                            "-c",
+                            '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)',
+                        ],
+                        check=True,
+                    )
+                    logging.info("Homebrew instalado exitosamente.")
+                except subprocess.CalledProcessError as e:
+                    logging.error(f"Error instalando Homebrew: {e}")
+                    sys.exit(1)
+            else:
+                logging.info("Homebrew ya está instalado.")
+
+            # Instalar git via Homebrew
+            logging.info("Instalando git via Homebrew...")
+            try:
+                subprocess.run(["brew", "install", "git"], check=True)
+                logging.info("Git instalado exitosamente via Homebrew.")
+            except subprocess.CalledProcessError as e:
+                logging.error(f"Error instalando git via Homebrew: {e}")
+                sys.exit(1)
+
+            # Instalar rye en macOS
+            install_rye()
+            return True
         case "Windows":
             logging.info(
                 "Por favor, instala Git en Windows (por ejemplo, desde https://git-scm.com/download/win)."
@@ -278,7 +309,48 @@ def clone_repo():
         sys.exit(1)
 
 
-def run_ansible_playbook(test: bool = False):
+def install_dotfiles_only():
+    """Instala solo los dotfiles creando enlaces simbólicos (sin Ansible)."""
+    logging.info("Modo dotfiles-only: creando enlaces simbólicos...")
+
+    config_src = DOTFILES_DIR / "config"
+    config_dst = Path.home() / ".config"
+    home_src = DOTFILES_DIR / "home"
+    home_dst = Path.home()
+
+    # Asegurar que los directorios destino existen
+    config_dst.mkdir(parents=True, exist_ok=True)
+
+    # Crear enlaces simbólicos para directorios y archivos en config/
+    if config_src.exists():
+        for item in config_src.iterdir():
+            dest = config_dst / item.name
+            if dest.exists() or dest.is_symlink():
+                logging.info(f"Eliminando existente: {dest}")
+                if dest.is_dir() and not dest.is_symlink():
+                    shutil.rmtree(dest)
+                else:
+                    dest.unlink()
+            logging.info(f"Creando enlace simbólico: {dest} -> {item}")
+            os.symlink(item, dest)
+
+    # Crear enlaces simbólicos para archivos en home/
+    if home_src.exists():
+        for item in home_src.iterdir():
+            dest = home_dst / item.name
+            if dest.exists() or dest.is_symlink():
+                logging.info(f"Eliminando existente: {dest}")
+                if dest.is_dir() and not dest.is_symlink():
+                    shutil.rmtree(dest)
+                else:
+                    dest.unlink()
+            logging.info(f"Creando enlace simbólico: {dest} -> {item}")
+            os.symlink(item, dest)
+
+    logging.info("Dotfiles instalados exitosamente.")
+
+
+def run_ansible_playbook(test: bool = False, check: bool = False):
     """Ejecuta el playbook de Ansible si Ansible está instalado."""
     ansible_dir = DOTFILES_DIR / "ansible"
     if test:
@@ -313,10 +385,12 @@ def run_ansible_playbook(test: bool = False):
             "run",
             "ansible-playbook",
             "--ask-become-pass",
-            str(playbook_path),
-            # "-vvv",
-            # "-v",
         ]
+        if check:
+            command.append("--check")
+        command.append(str(playbook_path))
+        # "-vvv",
+        # "-v",
         run_command(command, cwd=DOTFILES_DIR)
         logging.info("Ansible Playbook ejecutado exitosamente.")
         return True
@@ -325,11 +399,66 @@ def run_ansible_playbook(test: bool = False):
         return False
 
 
+def show_menu() -> str:
+    """Muestra el menú interactivo y devuelve la opción seleccionada."""
+    print("\n" + "=" * 50)
+    print("  SENTU Dotfiles Installer")
+    print("=" * 50)
+    print("\nSelecciona una opción:")
+    print("  [1] Instalación completa (sistema + dotfiles)")
+    print("  [2] Solo dotfiles (copiar configs, saltar paquetes)")
+    print("  [3] Modo test (ansible --check)")
+    print("  [4] Salir")
+    print()
+
+    while True:
+        try:
+            choice = input("Opción [1-4]: ").strip()
+            if choice in {"1", "2", "3", "4"}:
+                return choice
+            print("Opción inválida. Por favor ingresa 1, 2, 3 o 4.")
+        except (EOFError, KeyboardInterrupt):
+            print("\nSaliendo...")
+            sys.exit(0)
+
+
 def main():
     show()
     os_name = platform.system()
     logging.info(f"Sistema operativo detectado: {os_name}")
 
+    choice = show_menu()
+
+    if choice == "4":
+        logging.info("Saliendo sin realizar cambios.")
+        sys.exit(0)
+
+    if choice == "2":
+        # Dotfiles-only: solo necesitamos git y clonar
+        if not check_command("git"):
+            logging.error("Git no está instalado. Instálalo manualmente y vuelve a intentar.")
+            sys.exit(1)
+        show("💾 Clonación de dotfiles iniciada")
+        clone_repo()
+        logging.info("💾 Clonación de dotfiles terminada")
+        install_dotfiles_only()
+        show("✅ Dotfiles instalados. Disfruta tu configuración!")
+        return
+
+    if choice == "3":
+        # Test mode
+        if not package_core():
+            logging.error("No se pudo instalar dependencias. Saliendo.")
+            sys.exit(1)
+        show("💾 Clonación de dotfiles iniciada")
+        clone_repo()
+        logging.info("💾 Clonación de dotfiles terminada")
+        show("⚙️  Iniciando instalación de paquetes (modo test --check)")
+        run_ansible_playbook(test=False, check=True)
+        show("✅ Modo test completado. Revisa la salida de Ansible.")
+        return
+
+    # choice == "1" (default full install)
     if not package_core():
         logging.error("No se pudo instalar dependencias. Saliendo.")
         sys.exit(1)

@@ -1,0 +1,55 @@
+package_managers:
+  manager: homebrew
+  dependencies:
+    core:
+      - git
+      - curl
+      - wget
+      - gcc
+      - make
+      - unzip
+      - zsh
+      - go
+      - rust
+      - python
+      - ruby
+      - p7zip
+      - lsd
+      - openjdk
+      - automake
+      - perl
+      - btop
+    extended:
+      - neovim
+      - tmux
+      - fzf
+      - htop
+      - fd
+      - ripgrep
+      - bat
+      - zoxide
+      - fastfetch
+      - httpie
+      - ffmpeg
+      - qemu
+      - docker
+      - docker-compose
+      - lua
+      - luarocks
+      - pynvim
+      - asciiquarium
+      - bpytop
+    extended_cask:
+      - discord
+      - alacritty
+      - ghostty
+      - vlc
+      - mpv
+      - audacity
+      - gimp
+      - inkscape
+      - libreoffice
+      - obsidian
+      - kdenlive
+      - lmms
+      - opencode

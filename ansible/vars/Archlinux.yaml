@@ -65,6 +65,7 @@ package_managers:
       - lm_sensors
       - discord
       - alacritty
+      - ghostty
       - kdeconnect
       - kdenlive
       - openshot

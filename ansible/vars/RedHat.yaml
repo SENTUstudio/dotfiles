@@ -24,6 +24,13 @@ package_managers:
       - install
       - "-y"
       - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
+    ghostty:
+      - sudo
+      - dnf
+      - copr
+      - enable
+      - scottames/ghostty
+      - "-y"
     docker:
       - sudo
       - dnf
@@ -99,6 +106,7 @@ package_managers:
       - lm_sensors
       - discord
       - alacritty
+      - ghostty
       - kde-connect
       - dnf-utils
       - kdenlive

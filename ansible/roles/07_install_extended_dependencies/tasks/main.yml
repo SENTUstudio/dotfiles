@@ -19,3 +19,21 @@
   # vars:
   #   core_dependencies: "{{ package_managers.dependencies.extended | default([]) }}"
   when: ansible_os_family == "Archlinux"
+
+- name: Instalar dependencias extendidas (macOS)
+  community.general.homebrew:
+    name: "{{ extended_dependencies }}"
+    state: present
+  when: ansible_os_family == "Darwin"
+  become: false
+  ignore_errors: true
+
+- name: Instalar dependencias extendidas cask (macOS)
+  community.general.homebrew_cask:
+    name: "{{ extended_cask_dependencies }}"
+    state: present
+  when:
+    - ansible_os_family == "Darwin"
+    - extended_cask_dependencies | length > 0
+  become: false
+  ignore_errors: true
