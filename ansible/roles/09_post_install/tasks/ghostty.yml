@@ -1,6 +1,0 @@
----
-- name: Instalar Ghostty terminal via Snap (Debian/Ubuntu)
-  ansible.builtin.shell: "snap install ghostty --classic"
-  become: true
-  when: ansible_os_family == "Debian"
-  ignore_errors: true
