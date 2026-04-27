@@ -53,7 +53,7 @@ Estos siempre se instalan independientemente de la distro.
 | **Node.js (via NVM)** | Script curl                                     | Última LTS                     |
 | **Java (JDK)**        | Gestor de paquetes nativo                       | OpenJDK                        |
 | **UV**                | Script curl (`https://astral.sh/uv/install.sh`) | Gestor Python moderno (Astral) |
-| **Rye**               | Script curl (`https://rye.astral.sh/get`)       | Gestor Python (Astral)         |
+| **uv**                | Script curl (`https://astral.sh/uv/install.sh`) | Gestor Python ultra-rápido (Astral) |
 
 **Archivos fuente:**
 - `ansible/vars/global.yaml`
@@ -319,8 +319,8 @@ Configuraciones personales copiadas a `~/.config/` y `~/`.
 
 ### Flujo por plataforma
 
-- **Linux**: detecta el gestor de paquetes (apt, dnf, pacman, yum, zypper), instala `git` y `rye`, clona el repositorio, y ejecuta el playbook de Ansible.
-- **macOS**: verifica Homebrew (lo instala si falta via script oficial), instala `git` via `brew`, instala `rye`, y continúa con Ansible.
+- **Linux**: detecta el gestor de paquetes (apt, dnf, pacman, yum, zypper), instala `git` y `uv`, clona el repositorio, y ejecuta el playbook de Ansible.
+- **macOS**: verifica Homebrew (lo instala si falta via script oficial), instala `git` via `brew`, instala `uv`, y continúa con Ansible.
 - **Windows**: no soportado; el script muestra instrucciones manuales y sale.
 
 ### Ejecución no interactiva

@@ -137,13 +137,11 @@ def install_yay_python():
         logging.error(f"Ocurrió un error inesperado: {e}")
 
 
-def install_rye():
-    """Instala rye (gestor de paquetes Python de Astral) via script curl."""
-    install_rye_cmd = (
-        'curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash'
-    )
-    command_list = ["bash", "-c", install_rye_cmd]
-    logging.info("Instalando rye...")
+def install_uv():
+    """Instala uv (gestor de paquetes Python ultra-rápido de Astral) via script curl."""
+    install_uv_cmd = 'curl -LsSf https://astral.sh/uv/install.sh | sh'
+    command_list = ["bash", "-c", install_uv_cmd]
+    logging.info("Instalando uv...")
     run_command(command_list)
 
 
@@ -152,9 +150,9 @@ def package_core():
 
     Cross-platform bootstrap:
     - Linux: detecta el gestor de paquetes nativo (apt, dnf, pacman, etc.)
-             e instala git, luego rye.
+             e instala git, luego uv.
     - Darwin (macOS): verifica Homebrew; si falta, ejecuta el instalador
-      oficial de Homebrew. Luego instala git via brew y rye via curl.
+      oficial de Homebrew. Luego instala git via brew y uv via curl.
       Nunca se requieren privilegios de administrador explícitos porque
       el installer de Homebrew solicita elevación si es necesario.
     - Windows: no soportado; instrucciones manuales.
@@ -178,7 +176,7 @@ def package_core():
                 "yum": ["sudo", "yum", "install", "-y", "git"],
                 "zypper": ["sudo", "zypper", "install", "-y", "git"],
             }
-            install_rye()
+            install_uv()
             for pm, update_cmd in package_managers.items():
                 if check_command(pm):
                     logging.info(
@@ -246,8 +244,8 @@ def package_core():
                 logging.error(f"Error instalando git via Homebrew: {e}")
                 sys.exit(1)
 
-            # Instalar rye en macOS
-            install_rye()
+            # Instalar uv en macOS
+            install_uv()
             return True
         case "Windows":
             logging.info(
@@ -383,10 +381,10 @@ def run_ansible_playbook(test: bool = False, check: bool = False):
     inventory_file_path = (
         ansible_dir / "inventory.ini"
     )  # Asumo que el inventario está en la misma carpeta
-    rye_shims_path = os.path.expanduser("~/.rye/shims")
-    os.environ["PATH"] = f"{os.environ['PATH']}:{rye_shims_path}"
-    rye_sync = ["rye", "sync"]
-    run_command(rye_sync, cwd=DOTFILES_DIR)
+    uv_path = os.path.expanduser("~/.local/bin")
+    os.environ["PATH"] = f"{os.environ['PATH']}:{uv_path}"
+    uv_sync = ["uv", "sync"]
+    run_command(uv_sync, cwd=DOTFILES_DIR)
 
     # if not check_command("ansible-playbook"):
     #     logging.error("Ansible no está instalado, no se puede ejecutar el playbook.")
@@ -404,7 +402,7 @@ def run_ansible_playbook(test: bool = False, check: bool = False):
     logging.info("Ejecutando Ansible Playbook...")
     try:
         command = [
-            "rye",
+            "uv",
             "run",
             "ansible-playbook",
             "--ask-become-pass",

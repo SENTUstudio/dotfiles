@@ -195,7 +195,8 @@ export OLLAMA_NUM_THREADS=7
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source "$HOME/.rye/env"
+# uv (gestor de paquetes Python) — el binario está en ~/.local/bin
+# El PATH ya se configura más abajo en la sección de OpenCode
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
