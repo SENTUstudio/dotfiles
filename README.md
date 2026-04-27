@@ -26,15 +26,64 @@
   </p>
 </div>
 
-# dotfiles
+# SENTU Dotfiles — Automated Linux & macOS Development Environment
 
-Proyecto que se encarga de hacer una post-instalación a un sistema operativo resién instalado, donde instala las aplicaciones bases de mi preferencia y copia mis archivos de configuración al nuevo sistema. consta de un script llamado sentu_install.py que se usa por medio de curl para llamar a todo el proyecto en formato zip desde un repositorio, lo extrae y ejecuta la instalación mínima requerida para poder ejecutar las Fases de post-instalación.
+> **One-command post-installation framework** for Fedora, Arch Linux, Debian, Ubuntu & macOS. 
+> Interactive TUI picker to select apps by category. Installs 100+ packages via Ansible: 
+> Neovim, Tmux, Docker, Zsh, Homebrew, Kitty, Lazygit, and more.
 
-Su funcionamiento es simple: ejecutás el instalador (instrucción más abajo), se descarga `sentu_install.py` y te presenta un **menú interactivo** para elegir qué querés instalar.
+**SENTU Dotfiles** automatiza la post-instalación de tu sistema operativo. Ejecutás un solo comando (`curl | python3`), se descarga el instalador `sentu_install.py` y te presenta un **menú interactivo** para elegir exactamente qué querés instalar.
 
-El proyecto es **multi-sistema**: soporta Fedora, Archlinux, Debian/Ubuntu y **macOS** (via Homebrew). También incluye una interfaz TUI para seleccionar aplicaciones individualmente.
+- 🖥️ **Multi-sistema**: Fedora, Archlinux, Debian/Ubuntu, macOS (Apple Silicon & Intel)
+- 📦 **100+ aplicaciones**: Desde herramientas CLI hasta apps GUI via Flatpak/Homebrew
+- 🎯 **TUI Picker**: Seleccioná categorías y apps individuales con interfaz interactiva
+- ⚡ **Ansible-powered**: Instalación declarativa, idempotente y reproducible
+- 🔧 **Modo solo-dotfiles**: Sincronizá solo tus configs sin tocar paquetes del sistema
 
-## Estructura de Archivos del Proyecto
+## Tabla de Contenidos
+
+- [Características Principales](#características-principales)
+- [Sistemas Operativos Soportados](#sistemas-operativos-soportados)
+- [Instalación Rápida](#instalación-rápida)
+- [Menú Interactivo](#menú-interactivo)
+- [Modo Solo Dotfiles](#modo-solo-dotfiles)
+- [Aplicaciones Incluidas](#aplicaciones-incluidas)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Diagrama de Flujo](#diagrama-de-flujo)
+- [Documentación](#documentación)
+- [Contribuir](#contribuir)
+- [Licencia](#licencia)
+
+---
+
+## Características Principales
+
+| Característica | Descripción |
+|----------------|-------------|
+| **One-command setup** | `curl \| python3` y listo |
+| **Multi-distro** | Fedora, Arch, Debian, Ubuntu, macOS |
+| **TUI Picker** | Selección interactiva por categorías |
+| **Ansible-powered** | Configuración declarativa y reproducible |
+| **100+ paquetes** | Dev tools, terminales, multimedia, etc. |
+| **Modo dry-run** | `--check` para simular sin modificar |
+| **Solo dotfiles** | Sincronizá configs sin instalar nada |
+
+---
+
+## Sistemas Operativos Soportados
+
+| Sistema | Versión | Estado | Gestor de Paquetes |
+|---------|---------|--------|-------------------|
+| **Fedora KDE** | 41+ | ✅ Probado | `dnf` |
+| **Arch Linux** | Rolling | ✅ Probado | `pacman` + `yay` |
+| **Debian** | 12+ | ⚠️ Parcial | `apt-get` |
+| **Ubuntu** | 22.04+ | ⚠️ Parcial | `apt-get` |
+| **macOS** | 13+ (Apple Silicon & Intel) | 🔄 Beta | `homebrew` |
+| **OpenSUSE** | — | 📝 Roadmap | `zypper` |
+
+---
+
+## Estructura del Proyecto
 
 ```bash
 dotfiles/
@@ -87,19 +136,7 @@ dotfiles/
 └── README.md
 ```
 
-## Sistemas Operativos Soportados
-
-| Sistema | Estado | Gestor de Paquetes |
-|---------|--------|-------------------|
-| **Fedora KDE 41+** | ✅ Probado | dnf |
-| **Archlinux** | ✅ Probado | pacman + yay |
-| **Debian/Ubuntu** | ⚠️ Parcial | apt-get |
-| **macOS** (Apple Silicon) | 🔄 En desarrollo | Homebrew |
-| OpenSUSE | 📝 En roadmap | zypper |
-
----
-
-# Instalación
+# Instalación Rápida
 
 ```bash
 curl -LsSf https://raw.githubusercontent.com/SENTUstudio/dotfiles/refs/heads/develop/sentu_install.py | python3
@@ -154,6 +191,49 @@ curl -LsSf ... | python3
 # → Seleccioná: [2] Solo dotfiles
 # → Listo, tus configs están sincronizadas
 ```
+
+---
+
+## Aplicaciones Incluidas
+
+El proyecto instala automáticamente más de **100 aplicaciones y herramientas** organizadas por categoría:
+
+### Desarrollo y Productividad
+- **Editores**: Neovim, VS Code (opcional)
+- **Terminales**: Kitty, Alacritty, Ghostty, Tmux
+- **Herramientas CLI**: ripgrep, fd, bat, fzf, zoxide, lazygit, atuin
+- **Runtimes**: Python 3, Go, Rust, Node.js (nvm), Lua
+- **Contenedores**: Docker, Docker Compose
+
+### Sistema y Monitoreo
+- **Fetch**: fastfetch, neofetch
+- **Monitoreo**: btop, htop
+- **Utilidades**: lsd, tree, unzip, p7zip
+
+### Multimedia
+- **Reproductores**: VLC, MPV, Audacity
+- **Editores**: Kdenlive, LMMS, GIMP, Inkscape
+- **Codecs**: FFmpeg
+
+### Comunicación
+- Discord, Telegram
+
+### Fuentes y Temas
+- Nerd Fonts (FiraCode, JetBrains Mono)
+- Powerlevel10k (prompt Zsh)
+
+📋 **Ver inventario completo** → [`docs/aplicaciones.md`](docs/aplicaciones.md)
+
+---
+
+## Documentación
+
+| Documento | Descripción |
+|-----------|-------------|
+| [`docs/aplicaciones.md`](docs/aplicaciones.md) | Inventario completo de 100+ apps con matriz de compatibilidad |
+| [`docs/analisis-zshrc.md`](docs/analisis-zshrc.md) | Análisis detallado de la configuración Zsh |
+| [`docs/SEO_STRATEGY.md`](docs/SEO_STRATEGY.md) | Estrategia de SEO y descubrimiento del proyecto |
+| [`tests/tart/README.md`](tests/tart/README.md) | Guía de testing con máquinas virtuales Tart |
 
 ---
 
@@ -241,3 +321,40 @@ flowchart TD
     click C "https://github.com/sentustudio/dotfiles/tree/main/config"
     click D "https://github.com/sentustudio/dotfiles/tree/main/home"
 ```
+
+---
+
+## Contribuir
+
+¡Las contribuciones son bienvenidas! Podés:
+
+- 🐛 **Reportar bugs**: Abrí un [issue](https://github.com/SENTUstudio/dotfiles/issues)
+- 💡 **Sugerir features**: Discusiones en [GitHub Discussions](https://github.com/SENTUstudio/dotfiles/discussions)
+- 🔧 **Enviar PRs**: Fork → branch → PR a `develop`
+- 📖 **Mejorar docs**: README, comentarios, traducciones
+
+### Guía rápida para PRs
+
+1. Fork el repo
+2. Creá una branch: `git checkout -b feature/tu-feature`
+3. Commiteá con [Conventional Commits](https://www.conventionalcommits.org/)
+4. Push y abrí PR a `develop`
+
+---
+
+## Licencia
+
+[MIT License](LICENSE) © 2025 SENTUstudio
+
+---
+
+<div align="center">
+  <p>
+    <sub>Hecho con ❤️ por <a href="https://github.com/SENTUstudio">SENTUstudio</a></sub>
+  </p>
+  <p>
+    <a href="https://github.com/SENTUstudio/dotfiles">⭐ Star this repo</a> • 
+    <a href="https://github.com/SENTUstudio/dotfiles/fork">🍴 Fork</a> • 
+    <a href="https://github.com/SENTUstudio/dotfiles/issues">🐛 Report Issue</a>
+  </p>
+</div>
