@@ -106,6 +106,7 @@ package_managers:
         - dnf-utils
         - dnf-plugins-core
         - bpytop
+        - atuin
       Lua y Soporte Neovim:
         - python3-neovim
         - lua-devel

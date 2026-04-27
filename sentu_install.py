@@ -4,6 +4,7 @@ import subprocess
 import sys
 import os
 from pathlib import Path
+from typing import Optional
 import logging
 import shutil
 
@@ -17,7 +18,7 @@ REPO_URL = "https://github.com/SENTUstudio/dotfiles.git"
 DOTFILES_DIR = Path.home() / "dotfiles"
 REPO_NAME = "dotfiles"
 REPO_BRANCH = (
-    "develop"  # "main", "develop" | Variable para la rama, se puede modificar aquí
+    "main"  # "main", "develop" | Variable para la rama, se puede modificar aquí
 )
 
 
@@ -63,12 +64,12 @@ def check_command(command: str) -> bool:
         return False
 
 
-def run_command(command_list: list[str], cwd: Path | None = None) -> None:
+def run_command(command_list: list[str], cwd: Optional[Path] = None) -> None:
     """Ejecuta un comando en el sistema.
 
     Args:
         command_list (list[str]): Lista de strings que representan el comando y sus argumentos.
-        cwd (Path | None): Directorio de trabajo para ejecutar el comando.
+        cwd (Optional[Path]): Directorio de trabajo para ejecutar el comando.
 
     Raises:
         SystemExit: Si el comando falla.
@@ -460,7 +461,7 @@ def redirect_tty() -> bool:
     return True
 
 
-def run_tui_picker(os_family: str) -> dict | None:
+def run_tui_picker(os_family: str) -> Optional[dict]:
     """Ejecuta el picker TUI de dos niveles para seleccionar aplicaciones.
 
     Lee el archivo de variables de la distro detectada, presenta un checkbox
@@ -471,7 +472,7 @@ def run_tui_picker(os_family: str) -> dict | None:
         os_family (str): Familia del SO detectada (RedHat, Archlinux, Debian, Darwin).
 
     Returns:
-        dict | None: Diccionario con las selecciones del usuario, o None si
+        Optional[dict]: Diccionario con las selecciones del usuario, o None si
                      el usuario canceló o no hay TTY disponible.
     """
     # Fallback si no hay TTY usable
@@ -649,14 +650,14 @@ def show_summary(selections: dict) -> bool:
         print("Opción inválida. Ingresá 'Y' para confirmar o 'n' para cancelar.")
 
 
-def write_selection_yaml(selections: dict) -> Path | None:
+def write_selection_yaml(selections: dict) -> Optional[Path]:
     """Escribe el archivo ansible/vars/selection.yaml con las selecciones.
 
     Args:
         selections (dict): Diccionario con las listas de paquetes seleccionados.
 
     Returns:
-        Path | None: Ruta del archivo escrito, o None si no había selecciones.
+        Optional[Path]: Ruta del archivo escrito, o None si no había selecciones.
     """
     if not selections:
         return None
@@ -707,6 +708,10 @@ def show_menu() -> str:
 
 
 def main():
+    # Redirigir stdin desde /dev/tty si estamos en un pipe (ej: curl | python3)
+    # para que input() y questionary funcionen correctamente.
+    redirect_tty()
+
     show()
     os_name = platform.system()
     logging.info(f"Sistema operativo detectado: {os_name}")
