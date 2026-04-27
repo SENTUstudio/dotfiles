@@ -10,3 +10,10 @@ wheels/
 .venv
 
 ansible/log/
+
+# generated selections
+ansible/vars/selection.yaml
+
+# secrets
+home/.zshrc.secrets
+*.secrets

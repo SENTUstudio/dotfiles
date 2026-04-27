@@ -1,0 +1,63 @@
+package_managers:
+  manager: homebrew
+  dependencies:
+    core:
+      - git
+      - curl
+      - wget
+      - gcc
+      - make
+      - unzip
+      - zsh
+      - go
+      - rust
+      - python
+      - ruby
+      - p7zip
+      - lsd
+      - openjdk
+      - automake
+      - perl
+      - btop
+    categorized:
+      Desarrollo y Productividad:
+        - neovim
+        - tmux
+        - fzf
+        - htop
+        - fd
+        - ripgrep
+        - bat
+        - zoxide
+        - fastfetch
+        - httpie
+        - lua
+        - luarocks
+        - pynvim
+        - asciiquarium
+        - bpytop
+        - docker
+        - docker-compose
+      Multimedia — Codecs y Librerías:
+        - ffmpeg
+      Virtualización:
+        - qemu
+    categorized_cask:
+      Desarrollo y Productividad:
+        - opencode
+        - obsidian
+      Terminales y Multiplexores:
+        - alacritty
+        - ghostty
+      Multimedia — Editores y Reproductores:
+        - vlc
+        - mpv
+        - audacity
+        - kdenlive
+        - lmms
+      Gráficos y Oficina:
+        - gimp
+        - inkscape
+        - libreoffice
+      Comunicación y Conectividad:
+        - discord

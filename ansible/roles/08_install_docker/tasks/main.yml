@@ -2,12 +2,21 @@
 - name: Include OS-specific tasks
   ansible.builtin.include_tasks: "{{ ansible_os_family }}.yml"
   ignore_errors: true
+  when: >-
+    selected_packages is not defined
+    or 'docker' in selected_packages
+    or 'docker-cli' in selected_packages
+    or 'docker-compose' in selected_packages
+    or 'containerd' in selected_packages
 
 - name: Crear grupo docker (si no existe)
   ansible.builtin.group:
     name: docker
     state: present
   become: true
+  when:
+    - ansible_os_family != "Darwin"
+    - selected_packages is not defined or 'docker' in selected_packages or 'docker-cli' in selected_packages or 'docker-compose' in selected_packages or 'containerd' in selected_packages
 
 # - name: Obtener el usuario actual
 #   become: false
@@ -21,7 +30,10 @@
     append: true
     state: present
   become: true
-  when: docker_add_current_user | bool
+  when:
+    - docker_add_current_user | bool
+    - ansible_os_family != "Darwin"
+    - selected_packages is not defined or 'docker' in selected_packages or 'docker-cli' in selected_packages or 'docker-compose' in selected_packages or 'containerd' in selected_packages
 
 - name: Añadir usuarios adicionales al grupo docker
   ansible.builtin.user:
@@ -31,7 +43,10 @@
     state: present
   with_items: "{{ docker_additional_users }}"
   become: true
-  when: docker_additional_users | length > 0
+  when:
+    - docker_additional_users | length > 0
+    - ansible_os_family != "Darwin"
+    - selected_packages is not defined or 'docker' in selected_packages or 'docker-cli' in selected_packages or 'docker-compose' in selected_packages or 'containerd' in selected_packages
 
 # - name: Configurar Docker para iniciar en el arranque
 #   ansible.builtin.systemd:
@@ -43,7 +58,10 @@
 
 - name: Configurar Docker para iniciar en el arranque
   become: true
-  when: docker_start_on_boot
+  when:
+    - docker_start_on_boot
+    - ansible_os_family != "Darwin"
+    - selected_packages is not defined or 'docker' in selected_packages or 'docker-cli' in selected_packages or 'docker-compose' in selected_packages or 'containerd' in selected_packages
   ansible.builtin.systemd_service:
     name: docker.service
     enabled: true

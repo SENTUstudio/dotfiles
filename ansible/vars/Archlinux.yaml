@@ -40,63 +40,71 @@ package_managers:
       - elfutils
       - fontconfig
       - btop
-    extended:
-      - lazygit
-      - ripgrep
-      - fd
-      - neovim
-      - fastfetch
-      - util-linux
-      - cron
-      - zoxide
-      - python-neovim
-      - kitty
-      - lua
-      - luarocks
-      - docker
-      - containerd
-      - docker-compose
-      - bat
-      - fzf
-      - httpie
-      - tmux
-      # - tmuxinator
-      - htop
-      - lm_sensors
-      - discord
-      - alacritty
-      - kdeconnect
-      - kdenlive
-      - openshot
-      - vlc
-      - mpv
-      - soundconverter
-      - audacity
-      - muse
-      - lmms
-      - flowblade
-      - xine-lib
-      - libdvdread
-      - libdvdnav
-      - lsdvd
-      - libdvbpsi
-      - ffmpeg
-      - libmatroska
-      - xvidcore
-      - gimp
-      - inkscape
-      - libreoffice-fresh
-      - libreoffice-fresh-es
-      - gstreamer
-      - gst-plugins-base
-      - gst-plugins-good
-      - gst-plugins-bad
-      - virt-manager
-      - qemu
-      - zeal
-      - asciiquarium
-      - bpytop
-      - obsidian
-      - mission-center
-      # - musikcube
-      # - google-chrome
+    categorized:
+      Desarrollo y Productividad:
+        - lazygit
+        - ripgrep
+        - fd
+        - neovim
+        - bat
+        - fzf
+        - httpie
+        - zoxide
+        - zeal
+        - asciiquarium
+        - obsidian
+        - mission-center
+      Terminales y Multiplexores:
+        - kitty
+        - alacritty
+        - ghostty
+        - tmux
+      Sistema y Monitoreo:
+        - fastfetch
+        - util-linux
+        - cron
+        - htop
+        - lm_sensors
+        - bpytop
+      Lua y Soporte Neovim:
+        - python-neovim
+        - lua
+        - luarocks
+      Docker y Contenedores:
+        - docker
+        - containerd
+        - docker-compose
+      Multimedia — Editores y Reproductores:
+        - kdenlive
+        - openshot
+        - vlc
+        - mpv
+        - soundconverter
+        - audacity
+        - muse
+        - lmms
+        - flowblade
+      Multimedia — Codecs y Librerías:
+        - xine-lib
+        - libdvdread
+        - libdvdnav
+        - lsdvd
+        - libdvbpsi
+        - ffmpeg
+        - libmatroska
+        - xvidcore
+        - gstreamer
+        - gst-plugins-base
+        - gst-plugins-good
+        - gst-plugins-bad
+      Gráficos y Oficina:
+        - gimp
+        - inkscape
+        - libreoffice-fresh
+        - libreoffice-fresh-es
+      Comunicación y Conectividad:
+        - discord
+        - kdeconnect
+      Virtualización:
+        - virt-manager
+        - qemu

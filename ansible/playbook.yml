@@ -5,9 +5,6 @@
   become: true
   gather_facts: true
 
-  vars_files:
-    - vars/installer_config.yaml
-
   roles:
     - role: test
     - role: 00_load_vars
@@ -17,9 +14,24 @@
     - role: 04_install_uv
     - role: 05_install_nvm
     - role: 06_install_lazygit
+      when: selected_packages is not defined or 'lazygit' in selected_packages
     - role: 07_install_extended_dependencies
+      when: >-
+        selected_packages is not defined
+        or selected_packages | length > 0
+        or (selected_cask_packages is defined and selected_cask_packages | length > 0)
     - role: 08_install_docker
+      when: >-
+        selected_packages is not defined
+        or 'docker' in selected_packages
+        or 'docker-cli' in selected_packages
+        or 'docker-compose' in selected_packages
+        or 'containerd' in selected_packages
     - role: 09_post_install
+      when: >-
+        selected_packages is not defined
+        or selected_packages | length > 0
+        or (selected_cask_packages is defined and selected_cask_packages | length > 0)
     - role: 10_config_zsh
     - role: 11_install_flatpak
     - role: 12_install_fonts

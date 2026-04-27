@@ -54,4 +54,13 @@
         - ansible_os_family != "RedHat"
         - ansible_distribution != "openSUSE Leap"
         - ansible_distribution != "openSUSE Tumbleweed"
+        - ansible_os_family != "Darwin"
   become: true
+
+- name: Instalar dependencias core (macOS)
+  community.general.homebrew:
+    name: "{{ core_dependencies }}"
+    state: present
+  when: ansible_os_family == "Darwin"
+  become: false
+  ignore_errors: true
