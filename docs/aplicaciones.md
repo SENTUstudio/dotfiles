@@ -306,7 +306,79 @@ Configuraciones personales copiadas a `~/.config/` y `~/`.
 
 ---
 
-## 10. Notas para macOS
+## 10. Uso del Instalador Interactivo
+
+`sentu_install.py` presenta un menú interactivo tras detectar el sistema operativo:
+
+| Opción | Descripción | Requiere sudo | Acciones principales |
+|--------|-------------|---------------|---------------------|
+| `[1]` | **Instalación completa** | Sí (Linux) / No (macOS) | Bootstrap de dependencias → clone repo → Ansible playbook |
+| `[2]` | **Solo dotfiles** | No | Solo clona el repo y crea symlinks en `~/.config/` y `~/` |
+| `[3]` | **Modo test** | Sí (Linux) | Igual que `[1]` pero Ansible corre con `--check` (dry-run) |
+| `[4]` | **Salir** | No | Termina sin cambios |
+
+### Flujo por plataforma
+
+- **Linux**: detecta el gestor de paquetes (apt, dnf, pacman, yum, zypper), instala `git` y `rye`, clona el repositorio, y ejecuta el playbook de Ansible.
+- **macOS**: verifica Homebrew (lo instala si falta via script oficial), instala `git` via `brew`, instala `rye`, y continúa con Ansible.
+- **Windows**: no soportado; el script muestra instrucciones manuales y sale.
+
+### Ejecución no interactiva
+
+Para automatizar en scripts CI o provisioning, redirige stdin:
+
+```bash
+# Instalación completa sin interacción
+echo "1" | python3 sentu_install.py
+
+# Solo dotfiles
+echo "2" | python3 sentu_install.py
+
+# Modo test
+echo "3" | python3 sentu_install.py
+```
+
+---
+
+## 11. `.zshrc.secrets` — Variables Sensibles
+
+El repositorio incluye `home/.zshrc.secrets.template` como plantilla para variables de entorno que **nunca deben commitearse** (API keys, tokens, contraseñas).
+
+### Setup inicial
+
+```bash
+cp ~/dotfiles/home/.zshrc.secrets.template ~/.zshrc.secrets
+chmod 600 ~/.zshrc.secrets
+```
+
+### Contenido típico
+
+```bash
+# ~/.zshrc.secrets — no agregar a git!
+export OPENAI_API_KEY="sk-..."
+export ANTHROPIC_API_KEY="sk-ant-..."
+export GITHUB_TOKEN="ghp_..."
+export KIRO_API_KEY="..."
+```
+
+### Integración con `.zshrc`
+
+El archivo `~/.zshrc` carga automáticamente `~/.zshrc.secrets` si existe:
+
+```zsh
+[[ -f ~/.zshrc.secrets ]] && source ~/.zshrc.secrets
+```
+
+### Reglas de seguridad
+
+1. **Nunca** agregues `~/.zshrc.secrets` al repositorio Git.
+2. Mantén permisos restrictivos: `chmod 600 ~/.zshrc.secrets`.
+3. Realiza backups cifrados (1Password, Bitwarden, etc.).
+4. Rota las claves periódicamente.
+
+---
+
+## 12. Notas para macOS
 
 ### 10.1 Paquetes con equivalente Homebrew
 La mayoría de los paquetes core y muchos extended tienen equivalente en Homebrew:

@@ -148,7 +148,17 @@ def install_rye():
 
 
 def package_core():
-    """Verifica e instala Git si no está presente."""
+    """Verifica e instala Git si no está presente.
+
+    Cross-platform bootstrap:
+    - Linux: detecta el gestor de paquetes nativo (apt, dnf, pacman, etc.)
+             e instala git, luego rye.
+    - Darwin (macOS): verifica Homebrew; si falta, ejecuta el instalador
+      oficial de Homebrew. Luego instala git via brew y rye via curl.
+      Nunca se requieren privilegios de administrador explícitos porque
+      el installer de Homebrew solicita elevación si es necesario.
+    - Windows: no soportado; instrucciones manuales.
+    """
     os_name = platform.system()
 
     logging.info("Instalando dependencias...")
@@ -195,6 +205,19 @@ def package_core():
                 )
                 sys.exit(1)
         case "Darwin":
+            # -----------------------------------------------------------------
+            # DARWIN BOOTSTRAP FLOW (macOS)
+            # -----------------------------------------------------------------
+            # 1. Homebrew es el gestor de paquetes estándar en macOS.
+            #    Si no está instalado, ejecutamos el script oficial de
+            #    https://brew.sh que maneja automáticamente la arquitectura
+            #    (Intel vs Apple Silicon) y las rutas (/usr/local vs /opt/homebrew).
+            # 2. Una vez Homebrew disponible, instalamos git via brew para
+            #    asegurar una versión actual y compatible.
+            # 3. rye se instala universalmente (Linux y Darwin) via su script
+            #    curl oficial, manteniendo paridad entre plataformas.
+            # -----------------------------------------------------------------
+
             # Bootstrap Homebrew en macOS si no está presente
             if not check_command("brew"):
                 logging.info("Homebrew no encontrado. Ejecutando instalador oficial...")
