@@ -38,6 +38,7 @@ package_managers:
         - bpytop
         - docker
         - docker-compose
+        - atuin
       Multimedia — Codecs y Librerías:
         - ffmpeg
       Virtualización:
