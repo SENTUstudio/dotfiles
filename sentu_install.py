@@ -708,6 +708,10 @@ def show_menu() -> str:
 
 
 def main():
+    # Redirigir stdin desde /dev/tty si estamos en un pipe (ej: curl | python3)
+    # para que input() y questionary funcionen correctamente.
+    redirect_tty()
+
     show()
     os_name = platform.system()
     logging.info(f"Sistema operativo detectado: {os_name}")
