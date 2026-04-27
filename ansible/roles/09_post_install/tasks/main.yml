@@ -22,11 +22,15 @@
 
 - name: Include Tmux plugin manager tasks
   ansible.builtin.include_tasks: tmux.yml
-  when: install_tmux_plugins | bool
+  when:
+    - install_tmux_plugins | bool
+    - selected_packages is not defined or 'tmux' in selected_packages
 
 - name: Include Ruby/Tmuxinator tasks
   ansible.builtin.include_tasks: ruby.yml
-  when: install_tmuxinator | bool
+  when:
+    - install_tmuxinator | bool
+    - selected_packages is not defined or 'tmux' in selected_packages
 
 # - name: Include Docker user setup tasks
 #   ansible.builtin.include_tasks: docker.yml
@@ -46,3 +50,4 @@
 
 - name: Include OpenCode tasks
   ansible.builtin.include_tasks: opencode.yml
+  when: selected_packages is not defined or 'opencode' in selected_packages

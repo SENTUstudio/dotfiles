@@ -29,6 +29,11 @@
     file: "{{ playbook_dir }}/vars/{{ ansible_os_family }}.yaml"
   ignore_errors: true # Evita fallos si el archivo no existe
 
+- name: Cargar selection.yaml si existe
+  ansible.builtin.include_vars:
+    file: "{{ playbook_dir }}/vars/selection.yaml"
+  ignore_errors: true
+
 - name: Depurar contenido de package_managers
   ansible.builtin.debug:
     var: package_managers
@@ -41,9 +46,27 @@
   ansible.builtin.debug:
     var: core_dependencies
 
+- name: Calcular fallback de extended_dependencies desde categorized o extended
+  ansible.builtin.set_fact:
+    _extended_fallback: >-
+      {{
+        package_managers.dependencies.categorized | default({}) | dict2items | map(attribute='value') | flatten
+        if package_managers.dependencies.categorized is defined
+        else package_managers.dependencies.extended | default([])
+      }}
+
+- name: Calcular fallback de extended_cask_dependencies desde categorized_cask o extended_cask
+  ansible.builtin.set_fact:
+    _extended_cask_fallback: >-
+      {{
+        package_managers.dependencies.categorized_cask | default({}) | dict2items | map(attribute='value') | flatten
+        if package_managers.dependencies.categorized_cask is defined
+        else package_managers.dependencies.extended_cask | default([])
+      }}
+
 - name: Definir extended_dependencies globalmente
   ansible.builtin.set_fact:
-    extended_dependencies: "{{ package_managers.dependencies.extended | default([]) }}"
+    extended_dependencies: "{{ selected_packages | default(_extended_fallback) }}"
 
 - name: Depurar contenido de extended_dependencies
   ansible.builtin.debug:
@@ -51,7 +74,7 @@
 
 - name: Definir extended_cask_dependencies globalmente (Darwin)
   ansible.builtin.set_fact:
-    extended_cask_dependencies: "{{ package_managers.dependencies.extended_cask | default([]) }}"
+    extended_cask_dependencies: "{{ selected_cask_packages | default(_extended_cask_fallback) }}"
 
 - name: Depurar contenido de extended_cask_dependencies
   ansible.builtin.debug:
