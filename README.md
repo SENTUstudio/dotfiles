@@ -30,82 +30,132 @@
 
 Proyecto que se encarga de hacer una post-instalación a un sistema operativo resién instalado, donde instala las aplicaciones bases de mi preferencia y copia mis archivos de configuración al nuevo sistema. consta de un script llamado sentu_install.py que se usa por medio de curl para llamar a todo el proyecto en formato zip desde un repositorio, lo extrae y ejecuta la instalación mínima requerida para poder ejecutar las Fases de post-instalación.
 
-Su funcionamiento es simple, con la instrucción de instalar (mencionada más abajo) se toma el script sentu_install.py desde el repositorio y se ejecuta, donde comprueba los requerimientos mínimos para su funcionamiento y si no los tiene los instala, luego clona el repositorio dotfiles y ejecuta Ansible para realizar la post-instalación de paquetes y enlaces de mis archivos config
+Su funcionamiento es simple: ejecutás el instalador (instrucción más abajo), se descarga `sentu_install.py` y te presenta un **menú interactivo** para elegir qué querés instalar.
 
-Esta versión del proyecto respalda mis archivos de configuración para linux pensado primeramente y optimizado para la distro de linux Fedora, pero la idea es que sea multi-sistema, para incluir las distros más famosas de linux, mac y windows
+El proyecto es **multi-sistema**: soporta Fedora, Archlinux, Debian/Ubuntu y **macOS** (via Homebrew). También incluye una interfaz TUI para seleccionar aplicaciones individualmente.
 
-## Estructura de Archviso del proyecto
-
-El proyecto cuenta con una estructura personalizada adaptada para proyectos python
+## Estructura de Archivos del Proyecto
 
 ```bash
-dotfiles
-├── ansible
-│   ├── playbook.yml
-│   ├── roles
-│   │   ├── add_repositories
-│   │   │   └── tasks
-│   │   │       └── main.yml
-│   │   ├── base_system_configuration
-│   │   │   └── tasks
-│   │   │       └── main.yml
-│   │   ├── dotfiles_management
-│   │   │   └── tasks
-│   │   │       └── main.yml
-│   │   ├── install_core_dependencies
-│   │   │   └── tasks
-│   │   │       └── main.yml
-│   │   ├── install_extended_dependencies
-│   │   │   └── tasks
-│   │   │       └── main.yml
-│   │   ├── install_post_install
-│   │   │   └── tasks
-│   │   │       └── main.yml
-│   │   ├── install_rye
-│   │   │   └── tasks
-│   │   │       └── main.yml
-│   │   └── install_uv
-│   │       └── tasks
-│   │           └── main.yml
-│   └── vars
-│       └── installer_config.yaml
-├── config
-│   ├── alacritty
-│   ├── bspwm
-│   ├── fastfetch
-│   ├── gh
-│   ├── git
-│   ├── kitty
-│   ├── lazygit
-│   ├── mpd
-│   ├── ncmpcpp
-│   ├── nvim
-│   ├── ohmyposh
-│   ├── paru
-│   ├── ranger
-│   ├── sentu
-│   ├── tmux
-│   ├── tmuxinator
-│   └── zsh
-├── home
-│   ├── .p10k.zsh
-│   └── .zshrc
-├── README.md
-└── sentu_install.py
-
+dotfiles/
+├── ansible/
+│   ├── playbook.yml              # Playbook principal
+│   ├── playbook-test.yml         # Playbook de test
+│   ├── roles/                    # Roles de Ansible (15+)
+│   │   ├── 00_load_vars/
+│   │   ├── 01_base_system_configuration/
+│   │   ├── 02_add_repositories/
+│   │   ├── 03_install_core_dependencies/
+│   │   ├── 04_install_uv/
+│   │   ├── 05_install_nvm/
+│   │   ├── 06_install_lazygit/
+│   │   ├── 07_install_extended_dependencies/
+│   │   ├── 08_install_docker/
+│   │   ├── 09_post_install/
+│   │   ├── 10_config_zsh/
+│   │   ├── 11_install_flatpak/
+│   │   ├── 12_install_fonts/
+│   │   └── 14_dotfiles_management/
+│   └── vars/                     # Variables por distro
+│       ├── RedHat.yaml           # Fedora
+│       ├── Archlinux.yaml
+│       ├── Debian.yaml
+│       ├── Darwin.yaml           # macOS
+│       └── post_install.yaml
+├── config/                       # Dotfiles (~/.config/)
+│   ├── alacritty, bspwm, fastfetch
+│   ├── gh, git, kitty, lazygit
+│   ├── mpd, ncmpcpp, nvim
+│   ├── ohmyposh, opencode        # ← Config de OpenCode
+│   ├── ranger, sentu, tmux
+│   ├── tmuxinator, zsh
+│   └── ...
+├── docs/
+│   ├── aplicaciones.md           # Inventario completo de apps
+│   ├── analisis-zshrc.md
+│   └── badges/
+├── home/                         # Archivos de home (~)
+│   ├── .p10k.zsh
+│   ├── .zshrc
+│   └── .zshrc.secrets.template   # Template para credenciales
+├── tests/
+│   └── tart/                     # Scripts de testing con Tart VMs
+│       ├── setup-macos-base.sh
+│       ├── run-macos-test.sh
+│       └── ...
+├── sentu_install.py              # Bootstrapper principal
+└── README.md
 ```
 
-Sistemas Operativos probados
+## Sistemas Operativos Soportados
 
-- [x] Fedora KDE 41+
+| Sistema | Estado | Gestor de Paquetes |
+|---------|--------|-------------------|
+| **Fedora KDE 41+** | ✅ Probado | dnf |
+| **Archlinux** | ✅ Probado | pacman + yay |
+| **Debian/Ubuntu** | ⚠️ Parcial | apt-get |
+| **macOS** (Apple Silicon) | 🔄 En desarrollo | Homebrew |
+| OpenSUSE | 📝 En roadmap | zypper |
 
-- [ ] OpenSUSE
+---
 
 # Instalación
 
 ```bash
 curl -LsSf https://raw.githubusercontent.com/SENTUstudio/dotfiles/refs/heads/main/sentu_install.py | python3
 ```
+
+> **Nota:** Requiere **Python 3.9+**. En macOS 13-14 se instala Python 3 automáticamente si falta.
+
+## Menú Interactivo
+
+Al ejecutar el instalador, verás este menú:
+
+```
+==================================================
+  SENTU Dotfiles Installer
+==================================================
+
+Selecciona una opción:
+  [1] Instalación completa (sistema + dotfiles)
+  [2] Solo dotfiles (copiar configs, saltar paquetes)
+  [3] Modo test (ansible --check)
+  [4] Salir
+  [5] Instalación personalizada (elegir apps)
+```
+
+### Opciones Disponibles
+
+| Opción | Descripción | Cuándo usarla |
+|--------|-------------|---------------|
+| **`[1] Instalación completa`** | Instala todo: dependencias del sistema, apps extendidas, y copia los dotfiles | **Sistema operativo recién instalado** |
+| **`[2] Solo dotfiles`** | Solo copia los archivos de configuración (`~/.config/*`, `~/.zshrc`, etc.) | **Sistema ya configurado**, solo querés sincronizar configs |
+| **`[3] Modo test`** | Simula la instalación sin modificar nada (usa `--check` de Ansible) | **Querés ver qué haría** sin tocar el sistema |
+| **`[4] Salir`** | Cancela la instalación | — |
+| **`[5] Instalación personalizada`** | Seleccionás categorías y apps individuales via TUI | **Querés elegir exactamente qué instalar** |
+
+---
+
+## Opción [2] Solo Dotfiles
+
+La opción **"Solo dotfiles"** es ideal cuando:
+- ✅ Ya tenés tu sistema configurado con los paquetes que necesitás
+- ✅ Solo querés sincronizar tus archivos de configuración
+- ✅ Estás en una máquina que no querés modificar mucho
+
+**Qué hace:**
+- ❌ **No instala** paquetes del sistema (dnf/apt/pacman/brew)
+- ❌ **No instala** apps extendidas (neovim, kitty, docker, etc.)
+- ✅ **Solo copia** los archivos de `config/` → `~/.config/` y `home/` → `~/`
+
+**Ejemplo de uso:**
+```bash
+curl -LsSf ... | python3
+# → Seleccioná: [2] Solo dotfiles
+# → Listo, tus configs están sincronizadas
+```
+
+---
 
 # Diagrama de flujo
 
