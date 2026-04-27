@@ -541,6 +541,7 @@ def run_tui_picker(os_family: str) -> dict | None:
     selected_packages = []
     selected_cask_packages = []
     selected_categories = []
+    by_category = {}
 
     for cat in selected_cats:
         cat_data = categories[cat]
@@ -569,16 +570,20 @@ def run_tui_picker(os_family: str) -> dict | None:
 
         if selected_apps:
             selected_categories.append(cat)
+            by_category[cat] = {"brew": [], "cask": []}
             for app, pkg_type in selected_apps:
                 if pkg_type == "cask":
                     selected_cask_packages.append(app)
+                    by_category[cat]["cask"].append(app)
                 else:
                     selected_packages.append(app)
+                    by_category[cat]["brew"].append(app)
 
     result = {
         "selected_packages": selected_packages,
         "selected_cask_packages": selected_cask_packages,
         "selected_categories": selected_categories,
+        "by_category": by_category,
     }
     return result
 
@@ -617,21 +622,14 @@ def show_summary(selections: dict) -> bool:
     print("  Resumen de instalación")
     print("=" * 50)
 
+    by_category = selections.get("by_category", {})
     for cat in selected_categories:
         print(f"\n📁 {cat}")
-        cat_apps = [app for app in selected_packages if app in selected_packages]
-        # Nota: el agrupamiento exacto por categoría requeriría re-leer el YAML;
-        # para el resumen mostramos las listas planas por simplicidad.
-
-    if selected_packages:
-        print(f"\n🍺 Paquetes brew ({len(selected_packages)}):")
-        for app in selected_packages:
+        cat_data = by_category.get(cat, {})
+        for app in cat_data.get("brew", []):
             print(f"   • {app}")
-
-    if selected_cask_packages:
-        print(f"\n📦 Paquetes cask ({len(selected_cask_packages)}):")
-        for app in selected_cask_packages:
-            print(f"   • {app}")
+        for app in cat_data.get("cask", []):
+            print(f"   • {app} (cask)")
 
     print(f"\nTotal: {total} aplicaciones seleccionadas.")
 
