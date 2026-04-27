@@ -234,17 +234,17 @@ def package_core():
         else:
             logging.info("Homebrew ya está instalado.")
 
-        # Instalar git via Homebrew
-        logging.info("Instalando git via Homebrew...")
-        try:
-            subprocess.run(["brew", "install", "git"], check=True)
-            logging.info("Git instalado exitosamente via Homebrew.")
-        except subprocess.CalledProcessError as e:
-            logging.error(f"Error instalando git via Homebrew: {e}")
-            sys.exit(1)
+            # Instalar git y python3 via Homebrew
+            logging.info("Instalando git y python3 via Homebrew...")
+            try:
+                subprocess.run(["brew", "install", "git", "python3"], check=True)
+                logging.info("Git y Python 3 instalados exitosamente via Homebrew.")
+            except subprocess.CalledProcessError as e:
+                logging.error(f"Error instalando git/python3 via Homebrew: {e}")
+                sys.exit(1)
 
-        # Instalar uv en macOS
-        install_uv()
+            # Instalar uv en macOS
+            install_uv()
         return True
     elif os_name == "Windows":
         logging.info(
