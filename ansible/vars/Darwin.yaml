@@ -19,37 +19,45 @@ package_managers:
       - automake
       - perl
       - btop
-    extended:
-      - neovim
-      - tmux
-      - fzf
-      - htop
-      - fd
-      - ripgrep
-      - bat
-      - zoxide
-      - fastfetch
-      - httpie
-      - ffmpeg
-      - qemu
-      - docker
-      - docker-compose
-      - lua
-      - luarocks
-      - pynvim
-      - asciiquarium
-      - bpytop
-    extended_cask:
-      - discord
-      - alacritty
-      - ghostty
-      - vlc
-      - mpv
-      - audacity
-      - gimp
-      - inkscape
-      - libreoffice
-      - obsidian
-      - kdenlive
-      - lmms
-      - opencode
+    categorized:
+      Desarrollo y Productividad:
+        - neovim
+        - tmux
+        - fzf
+        - htop
+        - fd
+        - ripgrep
+        - bat
+        - zoxide
+        - fastfetch
+        - httpie
+        - lua
+        - luarocks
+        - pynvim
+        - asciiquarium
+        - bpytop
+        - docker
+        - docker-compose
+      Multimedia — Codecs y Librerías:
+        - ffmpeg
+      Virtualización:
+        - qemu
+    categorized_cask:
+      Desarrollo y Productividad:
+        - opencode
+        - obsidian
+      Terminales y Multiplexores:
+        - alacritty
+        - ghostty
+      Multimedia — Editores y Reproductores:
+        - vlc
+        - mpv
+        - audacity
+        - kdenlive
+        - lmms
+      Gráficos y Oficina:
+        - gimp
+        - inkscape
+        - libreoffice
+      Comunicación y Conectividad:
+        - discord
