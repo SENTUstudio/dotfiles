@@ -147,8 +147,9 @@ clone_or_update_repo() {
         cd "$DOTFILES_DIR"
         git fetch origin
         if [[ -n $(git status --porcelain) ]]; then
-            error "Hay cambios locales sin commitear en $DOTFILES_DIR. Guardalos o descartalos antes de actualizar."
-            exit 1
+            warn "Se detectaron cambios locales en $DOTFILES_DIR."
+            info "Guardando cambios locales en stash..."
+            git stash push -m "auto-stash before update"
         fi
         git reset --hard "origin/$REPO_BRANCH"
         success "Repositorio actualizado"
