@@ -19,7 +19,7 @@ home/.zshrc.secrets
 *.secrets
 
 # Go binaries
-sentu-dotfiles
+/sentu-dotfiles
 *.exe
 
 # Go build artifacts
