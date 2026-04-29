@@ -1,5 +1,11 @@
 ---
-# Asegurar que los directorios necesarios existen
+# =============================================================================
+# Role: 14_dotfiles_management
+# Descripción: Despliegue de dotfiles usando sentu-dotfiles (Go)
+# Reemplaza la lógica anterior de symlinks por copia de archivos
+# =============================================================================
+
+# Asegurar que los directorios base existen
 - name: Asegurar que los directorios base existen
   file:
     path: "{{ item }}"
@@ -9,215 +15,77 @@
     - "{{ user_home }}/.config"
     - "{{ user_home }}/.local/share"
     - "{{ user_home }}/.sentu_backup"
-    - "{{ user_home }}/.sentu_backup/.config"
-    - "{{ user_home }}/.sentu_backup/.local"
-    - "{{ user_home }}/.sentu_backup/.local/share"
   become: no
 
-# Manejo de dotfiles/config (directorios)
-- name: Encontrar todos los directorios en dotfiles/config
-  find:
-    paths: "{{ user_home }}/dotfiles/config"
-    file_type: directory
-    recurse: no
-  register: directorios_config
-  become: no
-
-- name: Verificar directorios de destino conflictivos en .config
-  stat:
-    path: "{{ user_home }}/.config/{{ item.path | basename }}"
-  register: info_destino_config_dir
-  loop: "{{ directorios_config.files }}"
-  become: no
-
-- name: Crear backup ZIP de directorios conflictivos existentes en .config
-  archive:
-    path: "{{ user_home }}/.config/{{ item.item.path | basename }}"
-    dest: "{{ user_home }}/.sentu_backup/.config/{{ item.item.path | basename }}_backup_{{ ansible_date_time.date }}.zip"
-    format: zip
-  loop: "{{ info_destino_config_dir.results }}"
-  become: no
-  when:
-    - item.stat is defined
-    - item.stat.exists
-    - item.stat.isdir
-    - item.stat.size > 0
-    - not item.stat.islnk
-
-- name: Eliminar directorios originales en .config después del backup
-  file:
-    path: "{{ user_home }}/.config/{{ item.item.path | basename }}"
-    state: absent
-  loop: "{{ info_destino_config_dir.results }}"
-  become: no
-  when:
-    - item.stat is defined
-    - item.stat.exists
-    - item.stat.isdir
-    - item.stat.size > 0
-    - not item.stat.islnk
-
-- name: Crear enlaces simbólicos para los directorios de configuración
-  file:
-    src: "{{ item.path }}"
-    dest: "{{ user_home }}/.config/{{ item.path | basename }}"
-    state: link
-    force: yes
-  loop: "{{ directorios_config.files }}"
-  become: no
-
-# Manejo de dotfiles/config (archivos)
-- name: Encontrar todos los archivos en dotfiles/config
-  find:
-    paths: "{{ user_home }}/dotfiles/config"
-    file_type: file
-    recurse: no
-  register: archivos_config
-  become: no
-
-- name: Verificar archivos existentes en .config
-  stat:
-    path: "{{ user_home }}/.config/{{ item.path | basename }}"
-  register: archivo_config_stat
-  loop: "{{ archivos_config.files }}"
-  become: no
+# Verificar si sentu-dotfiles está instalado
+- name: Verificar si sentu-dotfiles está en PATH
+  command: "which sentu-dotfiles"
+  register: sentu_dotfiles_path
   ignore_errors: yes
-
-- name: Hacer backup de archivos existentes en .config
-  copy:
-    src: "{{ user_home }}/.config/{{ item.item.path | basename }}"
-    dest: "{{ user_home }}/.sentu_backup/.config/{{ item.item.path | basename }}.bak.{{ ansible_date_time.date }}"
-    remote_src: yes
-  loop: "{{ archivo_config_stat.results }}"
-  become: no
-  when:
-    - item.stat.exists | default(false)
-    - not item.stat.islnk | default(false)
-
-- name: Eliminar archivos originales en .config después del backup
-  file:
-    path: "{{ user_home }}/.config/{{ item.item.path | basename }}"
-    state: absent
-  loop: "{{ archivo_config_stat.results }}"
-  become: no
-  when:
-    - item.stat.exists | default(false)
-    - not item.stat.islnk | default(false)
-
-- name: Crear enlaces simbólicos para los archivos de configuración
-  file:
-    src: "{{ item.path }}"
-    dest: "{{ user_home }}/.config/{{ item.path | basename }}"
-    state: link
-    force: yes
-  loop: "{{ archivos_config.files }}"
+  changed_when: false
   become: no
 
-# Manejo de dotfiles/home (archivos)
-- name: Encontrar todos los archivos en dotfiles/home
-  find:
-    paths: "{{ user_home }}/dotfiles/home"
-    file_type: file
-    recurse: no
-    hidden: yes
-  register: archivos_home
-  become: no
-
-- name: Verificar si los archivos de home son enlaces simbólicos
+# Si no está instalado, verificar si el binario existe en ~/.local/bin
+- name: Verificar si sentu-dotfiles existe en ~/.local/bin
   stat:
-    path: "{{ user_home }}/{{ item.path | basename }}"
-  register: archivo_home_stat
-  loop: "{{ archivos_home.files }}"
+    path: "{{ user_home }}/.local/bin/sentu-dotfiles"
+  register: sentu_dotfiles_bin
   become: no
+  when: sentu_dotfiles_path.rc != 0
+
+# Si no existe el binario, verificar si Go está instalado
+- name: Verificar si Go está instalado
+  command: "which go"
+  register: go_path
   ignore_errors: yes
-
-- name: Hacer backup de archivos de home existentes que serán reemplazados
-  copy:
-    src: "{{ user_home }}/{{ item.item.path | basename }}"
-    dest: "{{ user_home }}/.sentu_backup/{{ item.item.path | basename }}.bak.{{ ansible_date_time.date }}"
-    remote_src: yes
-  loop: "{{ archivo_home_stat.results }}"
+  changed_when: false
   become: no
   when:
-    - item.stat.exists | default(false)
-    - not item.stat.islnk | default(false)
+    - sentu_dotfiles_path.rc != 0
+    - not sentu_dotfiles_bin.stat.exists | default(false)
 
-- name: Eliminar archivos originales de home después del backup
-  file:
-    path: "{{ user_home }}/{{ item.item.path | basename }}"
-    state: absent
-  loop: "{{ archivo_home_stat.results }}"
+# Compilar sentu-dotfiles desde el repositorio
+- name: Compilar sentu-dotfiles desde el repositorio
+  command:
+    cmd: "go build -ldflags='-s -w' -o {{ user_home }}/.local/bin/sentu-dotfiles ./cmd/sentu-dotfiles"
+    chdir: "{{ user_home }}/dotfiles"
+  environment:
+    PATH: "{{ ansible_env.PATH | default('') }}:/usr/local/go/bin:{{ user_home }}/go/bin"
   become: no
   when:
-    - item.stat.exists | default(false)
-    - not item.stat.islnk | default(false)
+    - sentu_dotfiles_path.rc != 0
+    - not sentu_dotfiles_bin.stat.exists | default(false)
+    - go_path.rc == 0
 
-- name: Crear enlaces simbólicos para los archivos del directorio home
-  file:
-    src: "{{ item.path }}"
-    dest: "{{ user_home }}/{{ item.path | basename }}"
-    state: link
-    force: yes
-  loop: "{{ archivos_home.files }}"
-  become: no
+# Si no hay Go ni binario, mostrar error instructivo
+- name: Fallar si no hay Go ni binario precompilado
+  fail:
+    msg: |
+      ❌ sentu-dotfiles no está instalado y Go no está disponible para compilarlo.
 
-# Manejo de dotfiles/home/local/share (directorios)
-- name: Verificar si existe el directorio dotfiles/home/local/share
-  stat:
-    path: "{{ user_home }}/dotfiles/home/local/share"
-  register: dotfiles_local_share
-  become: no
-
-- name: Encontrar todos los directorios en dotfiles/home/local/share
-  find:
-    paths: "{{ user_home }}/dotfiles/home/local/share"
-    file_type: directory
-    recurse: no
-  register: directorios_home_local_share
-  become: no
-  when: dotfiles_local_share.stat.exists and dotfiles_local_share.stat.isdir
-
-- name: Verificar directorios existentes en .local/share
-  stat:
-    path: "{{ user_home }}/.local/share/{{ item.path | basename }}"
-  register: info_destino_local_share
-  loop: "{{ directorios_home_local_share.files | default([]) }}"
-  become: no
-  when: dotfiles_local_share.stat.exists and dotfiles_local_share.stat.isdir
-
-- name: Crear backup de directorios conflictivos en .local/share
-  archive:
-    path: "{{ user_home }}/.local/share/{{ item.item.path | basename }}"
-    dest: "{{ user_home }}/.sentu_backup/.local/share/{{ item.item.path | basename }}_backup_{{ ansible_date_time.date }}.zip"
-    format: zip
-  loop: "{{ info_destino_local_share.results | default([]) }}"
-  become: no
+      Opciones:
+      1. Instalá Go manualmente y volvé a ejecutar el playbook.
+      2. Descargá un binario precompilado desde GitHub Releases y colocalo en ~/.local/bin/sentu-dotfiles
+      3. Usá el script install.sh: curl -fsSL ... | bash
   when:
-    - item.stat is defined
-    - item.stat.exists
-    - item.stat.isdir
-    - item.stat.size > 0
-    - not item.stat.islnk
+    - sentu_dotfiles_path.rc != 0
+    - not sentu_dotfiles_bin.stat.exists | default(false)
+    - go_path.rc != 0
 
-- name: Eliminar directorios originales en .local/share después del backup
-  file:
-    path: "{{ user_home }}/.local/share/{{ item.item.path | basename }}"
-    state: absent
-  loop: "{{ info_destino_local_share.results | default([]) }}"
+# Asegurar que ~/.local/bin está en PATH para esta sesión
+- name: Asegurar PATH para sentu-dotfiles
+  set_fact:
+    sentu_dotfiles_cmd: "{{ user_home }}/.local/bin/sentu-dotfiles"
   become: no
-  when:
-    - item.stat is defined
-    - item.stat.exists
-    - item.stat.isdir
-    - item.stat.size > 0
-    - not item.stat.islnk
 
-- name: Crear enlaces simbólicos para los directorios en .local/share
-  file:
-    src: "{{ item.path }}"
-    dest: "{{ user_home }}/.local/share/{{ item.path | basename }}"
-    state: link
-    force: yes
-  loop: "{{ directorios_home_local_share.files | default([]) }}"
+# Ejecutar deploy de dotfiles
+- name: Desplegar dotfiles con sentu-dotfiles
+  command: "{{ sentu_dotfiles_cmd | default('sentu-dotfiles') }} deploy"
+  register: deploy_result
+  changed_when: "'desplegados' in deploy_result.stdout"
   become: no
-  when: dotfiles_local_share.stat.exists and dotfiles_local_share.stat.isdir
+
+- name: Mostrar resultado del deploy
+  debug:
+    msg: "{{ deploy_result.stdout_lines }}"
+  become: no
