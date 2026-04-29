@@ -254,7 +254,16 @@ main() {
     echo ""
 
     # Run the manager
-    exec "$INSTALL_DIR/$BINARY_NAME" "$@"
+    if [[ -t 0 && -t 1 ]]; then
+        # TTY available: launch TUI
+        exec "$INSTALL_DIR/$BINARY_NAME" "$@"
+    else
+        # No TTY (pipe mode): run deploy directly
+        warn "Modo no interactivo detectado (pipe). Ejecutando deploy directamente..."
+        info "Para usar la TUI interactiva, ejecutá: sentu-dotfiles"
+        echo ""
+        exec "$INSTALL_DIR/$BINARY_NAME" deploy "$@"
+    fi
 }
 
 # Run main
