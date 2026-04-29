@@ -17,3 +17,11 @@ ansible/vars/selection.yaml
 # secrets
 home/.zshrc.secrets
 *.secrets
+
+# Go binaries
+sentu-dotfiles
+*.exe
+
+# Go build artifacts
+bin/
+dist/

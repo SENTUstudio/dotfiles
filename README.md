@@ -1,6 +1,6 @@
 ```
   █▀ █▀▀ █▄░█ ▀█▀ █░█  ┎┤  Ingeniería de Datos & Data Science  ├┒
-  ▄█ ██▄ █░▀█ ░█░ █▄█  ┖┤              en Python               ├┚
+  ▄█ ██▄ █░▀█ ░█░ █▄█  ┖┤         Dotfiles Manager Go          ├┚
               .studio
 ```
 
@@ -28,17 +28,18 @@
 
 # SENTU Dotfiles — Automated Linux & macOS Development Environment
 
-> **One-command post-installation framework** for Fedora, Arch Linux, Debian, Ubuntu & macOS. 
-> Interactive TUI picker to select apps by category. Installs 100+ packages via Ansible: 
-> Neovim, Tmux, Docker, Zsh, Homebrew, Kitty, Lazygit, and more.
+> **One-command post-installation framework** for Fedora, Arch Linux, Debian, Ubuntu & macOS.
+> Powered by a standalone Go binary for dotfile management + Ansible for system provisioning.
+> Installs 100+ packages: Neovim, Tmux, Docker, Zsh, Homebrew, Kitty, Lazygit, and more.
 
-**SENTU Dotfiles** automatiza la post-instalación de tu sistema operativo. Ejecutás un solo comando (`curl | python3`), se descarga el instalador `sentu_install.py` y te presenta un **menú interactivo** para elegir exactamente qué querés instalar.
+**SENTU Dotfiles** automatiza la post-instalación de tu sistema operativo. Ejecutás un solo comando (`curl | bash`), se descarga el bootstrap `install.sh` que instala `sentu-dotfiles` (binario Go standalone) y te presenta una **TUI interactiva** para gestionar tus dotfiles y sistema.
 
 - 🖥️ **Multi-sistema**: Fedora, Archlinux, Debian/Ubuntu, macOS (Apple Silicon & Intel)
 - 📦 **100+ aplicaciones**: Desde herramientas CLI hasta apps GUI via Flatpak/Homebrew
-- 🎯 **TUI Picker**: Seleccioná categorías y apps individuales con interfaz interactiva
+- 🎯 **TUI Interactiva**: Gestión de dotfiles con Bubble Tea (navegación con teclado)
 - ⚡ **Ansible-powered**: Instalación declarativa, idempotente y reproducible
-- 🔧 **Modo solo-dotfiles**: Sincronizá solo tus configs sin tocar paquetes del sistema
+- 🔧 **sentu-dotfiles**: Binario Go standalone para deploy/update/status/backup de configs
+- 💾 **Copia segura**: Archivos reales en `~/.config/` (no symlinks), con backup automático
 
 ## Tabla de Contenidos
 
@@ -60,13 +61,15 @@
 
 | Característica | Descripción |
 |----------------|-------------|
-| **One-command setup** | `curl \| python3` y listo |
+| **One-command setup** | `curl \| bash` y listo |
 | **Multi-distro** | Fedora, Arch, Debian, Ubuntu, macOS |
-| **TUI Picker** | Selección interactiva por categorías |
+| **sentu-dotfiles** | Binario Go standalone: deploy/update/status/add/backup |
+| **TUI Interactiva** | Bubble Tea con navegación vim-keys |
 | **Ansible-powered** | Configuración declarativa y reproducible |
 | **100+ paquetes** | Dev tools, terminales, multimedia, etc. |
 | **Modo dry-run** | `--check` para simular sin modificar |
 | **Solo dotfiles** | Sincronizá configs sin instalar nada |
+| **Backup automático** | Timestamped backups antes de cualquier cambio |
 
 ---
 
@@ -87,6 +90,14 @@
 
 ```bash
 dotfiles/
+├── cmd/sentu-dotfiles/           # Entry point del binario Go
+│   └── main.go                   # CLI (Cobra) + TUI (Bubble Tea)
+├── internal/
+│   ├── config/config.go          # Configuración de rutas y mapeos
+│   ├── dotfiles/engine.go        # Core engine: deploy/update/add/status/backup
+│   └── tui/                      # TUI con Bubble Tea
+│       ├── model.go              # Modelo de la interfaz interactiva
+│       └── styles.go             # Estilos Lipgloss
 ├── ansible/
 │   ├── playbook.yml              # Playbook principal
 │   ├── playbook-test.yml         # Playbook de test
@@ -104,7 +115,7 @@ dotfiles/
 │   │   ├── 10_config_zsh/
 │   │   ├── 11_install_flatpak/
 │   │   ├── 12_install_fonts/
-│   │   └── 14_dotfiles_management/
+│   │   └── 14_dotfiles_management/   # Delega a sentu-dotfiles deploy
 │   └── vars/                     # Variables por distro
 │       ├── RedHat.yaml           # Fedora
 │       ├── Archlinux.yaml
@@ -132,11 +143,62 @@ dotfiles/
 │       ├── setup-macos-base.sh
 │       ├── run-macos-test.sh
 │       └── ...
-├── sentu_install.py              # Bootstrapper principal
+├── .github/workflows/
+│   └── release.yml               # CI/CD: compila releases cross-platform
+├── install.sh                    # Bootstrap principal (descarga binario o compila)
+├── sentu_install.py              # Instalador legacy (Ansible + picker)
+├── go.mod / go.sum               # Módulo Go
 └── README.md
 ```
 
 # Instalación Rápida
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/SENTUstudio/dotfiles/main/install.sh | bash
+```
+
+> **Nota:** El script `install.sh` detecta tu plataforma, descarga el binario precompilado desde GitHub Releases (o compila desde source si no hay release), clona el repo de dotfiles y ejecuta `sentu-dotfiles`.
+
+## sentu-dotfiles — Gestor de Dotfiles
+
+`sentu-dotfiles` es un binario Go standalone para gestionar tus configuraciones:
+
+```bash
+# Interactivo (TUI)
+sentu-dotfiles
+
+# Comandos directos
+sentu-dotfiles deploy              # Instalar dotfiles por primera vez
+sentu-dotfiles update              # Actualizar después de git pull
+sentu-dotfiles status              # Ver diferencias repo vs sistema
+sentu-dotfiles add ~/.config/nvim  # Agregar nueva config al repo
+sentu-dotfiles backup              # Backup manual de configs actuales
+```
+
+### TUI Interactiva
+
+Ejecutando `sentu-dotfiles` sin argumentos lanza la interfaz interactiva:
+
+```
+  █▀ █▀▀ █▄░█ ▀█▀ █░█  ┎┤ Ingeniería de Datos & Data Science ├┒
+  ▄█ ██▄ █░▀█ ░█░ █▄█  ┖┤  Dotfiles Manager                  ├┚
+                .studio
+
+Seleccioná una opción:
+
+  🚀 Deploy     Instalar dotfiles por primera vez
+  🔄 Update     Actualizar dotfiles (solo cambios)
+  📊 Status     Ver diferencias entre repo y sistema
+  ➕ Add        Agregar una config del sistema al repo
+  💾 Backup     Backup manual de configs actuales
+  ❌ Salir
+
+↑/k ↓/j navegar • enter seleccionar • q salir
+```
+
+## Instalación Completa (Ansible)
+
+Para instalar el sistema completo (paquetes, fonts, docker, etc.) usá el instalador legacy:
 
 ```bash
 curl -LsSf https://raw.githubusercontent.com/SENTUstudio/dotfiles/refs/heads/main/sentu_install.py | python3
@@ -144,29 +206,12 @@ curl -LsSf https://raw.githubusercontent.com/SENTUstudio/dotfiles/refs/heads/mai
 
 > **Nota:** Requiere **Python 3.9+**. En macOS 13-14 se instala Python 3 automáticamente si falta.
 
-## Menú Interactivo
-
-Al ejecutar el instalador, verás este menú:
-
-```
-==================================================
-  SENTU Dotfiles Installer
-==================================================
-
-Selecciona una opción:
-  [1] Instalación completa (sistema + dotfiles)
-  [2] Solo dotfiles (copiar configs, saltar paquetes)
-  [3] Modo test (ansible --check)
-  [4] Salir
-  [5] Instalación personalizada (elegir apps)
-```
-
-### Opciones Disponibles
+### Opciones del Instalador Legacy
 
 | Opción | Descripción | Cuándo usarla |
 |--------|-------------|---------------|
 | **`[1] Instalación completa`** | Instala todo: dependencias del sistema, apps extendidas, y copia los dotfiles | **Sistema operativo recién instalado** |
-| **`[2] Solo dotfiles`** | Solo copia los archivos de configuración (`~/.config/*`, `~/.zshrc`, etc.) | **Sistema ya configurado**, solo querés sincronizar configs |
+| **`[2] Solo dotfiles`** | Delega a `sentu-dotfiles deploy` | **Sistema ya configurado**, solo querés sincronizar configs |
 | **`[3] Modo test`** | Simula la instalación sin modificar nada (usa `--check` de Ansible) | **Querés ver qué haría** sin tocar el sistema |
 | **`[4] Salir`** | Cancela la instalación | — |
 | **`[5] Instalación personalizada`** | Seleccionás categorías y apps individuales via TUI | **Querés elegir exactamente qué instalar** |
@@ -183,13 +228,16 @@ La opción **"Solo dotfiles"** es ideal cuando:
 **Qué hace:**
 - ❌ **No instala** paquetes del sistema (dnf/apt/pacman/brew)
 - ❌ **No instala** apps extendidas (neovim, kitty, docker, etc.)
-- ✅ **Solo copia** los archivos de `config/` → `~/.config/` y `home/` → `~/`
+- ✅ **Copia archivos reales** (no symlinks) de `config/` → `~/.config/` y `home/` → `~/`
+- ✅ **Hace backup automático** de configuraciones existentes antes de sobrescribir
 
 **Ejemplo de uso:**
 ```bash
-curl -LsSf ... | python3
-# → Seleccioná: [2] Solo dotfiles
-# → Listo, tus configs están sincronizadas
+# Vía install.sh (recomendado)
+curl -fsSL https://raw.githubusercontent.com/SENTUstudio/dotfiles/main/install.sh | bash
+
+# O directamente con sentu-dotfiles (si ya tenés el binario)
+sentu-dotfiles deploy
 ```
 
 ---
@@ -226,6 +274,48 @@ El proyecto instala automáticamente más de **100 aplicaciones y herramientas**
 
 ---
 
+## sentu-dotfiles CLI
+
+El binario `sentu-dotfiles` gestiona tus configuraciones de forma standalone:
+
+### Comandos
+
+| Comando | Descripción | Ejemplo |
+|---------|-------------|---------|
+| `deploy` | Copia todos los dotfiles del repo al sistema con backup | `sentu-dotfiles deploy` |
+| `update` | Re-deploy inteligente: solo copia lo que cambió | `sentu-dotfiles update` |
+| `status` | Muestra diferencias entre repo y sistema | `sentu-dotfiles status` |
+| `add <path>` | Agrega una config del sistema al repo | `sentu-dotfiles add ~/.config/nvim` |
+| `backup` | Backup manual de todas las configs actuales | `sentu-dotfiles backup` |
+
+### Flujo de trabajo diario
+
+```bash
+# 1. Hacés cambios en el repo
+cd ~/dotfiles
+# Editás config/nvim/init.lua
+
+# 2. Commiteás y pusheás
+git add config/nvim/init.lua
+git commit -m "update nvim config"
+git push
+
+# 3. En otra máquina, actualizás
+cd ~/dotfiles && git pull
+sentu-dotfiles update
+```
+
+### Por qué copia en lugar de symlinks
+
+Algunos programas (como **opencode**) gestionan sus archivos y plugins directamente en los directorios de configuración y fallan cuando estos son symlinks. `sentu-dotfiles` usa **copia de archivos reales** para garantizar compatibilidad 100%.
+
+| Método | Actualización | Edición | Compatibilidad |
+|--------|--------------|---------|----------------|
+| **Symlinks** (anterior) | `git pull` actualiza todo | Editás en `~/.config/` = editás el repo | Algunos programas rompen |
+| **Copia** (actual) | `sentu-dotfiles update` | Editás en el repo, luego `update` | 100% compatible |
+
+---
+
 ## Documentación
 
 | Documento | Descripción |
@@ -251,73 +341,62 @@ flowchart TD
 
     %% Installation Process with C4 styling
     subgraph boundary_install ["Proceso de Instalación"]
-        A["sentu_install.py\n[Script Instalador]"]:::component
-        A -->|"ejecuta"| B["Motor de Ansible Playbook\n[Motor de Orquestación]"]:::container
+        A["install.sh\n[Bootstrap Shell]"]:::component
+        A -->|"descarga o compila"| SD["sentu-dotfiles\n[Binario Go]"]:::container
+        A -->|"clona"| REPO["~/dotfiles\n[Repositorio]"]:::database
     end
 
-    %% Configuration File with C4 styling
-    subgraph boundary_config ["Configuración"]
-        B10["installer_config.yaml\n[Base de Datos de Configuración]"]:::database
+    %% Dotfiles Manager
+    subgraph boundary_dotfiles ["Gestor de Dotfiles"]
+        SD -->|"deploy"| SD1["Copia archivos\ncon backup"]:::component
+        SD -->|"update"| SD2["Compara y copia\ncambios"]:::component
+        SD -->|"status"| SD3["Muestra\ndiferencias"]:::component
     end
 
     %% Ansible Components with C4 styling
-    subgraph boundary_ansible ["Componentes del Motor de Ansible"]
+    subgraph boundary_ansible ["Componentes Ansible (Instalación Completa)"]
+        B["sentu_install.py\n[Legacy Installer]"]:::component
         B1["playbook.yml\n[Playbook Principal]"]:::component
-        B2["test\n[Role de Pruebas]"]:::component
-        B3["base_system_configuration\n[Role de Configuración Base]"]:::component
-        B4["add_repositories\n[Role de Configuración de Repositorios]"]:::component
-        B5["install_core_dependencies\n[Role de Dependencias Core]"]:::component
-        B6["install_uv\n[Role de Python UV]"]:::component
-        B7["install_rye\n[Role de Python Rye]"]:::component
-        B8["install_extended_dependencies\n[Role de Dependencias Extendidas]"]:::component
-        B9["install_post_install\n[Role de Post-Instalación]"]:::component
-        B11["install_fonts\n[Role de Instalación de Fuentes]"]:::component
-        B12["dotfiles_management\n[Role de Gestión de Dotfiles]"]:::component
+        B2["base_system_configuration\n[Role de Configuración Base]"]:::component
+        B3["install_core_dependencies\n[Role de Dependencias Core]"]:::component
+        B4["install_extended_dependencies\n[Role de Dependencias Extendidas]"]:::component
+        B5["dotfiles_management\n[Role de Gestión de Dotfiles]"]:::component
     end
 
     %% Deployment Targets with C4 styling
     subgraph boundary_deploy ["Destinos de Implementación"]
-        C["Archivos de Configuración\n[Configuración del Sistema]"]:::container
-        D["Dotfiles del Usuario\n[Entorno de Usuario]"]:::container
+        C["~/.config/\n[Configuración del Sistema]"]:::container
+        D["~/\n[Archivos de Home]"]:::container
     end
 
-    %% Update the flow based on the new playbook order
+    %% Flow
     B --> B1
-    B1 --> B10
-    B10 --> B2
+    B1 --> B2
     B2 --> B3
     B3 --> B4
     B4 --> B5
-    B5 --> B6
-    B6 --> B7
-    B7 --> B8
-    B8 --> B9
-    B9 --> B11
-    B11 --> B12
+    B5 -->|"delega a"| SD
 
-    B12 -->|"despliega"| C
-    B12 -->|"copia a"| D
+    SD1 -->|"copia a"| C
+    SD1 -->|"copia a"| D
+    SD2 -->|"actualiza"| C
+    SD2 -->|"actualiza"| D
 
     %% Set boundary style
     style boundary_install fill:none,stroke:#777,stroke-width:2px,stroke-dasharray:7 5
-    style boundary_config fill:none,stroke:#777,stroke-width:2px,stroke-dasharray:7 5
+    style boundary_dotfiles fill:none,stroke:#777,stroke-width:2px,stroke-dasharray:7 5
     style boundary_ansible fill:none,stroke:#777,stroke-width:2px,stroke-dasharray:7 5
     style boundary_deploy fill:none,stroke:#777,stroke-width:2px,stroke-dasharray:7 5
 
     %% Hyperlinks
-    click A "https://github.com/sentustudio/dotfiles/blob/main/sentu_install.py"
+    click A "https://github.com/sentustudio/dotfiles/blob/main/install.sh"
+    click SD "https://github.com/sentustudio/dotfiles/tree/main/cmd/sentu-dotfiles"
+    click B "https://github.com/sentustudio/dotfiles/blob/main/sentu_install.py"
     click B1 "https://github.com/sentustudio/dotfiles/blob/main/ansible/playbook.yml"
-    click B2 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/test"
-    click B3 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/base_system_configuration"
-    click B4 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/add_repositories"
-    click B5 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/install_core_dependencies"
-    click B6 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/install_uv"
-    click B7 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/install_rye"
-    click B8 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/install_extended_dependencies"
-    click B9 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/install_post_install"
-    click B10 "https://github.com/sentustudio/dotfiles/blob/main/ansible/vars/installer_config.yaml"
-    click B11 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/install_fonts"
-    click B12 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/dotfiles_management"
+    click B2 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/base_system_configuration"
+    click B3 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/install_core_dependencies"
+    click B4 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/install_extended_dependencies"
+    click B5 "https://github.com/sentustudio/dotfiles/tree/main/ansible/roles/dotfiles_management"
     click C "https://github.com/sentustudio/dotfiles/tree/main/config"
     click D "https://github.com/sentustudio/dotfiles/tree/main/home"
 ```

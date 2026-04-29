@@ -217,6 +217,7 @@ def package_core():
         # -----------------------------------------------------------------
 
         # Bootstrap Homebrew en macOS si no está presente
+        brew_installed_now = False
         if not check_command("brew"):
             logging.info("Homebrew no encontrado. Ejecutando instalador oficial...")
             try:
@@ -229,23 +230,35 @@ def package_core():
                     check=True,
                 )
                 logging.info("Homebrew instalado exitosamente.")
+                brew_installed_now = True
             except subprocess.CalledProcessError as e:
                 logging.error(f"Error instalando Homebrew: {e}")
                 sys.exit(1)
         else:
             logging.info("Homebrew ya está instalado.")
 
-            # Instalar git y python3 via Homebrew
-            logging.info("Instalando git y python3 via Homebrew...")
-            try:
-                subprocess.run(["brew", "install", "git", "python3"], check=True)
-                logging.info("Git y Python 3 instalados exitosamente via Homebrew.")
-            except subprocess.CalledProcessError as e:
-                logging.error(f"Error instalando git/python3 via Homebrew: {e}")
-                sys.exit(1)
+        # Asegurar que brew está en PATH (especialmente en Apple Silicon después de instalación fresca)
+        if brew_installed_now:
+            machine = platform.machine()
+            if machine == "arm64":
+                brew_bin = "/opt/homebrew/bin"
+            else:
+                brew_bin = "/usr/local/bin"
+            if brew_bin not in os.environ.get("PATH", ""):
+                os.environ["PATH"] = f"{brew_bin}:{os.environ.get('PATH', '')}"
+                logging.info(f"Agregado {brew_bin} al PATH para esta sesión.")
 
-            # Instalar uv en macOS
-            install_uv()
+        # Instalar git y python3 via Homebrew (siempre, no solo si brew ya existía)
+        logging.info("Instalando git y python3 via Homebrew...")
+        try:
+            subprocess.run(["brew", "install", "git", "python3"], check=True)
+            logging.info("Git y Python 3 instalados exitosamente via Homebrew.")
+        except subprocess.CalledProcessError as e:
+            logging.error(f"Error instalando git/python3 via Homebrew: {e}")
+            sys.exit(1)
+
+        # Instalar uv en macOS
+        install_uv()
         return True
     elif os_name == "Windows":
         logging.info(
@@ -311,8 +324,8 @@ def clone_repo():
             f"El directorio '{DOTFILES_DIR}' existe pero no parece ser un repositorio Git completo. Intentando eliminar y clonar de nuevo."
         )
         try:
-            run_command(["rm", "-rf", str(DOTFILES_DIR)])
-        except subprocess.CalledProcessError as e:
+            shutil.rmtree(DOTFILES_DIR, ignore_errors=False)
+        except OSError as e:
             logging.error(f"Error al eliminar el directorio existente: {e}")
             logging.error(
                 "Por favor, verifica los permisos o elimina el directorio manualmente."
@@ -330,45 +343,94 @@ def clone_repo():
         sys.exit(1)
 
 
+def install_go():
+    """Instala Go si no está presente (simplificado para dotfiles-only)."""
+    if check_command("go"):
+        return True
+
+    logging.info("Go no encontrado. Instalando Go...")
+    os_name = platform.system()
+    machine = platform.machine()
+
+    arch_map = {"x86_64": "amd64", "arm64": "arm64", "aarch64": "arm64"}
+    go_arch = arch_map.get(machine, machine)
+
+    os_map = {"Linux": "linux", "Darwin": "darwin"}
+    go_os = os_map.get(os_name, os_name.lower())
+
+    go_version = "1.23.4"
+    tarball = f"go{go_version}.{go_os}-{go_arch}.tar.gz"
+    url = f"https://go.dev/dl/{tarball}"
+
+    try:
+        logging.info(f"Descargando Go {go_version}...")
+        run_command(["curl", "-fsSL", url, "-o", f"/tmp/{tarball}"])
+        logging.info("Extrayendo Go...")
+        run_command(["sudo", "rm", "-rf", "/usr/local/go"])
+        run_command(["sudo", "tar", "-C", "/usr/local", "-xzf", f"/tmp/{tarball}"])
+        run_command(["rm", "-f", f"/tmp/{tarball}"])
+
+        # Agregar al PATH para esta sesión
+        os.environ["PATH"] = "/usr/local/go/bin:" + os.environ.get("PATH", "")
+
+        if check_command("go"):
+            logging.info("Go instalado correctamente.")
+            return True
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Error instalando Go: {e}")
+
+    logging.error("No se pudo instalar Go automáticamente.")
+    logging.info("Instalalo manualmente desde https://go.dev/dl/ y volvé a intentar.")
+    return False
+
+
+def ensure_sentu_dotfiles():
+    """Asegura que sentu-dotfiles esté compilado e instalado en ~/.local/bin/."""
+    install_dir = Path.home() / ".local" / "bin"
+    binary = install_dir / "sentu-dotfiles"
+
+    if binary.exists():
+        logging.info(f"sentu-dotfiles encontrado en {binary}")
+        return str(binary)
+
+    logging.info("sentu-dotfiles no encontrado. Compilando desde el repositorio...")
+
+    if not install_go():
+        sys.exit(1)
+
+    install_dir.mkdir(parents=True, exist_ok=True)
+
+    try:
+        run_command(
+            ["go", "build", "-ldflags=-s -w", "-o", str(binary), "./cmd/sentu-dotfiles"],
+            cwd=DOTFILES_DIR,
+        )
+        binary.chmod(0o755)
+        logging.info(f"sentu-dotfiles compilado e instalado en {binary}")
+        return str(binary)
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Error compilando sentu-dotfiles: {e}")
+        sys.exit(1)
+
+
 def install_dotfiles_only():
-    """Instala solo los dotfiles creando enlaces simbólicos (sin Ansible)."""
-    logging.info("Modo dotfiles-only: creando enlaces simbólicos...")
+    """Instala solo los dotfiles usando sentu-dotfiles (sin Ansible)."""
+    logging.info("Modo dotfiles-only: desplegando con sentu-dotfiles...")
 
-    config_src = DOTFILES_DIR / "config"
-    config_dst = Path.home() / ".config"
-    home_src = DOTFILES_DIR / "home"
-    home_dst = Path.home()
+    binary = ensure_sentu_dotfiles()
 
-    # Asegurar que los directorios destino existen
-    config_dst.mkdir(parents=True, exist_ok=True)
+    # Asegurar que ~/.local/bin está en PATH para esta sesión
+    local_bin = str(Path.home() / ".local" / "bin")
+    if local_bin not in os.environ.get("PATH", ""):
+        os.environ["PATH"] = f"{local_bin}:{os.environ.get('PATH', '')}"
 
-    # Crear enlaces simbólicos para directorios y archivos en config/
-    if config_src.exists():
-        for item in config_src.iterdir():
-            dest = config_dst / item.name
-            if dest.exists() or dest.is_symlink():
-                logging.info(f"Eliminando existente: {dest}")
-                if dest.is_dir() and not dest.is_symlink():
-                    shutil.rmtree(dest)
-                else:
-                    dest.unlink()
-            logging.info(f"Creando enlace simbólico: {dest} -> {item}")
-            os.symlink(item, dest)
-
-    # Crear enlaces simbólicos para archivos en home/
-    if home_src.exists():
-        for item in home_src.iterdir():
-            dest = home_dst / item.name
-            if dest.exists() or dest.is_symlink():
-                logging.info(f"Eliminando existente: {dest}")
-                if dest.is_dir() and not dest.is_symlink():
-                    shutil.rmtree(dest)
-                else:
-                    dest.unlink()
-            logging.info(f"Creando enlace simbólico: {dest} -> {item}")
-            os.symlink(item, dest)
-
-    logging.info("Dotfiles instalados exitosamente.")
+    logging.info("Ejecutando sentu-dotfiles deploy...")
+    try:
+        run_command([binary, "deploy"])
+        logging.info("Dotfiles desplegados exitosamente.")
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Error desplegando dotfiles: {e}")
+        sys.exit(1)
 
 
 def run_ansible_playbook(test: bool = False, check: bool = False):
