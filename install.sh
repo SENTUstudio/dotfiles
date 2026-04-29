@@ -41,6 +41,25 @@ error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
+# Run command with sudo if available and not root
+run_with_privilege() {
+    if [[ $EUID -eq 0 ]]; then
+        "$@"
+    elif command -v sudo &>/dev/null; then
+        if [[ -t 0 ]]; then
+            sudo "$@"
+        else
+            if ! sudo -n "$@"; then
+                error "Se requieren privilegios de root, pero sudo necesita contraseña y no hay una terminal interactiva disponible. Ejecutá como root o configurá sudo sin contraseña."
+                exit 1
+            fi
+        fi
+    else
+        error "Se requieren privilegios de root para continuar, pero 'sudo' no está disponible."
+        exit 1
+    fi
+}
+
 # Detect OS and architecture
 detect_platform() {
     local os arch
@@ -112,15 +131,21 @@ download_release_binary() {
     local arch=${platform#*_}
     local binary_file="sentu-dotfiles_${os}_${arch}"
     local download_url
+    local api_response
 
     info "Buscando última release en GitHub..."
 
     # Get latest release download URL
-    download_url=$(curl -fsSL "$GITHUB_API" 2>/dev/null | \
-        grep -o '"browser_download_url": *"[^"]*' | \
-        grep "$binary_file" | \
-        head -1 | \
-        sed 's/.*": *"//')
+    if ! api_response=$(curl -fsSL --connect-timeout 10 --max-time 60 "$GITHUB_API"); then
+        warn "Error de red al consultar GitHub API. Verificá tu conexión o si alcanzaste el límite de rate limit."
+        return 1
+    fi
+
+    download_url=$(echo "$api_response" | \
+        grep -o '"browser_download_url": *"[^"]*"' | \
+        sed 's/.*": *"//;s/"$//' | \
+        grep -E "/${binary_file}$" | \
+        head -1)
 
     if [[ -z "$download_url" ]]; then
         warn "No se encontró un binario precompilado para $platform"
@@ -130,11 +155,25 @@ download_release_binary() {
     info "Descargando sentu-dotfiles desde GitHub Releases..."
     info "URL: $download_url"
 
-    if curl -fsSL "$download_url" -o "$INSTALL_DIR/$BINARY_NAME"; then
+    local tmp_binary
+    tmp_binary="/tmp/sentu-dotfiles.$$"
+    if curl -fsSL --connect-timeout 10 --max-time 60 "$download_url" -o "$tmp_binary"; then
+        if [[ ! -s "$tmp_binary" ]]; then
+            warn "Descarga incompleta o archivo vacío"
+            rm -f "$tmp_binary"
+            return 1
+        fi
+        if command -v file &>/dev/null && ! file "$tmp_binary" | grep -qE 'executable|ELF|Mach-O'; then
+            warn "El archivo descargado no parece ser un binario válido"
+            rm -f "$tmp_binary"
+            return 1
+        fi
+        mv "$tmp_binary" "$INSTALL_DIR/$BINARY_NAME"
         chmod +x "$INSTALL_DIR/$BINARY_NAME"
         success "sentu-dotfiles descargado e instalado desde GitHub Releases"
         return 0
     else
+        rm -f "$tmp_binary"
         warn "Error descargando el binario"
         return 1
     fi
@@ -145,13 +184,52 @@ clone_or_update_repo() {
     if [[ -d "$DOTFILES_DIR/.git" ]]; then
         info "Actualizando repositorio existente en $DOTFILES_DIR..."
         cd "$DOTFILES_DIR"
-        git fetch origin
-        if [[ -n $(git status --porcelain) ]]; then
+        if ! git fetch origin; then
+            error "No se pudo conectar con origin para actualizar el repositorio. Verificá tu conexión a internet."
+            exit 1
+        fi
+        local stashed=false
+        local has_tracked_changes=false
+        local has_untracked=false
+        if ! git diff --quiet HEAD; then
+            has_tracked_changes=true
+        fi
+        if [[ -n $(git ls-files --others --exclude-standard) ]]; then
+            has_untracked=true
+        fi
+        if [[ "$has_tracked_changes" == true ]]; then
             warn "Se detectaron cambios locales en $DOTFILES_DIR."
             info "Guardando cambios locales en stash..."
-            git stash push -m "auto-stash before update"
+            git stash save "auto-stash before update"
+            stashed=true
+        fi
+        if [[ "$has_untracked" == true ]]; then
+            warn "Se detectaron archivos no rastreados en $DOTFILES_DIR. No se incluirán en el stash."
+        fi
+        # Ensure we are on the correct branch before hard reset
+        git checkout "$REPO_BRANCH" || git checkout -b "$REPO_BRANCH" "origin/$REPO_BRANCH"
+        # Warn about unpushed commits
+        local has_unpushed=false
+        if [[ -n $(git log --oneline "origin/$REPO_BRANCH..HEAD" 2>/dev/null) ]]; then
+            warn "Tenés commits locales no enviados a origin/$REPO_BRANCH. El reset los va a dejar como commits huérfanos en tu repo local."
+            has_unpushed=true
+        fi
+        if [[ "$has_unpushed" == true ]]; then
+            if [[ -t 0 ]]; then
+                read -rp "¿Continuar con el reset destructivo? [s/N]: " confirm
+                if [[ ! "$confirm" =~ ^[Ss]$ ]]; then
+                    error "Operación cancelada por el usuario."
+                    exit 1
+                fi
+            else
+                error "Repositorio tiene commits no enviados. No se puede continuar en modo no interactivo."
+                exit 1
+            fi
         fi
         git reset --hard "origin/$REPO_BRANCH"
+        if [[ "$stashed" == true ]]; then
+            warn "Tus cambios locales fueron guardados en stash. Para restaurarlos ejecutá: git stash pop"
+        fi
         success "Repositorio actualizado"
     else
         if [[ -d "$DOTFILES_DIR" ]]; then
@@ -166,31 +244,61 @@ clone_or_update_repo() {
     fi
 }
 
+# Compare two version strings (e.g., 1.21.0). Returns 0 if v1 >= v2.
+version_ge() {
+    local v1="$1" v2="$2"
+    v1="${v1#go}"
+    v2="${v2#go}"
+    local IFS=.
+    local i x y
+    local -a ver1 ver2
+    read -r -a ver1 <<< "$v1"
+    read -r -a ver2 <<< "$v2"
+    for ((i=0; i<${#ver1[@]} || i<${#ver2[@]}; i++)); do
+        x=${ver1[i]:-0}
+        y=${ver2[i]:-0}
+        if ((10#$x < 10#$y)); then return 1; fi
+        if ((10#$x > 10#$y)); then return 0; fi
+    done
+    return 0
+}
+
 # Install Go if not present
 install_go_if_needed() {
+    local min_version="1.21.0"
     if command -v go &>/dev/null; then
         local go_version
         go_version=$(go version | awk '{print $3}' | sed 's/go//')
-        info "Go encontrado: $go_version"
-        return 0
+        if version_ge "$go_version" "$min_version"; then
+            info "Go encontrado: $go_version"
+            return 0
+        else
+            warn "Go $go_version es menor a la versión mínima requerida ($min_version). Se actualizará..."
+        fi
+    else
+        warn "Go no está instalado. Es necesario para compilar sentu-dotfiles."
     fi
 
-    warn "Go no está instalado. Es necesario para compilar sentu-dotfiles."
     info "Instalando Go..."
 
-    local platform go_version="1.23.4"
+    local platform target_go_version="1.23.4"
     platform=$(detect_platform)
 
     local os=${platform%_*}
     local arch=${platform#*_}
 
-    local go_tarball="go${go_version}.${os}-${arch}.tar.gz"
+    local go_tarball="go${target_go_version}.${os}-${arch}.tar.gz"
     local go_url="https://go.dev/dl/${go_tarball}"
 
     cd /tmp
-    curl -fsSL "$go_url" -o "$go_tarball"
-    sudo rm -rf /usr/local/go
-    sudo tar -C /usr/local -xzf "$go_tarball"
+    curl -fsSL --connect-timeout 10 --max-time 60 "$go_url" -o "$go_tarball"
+    if ! tar -tzf "$go_tarball" >/dev/null 2>&1; then
+        error "El tarball de Go descargado está corrupto o es inválido."
+        rm -f "$go_tarball"
+        exit 1
+    fi
+    run_with_privilege rm -rf /usr/local/go
+    run_with_privilege tar -C /usr/local -xzf "$go_tarball"
     rm -f "$go_tarball"
 
     export PATH="/usr/local/go/bin:$PATH"
@@ -238,6 +346,10 @@ main() {
     if download_release_binary "$platform"; then
         info "Usando binario precompilado de GitHub Releases"
     else
+        if [[ ! -t 0 ]]; then
+            error "No se pudo descargar el binario en modo no interactivo. Abortando."
+            exit 1
+        fi
         warn "No se pudo descargar el binario. Usando fallback de compilación..."
 
         # Strategy 2: Fallback to building from source
@@ -254,7 +366,7 @@ main() {
     echo ""
 
     # Run the manager
-    if [[ -t 0 && -t 1 ]]; then
+    if [[ -t 0 ]]; then
         # TTY available: launch TUI
         exec "$INSTALL_DIR/$BINARY_NAME" "$@"
     else
@@ -262,7 +374,11 @@ main() {
         warn "Modo no interactivo detectado (pipe). Ejecutando deploy directamente..."
         info "Para usar la TUI interactiva, ejecutá: sentu-dotfiles"
         echo ""
-        exec "$INSTALL_DIR/$BINARY_NAME" deploy "$@"
+        if [[ $# -eq 0 ]]; then
+            exec "$INSTALL_DIR/$BINARY_NAME" deploy
+        else
+            exec "$INSTALL_DIR/$BINARY_NAME" "$@"
+        fi
     fi
 }
 
