@@ -249,11 +249,21 @@ main() {
 
     success "sentu-dotfiles está listo para usar"
     echo ""
-    info "Ejecutando sentu-dotfiles..."
-    echo ""
 
     # Run the manager
-    exec "$INSTALL_DIR/$BINARY_NAME" "$@"
+    if [[ -t 0 ]]; then
+        # TTY available: launch full setup
+        info "Ejecutando sentu-dotfiles setup..."
+        echo ""
+        exec "$INSTALL_DIR/$BINARY_NAME" setup "$@"
+    else
+        # No TTY (pipe mode): show message and exit
+        info "Bootstrap completado. Para continuar la instalación ejecutá:"
+        echo ""
+        echo "  export PATH=\"$INSTALL_DIR:\$PATH\""
+        echo "  sentu-dotfiles setup"
+        echo ""
+    fi
 }
 
 # Run main

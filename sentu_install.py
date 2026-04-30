@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import platform
 import subprocess
 import sys
@@ -769,7 +770,50 @@ def show_menu() -> str:
             sys.exit(0)
 
 
+def setup_only_mode(os_family: str | None) -> None:
+    """Ejecuta la instalación completa sin menú interactivo.
+
+    Este modo es invocado por sentu-dotfiles setup (Go) para que
+    Python se encargue del setup y Go del deploy de dotfiles.
+    """
+    if not package_core():
+        logging.error("No se pudo instalar dependencias. Saliendo.")
+        sys.exit(1)
+
+    show("💾 Clonación de dotfiles iniciada")
+    clone_repo()
+    logging.info("💾 Clonación de dotfiles terminada")
+
+    # Si hay TTY y detectamos OS family, mostramos picker
+    if os_family is not None and sys.stdin.isatty():
+        show("🎨 Iniciando selección personalizada de aplicaciones")
+        selections = run_tui_picker(os_family)
+        if selections is not None:
+            if show_summary(selections):
+                write_selection_yaml(selections)
+                show("⚙️  Iniciando instalación personalizada")
+                run_ansible_playbook(test=False)
+                show("✅ Instalación de paquetes completada")
+                return
+            # Si el usuario no confirmó, fallback a full
+            logging.info("El usuario canceló la selección personalizada. Fallback a full.")
+
+    show("⚙️  Iniciando instalación de paquetes")
+    run_ansible_playbook(test=False)
+    show("✅ Instalación de paquetes completada")
+
+
 def main():
+    parser = argparse.ArgumentParser(
+        description="SENTU Dotfiles Installer - Instalación completa del sistema"
+    )
+    parser.add_argument(
+        "--setup-only",
+        action="store_true",
+        help="Ejecuta solo la instalación de paquetes (sin menú). Usado por sentu-dotfiles.",
+    )
+    args = parser.parse_args()
+
     # Redirigir stdin desde /dev/tty si estamos en un pipe (ej: curl | python3)
     # para que input() y questionary funcionen correctamente.
     redirect_tty()
@@ -778,14 +822,7 @@ def main():
     os_name = platform.system()
     logging.info(f"Sistema operativo detectado: {os_name}")
 
-    # Mapeo de plataforma a familia de vars
-    os_family_map = {
-        "Linux": None,  # Se detecta por gestor de paquetes o distribución en Ansible
-    }
-    # Para el picker necesitamos el nombre exacto del archivo de vars.
-    # En Linux no sabemos la distro desde Python fácilmente sin leer /etc/os-release.
-    # Sin embargo, Ansible usa ansible_os_family que es RedHat, Archlinux, Debian.
-    # Para simplificar, leemos /etc/os-release en Linux.
+    # Detectar OS family
     os_family = None
     if os_name == "Darwin":
         os_family = "Darwin"
@@ -804,6 +841,10 @@ def main():
                         break
         except FileNotFoundError:
             pass
+
+    if args.setup_only:
+        setup_only_mode(os_family)
+        return
 
     while True:
         choice = show_menu()

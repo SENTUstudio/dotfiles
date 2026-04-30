@@ -6,6 +6,7 @@ import (
 
 	"github.com/SENTUstudio/dotfiles/internal/config"
 	"github.com/SENTUstudio/dotfiles/internal/dotfiles"
+	"github.com/SENTUstudio/dotfiles/internal/setup"
 	"github.com/SENTUstudio/dotfiles/internal/tui"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/spf13/cobra"
@@ -27,6 +28,7 @@ Uso interactivo (TUI):
   sentu-dotfiles           # Lanza la interfaz interactiva
 
 Uso por comandos (scripting):
+  sentu-dotfiles setup     # Instalar apps y configurar el sistema completo
   sentu-dotfiles deploy    # Instalar dotfiles por primera vez
   sentu-dotfiles update    # Actualizar dotfiles después de un git pull
   sentu-dotfiles status    # Ver diferencias entre repo y sistema
@@ -139,7 +141,27 @@ al repositorio de dotfiles. Útil para incorporar nuevas configs.`,
 		},
 	}
 
-	rootCmd.AddCommand(tuiCmd, deployCmd, updateCmd, addCmd, statusCmd, backupCmd)
+	// Comando setup
+	var setupCmd = &cobra.Command{
+		Use:   "setup",
+		Short: "Instala apps y configura el sistema completo",
+		Long: `Ejecuta la instalación completa del sistema delegando a sentu_install.py (Ansible).
+Instala dependencias, apps seleccionadas y luego despliega los dotfiles.`,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			runner := setup.NewRunner(cfg.DotfilesDir)
+			if err := runner.Run(); err != nil {
+				return fmt.Errorf("❌ Error en setup: %w", err)
+			}
+			fmt.Println("🚀 Desplegando dotfiles...")
+			if err := engine.Deploy(); err != nil {
+				return fmt.Errorf("❌ Error en deploy: %w", err)
+			}
+			fmt.Println("✅ Dotfiles desplegados exitosamente.")
+			return nil
+		},
+	}
+
+	rootCmd.AddCommand(tuiCmd, deployCmd, updateCmd, addCmd, statusCmd, backupCmd, setupCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
