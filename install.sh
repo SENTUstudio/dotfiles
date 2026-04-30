@@ -379,16 +379,16 @@ main() {
 
     # Run the manager
     if [[ -t 0 ]]; then
-        # TTY available: launch full setup
-        info "Ejecutando sentu-dotfiles setup..."
+        # TTY available: launch TUI menu so user chooses what to do
+        info "Lanzando sentu-dotfiles..."
         echo ""
-        exec "$INSTALL_DIR/$BINARY_NAME" setup "$@"
+        exec "$INSTALL_DIR/$BINARY_NAME" "$@"
     else
         # No TTY (pipe mode): show message and exit
-        info "Bootstrap completado. Para continuar la instalación ejecutá:"
+        info "Bootstrap completado. Para continuar ejecutá:"
         echo ""
         echo "  export PATH=\"$INSTALL_DIR:\$PATH\""
-        echo "  sentu-dotfiles setup"
+        echo "  sentu-dotfiles"
         echo ""
     fi
 }
