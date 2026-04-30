@@ -78,11 +78,16 @@ log_info "Copiando proyecto dotfiles a la VM..."
 # Usar rsync o scp; primero esperamos a que SSH esté listo
 sleep 10
 
-SSH_OPTS="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=10"
+SSH_OPTS="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=10 -o PubkeyAuthentication=no"
+
+# Helper: ejecutar SSH con password
+vm_ssh() {
+    sshpass -p "${SSH_PASS}" ssh ${SSH_OPTS} "${SSH_USER}@${VM_IP}" "$@"
+}
 
 # Verificar conectividad SSH
 elapsed=0
-while ! ssh ${SSH_OPTS} "${SSH_USER}@${VM_IP}" 'echo ok' &>/dev/null; do
+while ! vm_ssh 'echo ok' &>/dev/null; do
     if (( elapsed >= 120 )); then
         log_err "SSH no disponible después de 2 minutos."
         kill "${TART_PID}" 2>/dev/null || true
@@ -95,8 +100,8 @@ done
 echo
 
 # Crear directorio destino y copiar
-ssh ${SSH_OPTS} "${SSH_USER}@${VM_IP}" 'mkdir -p ~/dotfiles'
-rsync -avz -e "ssh ${SSH_OPTS}" \
+vm_ssh 'mkdir -p ~/dotfiles'
+sshpass -p "${SSH_PASS}" rsync -avz -e "ssh ${SSH_OPTS}" \
     --exclude='.git' \
     --exclude='node_modules' \
     "${PROJECT_ROOT}/" \
@@ -104,21 +109,18 @@ rsync -avz -e "ssh ${SSH_OPTS}" \
 
 log_ok "Proyecto copiado exitosamente."
 
-# --- Run sentu_install.py inside VM ------------------------------------------
+# --- Run dotfiles setup inside VM ------------------------------------------
 
-log_info "Ejecutando sentu_install.py (modo test --check) dentro de la VM..."
+log_info "Ejecutando sentu-dotfiles setup dentro de la VM..."
 log_info "Timeout: ${TEST_TIMEOUT}s"
 
 TEST_OUTPUT=$(mktemp)
 TEST_EXIT=0
 
-# Ejecutar con timeout
-ssh ${SSH_OPTS} "${SSH_USER}@${VM_IP}" \
-    'cd ~/dotfiles && echo "4" | python3 sentu_install.py' \
+# Ejecutar setup con timeout
+vm_ssh \
+    'cd ~/dotfiles && export PATH="$HOME/.local/bin:$PATH" && ./install.sh' \
     >"${TEST_OUTPUT}" 2>&1 || TEST_EXIT=$?
-
-# Nota: enviamos "4" (Salir) al menú interactivo para evitar bloqueo.
-# Para una prueba real, reemplazar por "1" o "3" según lo que se quiera validar.
 
 if [[ ${TEST_EXIT} -eq 0 ]]; then
     log_ok "Test completado exitosamente (exit code 0)."
@@ -133,7 +135,7 @@ tail -n 30 "${TEST_OUTPUT}" | sed 's/^/    /'
 # --- Cleanup test VM ---------------------------------------------------------
 
 log_info "Apagando y eliminando VM de prueba '${VM_TEST}'..."
-ssh ${SSH_OPTS} "${SSH_USER}@${VM_IP}" 'sudo shutdown -h now' 2>/dev/null || true
+vm_ssh 'sudo shutdown -h now' 2>/dev/null || true
 wait "${TART_PID}" 2>/dev/null || true
 sleep 3
 tart delete "${VM_TEST}" || log_warn "No se pudo eliminar '${VM_TEST}'"
