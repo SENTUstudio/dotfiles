@@ -376,23 +376,20 @@ main() {
 
     success "sentu-dotfiles está listo para usar"
     echo ""
-    info "Ejecutando sentu-dotfiles..."
-    echo ""
 
     # Run the manager
     if [[ -t 0 ]]; then
-        # TTY available: launch TUI
-        exec "$INSTALL_DIR/$BINARY_NAME" "$@"
-    else
-        # No TTY (pipe mode): run deploy directly
-        warn "Modo no interactivo detectado (pipe). Ejecutando deploy directamente..."
-        info "Para usar la TUI interactiva, ejecutá: sentu-dotfiles"
+        # TTY available: launch full setup
+        info "Ejecutando sentu-dotfiles setup..."
         echo ""
-        if [[ $# -eq 0 ]]; then
-            exec "$INSTALL_DIR/$BINARY_NAME" deploy
-        else
-            exec "$INSTALL_DIR/$BINARY_NAME" "$@"
-        fi
+        exec "$INSTALL_DIR/$BINARY_NAME" setup "$@"
+    else
+        # No TTY (pipe mode): show message and exit
+        info "Bootstrap completado. Para continuar la instalación ejecutá:"
+        echo ""
+        echo "  export PATH=\"$INSTALL_DIR:\$PATH\""
+        echo "  sentu-dotfiles setup"
+        echo ""
     fi
 }
 

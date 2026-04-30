@@ -7,6 +7,7 @@ import (
 
 	"github.com/SENTUstudio/dotfiles/internal/config"
 	"github.com/SENTUstudio/dotfiles/internal/dotfiles"
+	"github.com/SENTUstudio/dotfiles/internal/setup"
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
@@ -30,6 +31,7 @@ type menuItem struct {
 }
 
 var menuItems = []menuItem{
+	{title: "⚙️  Setup", description: "Instalar apps y configurar sistema", action: "setup"},
 	{title: "🚀 Deploy", description: "Instalar dotfiles por primera vez", action: "deploy"},
 	{title: "🔄 Update", description: "Actualizar dotfiles (solo cambios)", action: "update"},
 	{title: "📊 Status", description: "Ver diferencias entre repo y sistema", action: "status"},
@@ -251,6 +253,7 @@ func (m Model) viewExecuting() string {
 	b.WriteString("\n\n")
 
 	actionNames := map[string]string{
+		"setup":  "Instalando apps y configurando sistema",
 		"deploy": "Desplegando dotfiles",
 		"update": "Actualizando dotfiles",
 		"status": "Verificando estado",
@@ -336,6 +339,15 @@ func (m Model) executeAction(action string) tea.Cmd {
 				return execDoneMsg{err: err}
 			}
 			return execDoneMsg{output: output}
+		case "setup":
+			runner := setup.NewRunner(m.engine.Config.DotfilesDir)
+			if err := runner.Run(); err != nil {
+				return execDoneMsg{err: err}
+			}
+			if err := m.engine.Deploy(); err != nil {
+				return execDoneMsg{err: err}
+			}
+			return execDoneMsg{output: "Setup y deploy completados exitosamente."}
 		default:
 			return execDoneMsg{err: fmt.Errorf("acción desconocida: %s", action)}
 		}
