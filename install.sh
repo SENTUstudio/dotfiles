@@ -26,19 +26,19 @@ REPO_BRANCH="main"
 
 # Logging functions
 info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
+    printf '%b%s %s%b\n' "$BLUE" "[INFO]" "$1" "$NC"
 }
 
 success() {
-    echo -e "${GREEN}[OK]${NC} $1"
+    printf '%b%s %s%b\n' "$GREEN" "[OK]" "$1" "$NC"
 }
 
 warn() {
-    echo -e "${YELLOW}[WARN]${NC} $1"
+    printf '%b%s %s%b\n' "$YELLOW" "[WARN]" "$1" "$NC"
 }
 
 error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+    printf '%b%s %s%b\n' "$RED" "[ERROR]" "$1" "$NC"
 }
 
 # Run command with sudo if available and not root
@@ -49,10 +49,11 @@ run_with_privilege() {
         if [[ -t 0 ]]; then
             sudo "$@"
         else
-            if ! sudo -n "$@"; then
+            if ! sudo -n true &>/dev/null; then
                 error "Se requieren privilegios de root, pero sudo necesita contraseña y no hay una terminal interactiva disponible. Ejecutá como root o configurá sudo sin contraseña."
                 exit 1
             fi
+            sudo "$@"
         fi
     else
         error "Se requieren privilegios de root para continuar, pero 'sudo' no está disponible."
@@ -110,8 +111,10 @@ ensure_install_dir() {
 
         # Detect shell
         local shell_rc
-        if [[ -n "${ZSH_VERSION:-}" ]] || [[ "$SHELL" == */zsh ]]; then
+        if [[ -n "${ZSH_VERSION:-}" ]]; then
             shell_rc="$HOME/.zshrc"
+        elif [[ -n "${BASH_VERSION:-}" ]]; then
+            shell_rc="$HOME/.bashrc"
         else
             shell_rc="$HOME/.bashrc"
         fi
@@ -156,7 +159,7 @@ download_release_binary() {
     info "URL: $download_url"
 
     local tmp_binary
-    tmp_binary="/tmp/sentu-dotfiles.$$"
+    tmp_binary=$(mktemp /tmp/sentu-dotfiles.XXXXXX)
     if curl -fsSL --connect-timeout 10 --max-time 60 "$download_url" -o "$tmp_binary"; then
         if [[ ! -s "$tmp_binary" ]]; then
             warn "Descarga incompleta o archivo vacío"
@@ -167,6 +170,9 @@ download_release_binary() {
             warn "El archivo descargado no parece ser un binario válido"
             rm -f "$tmp_binary"
             return 1
+        fi
+        if [[ -d "${INSTALL_DIR:?}/$BINARY_NAME" ]]; then
+            rm -rf "${INSTALL_DIR:?}/$BINARY_NAME"
         fi
         mv "$tmp_binary" "$INSTALL_DIR/$BINARY_NAME"
         chmod +x "$INSTALL_DIR/$BINARY_NAME"
@@ -191,7 +197,7 @@ clone_or_update_repo() {
         local stashed=false
         local has_tracked_changes=false
         local has_untracked=false
-        if ! git diff --quiet HEAD; then
+        if ! git diff --quiet HEAD 2>/dev/null; then
             has_tracked_changes=true
         fi
         if [[ -n $(git ls-files --others --exclude-standard) ]]; then
@@ -207,7 +213,7 @@ clone_or_update_repo() {
             warn "Se detectaron archivos no rastreados en $DOTFILES_DIR. No se incluirán en el stash."
         fi
         # Ensure we are on the correct branch before hard reset
-        git checkout "$REPO_BRANCH" || git checkout -b "$REPO_BRANCH" "origin/$REPO_BRANCH"
+        git checkout -f "$REPO_BRANCH" || git checkout -b "$REPO_BRANCH" "origin/$REPO_BRANCH"
         # Warn about unpushed commits
         local has_unpushed=false
         if [[ -n $(git log --oneline "origin/$REPO_BRANCH..HEAD" 2>/dev/null) ]]; then
@@ -232,7 +238,7 @@ clone_or_update_repo() {
         fi
         success "Repositorio actualizado"
     else
-        if [[ -d "$DOTFILES_DIR" ]]; then
+        if [[ -e "$DOTFILES_DIR" ]]; then
             warn "$DOTFILES_DIR existe pero no es un repositorio git."
             local backup_name="${DOTFILES_DIR}.backup.$(date +%Y%m%d_%H%M%S)"
             info "Renombrando a $backup_name..."
@@ -257,6 +263,10 @@ version_ge() {
     for ((i=0; i<${#ver1[@]} || i<${#ver2[@]}; i++)); do
         x=${ver1[i]:-0}
         y=${ver2[i]:-0}
+        x=${x%%[!0-9]*}
+        y=${y%%[!0-9]*}
+        x=${x:-0}
+        y=${y:-0}
         if ((10#$x < 10#$y)); then return 1; fi
         if ((10#$x > 10#$y)); then return 0; fi
     done
@@ -290,18 +300,20 @@ install_go_if_needed() {
     local go_tarball="go${target_go_version}.${os}-${arch}.tar.gz"
     local go_url="https://go.dev/dl/${go_tarball}"
 
-    cd /tmp
-    curl -fsSL --connect-timeout 10 --max-time 60 "$go_url" -o "$go_tarball"
-    if ! tar -tzf "$go_tarball" >/dev/null 2>&1; then
+    local go_tmpdir
+    go_tmpdir=$(mktemp -d)
+    curl -fsSL --connect-timeout 10 --max-time 60 "$go_url" -o "$go_tmpdir/$go_tarball"
+    if ! tar -tzf "$go_tmpdir/$go_tarball" >/dev/null 2>&1; then
         error "El tarball de Go descargado está corrupto o es inválido."
-        rm -f "$go_tarball"
+        rm -rf "$go_tmpdir"
         exit 1
     fi
     run_with_privilege rm -rf /usr/local/go
-    run_with_privilege tar -C /usr/local -xzf "$go_tarball"
-    rm -f "$go_tarball"
+    run_with_privilege tar -C /usr/local -xzf "$go_tmpdir/$go_tarball"
+    rm -rf "$go_tmpdir"
 
     export PATH="/usr/local/go/bin:$PATH"
+    hash -r
 
     if command -v go &>/dev/null; then
         success "Go instalado correctamente"
@@ -318,6 +330,7 @@ build_from_source() {
 
     if ! command -v go &>/dev/null; then
         export PATH="/usr/local/go/bin:$PATH"
+        hash -r
     fi
 
     go build -ldflags="-s -w" -o "$INSTALL_DIR/$BINARY_NAME" ./cmd/sentu-dotfiles
@@ -359,6 +372,7 @@ main() {
 
     # Ensure binary is in current PATH for this session
     export PATH="$INSTALL_DIR:$PATH"
+    hash -r
 
     success "sentu-dotfiles está listo para usar"
     echo ""
